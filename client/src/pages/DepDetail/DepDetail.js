@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../../components/Grid";
-import Jumbotron from "../../components/Jumbotron";
+import { Container } from "../../components/Grid";
 import API from "../../utils/API";
 import { List, ListItem } from "../../components/List";
 // import { DeleteBtn } from "../../components/DeleteBtn";
@@ -9,49 +8,40 @@ import { List, ListItem } from "../../components/List";
 
 class DepDetail extends Component {
   state = {
-    books: [],
+    tasks: [],
     department: "",
     task: "",
     description: ""
   };
-  // When this component mounts, grab the book with the _id of this.props.match.params.id
-  // e.g. localhost:3000/books/599dcb67f0f16317844583fc
+  // When this component mounts, grab the task that have department of this.props.match.params.department
+  // e.g. localhost:3000/tasks/dept/Concierge
 
   componentDidMount() {
-    this.loadDepBooks();
+    this.loadDepTasks();
   }
 
-  loadDepBooks = () => {
-    API.getDepBooks(this.props.match.params.department)
+  loadDepTasks = () => {
+    API.getDepTasks(this.props.match.params.department)
       .then(res =>
-        this.setState({ books: res.data, department: "", task: "", description: "" })
+        this.setState({ tasks: res.data, department: "", task: "", description: "" })
       )
       .catch(err => console.log(err));
   };
-
-//   componentDidMount() {
-//     API.getDepBooks(this.props.match.params.department)
-//     .then(res =>
-//       this.setState({ book: res.data, department: "", task: "", description: "" })
-//     )
-//     .catch(err => console.log(err));
-    
-// };
 
 
   render() {
     return (
       <Container fluid>
-         {this.state.books.length ? (
+         {this.state.tasks.length ? (
               <List>
-                {this.state.books.map(book => (
-                  <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
+                {this.state.tasks.map(task => (
+                  <ListItem key={task._id}>
+                    <Link to={"/tasks/" + task._id}>
                       <strong>
-                        {book.department} -Task-  {book.task}
+                        {task.department} -Task-  {task.task}
                       </strong>
                     </Link>
-                    {/* <DeleteBtn onClick={() => this.deleteBook(book._id)} /> */}
+                    {/* <DeleteBtn onClick={() => this.deleteTask(task._id)} /> */}
                   </ListItem>
                 ))}
               </List>

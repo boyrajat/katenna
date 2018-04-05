@@ -8,29 +8,29 @@ import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import {Dropdown} from '../../components/Form/Dropdown';
 
-class Books extends Component {
+class Tasks extends Component {
   state = {
-    books: [],
+    Tasks: [],
     department: "",
     task: "",
     description: ""
   };
 
   componentDidMount() {
-    this.loadBooks();
+    this.loadTasks();
   }
 
-  loadBooks = () => {
-    API.getBooks()
+  loadTasks = () => {
+    API.getTasks()
       .then(res =>
-        this.setState({ books: res.data, department: "", task: "", description: "" })
+        this.setState({ Tasks: res.data, department: "", task: "", description: "" })
       )
       .catch(err => console.log(err));
   };
 
-  deleteBook = id => {
-    API.deleteBook(id)
-      .then(res => this.loadBooks())
+  deleteTask = id => {
+    API.deleteTask(id)
+      .then(res => this.loadTasks())
       .catch(err => console.log(err));
   };
 
@@ -44,12 +44,12 @@ class Books extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.department && this.state.task) {
-      API.saveBook({
+      API.saveTask({
         department: this.state.department,
         task: this.state.task,
         description: this.state.description
       })
-        .then(res => this.loadBooks())
+        .then(res => this.loadTasks())
         .catch(err => console.log(err));
     }
   };
@@ -93,16 +93,16 @@ class Books extends Component {
             <Jumbotron>
               <h1>Entered Job Details</h1>
             </Jumbotron>
-            {this.state.books.length ? (
+            {this.state.Tasks.length ? (
               <List>
-                {this.state.books.map(book => (
-                  <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
+                {this.state.Tasks.map(Task => (
+                  <ListItem key={Task._id}>
+                    <Link to={"/Tasks/" + Task._id}>
                       <strong>
-                        {book.department} -Task-  {book.task}
+                        {Task.department} -Task-  {Task.task}
                       </strong>
                     </Link>
-                    <DeleteBtn onClick={() => this.deleteBook(book._id)} />
+                    <DeleteBtn onClick={() => this.deleteTask(Task._id)} />
                   </ListItem>
                 ))}
               </List>
@@ -116,4 +116,4 @@ class Books extends Component {
   }
 }
 
-export default Books;
+export default Tasks;

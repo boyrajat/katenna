@@ -1,5 +1,8 @@
 import React from 'react';
 
+// This is the drop down menu option to select the department
+// for which the manager needs to enter task
+
 export const Dropdown = props =>
   <div className="form-group">
     <div className="input-group mb-6">
