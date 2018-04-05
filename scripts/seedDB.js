@@ -11,22 +11,115 @@ mongoose.connect(
   }
 );
 
- const taskSeed = [
-   {
-    department: "Concierge",
-    task: "Stephen King",
-    description:
-      'A number-one national best seller about a man who wakes up from a five-year coma able to see people\'s futures and the terrible fate awaiting mankind in The Dead Zone - a "compulsive page-turner" (The Atlanta Journal-Constitution). Johnny Smith awakens from a five-year coma after his car accident and discovers that he can see people\'s futures and pasts when he touches them. Many consider his talent a gift; Johnny feels cursed. His fiancée married another man during his coma, and people clamor for him to solve their problems. When Johnny has a disturbing vision after he shakes the hand of an ambitious and amoral politician, he must decide if he should take drastic action to change the future. The Dead Zone is a "faultlessly paced...continuously engrossing" (Los Angeles Times) novel of second sight.',
-    date: new Date(Date.now())
-  },
+const taskSeed = 
+//Array for Company info, Employee info and Jobs info objects
+[
+  //Company Info object
+  
   {
-    department: "Bellman",
-    task: "William Golding",
-    description:
-      "The tale of a party of shipwrecked schoolboys, marooned on a coral island, who at first enjoy the freedom of the situation but soon divide into fearsome gangs which turn the paradise island into a nightmare of panic and death.",
-    date: new Date(Date.now())
+    company: {
+      name: "Katenna Hotel Miami",
+      address: {
+        street: "1220 Ocean Drive",
+        city: "Miami Beach",
+        state: "Florida",
+        zip: 33139
+      },
+      phone: "305-604-5070",
+      url: "http://www.katennahotelmiami.com",
+      location: "in the heart of South Beach on Ocean Drive, between 12th and 13th streets",
+      rooms: 45,
+      built: 1936,
+      architect: "L. Murray Dixon",
+      features: [
+        'Guaranteed direct ocean views from all rooms and suites',
+        'Large, spacious rooms averaging 550 sq ft or more in size',
+        'Complimentary WiFi in all guest rooms and public spaces',
+        'The Katenna Restaurant, featuring all day indoor/outdoor dining',
+        'Outdoor heated pool exclusively for hotel guests',
+        'Fitness Center (open 24 hours)'
+      ],
+      services: [
+        'Complimentary beach set-up of two beach chairs, one umbrella and two towels',
+        'Complimentary "Katenna Sunrise" welcome cocktail upon arrival',
+        'Valet parking ($35 per night)',
+        '24-hour concierge service',
+        'Same day laundering and dry cleaning services',
+        'Pressing and steaming services',
+        'Shoe shine services',
+        'Well-stocked lending library featuring award-winning DVDs',
+      ],
+      amenities: [
+        'In-room dining serving breakfast, lunch and dinner',
+        'Nespresso coffee & tea machines',
+        'Fully stocked honor bar',
+        'In-room safe',
+        'Flat-screen televisions with DVD players',
+        'iPod docking stations in all rooms and suites',
+        'Large walk -in closets',
+        'Iron and ironing board available upon request',
+        'In - room spa treatments'
+      ],
+      dining: [
+        {
+          outlet: {
+            name: 'Tides Restaurant and Terrace',
+            cuisine: 'International and American',
+            hours: {
+              breakfast: {
+                open: 7,
+                close: 11
+              },
+              lunch: {
+                open: 11,
+                close: 16
+              },
+              dinner: {
+                open: 16,
+                close: 23
+              }
+            }
+          }
+        },
+        {
+          outlet: {
+            name: 'Turtle Bar',
+            cuisine: 'Alcolohol, wine and beer',
+            hours: {
+              breakfast: {
+                open: 9,
+                close: 11
+              },
+              lunch: {
+                open: 11,
+                close: 16
+              },
+              dinner: {
+                open: 16,
+                close: 23
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  
+  // Employee info object
+  {
+    employees: [
+      {
+        name: "Mariela Pascual",
+        email: "mariela2pascual@gmail.com",
+        phone: "786-469-1844",
+        position: "Front Office"
+
+
+    }
+  ]
   }
 ];
+
 
 db.Task
   .remove({})
