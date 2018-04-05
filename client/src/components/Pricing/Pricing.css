@@ -1,0 +1,138 @@
+#priceContFlu {
+	background-color: rgba(230, 230, 230, 1);
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+#priceText h3 {
+	font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 2.25rem;
+    margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center !important;
+}
+
+#priceText hr {
+    max-width: 150px;
+    height: 4px;
+    border: none;
+    background-color: #8bf195;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#priceText p {
+	font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: rgba(50, 50, 50, 1);
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+#cardDiv .card{
+	border: none;
+	border-radius: 0;
+	background-color: rgb(255, 255, 255, 0);
+}
+
+
+.card-header {
+    color: white;
+    border: none;
+    border-radius: 0;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.card-body {
+	background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.card-body h5 {
+	font-family: 'Open Sans', sans-serif;
+    font-size: 100px;
+    font-weight: 600;
+    color: rgba(50, 50, 50, 1);
+}
+
+#dollar {
+	font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    color: rgba(50, 50, 50, 0.5);
+    position: relative;
+	bottom: 60px;
+}
+
+#years {
+	font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    color: rgba(50, 50, 50, 0.5);
+}
+
+.card-body p {
+	font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: rgba(50, 50, 50, 0.5);
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.card-body a {
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 0;
+    padding: 10px 50px;
+}
+
+
+
+
+
+
+#freeCard .card-header {
+    background-color: #1DE9B6;
+}
+
+#freeCard .card-body a {
+    color: #1DE9B6;
+    border: 2px solid #1DE9B6;
+}
+
+
+
+
+#smallCard .card-header {
+    background-color: #F44336;
+}
+
+#smallCard .card-body a {
+    color: #F44336;
+    border: 2px solid #F44336;
+}
+
+
+
+
+#largeCard .card-header {
+    background-color: #FFC400;
+}
+
+#largeCard .card-body a {
+    color: #FFC400;
+    border: 2px solid #FFC400;
+}

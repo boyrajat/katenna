@@ -1,0 +1,53 @@
+.jumbotron {
+	background-color: black;
+    padding: 0;
+    padding-top: 120px;
+    padding-bottom: 120px;
+	color: white;
+	margin-bottom: 0px;
+}
+
+.jumboSpace {
+	min-height: 50vh;
+	align-items: center !important;
+}
+
+#desktopImage {
+	max-width: 100%;
+	margin-top: 40px;	
+}
+
+.jumbotron h1 {
+	color: white;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 50px;
+	font-weight: 800;
+	margin-bottom: 20px;
+}
+
+.jumbotron p {
+	color: white;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 1px;
+    font-size: 18px;
+
+}
+
+.btn {
+	font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    border-radius: 0;
+    border: 2px solid white;
+	padding: 10px 50px;
+	margin-top: 20px;
+}
+
+.btn:first-of-type {
+	margin-right: 20px;
+}

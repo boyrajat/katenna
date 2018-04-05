@@ -1,0 +1,45 @@
+#downloadsContFlu {
+	background-color: rgba(240, 240, 240, 1);
+	padding-top: 100px;
+}
+
+#downloadsColImg {
+    overflow: hidden;
+	max-height: 470px;
+}
+
+#downloadsColImg img {
+	max-height: 700px;
+	
+}
+
+#downloadsColText {
+ margin-bottom: 100px;
+ margin-top: 50px;
+
+}
+
+
+#downloadsColText h5 {
+	font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #3a88be;
+}
+
+#downloadsColText h3 {
+	font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 2.25rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#downloadsColText p {
+	font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: rgba(50, 50, 50, 1);
+    margin-bottom: 20px;
+}
