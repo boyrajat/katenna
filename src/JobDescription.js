@@ -12,9 +12,10 @@ class JobDescription extends Component {
         this.state = { data: [] };
     }
     render() {
-        return (
+        return  (
             <div style = { style.jobDescription }>
-            <h2>Employee Type </h2>
+            <h2>{this.props.dept} </h2>
+            
             <JobList data={ DATA }/>
             <JobForm />
             </div>
