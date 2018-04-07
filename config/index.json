@@ -1,0 +1,4 @@
+{
+  "dbUri": "mongodb://localhost/katennaUsers",
+  "jwtSecret": "this is the secret"
+}

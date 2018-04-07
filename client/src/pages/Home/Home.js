@@ -15,10 +15,10 @@ class Home extends Component {
 			<div className="container-fluid">
 				<NavBar />
 				<Jumbotron />
-				<Features id="features"/>
-				<Download id="download"/>
-				<Pricing id="pricing"/>
-				<Footer id="contact"/>
+				<Features id="features" />
+				<Download id="download" />
+				<Pricing id="pricing" />
+				<Footer id="contact" />
 			</div>
 		);
 	}
