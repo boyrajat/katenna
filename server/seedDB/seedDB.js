@@ -103,7 +103,7 @@ const taskSeed =
         {
           name: "Mariela Pascual",
           email: "mariela2pascual@gmail.com",
-          phone: "786-469-1844",
+          phone: "NONE",
           position: "Front Office"
 
 
