@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Auth from '../modules/Auth';
-import LoginForm from '../components/LoginForm.jsx';
+import Auth from '../../modules/Auth';
+import LoginForm from '../../components/LoginForm';
 
 
 class LoginPage extends React.Component {
@@ -69,7 +69,7 @@ class LoginPage extends React.Component {
         this.props.toggleAuthenticateStatus()
 
         // redirect signed in user to dashboard
-        this.props.history.push('/dashboard');
+        this.props.history.push('/');
       } else {
         // failure
 

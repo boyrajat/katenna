@@ -1,7 +1,12 @@
 import React from "react";
 import "./Jumbotron.css";
-import LoginPage from '../../containers/LoginPage.jsx';
-import SignUpPage from '../../containers/SignUpPage.jsx';
+import LoginPage from '../../containers/LoginPage';
+import SignUpPage from '../../containers/SignUpPage';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+// import routes from './routes.js';
+
 import {
 	BrowserRouter as Router,
 	Route,
@@ -21,7 +26,6 @@ const Jumbotron = () => (
 
 					<Link className="btn " to="/login">Log in</Link>
 					<Link className="btn " to="/signup">Sign Up</Link>
-
 
 				</div>
 

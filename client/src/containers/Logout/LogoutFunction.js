@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Auth from '../modules/Auth';
-
+import Auth from '../../modules/Auth';
 
 class LogoutFunction extends React.Component {
 
@@ -10,6 +9,7 @@ class LogoutFunction extends React.Component {
     Auth.deauthenticateUser();
     // change the current URL to / after logout
     this.props.history.push('/');
+    window.location.reload();
   }
 
   render() {
@@ -17,6 +17,7 @@ class LogoutFunction extends React.Component {
       <div>
         <p>Logging out...</p>
       </div>
+
     )
   }
 }

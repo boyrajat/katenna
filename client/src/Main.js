@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 // import routes from './routes.js';
-
-
 import {
   BrowserRouter as Router,
   Route,
@@ -14,13 +12,14 @@ import {
   withRouter
 } from 'react-router-dom'
 
-import Base from './components/Base.jsx';
-import HomePage from './components/HomePage.jsx';
+// importing Pages
 import HomeThing from './pages/Home/Home.js';
-import LoginPage from './containers/LoginPage.jsx';
-import LogoutFunction from './containers/LogoutFunction.jsx';
-import SignUpPage from './containers/SignUpPage.jsx';
-import DashboardPage from './containers/DashboardPage.jsx';
+import LoginPage from './containers/LoginPage';
+import LogoutFunction from './containers/Logout';
+import SignUpPage from './containers/SignUpPage';
+import DashboardPage from './containers/DashboardPage';
+
+// importing authentication
 import Auth from './modules/Auth';
 
 // remove tap delay, essential for MaterialUI to work properly
@@ -80,32 +79,19 @@ class Main extends Component {
     return (
       <MuiThemeProvider muiTheme={getMuiTheme()}>
         <Router>
-          <div>
-            <div className="top-bar" style={{ display: 'none' }}>
-              <div className="top-bar-left"  >
-                <Link to="/" style={{ fontSize: '16px', color: 'black' }}>Katenna home page</Link>
+          {this.state.authenticated ? (
+            <PrivateRoute path="/" component={DashboardPage} />
+          ) : (
+              <div>
+                <PropsRoute exact path="/" component={HomeThing} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />
+                {/* the line below will be used in case that we decide to add a dashboard link to the landing page */}
+                {/* <PrivateRoute path="/dashboard" component={DashboardPage} /> */}
+                <LoggedOutRoute path="/login" component={LoginPage} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />
+                <LoggedOutRoute path="/signup" component={SignUpPage} />
+                {/* leaving the line below in case we want to add a logout button to the homepage */}
+                <Route path="/logout" component={LogoutFunction} />
               </div>
-              {this.state.authenticated ? (
-                <div className="top-bar-right">
-                  <Link to="/dashboard" style={{ fontSize: '16px', color: 'black' }}>Dashboard</Link>
-                  <Link to="/logout" style={{ fontSize: '16px', color: 'black' }}>Log out</Link>
-                </div>
-              ) : (
-                  <div className="top-bar-right">
-                    <Link to="/login" style={{ fontSize: '16px', color: 'black' }}>Log in</Link>
-                    <Link to="/signup" style={{ fontSize: '16px', color: 'black' }}>Sign up</Link>
-                  </div>
-                )}
-
-            </div>
-
-            <PropsRoute exact path="/" component={HomeThing} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />
-            <PrivateRoute path="/dashboard" component={DashboardPage} />
-            <LoggedOutRoute path="/login" component={LoginPage} toggleAuthenticateStatus={() => this.toggleAuthenticateStatus()} />
-            <LoggedOutRoute path="/signup" component={SignUpPage} />
-            <Route path="/logout" component={LogoutFunction} />
-          </div>
-
+            )}
         </Router>
       </MuiThemeProvider>
     );
@@ -113,3 +99,6 @@ class Main extends Component {
 }
 
 export default Main;
+
+
+
