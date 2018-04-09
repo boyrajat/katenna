@@ -9,7 +9,7 @@ import {
   withRouter
 } from 'react-router-dom'
 import LogoutFunction from '../../containers/Logout';
-
+import SideBar from '../SideBar';
 const Dashboard = ({ secretData, user }) => (
   <Card className="container">
     <CardTitle
@@ -28,6 +28,9 @@ const Dashboard = ({ secretData, user }) => (
           src="https://console.dialogflow.com/api-client/demo/embedded/7d304919-0df1-4533-8f13-e7a0e708cddc">
         </iframe>
       </div>
+    </div>
+    <div>
+      <SideBar />
     </div>
     <Route path="/logout" component={LogoutFunction} />
   </Card>

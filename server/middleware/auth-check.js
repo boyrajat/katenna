@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const User = require('mongoose').model('User');
+const Task = require('mongoose').model('Task');
 const config = require('../../config');
 
 
@@ -27,7 +28,10 @@ module.exports = (req, res, next) => {
         return res.status(401).end();
       }
       // pass user details onto next route
-      req.user = user
+      req.user = user;
+      req.user.name = "sup";
+      req.user.employees = Task.find({});
+      console.log(req.user.employees);
       return next();
     });
   });

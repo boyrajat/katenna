@@ -27,12 +27,13 @@ const authCheckMiddleware = require('./server/middleware/auth-check');
 app.use('/api', authCheckMiddleware);
 
 // routes
-const authRoutes = require('./server/routes/auth');
-const apiRoutes = require('./server/routes/api');
-const taskRoutes = require('./server/routes/api/tasks');
+const authRoutes = require('./server/routes/auth.js');
+const apiRoutes = require('./server/routes/api.js');
+const taskRoutes = require('./server/routes/TaskRoutes');
+
 app.use('/auth', authRoutes);
 app.use('/api', apiRoutes);
-app.use('/tasks', taskRoutes);
+app.use(taskRoutes);
 
 // Set Port, hosting services will look for process.env.PORT
 app.set('port', (process.env.PORT || 3000));
