@@ -7,7 +7,7 @@ module.exports.connect = (uri) => {
   // mongoose.Promise = global.Promise;
 
   // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-  var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/katennaUsers";
+  var MONGODB_URI = process.env.MONGODB_URI || "mongodb://boyrajat:Katenna1234!@ds237989.mlab.com:37989/katenna";
 
   // Set mongoose to leverage built in JavaScript ES6 Promises
   // Connect to the Mongo DB
@@ -26,6 +26,7 @@ module.exports.connect = (uri) => {
   // load models
   require('./task');
   require('./user');
+  require('./employee');
 
 };
 
