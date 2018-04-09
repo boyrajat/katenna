@@ -1,42 +1,42 @@
 const db = require("../models");
-const Task = require("../models/task");
+const Employee = require("../models/employee");
 // Defining methods for the tasksController
 module.exports = {
   findAll: function (req, res) {
     console.log("inside findall");
-    Task
+    Employee
       .find({})
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findById: function (req, res) {
-    Task
+    Employee
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findByDepartment: function (req, res) {
-    Task
+    Employee
       .find({ name: req.params.department })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
 
   },
   create: function (req, res) {
-    Task
+    Employee
       .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   update: function (req, res) {
-    Task
+    Employee
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   remove: function (req, res) {
-    Task
+    Employee
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))

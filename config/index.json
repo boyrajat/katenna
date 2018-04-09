@@ -1,4 +1,4 @@
 {
-  "dbUri": "mongodb://localhost/katennaUsers",
+  "dbUri": "mongodb://boyrajat:Katenna1234!@ds237989.mlab.com:37989/katenna",
   "jwtSecret": "this is the secret"
 }
