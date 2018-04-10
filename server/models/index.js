@@ -27,6 +27,7 @@ module.exports.connect = (uri) => {
   require('./task');
   require('./user');
   require('./employee');
+  require('./company');
 
 };
 
