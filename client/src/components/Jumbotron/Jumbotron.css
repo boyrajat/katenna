@@ -17,7 +17,7 @@
 	margin-top: 40px;	
 }
 
-.jumbotron h1 {
+#jumboH1 {
 	color: white;
     font-family: 'Raleway', sans-serif;
     text-transform: uppercase;
@@ -25,14 +25,15 @@
     font-size: 50px;
 	font-weight: 800;
 	margin-bottom: 20px;
+	text-align: left !important;
 }
 
-.jumbotron p {
+#jumboP {
 	color: white;
     font-family: 'Open Sans', sans-serif;
     letter-spacing: 1px;
     font-size: 18px;
-
+	text-align: left !important;
 }
 
 .btn {
