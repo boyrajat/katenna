@@ -17,8 +17,9 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findByDepartment: function (req, res) {
+    console.log("inside company property");
     Company
-      .find({ name: req.params.department })
+      .find({}, req.params.department)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
 

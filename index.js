@@ -31,11 +31,13 @@ const authRoutes = require('./server/routes/auth.js');
 const apiRoutes = require('./server/routes/api.js');
 const taskRoutes = require('./server/routes/TaskRoutes');
 const employeeRoutes = require('./server/routes/TaskRoutes');
+const companyRoutes = require('./server/routes/TaskRoutes');
 
 app.use('/auth', authRoutes);
 app.use('/api', apiRoutes);
 app.use(taskRoutes);
 app.use(employeeRoutes);
+app.use(companyRoutes);
 
 // Set Port, hosting services will look for process.env.PORT
 app.set('port', (process.env.PORT || 3000));
