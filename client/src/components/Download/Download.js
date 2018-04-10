@@ -12,9 +12,8 @@ const Download = () =>
 					<h5>User Interface</h5>
 					<h3>Discover Katenna <br /> for Employees</h3>
 					<p>Real-time training that is focused on your employees' individual needs, providing ongoing support as they grow their skills. Continuity, consistency and clarity across all branches of labor, through training and development process. The traditional obstacles of disseminating institutional knowledge can be maximized and preserved for posterity for future generations of incoming employees. <br />Download a trial version today.</p>
-					<a href="/home">
+						{/* This image is supposed to be a button, but it is disabled for now */}
 						<img src='/img/DownloadBtnBlack.svg' alt="Employee Screen" />
-					</a>
 				</div>
 			</div>
 		</div>
