@@ -40492,6 +40492,8 @@ var DashboardPage = function (_React$Component) {
         _react2.default.createElement(_Dashboard2.default, { secretData: this.state.secretData, user: this.state.user })
       );
     }
+    // test
+
   }]);
 
   return DashboardPage;
