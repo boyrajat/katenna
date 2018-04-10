@@ -1,14 +1,14 @@
-.features {
+#features {
 	margin-top:	100px;
 	margin-bottom: 60px;
 }
 
-.features img {
+#features img {
 	max-height: 100px;
 	margin-bottom: 20px;	
 }
 
-.features h4 {
+#features h4 {
 	font-family: 'Raleway', sans-serif;
     font-size: 20px;
     text-transform: uppercase;
@@ -18,7 +18,7 @@
     margin-bottom: 10px;
 }
 
-.features p {
+#features p {
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     color: rgba(50, 50, 50, 1);

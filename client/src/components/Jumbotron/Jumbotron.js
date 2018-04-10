@@ -20,8 +20,8 @@ const Jumbotron = () => (
 		<div className="container align-middle">
 			<div className="row jumboSpace align-middle">
 				<div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 align-middle">
-					<h1 className="display-4">Teams come and go. Knowledge never leaves.</h1>
-					<p className="lead">The training and development bot that provides ongoing support to employees, preserves the continuity of institutional knowledge, all while protecting the bottom-line.</p>
+					<h1 className="display-4" id="jumboH1">Teams come and go. Knowledge never leaves.</h1>
+					<p className="lead" id="jumboP">The training and development bot that provides ongoing support to employees, preserves the continuity of institutional knowledge, all while protecting the bottom-line.</p>
 
 
 					<Link className="btn " to="/login">Log in</Link>

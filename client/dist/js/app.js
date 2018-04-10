@@ -38898,11 +38898,7 @@ var Download = function Download() {
 						_react2.default.createElement("br", null),
 						"Download a trial version today."
 					),
-					_react2.default.createElement(
-						"a",
-						{ href: "/home" },
-						_react2.default.createElement("img", { src: "/img/DownloadBtnBlack.svg", alt: "Employee Screen" })
-					)
+					_react2.default.createElement("img", { src: "/img/DownloadBtnBlack.svg", alt: "Employee Screen" })
 				)
 			)
 		)
@@ -38955,7 +38951,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Features = function Features() {
 	return _react2.default.createElement(
 		"div",
-		{ className: "container text-center features" },
+		{ className: "container text-center", id: "features" },
 		_react2.default.createElement(
 			"div",
 			{ className: "row text-center" },
@@ -39049,6 +39045,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(29);
 
+var _ContactForm = __webpack_require__(525);
+
+var _ContactForm2 = _interopRequireDefault(_ContactForm);
+
 __webpack_require__(515);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -39056,7 +39056,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Footer = function Footer() {
 	return _react2.default.createElement(
 		"div",
-		{ className: "container-fluid footerContFlu" },
+		{ className: "container-fluid footerContFlu", id: "contact" },
 		_react2.default.createElement(
 			"div",
 			{ className: "row", id: "footerDecoration" },
@@ -39093,86 +39093,7 @@ var Footer = function Footer() {
 						" was created by Alexander, Charles, Mariela, Melissa and Rajat. We are passionate about building applications which solve problems that have yet to even be discovered on our daily basis. We\u2019d love to show you our solutions, get your feedback and see if we might be a good fit for your organization. Please contact us if you would like to schedule a brief demo."
 					)
 				),
-				_react2.default.createElement(
-					"div",
-					{ className: "col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5", id: "contactForm" },
-					_react2.default.createElement(
-						"h3",
-						null,
-						"GET IN TOUCH"
-					),
-					_react2.default.createElement(
-						"form",
-						null,
-						_react2.default.createElement(
-							"div",
-							{ className: "form-group row" },
-							_react2.default.createElement(
-								"div",
-								{ className: "col-12" },
-								_react2.default.createElement(
-									"div",
-									{ className: "input-group" },
-									_react2.default.createElement(
-										"div",
-										{ className: "input-group-addon" },
-										"Name"
-									),
-									_react2.default.createElement("input", { id: "name", name: "name", placeholder: "Your Full Name", type: "text", required: "required", className: "form-control here" })
-								)
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "form-group row" },
-							_react2.default.createElement(
-								"div",
-								{ className: "col-12" },
-								_react2.default.createElement(
-									"div",
-									{ className: "input-group" },
-									_react2.default.createElement(
-										"div",
-										{ className: "input-group-addon" },
-										"Email"
-									),
-									_react2.default.createElement("input", { id: "email", name: "email", placeholder: "email@website.com", type: "text", required: "required", className: "form-control here" })
-								)
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "form-group row" },
-							_react2.default.createElement(
-								"div",
-								{ className: "col-12" },
-								_react2.default.createElement(
-									"div",
-									{ className: "input-group" },
-									_react2.default.createElement(
-										"div",
-										{ className: "input-group-addon" },
-										"Message"
-									),
-									_react2.default.createElement("textarea", { id: "message", name: "message", cols: "40", rows: "3", required: "required", placeholder: "We'd love to hear from you.", className: "form-control" })
-								)
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "form-group row" },
-							_react2.default.createElement(
-								"div",
-								{ className: "col-12 text-center" },
-								_react2.default.createElement(
-									"button",
-									{ name: "submit", type: "submit", className: "btn btn-primary", id: "contactSubmit" },
-									"Submit"
-								)
-							)
-						)
-					)
-				)
+				_react2.default.createElement(_ContactForm2.default, null)
 			)
 		)
 	);
@@ -39258,12 +39179,12 @@ var Jumbotron = function Jumbotron() {
 					{ className: "col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 align-middle" },
 					_react2.default.createElement(
 						"h1",
-						{ className: "display-4" },
+						{ className: "display-4", id: "jumboH1" },
 						"Teams come and go. Knowledge never leaves."
 					),
 					_react2.default.createElement(
 						"p",
-						{ className: "lead" },
+						{ className: "lead", id: "jumboP" },
 						"The training and development bot that provides ongoing support to employees, preserves the continuity of institutional knowledge, all while protecting the bottom-line."
 					),
 					_react2.default.createElement(
@@ -39484,7 +39405,7 @@ var NavBar = function NavBar() {
 			{ className: "container" },
 			_react2.default.createElement(
 				_reactRouterDom.Link,
-				{ className: "navbar-brand", to: "/home" },
+				{ className: "navbar-brand", to: "/" },
 				_react2.default.createElement("img", { src: "/img/katennaWhite.svg", alt: "KATENNA", id: "logo" })
 			),
 			_react2.default.createElement(
@@ -39503,7 +39424,7 @@ var NavBar = function NavBar() {
 						{ className: "nav-item" },
 						_react2.default.createElement(
 							_reactRouterHashLink.NavHashLink,
-							{ smooth: true, to: "/home#features" },
+							{ smooth: true, to: "/#features" },
 							"FEATURES"
 						)
 					),
@@ -39512,7 +39433,7 @@ var NavBar = function NavBar() {
 						{ className: "nav-item" },
 						_react2.default.createElement(
 							_reactRouterHashLink.NavHashLink,
-							{ smooth: true, to: "/home#download" },
+							{ smooth: true, to: "/#downloadsContFlu" },
 							"DOWNLOAD"
 						)
 					),
@@ -39521,7 +39442,7 @@ var NavBar = function NavBar() {
 						{ className: "nav-item" },
 						_react2.default.createElement(
 							_reactRouterHashLink.NavHashLink,
-							{ smooth: true, to: "/home#pricing" },
+							{ smooth: true, to: "/#priceContFlu" },
 							"PRICING"
 						)
 					),
@@ -39530,7 +39451,7 @@ var NavBar = function NavBar() {
 						{ className: "nav-item" },
 						_react2.default.createElement(
 							_reactRouterHashLink.NavHashLink,
-							{ smooth: true, to: "/home#contact" },
+							{ smooth: true, to: "/#contact" },
 							"CONTACT"
 						)
 					)
@@ -43248,7 +43169,7 @@ exports = module.exports = __webpack_require__(38)(false);
 
 
 // module
-exports.push([module.i, ".features {\n\tmargin-top:\t100px;\n\tmargin-bottom: 60px;\n}\n\n.features img {\n\tmax-height: 100px;\n\tmargin-bottom: 20px;\t\n}\n\n.features h4 {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 20px;\n    text-transform: uppercase;\n    letter-spacing: 1px;\n    font-weight: 600;\n    color: rgba(30, 30, 30, 1);\n    margin-bottom: 10px;\n}\n\n.features p {\n    font-family: 'Open Sans', sans-serif;\n    font-size: 14px;\n    color: rgba(50, 50, 50, 1);\n    margin-bottom: 40px;\n}", ""]);
+exports.push([module.i, "#features {\n\tmargin-top:\t100px;\n\tmargin-bottom: 60px;\n}\n\n#features img {\n\tmax-height: 100px;\n\tmargin-bottom: 20px;\t\n}\n\n#features h4 {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 20px;\n    text-transform: uppercase;\n    letter-spacing: 1px;\n    font-weight: 600;\n    color: rgba(30, 30, 30, 1);\n    margin-bottom: 10px;\n}\n\n#features p {\n    font-family: 'Open Sans', sans-serif;\n    font-size: 14px;\n    color: rgba(50, 50, 50, 1);\n    margin-bottom: 40px;\n}", ""]);
 
 // exports
 
@@ -43262,7 +43183,7 @@ exports = module.exports = __webpack_require__(38)(false);
 
 
 // module
-exports.push([module.i, ".footerContFlu {\n\tbackground-color: rgba(40, 40, 40, 1);\n\tcolor: white;\n}\n\n#footerDecoration {\n    margin-right: 0px;\n}\n\n#footerDecoration div{\n\tmin-height: 10px;\n}\n\n.bg-1 {\n\tbackground-color:  #8bf195;\n}\n\n.bg-2 {\n\tbackground-color: #3a88be;\n}\n\n.bg-3 {\n\tbackground-color: #f6c501;\n\n}\n\n.bg-4 {\n\tbackground-color: #52eab6;\n}\n\n.bg-5 {\n\tbackground-color: #f24336;\n}\n\n.bg-6 {\n\tbackground-color: #87e0f0;\n}\n\n.footerCont {\n\tpadding-top: 100px;\n\tpadding-bottom: 100px;\n}\n\n#kIcon {\n\tmax-width: 50px;\n\tmargin-bottom: 20px;\n}\n\n#aboutUs {\n\tfont-family: 'Open Sans', sans-serif;\n\tfont-size: 14px;\n\tcolor: white;\n\tmargin-bottom: 40px;\n}\n\n#contactForm h3 {\n    font-family: 'Raleway', sans-serif;\n    text-transform: uppercase;\n    letter-spacing: 1px;\n    font-size: 40px;\n    margin-bottom: 20px;\n}\n\nform {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: 16px;\n    text-transform: uppercase;\n}\n\n.input-group-addon {\n    background-color: #87e0f0;\n    padding: 7px 10px;\n    min-width: 95px;\n    align-items: center !important;\n    vertical-align: middle !important;\n    max-height: 38px;\n    border: none;\n    border-radius: 0;\n}\n\n.input-group > input {\n    background-color: white;\n    border: none;\n    border-radius: 0;\n    font-family: 'Open Sans', sans-serif;\n    font-size: 12px;\n    color: rgba(0, 0, 0, 0.25);\n    font-style: italic;\n}\n\n.input-group > textarea {\n    background-color: white;\n    border: none;\n    border-radius: 0;\n    font-family: 'Open Sans', sans-serif;\n    font-size: 12px;\n    color: rgba(0, 0, 0, 0.25);\n    font-style: italic;\n}\n\n#contactSubmit {\n    font-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    border-radius: 0;\n    padding: 10px 50px;\n    color: #87e0f0;\n    border: 2px solid #87e0f0;\n    background-color: rgba(255, 255, 255, 0);\n}", ""]);
+exports.push([module.i, ".footerContFlu {\n\tbackground-color: rgba(40, 40, 40, 1);\n\tcolor: white;\n}\n\n#footerDecoration {\n    margin-right: 0px;\n}\n\n#footerDecoration div{\n\tmin-height: 10px;\n}\n\n.bg-1 {\n\tbackground-color:  #8bf195;\n}\n\n.bg-2 {\n\tbackground-color: #3a88be;\n}\n\n.bg-3 {\n\tbackground-color: #f6c501;\n\n}\n\n.bg-4 {\n\tbackground-color: #52eab6;\n}\n\n.bg-5 {\n\tbackground-color: #f24336;\n}\n\n.bg-6 {\n\tbackground-color: #87e0f0;\n}\n\n.footerCont {\n\tpadding-top: 100px;\n\tpadding-bottom: 100px;\n}\n\n#kIcon {\n\tmax-width: 50px;\n\tmargin-bottom: 20px;\n}\n\n#aboutUs {\n\tfont-family: 'Open Sans', sans-serif;\n\tfont-size: 14px;\n\tcolor: white;\n\tmargin-bottom: 40px;\n\ttext-align: left !important;\n}\n\n", ""]);
 
 // exports
 
@@ -43276,7 +43197,7 @@ exports = module.exports = __webpack_require__(38)(false);
 
 
 // module
-exports.push([module.i, ".jumbotron {\n\tbackground-color: black;\n    padding: 0;\n    padding-top: 120px;\n    padding-bottom: 120px;\n\tcolor: white;\n\tmargin-bottom: 0px;\n}\n\n.jumboSpace {\n\tmin-height: 50vh;\n\talign-items: center !important;\n}\n\n#desktopImage {\n\tmax-width: 100%;\n\tmargin-top: 40px;\t\n}\n\n.jumbotron h1 {\n\tcolor: white;\n    font-family: 'Raleway', sans-serif;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    font-size: 50px;\n\tfont-weight: 800;\n\tmargin-bottom: 20px;\n}\n\n.jumbotron p {\n\tcolor: white;\n    font-family: 'Open Sans', sans-serif;\n    letter-spacing: 1px;\n    font-size: 18px;\n\n}\n\n.btn {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: white;\n    border-radius: 0;\n    border: 2px solid white;\n\tpadding: 10px 50px;\n\tmargin-top: 20px;\n}\n\n.btn:first-of-type {\n\tmargin-right: 20px;\n}\n", ""]);
+exports.push([module.i, ".jumbotron {\n\tbackground-color: black;\n    padding: 0;\n    padding-top: 120px;\n    padding-bottom: 120px;\n\tcolor: white;\n\tmargin-bottom: 0px;\n}\n\n.jumboSpace {\n\tmin-height: 50vh;\n\talign-items: center !important;\n}\n\n#desktopImage {\n\tmax-width: 100%;\n\tmargin-top: 40px;\t\n}\n\n#jumboH1 {\n\tcolor: white;\n    font-family: 'Raleway', sans-serif;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    font-size: 50px;\n\tfont-weight: 800;\n\tmargin-bottom: 20px;\n\ttext-align: left !important;\n}\n\n#jumboP {\n\tcolor: white;\n    font-family: 'Open Sans', sans-serif;\n    letter-spacing: 1px;\n    font-size: 18px;\n\ttext-align: left !important;\n}\n\n.btn {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: white;\n    border-radius: 0;\n    border: 2px solid white;\n\tpadding: 10px 50px;\n\tmargin-top: 20px;\n}\n\n.btn:first-of-type {\n\tmargin-right: 20px;\n}\n", ""]);
 
 // exports
 
@@ -65039,6 +64960,196 @@ module.exports = function(module) {
 	return module;
 };
 
+
+/***/ }),
+/* 524 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+__webpack_require__(527);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ContactForm = function ContactForm() {
+	return _react2.default.createElement(
+		"div",
+		{ className: "col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5", id: "contactForm" },
+		_react2.default.createElement(
+			"h3",
+			null,
+			"GET IN TOUCH"
+		),
+		_react2.default.createElement(
+			"form",
+			null,
+			_react2.default.createElement(
+				"div",
+				{ className: "form-group row" },
+				_react2.default.createElement(
+					"div",
+					{ className: "col-12" },
+					_react2.default.createElement(
+						"div",
+						{ className: "input-group" },
+						_react2.default.createElement(
+							"div",
+							{ className: "input-group-addon" },
+							"Name"
+						),
+						_react2.default.createElement("input", { id: "name", name: "name", placeholder: "Your Full Name", type: "text", required: "required", className: "form-control here" })
+					)
+				)
+			),
+			_react2.default.createElement(
+				"div",
+				{ className: "form-group row" },
+				_react2.default.createElement(
+					"div",
+					{ className: "col-12" },
+					_react2.default.createElement(
+						"div",
+						{ className: "input-group" },
+						_react2.default.createElement(
+							"div",
+							{ className: "input-group-addon" },
+							"Email"
+						),
+						_react2.default.createElement("input", { id: "email", name: "email", placeholder: "email@website.com", type: "text", required: "required", className: "form-control here" })
+					)
+				)
+			),
+			_react2.default.createElement(
+				"div",
+				{ className: "form-group row" },
+				_react2.default.createElement(
+					"div",
+					{ className: "col-12" },
+					_react2.default.createElement(
+						"div",
+						{ className: "input-group" },
+						_react2.default.createElement(
+							"div",
+							{ className: "input-group-addon" },
+							"Message"
+						),
+						_react2.default.createElement("textarea", { id: "message", name: "message", cols: "40", rows: "3", required: "required", placeholder: "We'd love to hear from you.", className: "form-control" })
+					)
+				)
+			),
+			_react2.default.createElement(
+				"div",
+				{ className: "form-group row" },
+				_react2.default.createElement(
+					"div",
+					{ className: "col-12 text-center" },
+					_react2.default.createElement(
+						"button",
+						{ name: "submit", type: "submit", className: "btn btn-primary", id: "contactSubmit" },
+						"Submit"
+					)
+				)
+			)
+		)
+	);
+};
+
+exports.default = ContactForm;
+
+/***/ }),
+/* 525 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _ContactForm = __webpack_require__(524);
+
+Object.defineProperty(exports, "default", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_ContactForm).default;
+  }
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+/* 526 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(38)(false);
+// imports
+
+
+// module
+exports.push([module.i, "#contactForm h3 {\n    font-family: 'Raleway', sans-serif;\n    text-transform: uppercase;\n    letter-spacing: 1px;\n    font-size: 40px;\n    margin-bottom: 20px;\n}\n\nform {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: 16px;\n    text-transform: uppercase;\n}\n\n.input-group-addon {\n    background-color: #87e0f0;\n    padding: 7px 10px;\n    min-width: 95px;\n    align-items: center !important;\n    vertical-align: middle !important;\n    max-height: 38px;\n    border: none;\n    border-radius: 0;\n}\n\n.input-group > input {\n    background-color: white;\n    border: none;\n    border-radius: 0;\n    font-family: 'Open Sans', sans-serif;\n    font-size: 12px;\n    color: rgba(0, 0, 0, 0.25);\n    font-style: italic;\n}\n\n.input-group > textarea {\n    background-color: white;\n    border: none;\n    border-radius: 0;\n    font-family: 'Open Sans', sans-serif;\n    font-size: 12px;\n    color: rgba(0, 0, 0, 0.25);\n    font-style: italic;\n}\n\n#contactSubmit {\n    font-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    border-radius: 0;\n    padding: 10px 50px;\n    color: #87e0f0;\n    border: 2px solid #87e0f0;\n    background-color: rgba(255, 255, 255, 0);\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 527 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(526);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(41)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../../../node_modules/css-loader/index.js!./ContactForm.css", function() {
+		var newContent = require("!!../../../../node_modules/css-loader/index.js!./ContactForm.css");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);

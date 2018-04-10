@@ -2,7 +2,7 @@ import React from "react";
 import "./Features.css";
 
 const Features = () =>
-	<div className="container text-center features">
+	<div className="container text-center" id="features">
 		<div className="row text-center">
 			<div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-center">
 				<img src='/img/taskManagement.svg' alt="Feature 1" />
