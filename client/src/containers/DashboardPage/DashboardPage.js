@@ -2,7 +2,7 @@ import React from 'react';
 import Auth from '../../modules/Auth';
 import Dashboard from '../../components/Dashboard';
 import SideBar from '../../components/SideBar';
-import LogoutButton from '../../components/LogoutButton';
+import TopBar from '../../components/TopBar';
 
 class DashboardPage extends React.Component {
 
@@ -44,11 +44,13 @@ class DashboardPage extends React.Component {
    */
   render() {
     return (
-      <div>
-        <SideBar />
-        <LogoutButton />
-        <Dashboard secretData={this.state.secretData} user={this.state.user} />
-      </div>
+      <container>
+        <TopBar secretData={this.state.secretData} user={this.state.user} />
+        <div className="row">
+          <SideBar />
+          <Dashboard secretData={this.state.secretData} user={this.state.user} />
+        </div>
+      </container >
     );
   }
   // test
