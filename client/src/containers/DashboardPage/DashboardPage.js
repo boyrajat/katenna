@@ -1,7 +1,8 @@
 import React from 'react';
 import Auth from '../../modules/Auth';
 import Dashboard from '../../components/Dashboard';
-
+import SideBar from '../../components/SideBar';
+import LogoutButton from '../../components/LogoutButton';
 
 class DashboardPage extends React.Component {
 
@@ -44,7 +45,8 @@ class DashboardPage extends React.Component {
   render() {
     return (
       <div>
-        <Dashboard secretData={this.state.secretData} user={this.state.user} />
+        <SideBar />
+        <LogoutButton />
         <Dashboard secretData={this.state.secretData} user={this.state.user} />
       </div>
     );

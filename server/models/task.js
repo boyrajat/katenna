@@ -13,7 +13,7 @@ const TaskSchema = new Schema({
   },
   tasks: [
     {
-      task: {
+      item: {
         type: String,
       },
       description: [{

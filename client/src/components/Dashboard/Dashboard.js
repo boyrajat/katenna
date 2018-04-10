@@ -9,31 +9,16 @@ import {
   withRouter
 } from 'react-router-dom'
 import LogoutFunction from '../../containers/Logout';
+import Employees from '../EmployeesFunctions';
+import Tasks from '../TasksFunctions';
 import SideBar from '../SideBar';
 const Dashboard = ({ secretData, user }) => (
-  <Card className="container">
-    <CardTitle
-      title="Dashboard"
-      subtitle="You should get access to this page only after authentication."
-    />
+  <div className="container">
     {secretData && <CardText style={{ fontSize: '16px', color: 'green' }}>Welcome <strong>{user.name}</strong>!<br />{secretData}</CardText>}
-    <div className="top-bar-right">
-      <Link to="/logout" style={{ fontSize: '16px', color: 'black' }}>Log out</Link>
-    </div>
-    <div>
-      <div>
-        <iframe
-          width="350"
-          height="430"
-          src="https://console.dialogflow.com/api-client/demo/embedded/7d304919-0df1-4533-8f13-e7a0e708cddc">
-        </iframe>
-      </div>
-    </div>
-    <div>
-      <SideBar />
-    </div>
     <Route path="/logout" component={LogoutFunction} />
-  </Card>
+    <Route path="/employees" component={Employees} />
+    <Route path="/task" component={Tasks} />
+  </div>
 );
 
 Dashboard.propTypes = {
