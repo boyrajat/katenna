@@ -14,8 +14,8 @@ router.route("/:id")
 
 // Matches with "/api/tasks/dept/:department"
 
-router.route("/property/:query")
-  .get(companyController.findByProperty)
+router.route("/property/:department")
+  .get(companyController.findByDepartment)
   .put(companyController.update)
   .delete(companyController.remove);
 
