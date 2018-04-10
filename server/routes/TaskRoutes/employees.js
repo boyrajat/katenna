@@ -14,7 +14,7 @@ router.route("/:id")
 
 // Matches with "/api/tasks/dept/:department"
 
-router.route("/dept/:department")
+router.route("/employee/:department")
   .get(employeesController.findByDepartment)
   .put(employeesController.update)
   .delete(employeesController.remove);
