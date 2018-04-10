@@ -13,11 +13,13 @@ import Employees from '../EmployeesFunctions';
 import Tasks from '../TasksFunctions';
 import SideBar from '../SideBar';
 const Dashboard = ({ secretData, user }) => (
-  <div className="container">
-    {secretData && <CardText style={{ fontSize: '16px', color: 'green' }}>Welcome <strong>{user.name}</strong>!<br />{secretData}</CardText>}
-    <Route path="/logout" component={LogoutFunction} />
-    <Route path="/employees" component={Employees} />
-    <Route path="/task" component={Tasks} />
+  <div className="col-9">
+    <div className="container">
+      {secretData && <CardText style={{ fontSize: '16px', color: 'green' }}>Welcome <strong>{user.name}</strong>!<br />{secretData}</CardText>}
+      <Route path="/logout" component={LogoutFunction} />
+      <Route path="/employees" component={Employees} />
+      <Route path="/task" component={Tasks} />
+    </div>
   </div>
 );
 
