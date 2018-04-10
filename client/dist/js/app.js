@@ -64983,7 +64983,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var ContactForm = function ContactForm() {
 	return _react2.default.createElement(
 		"div",
-		{ className: "col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5", id: "contactForm" },
+		{ className: "col-12 col-sm-12 col-md-5 cogit l-lg-5 col-xl-5", id: "contactForm" },
 		_react2.default.createElement(
 			"h3",
 			null,

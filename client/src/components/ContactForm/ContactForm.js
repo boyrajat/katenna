@@ -3,7 +3,7 @@ import "./ContactForm.css";
 
 const ContactForm = () => {
 	return (
-	<div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5" id="contactForm">
+	<div className="col-12 col-sm-12 col-md-5 cogit l-lg-5 col-xl-5" id="contactForm">
 		<h3>GET IN TOUCH</h3>
 
 		<form>
