@@ -1594,7 +1594,7 @@ module.exports = ReactComponentTreeHook;
 /* 23 */
 /***/ (function(module, exports) {
 
-var core = module.exports = { version: '2.5.5' };
+var core = module.exports = { version: '2.5.4' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 
@@ -7426,7 +7426,7 @@ Router.childContextTypes = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp__ = __webpack_require__(230);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp__ = __webpack_require__(231);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_path_to_regexp__);
 
 
@@ -18549,9 +18549,18 @@ var createMemoryHistory = function createMemoryHistory() {
 
 /***/ }),
 /* 230 */
+/***/ (function(module, exports) {
+
+module.exports = Array.isArray || function (arr) {
+  return Object.prototype.toString.call(arr) == '[object Array]';
+};
+
+
+/***/ }),
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isarray = __webpack_require__(231)
+var isarray = __webpack_require__(230)
 
 /**
  * Expose `pathToRegexp`.
@@ -18977,15 +18986,6 @@ function pathToRegexp (path, keys, options) {
 
   return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
 }
-
-
-/***/ }),
-/* 231 */
-/***/ (function(module, exports) {
-
-module.exports = Array.isArray || function (arr) {
-  return Object.prototype.toString.call(arr) == '[object Array]';
-};
 
 
 /***/ }),
@@ -40699,7 +40699,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 // import routes from './routes.js';
 
 _reactModal2.default.setAppElement('#react-app');
@@ -42034,11 +42033,12 @@ var LoginPage = function (_React$Component) {
           _Auth2.default.authenticateUser(xhr.response.token);
 
           // update authenticated state
-          _this2.props.toggleAuthenticateStatus();
+          // this.props.toggleAuthenticateStatus();
 
           // redirect signed in user to dashboard
-          _this2.props.history.push('/');
+          // this.props.history.push('/');
           window.location.reload();
+          //^^^ Alex & MW trying to debbug here
         } else {
           // failure
 
