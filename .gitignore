@@ -91,7 +91,7 @@ typings/
 
 # dependencies
 /node_modules
-/client/dist
+/client/dist/js/app.js
 # testing
 /coverage
 
