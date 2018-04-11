@@ -1,0 +1,95 @@
+#employeesContainerDiv {
+    padding: 0;
+    margin: 0;
+}
+
+.eachEmployeeCard {
+	border: none;
+    border-radius: 0;
+    margin-bottom: 40px !important;
+    padding: 0;
+}
+
+.eachImgDiv {
+    max-height: 150px;
+    border: none;
+    border-radius: 0;
+}
+
+.eachCardImg {
+	border: none;
+    border-radius: 0;
+}
+
+.eachCardHeader {
+	background-color: #3a88be;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    text-transform: capitalize;
+}
+
+.eachCardTitle {
+	font-weight: 600;
+    font-size: 25px;
+}
+
+.eachCardSubtitle {
+	font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+.eachCardBody {
+    border: none;
+    border-radius: 0;
+    padding: 1.25rem;
+}
+
+.eachCardText {
+	padding: 0;
+    margin: 0;
+}
+
+.eachCardListItem {
+	text-align: left !important;
+    padding: 0;
+    margin: 10px 0px !important;
+}
+
+.eachCardItem {
+	font-weight: 600;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+.eachCardFooter {
+    background-color: white;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    margin-top: 30px;
+}
+
+.eachFooterBtn {
+	font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 0;
+    border: none;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #f6c501;
+    text-align: center;
+}
+
+.eachFooterBtn > a {
+	padding: 0 !important;
+	margin: 0 !important;
+	color:	white;
+}
