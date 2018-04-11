@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 class ModalContainer extends React.Component {
   render() {
     // Render nothing if the "show" prop is false
-    if(!this.props.show) {
+    if (!this.props.show) {
       return null;
     }
 
@@ -21,7 +21,7 @@ class ModalContainer extends React.Component {
 
     // The modal "window"
     const modalStyle = {
-		display: 'block',
+      display: 'block',
       backgroundColor: '#fff',
       borderRadius: 5,
       maxWidth: 500,
@@ -29,7 +29,7 @@ class ModalContainer extends React.Component {
       margin: '0 auto',
       padding: 30
     };
-
+    const whereTo = this.props.whereTo;
     return (
       <div className="backdrop" style={backdropStyle}>
         <div className="modal" style={modalStyle}>
@@ -37,7 +37,7 @@ class ModalContainer extends React.Component {
 
           <div className="footer">
             <button onClick={this.props.onClose}>
-              Close
+              Close {whereTo}
             </button>
           </div>
         </div>
@@ -47,6 +47,7 @@ class ModalContainer extends React.Component {
 }
 
 ModalContainer.propTypes = {
+  whereTo: PropTypes.string,
   onClose: PropTypes.func.isRequired,
   show: PropTypes.bool,
   children: PropTypes.node

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ModalContainer from './ModalContainer';
+import PropTypes from 'prop-types';
 
 class ModalParent extends Component {
   constructor(props) {
@@ -13,15 +14,15 @@ class ModalParent extends Component {
   }
 
   render() {
-	const { isOpen } = this.state;
-
+    const { isOpen } = this.state;
+    const whereTo = this.props.whereTo
     return (
       <div className="ModalParent">
         <button onClick={() => this.toggleModal()}>
           Open the modal
         </button>
 
-        <ModalContainer show={this.state.isOpen}
+        <ModalContainer whereTo={whereTo} show={this.state.isOpen}
           onClose={() => this.toggleModal()}>
           Here's some content for the modal
         </ModalContainer>
@@ -29,5 +30,11 @@ class ModalParent extends Component {
     );
   };
 }
+
+ModalParent.propTypes = {
+  whereTo: PropTypes.string,
+  children: PropTypes.node
+};
+
 
 export default ModalParent;

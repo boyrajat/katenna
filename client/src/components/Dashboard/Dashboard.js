@@ -19,6 +19,7 @@ const Dashboard = ({ secretData, user }) => (
       <Route path="/logout" component={LogoutFunction} />
       <Route path="/employees" component={Employees} />
       <Route path="/task" component={Tasks} />
+
     </div>
   </div>
 );

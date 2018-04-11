@@ -4,6 +4,7 @@ import Dashboard from '../../components/Dashboard';
 import SideBar from '../../components/SideBar';
 import TopBar from '../../components/TopBar';
 
+
 class DashboardPage extends React.Component {
 
   /**
@@ -46,7 +47,9 @@ class DashboardPage extends React.Component {
     return (
       <container>
         <TopBar secretData={this.state.secretData} user={this.state.user} />
+
         <div className="row">
+
           <SideBar />
           <Dashboard secretData={this.state.secretData} user={this.state.user} />
         </div>

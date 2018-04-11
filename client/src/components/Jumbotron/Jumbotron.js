@@ -5,7 +5,7 @@ import SignUpPage from '../../containers/SignUpPage';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import ModalParent from '../Modal/ModalParent'
+import Modal from '../Modal/ModalParent'
 // import routes from './routes.js';
 
 import {
@@ -24,7 +24,7 @@ const Jumbotron = () => (
 					<h1 className="display-4" id="jumboH1">Teams come and go. Knowledge never leaves.</h1>
 					<p className="lead" id="jumboP">The training and development bot that provides ongoing support to employees, preserves the continuity of institutional knowledge, all while protecting the bottom-line.</p>
 
-
+					<Modal whereTo="/login" />
 					<Link className="btn " to="/login">Log in</Link>
 					<Link className="btn " to="/signup">Sign Up</Link>
 				</div>
