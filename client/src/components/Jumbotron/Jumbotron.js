@@ -26,7 +26,6 @@ const Jumbotron = () => (
 
 					<Link className="btn " to="/login">Log in</Link>
 					<Link className="btn " to="/signup">Sign Up</Link>
-
 				</div>
 
 				<div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 text-center align-middle">
