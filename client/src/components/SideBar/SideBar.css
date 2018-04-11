@@ -1,0 +1,47 @@
+#sideBarDiv {
+    background-color: #f6c501;
+    color: white;
+    min-height: -webkit-fill-available;
+    font-family: 'Open Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+#sideBarTopInfo {
+    font-family: 'Open Sans', sans-serif;
+    font-size: smaller;
+    text-align: center;
+    padding: 40px;
+}
+
+#sideBarNav{
+	min-width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#sideBarNavMainBtns {
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    border-radius: 0;
+    border-top: 2px solid white;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+    padding: 20px 50px;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#sideBarNavMainBtns:last-of-type {
+    border-bottom: 2px solid white;
+}
+
+#sideBarNavMainBtns:hover {
+	background-color: white;
+	color: #3a88be;
+}

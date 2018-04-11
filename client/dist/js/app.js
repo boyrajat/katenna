@@ -11951,26 +11951,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _Paper2.default;
 
 /***/ }),
-/* 175 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _RaisedButton = __webpack_require__(410);
-
-var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _RaisedButton2.default;
-
-/***/ }),
+/* 175 */,
 /* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -39962,130 +39943,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactDom2.default.render(_react2.default.createElement(_Main2.default, null), document.getElementById('react-app'));
 
 /***/ }),
-/* 262 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(7);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _reactRouterDom = __webpack_require__(20);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var AddEmployeeForm = function (_React$Component) {
-    _inherits(AddEmployeeForm, _React$Component);
-
-    function AddEmployeeForm(props) {
-        _classCallCheck(this, AddEmployeeForm);
-
-        var _this = _possibleConstructorReturn(this, (AddEmployeeForm.__proto__ || Object.getPrototypeOf(AddEmployeeForm)).call(this, props));
-
-        _this.state = {
-            newName: '',
-            newEmail: ''
-        };
-
-        _this.handleChange = _this.handleChange.bind(_this);
-        _this.handleSubmit = _this.handleSubmit.bind(_this);
-        return _this;
-    }
-
-    _createClass(AddEmployeeForm, [{
-        key: 'handleChange',
-        value: function handleChange(event) {
-            this.setState({
-                newName: event.target.value
-            });
-        }
-    }, {
-        key: 'handleSubmit',
-        value: function handleSubmit(event) {
-            alert('A name was submitted: ' + this.state.newName);
-            event.preventDefault();
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'form',
-                { onSubmit: this.handleSubmit },
-                _react2.default.createElement(
-                    'label',
-                    null,
-                    'Name:',
-                    _react2.default.createElement('input', { type: 'text', newName: this.state.value, onChange: this.handleChange })
-                ),
-                _react2.default.createElement(
-                    'label',
-                    null,
-                    'email:',
-                    _react2.default.createElement('input', { type: 'text', newEmail: this.state.value, onChange: this.handleChange })
-                ),
-                _react2.default.createElement(
-                    'label',
-                    null,
-                    'Phone:',
-                    _react2.default.createElement('input', { type: 'text', newPhone: this.state.value, onChange: this.handleChange })
-                ),
-                _react2.default.createElement(
-                    'label',
-                    null,
-                    'position:',
-                    _react2.default.createElement('input', { type: 'text', newPosition: this.state.value, onChange: this.handleChange })
-                ),
-                _react2.default.createElement('input', { type: 'submit', value: 'Submit' })
-            );
-        }
-    }]);
-
-    return AddEmployeeForm;
-}(_react2.default.Component);
-
-exports.default = AddEmployeeForm;
-
-/***/ }),
-/* 263 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _AddEmployeeForm = __webpack_require__(262);
-
-Object.defineProperty(exports, "default", {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_AddEmployeeForm).default;
-  }
-});
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/***/ }),
+/* 262 */,
+/* 263 */,
 /* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -40230,8 +40089,6 @@ var _propTypes = __webpack_require__(7);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _Card = __webpack_require__(48);
-
 var _reactRouterDom = __webpack_require__(20);
 
 var _Logout = __webpack_require__(147);
@@ -40254,9 +40111,7 @@ var _SideBar = __webpack_require__(145);
 
 var _SideBar2 = _interopRequireDefault(_SideBar);
 
-var _AddEmployeeForm = __webpack_require__(263);
-
-var _AddEmployeeForm2 = _interopRequireDefault(_AddEmployeeForm);
+__webpack_require__(561);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -40265,29 +40120,25 @@ var Dashboard = function Dashboard(_ref) {
       user = _ref.user;
   return _react2.default.createElement(
     'div',
-    { className: 'col-9' },
-    _react2.default.createElement(
-      'div',
-      { className: 'container' },
-      secretData && _react2.default.createElement(
-        _Card.CardText,
-        { style: { fontSize: '16px', color: 'green' } },
-        'Welcome ',
-        _react2.default.createElement(
-          'strong',
-          null,
-          user.name
-        ),
-        '!',
-        _react2.default.createElement('br', null),
-        secretData
+    { className: 'col-10', id: 'mainDashContainer' },
+    secretData && _react2.default.createElement(
+      'h6',
+      null,
+      'Welcome ',
+      _react2.default.createElement(
+        'strong',
+        null,
+        user.name
       ),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/logout', component: _Logout2.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/employees', component: _EmployeesFunctions4.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/task', component: _TasksFunctions2.default }),
-      _react2.default.createElement(_AddEmployeeForm2.default, null),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/taskback', component: _EmployeesFunctions2.default })
-    )
+      '!',
+      _react2.default.createElement('br', null),
+      secretData
+    ),
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/logout', component: _Logout2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/employees', component: _EmployeesFunctions4.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/task', component: _TasksFunctions2.default }),
+    _react2.default.createElement(AddEmployeeForm, null),
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/taskback', component: _EmployeesFunctions2.default })
   );
 };
 
@@ -41115,11 +40966,7 @@ var Jumbotron = function (_React$Component) {
 									className: 'Modal',
 									overlayClassName: 'Overlay'
 								},
-								_react2.default.createElement(
-									'button',
-									{ id: 'modalClose', onClick: this.handleCloseModalLogin },
-									'X'
-								),
+								_react2.default.createElement('img', { src: '/img/modalCloseButton.svg', id: 'modalClose', onClick: this.handleCloseModalLogin }),
 								_react2.default.createElement(_LoginPage2.default, null)
 							),
 							_react2.default.createElement(
@@ -41133,11 +40980,7 @@ var Jumbotron = function (_React$Component) {
 									className: 'Modal',
 									overlayClassName: 'Overlay'
 								},
-								_react2.default.createElement(
-									'button',
-									{ id: 'modalClose', onClick: this.handleCloseModalSignup },
-									'Close Modal'
-								),
+								_react2.default.createElement('img', { src: '/img/modalCloseButton.svg', id: 'modalClose', onClick: this.handleCloseModalLogin }),
 								_react2.default.createElement(_SignUpPage2.default, null)
 							)
 						),
@@ -41200,15 +41043,11 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactRouterDom = __webpack_require__(20);
 
-var _Card = __webpack_require__(48);
-
-var _RaisedButton = __webpack_require__(175);
-
-var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
-
 var _TextField = __webpack_require__(177);
 
 var _TextField2 = _interopRequireDefault(_TextField);
+
+__webpack_require__(555);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41220,15 +41059,15 @@ var LoginForm = function LoginForm(_ref) {
       user = _ref.user,
       toggleAuthenticateStatus = _ref.toggleAuthenticateStatus;
   return _react2.default.createElement(
-    _Card.Card,
-    { className: 'container' },
+    'div',
+    { className: 'container', id: 'LoginFormContainer' },
     _react2.default.createElement(
       'form',
       { action: '/', onSubmit: onSubmit },
       _react2.default.createElement(
         'h2',
-        { className: 'card-heading' },
-        'Login'
+        { id: 'formTitle' },
+        'Log in'
       ),
       successMessage && _react2.default.createElement(
         'p',
@@ -41242,7 +41081,7 @@ var LoginForm = function LoginForm(_ref) {
       ),
       _react2.default.createElement(
         'div',
-        { className: 'field-line' },
+        { className: 'field-line', id: 'fieldDiv' },
         _react2.default.createElement(_TextField2.default, {
           floatingLabelText: 'Email',
           name: 'email',
@@ -41253,7 +41092,7 @@ var LoginForm = function LoginForm(_ref) {
       ),
       _react2.default.createElement(
         'div',
-        { className: 'field-line' },
+        { className: 'field-line', id: 'fieldDiv' },
         _react2.default.createElement(_TextField2.default, {
           floatingLabelText: 'Password',
           type: 'password',
@@ -41268,20 +41107,19 @@ var LoginForm = function LoginForm(_ref) {
         null,
         _react2.default.createElement(
           'button',
-          { type: 'submit', label: 'Log in' },
-          'Log in'
+          { id: 'FormSubmitBtn', type: 'submit', label: 'Log in' },
+          'LOG IN'
         )
       ),
       _react2.default.createElement(
-        _Card.CardText,
-        null,
-        'Don\'t have an account? ',
+        'div',
+        { id: 'noAcctMssg' },
+        'Don\'t have an account? \xA0',
         _react2.default.createElement(
           _reactRouterDom.Link,
-          { to: '/signup', style: { fontSize: '16px', color: 'black' } },
-          'Create one'
-        ),
-        '.'
+          { to: '/signup' },
+          'Create one now'
+        )
       )
     )
   );
@@ -41336,17 +41174,15 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(20);
 
+__webpack_require__(556);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var LogoutButton = function LogoutButton() {
 	return _react2.default.createElement(
-		"div",
-		{ className: "btn-group-vertical" },
-		_react2.default.createElement(
-			_reactRouterDom.Link,
-			{ className: "btn btn-danger", to: "/logout" },
-			"Logout"
-		)
+		_reactRouterDom.Link,
+		{ to: "/logout", id: "logOutClickableArea" },
+		_react2.default.createElement("img", { src: "/img/logOut.svg", alt: "KATENNA", id: "logOutBtn" })
 	);
 };
 
@@ -41693,23 +41529,34 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(20);
 
+__webpack_require__(557);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var SideBar = function SideBar() {
 	return _react2.default.createElement(
 		"div",
-		{ className: "col-3" },
+		{ className: "col-2", id: "sideBarDiv" },
 		_react2.default.createElement(
 			"div",
-			{ "class": "btn-group-vertical" },
+			{ id: "sideBarTopInfo" },
+			"Something cool here like user photo or something.",
+			_react2.default.createElement("br", null),
+			"I need the image info from database here I suppose, plus the current user's name only, not lastname.",
+			_react2.default.createElement("br", null),
+			"Please look under katenna/server/static/img/employees for a bunch of 'profile images' we can use."
+		),
+		_react2.default.createElement(
+			"div",
+			{ className: "btn-group-vertical", id: "sideBarNav" },
 			_react2.default.createElement(
 				_reactRouterDom.Link,
-				{ "class": "btn btn-secondary", to: "/employees" },
+				{ className: "btn btn-secondary", id: "sideBarNavMainBtns", to: "/employees" },
 				"Employees"
 			),
 			_react2.default.createElement(
 				_reactRouterDom.Link,
-				{ "class": "btn btn-secondary", to: "/task" },
+				{ className: "btn btn-secondary", id: "sideBarNavMainBtns", to: "/task" },
 				"Tasks"
 			)
 		)
@@ -41739,15 +41586,11 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactRouterDom = __webpack_require__(20);
 
-var _Card = __webpack_require__(48);
-
-var _RaisedButton = __webpack_require__(175);
-
-var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
-
 var _TextField = __webpack_require__(177);
 
 var _TextField2 = _interopRequireDefault(_TextField);
+
+__webpack_require__(558);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41757,14 +41600,14 @@ var SignUpForm = function SignUpForm(_ref) {
       errors = _ref.errors,
       user = _ref.user;
   return _react2.default.createElement(
-    _Card.Card,
-    { className: 'container' },
+    'div',
+    { className: 'container', id: 'SignUpFormContainer' },
     _react2.default.createElement(
       'form',
       { action: '/', onSubmit: onSubmit },
       _react2.default.createElement(
         'h2',
-        { className: 'card-heading' },
+        { id: 'formTitle' },
         'Sign Up'
       ),
       errors.summary && _react2.default.createElement(
@@ -41774,7 +41617,7 @@ var SignUpForm = function SignUpForm(_ref) {
       ),
       _react2.default.createElement(
         'div',
-        { className: 'field-line' },
+        { className: 'field-line', id: 'fieldDiv' },
         _react2.default.createElement(_TextField2.default, {
           floatingLabelText: 'Name',
           name: 'name',
@@ -41785,7 +41628,7 @@ var SignUpForm = function SignUpForm(_ref) {
       ),
       _react2.default.createElement(
         'div',
-        { className: 'field-line' },
+        { className: 'field-line', id: 'fieldDiv' },
         _react2.default.createElement(_TextField2.default, {
           floatingLabelText: 'Email',
           name: 'email',
@@ -41796,7 +41639,7 @@ var SignUpForm = function SignUpForm(_ref) {
       ),
       _react2.default.createElement(
         'div',
-        { className: 'field-line' },
+        { className: 'field-line', id: 'fieldDiv' },
         _react2.default.createElement(_TextField2.default, {
           floatingLabelText: 'Password',
           type: 'password',
@@ -41811,17 +41654,17 @@ var SignUpForm = function SignUpForm(_ref) {
         null,
         _react2.default.createElement(
           'button',
-          { type: 'submit', label: 'Create New Account', primary: true },
+          { id: 'FormSubmitBtn', type: 'submit', label: 'Create New Account', primary: true },
           'Sign Up'
         )
       ),
       _react2.default.createElement(
-        _Card.CardText,
-        null,
-        'Already have an account? ',
+        'div',
+        { id: 'noAcctMssg' },
+        'Already have an account?  \xA0',
         _react2.default.createElement(
           _reactRouterDom.Link,
-          { to: '/login', style: { fontSize: '16px', color: 'black' } },
+          { to: '/login' },
           'Log in'
         )
       )
@@ -42057,6 +41900,8 @@ var _LogoutButton = __webpack_require__(283);
 
 var _LogoutButton2 = _interopRequireDefault(_LogoutButton);
 
+__webpack_require__(559);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var TopBar = function TopBar(_ref) {
@@ -42064,16 +41909,31 @@ var TopBar = function TopBar(_ref) {
 	    user = _ref.user;
 	return _react2.default.createElement(
 		"div",
-		{ "class": "row" },
+		{ className: "row justify-content-between no-gutters", id: "topBarRow" },
 		_react2.default.createElement(
-			"p",
-			null,
-			"this is a Top Bar ",
-			secretData,
-			" ",
-			user.name
+			"div",
+			{ className: "col-11", id: "topBarBrand" },
+			_react2.default.createElement(
+				_reactRouterDom.Link,
+				{ to: "/", id: "topBarLink" },
+				_react2.default.createElement("img", { src: "/img/kIcon.svg", alt: "KATENNA", id: "katennaIcon" })
+			),
+			_react2.default.createElement(
+				"h1",
+				{ id: "welcomeTitle" },
+				"Welcome, ",
+				_react2.default.createElement(
+					"strong",
+					null,
+					user.name
+				)
+			)
 		),
-		_react2.default.createElement(_LogoutButton2.default, null)
+		_react2.default.createElement(
+			"div",
+			{ className: "col-1 text-right", id: "buttonAlign" },
+			_react2.default.createElement(_LogoutButton2.default, null)
+		)
 	);
 };
 
@@ -42196,7 +42056,7 @@ var DashboardPage = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'container' },
+        { className: 'container-fluid' },
         _react2.default.createElement(_TopBar2.default, { secretData: this.state.secretData, user: this.state.user }),
         _react2.default.createElement(
           'div',
@@ -45382,7 +45242,7 @@ exports = module.exports = __webpack_require__(34)(false);
 
 
 // module
-exports.push([module.i, ".jumbotron {\n\tbackground-color: black;\n    padding: 0;\n    padding-top: 120px;\n    padding-bottom: 120px;\n\tcolor: white;\n\tmargin-bottom: 0px;\n}\n\n.jumboSpace {\n\tmin-height: 50vh;\n\talign-items: center !important;\n}\n\n#desktopImage {\n\tmax-width: 100%;\n\tmargin-top: 40px;\t\n}\n\n#jumboH1 {\n\tcolor: white;\n    font-family: 'Raleway', sans-serif;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    font-size: 50px;\n\tfont-weight: 800;\n\tmargin-bottom: 20px;\n\ttext-align: left !important;\n}\n\n#jumboP {\n\tcolor: white;\n    font-family: 'Open Sans', sans-serif;\n    letter-spacing: 1px;\n    font-size: 18px;\n\ttext-align: left !important;\n}\n\n#jumboBtn {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: white;\n    border-radius: 0;\n    border: 2px solid white;\n\tpadding: 10px 50px;\n\tmargin-top: 20px;\n\tbackground-color: rgba(0, 0, 0, 0);\n}\n\n#jumboBtn:first-of-type {\n\tmargin-right: 20px;\n}\n\n.Modal {\n\tposition: relative;\n    max-width: max-content;\n    max-height: max-content;\n    padding: 40px;\n    margin: auto;\n    margin-top: 50px;\n    background: white;\n\tborder-radius: 5px;\n\ttext-align: right;\n  }\n\n  .Overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    background-color: rgba(0, 0, 0, .75);\n  }\n\n  #modalClose {\n\tfont-size: 30px;\n    font-weight: bolder;\n    text-transform: uppercase;\n    border-radius: 0;\n    border: 2px solid black;\n    padding: 5px 20px;\n    background-color: rgba(0, 0, 0, 0);\n    font-family: 'Open Sans', sans-serif;\n  }", ""]);
+exports.push([module.i, ".jumbotron {\n\tbackground-color: black;\n    padding: 0;\n    padding-top: 120px;\n    padding-bottom: 120px;\n\tcolor: white;\n\tmargin-bottom: 0px;\n}\n\n.jumboSpace {\n\tmin-height: 50vh;\n\talign-items: center !important;\n}\n\n#desktopImage {\n\tmax-width: 100%;\n\tmargin-top: 40px;\t\n}\n\n#jumboH1 {\n\tcolor: white;\n    font-family: 'Raleway', sans-serif;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    font-size: 50px;\n\tfont-weight: 800;\n\tmargin-bottom: 20px;\n\ttext-align: left !important;\n}\n\n#jumboP {\n\tcolor: white;\n    font-family: 'Open Sans', sans-serif;\n    letter-spacing: 1px;\n    font-size: 18px;\n\ttext-align: left !important;\n}\n\n#jumboBtn {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: white;\n    border-radius: 0;\n    border: 2px solid white;\n\tpadding: 10px 50px;\n\tmargin-top: 20px;\n\tbackground-color: rgba(0, 0, 0, 0);\n}\n\n#jumboBtn:first-of-type {\n\tmargin-right: 20px;\n}\n\n.Modal {\n\tposition: relative;\n    max-width: max-content;\n    max-height: max-content;\n    padding: 60px;\n    margin: auto;\n    margin-top: 50px;\n    background: white;\n\tborder-radius: 5px;\n\ttext-align: right;\n  }\n\n  .Overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    background-color: rgba(0, 0, 0, .75);\n  }\n\n  #modalClose {\n    max-height: 30px;\n    position: absolute;\n    top: 60px;\n    right: 60px;\n    max-width: 30px;\n  }", ""]);
 
 // exports
 
@@ -51508,498 +51368,7 @@ exports.default = Paper;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 410 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends2 = __webpack_require__(17);
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = __webpack_require__(16);
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = __webpack_require__(10);
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = __webpack_require__(8);
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = __webpack_require__(11);
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = __webpack_require__(13);
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = __webpack_require__(12);
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _simpleAssign = __webpack_require__(9);
-
-var _simpleAssign2 = _interopRequireDefault(_simpleAssign);
-
-var _react = __webpack_require__(4);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(6);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _transitions = __webpack_require__(21);
-
-var _transitions2 = _interopRequireDefault(_transitions);
-
-var _colorManipulator = __webpack_require__(113);
-
-var _EnhancedButton = __webpack_require__(178);
-
-var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
-
-var _Paper = __webpack_require__(174);
-
-var _Paper2 = _interopRequireDefault(_Paper);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function validateLabel(props, propName, componentName) {
-  if (process.env.NODE_ENV !== 'production') {
-    if (!props.children && props.label !== 0 && !props.label && !props.icon) {
-      return new Error('Required prop label or children or icon was not specified in ' + componentName + '.');
-    }
-  }
-}
-
-function getStyles(props, context, state) {
-  var _context$muiTheme = context.muiTheme,
-      baseTheme = _context$muiTheme.baseTheme,
-      button = _context$muiTheme.button,
-      raisedButton = _context$muiTheme.raisedButton,
-      borderRadius = _context$muiTheme.borderRadius;
-  var disabled = props.disabled,
-      disabledBackgroundColor = props.disabledBackgroundColor,
-      disabledLabelColor = props.disabledLabelColor,
-      fullWidth = props.fullWidth,
-      icon = props.icon,
-      label = props.label,
-      labelPosition = props.labelPosition,
-      primary = props.primary,
-      secondary = props.secondary,
-      style = props.style;
-
-
-  var amount = primary || secondary ? 0.4 : 0.08;
-
-  var backgroundColor = raisedButton.color;
-  var labelColor = raisedButton.textColor;
-
-  if (disabled) {
-    backgroundColor = disabledBackgroundColor || raisedButton.disabledColor;
-    labelColor = disabledLabelColor || raisedButton.disabledTextColor;
-  } else if (primary) {
-    backgroundColor = raisedButton.primaryColor;
-    labelColor = raisedButton.primaryTextColor;
-  } else if (secondary) {
-    backgroundColor = raisedButton.secondaryColor;
-    labelColor = raisedButton.secondaryTextColor;
-  } else {
-    if (props.backgroundColor) {
-      backgroundColor = props.backgroundColor;
-    }
-    if (props.labelColor) {
-      labelColor = props.labelColor;
-    }
-  }
-
-  var buttonHeight = style && style.height || button.height;
-
-  return {
-    root: {
-      display: 'inline-block',
-      transition: _transitions2.default.easeOut(),
-      minWidth: fullWidth ? '100%' : button.minWidth
-    },
-    button: {
-      height: buttonHeight,
-      lineHeight: buttonHeight + 'px',
-      width: '100%',
-      padding: 0,
-      borderRadius: borderRadius,
-      transition: _transitions2.default.easeOut(),
-      backgroundColor: backgroundColor,
-      // That's the default value for a button but not a link
-      textAlign: 'center'
-    },
-    label: {
-      position: 'relative',
-      opacity: 1,
-      fontSize: raisedButton.fontSize,
-      letterSpacing: 0,
-      textTransform: raisedButton.textTransform || button.textTransform || 'uppercase',
-      fontWeight: raisedButton.fontWeight,
-      margin: 0,
-      userSelect: 'none',
-      paddingLeft: icon && labelPosition !== 'before' ? 8 : baseTheme.spacing.desktopGutterLess,
-      paddingRight: icon && labelPosition === 'before' ? 8 : baseTheme.spacing.desktopGutterLess,
-      color: labelColor
-    },
-    icon: {
-      verticalAlign: 'middle',
-      marginLeft: label && labelPosition !== 'before' ? 12 : 0,
-      marginRight: label && labelPosition === 'before' ? 12 : 0
-    },
-    overlay: {
-      height: buttonHeight,
-      borderRadius: borderRadius,
-      backgroundColor: (state.keyboardFocused || state.hovered) && !disabled && (0, _colorManipulator.fade)(labelColor, amount),
-      transition: _transitions2.default.easeOut(),
-      top: 0
-    },
-    ripple: {
-      color: labelColor,
-      opacity: !(primary || secondary) ? 0.1 : 0.16
-    }
-  };
-}
-
-var RaisedButton = function (_Component) {
-  (0, _inherits3.default)(RaisedButton, _Component);
-
-  function RaisedButton() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    (0, _classCallCheck3.default)(this, RaisedButton);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = RaisedButton.__proto__ || (0, _getPrototypeOf2.default)(RaisedButton)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      hovered: false,
-      keyboardFocused: false,
-      touched: false,
-      initialZDepth: 0,
-      zDepth: 0
-    }, _this.handleMouseDown = function (event) {
-      // only listen to left clicks
-      if (event.button === 0) {
-        _this.setState({
-          zDepth: _this.state.initialZDepth + 1
-        });
-      }
-      if (_this.props.onMouseDown) {
-        _this.props.onMouseDown(event);
-      }
-    }, _this.handleMouseUp = function (event) {
-      _this.setState({
-        zDepth: _this.state.initialZDepth
-      });
-      if (_this.props.onMouseUp) {
-        _this.props.onMouseUp(event);
-      }
-    }, _this.handleMouseLeave = function (event) {
-      if (!_this.state.keyboardFocused) {
-        _this.setState({
-          zDepth: _this.state.initialZDepth,
-          hovered: false
-        });
-      }
-      if (_this.props.onMouseLeave) {
-        _this.props.onMouseLeave(event);
-      }
-    }, _this.handleMouseEnter = function (event) {
-      if (!_this.state.keyboardFocused && !_this.state.touched) {
-        _this.setState({
-          hovered: true
-        });
-      }
-      if (_this.props.onMouseEnter) {
-        _this.props.onMouseEnter(event);
-      }
-    }, _this.handleTouchStart = function (event) {
-      _this.setState({
-        touched: true,
-        zDepth: _this.state.initialZDepth + 1
-      });
-
-      if (_this.props.onTouchStart) {
-        _this.props.onTouchStart(event);
-      }
-    }, _this.handleTouchEnd = function (event) {
-      _this.setState({
-        touched: true,
-        zDepth: _this.state.initialZDepth
-      });
-
-      if (_this.props.onTouchEnd) {
-        _this.props.onTouchEnd(event);
-      }
-    }, _this.handleKeyboardFocus = function (event, keyboardFocused) {
-      var zDepth = keyboardFocused && !_this.props.disabled ? _this.state.initialZDepth + 1 : _this.state.initialZDepth;
-
-      _this.setState({
-        zDepth: zDepth,
-        keyboardFocused: keyboardFocused
-      });
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-  }
-
-  (0, _createClass3.default)(RaisedButton, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      var zDepth = this.props.disabled ? 0 : 1;
-      this.setState({
-        zDepth: zDepth,
-        initialZDepth: zDepth
-      });
-    }
-  }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      var zDepth = nextProps.disabled ? 0 : 1;
-      var nextState = {
-        zDepth: zDepth,
-        initialZDepth: zDepth
-      };
-
-      if (nextProps.disabled) {
-        nextState.hovered = false;
-      }
-
-      this.setState(nextState);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          backgroundColor = _props.backgroundColor,
-          buttonStyle = _props.buttonStyle,
-          children = _props.children,
-          className = _props.className,
-          disabled = _props.disabled,
-          disabledBackgroundColor = _props.disabledBackgroundColor,
-          disabledLabelColor = _props.disabledLabelColor,
-          fullWidth = _props.fullWidth,
-          icon = _props.icon,
-          label = _props.label,
-          labelColor = _props.labelColor,
-          labelPosition = _props.labelPosition,
-          labelStyle = _props.labelStyle,
-          overlayStyle = _props.overlayStyle,
-          primary = _props.primary,
-          rippleStyle = _props.rippleStyle,
-          secondary = _props.secondary,
-          style = _props.style,
-          other = (0, _objectWithoutProperties3.default)(_props, ['backgroundColor', 'buttonStyle', 'children', 'className', 'disabled', 'disabledBackgroundColor', 'disabledLabelColor', 'fullWidth', 'icon', 'label', 'labelColor', 'labelPosition', 'labelStyle', 'overlayStyle', 'primary', 'rippleStyle', 'secondary', 'style']);
-      var prepareStyles = this.context.muiTheme.prepareStyles;
-
-      var styles = getStyles(this.props, this.context, this.state);
-      var mergedRippleStyles = (0, _simpleAssign2.default)({}, styles.ripple, rippleStyle);
-
-      var buttonEventHandlers = disabled ? {} : {
-        onMouseDown: this.handleMouseDown,
-        onMouseUp: this.handleMouseUp,
-        onMouseLeave: this.handleMouseLeave,
-        onMouseEnter: this.handleMouseEnter,
-        onTouchStart: this.handleTouchStart,
-        onTouchEnd: this.handleTouchEnd,
-        onKeyboardFocus: this.handleKeyboardFocus
-      };
-
-      var labelElement = label && _react2.default.createElement(
-        'span',
-        { style: prepareStyles((0, _simpleAssign2.default)(styles.label, labelStyle)), key: 'labelElement' },
-        label
-      );
-
-      var iconCloned = icon && (0, _react.cloneElement)(icon, {
-        color: icon.props.color || styles.label.color,
-        style: (0, _simpleAssign2.default)(styles.icon, icon.props.style),
-        key: 'iconCloned'
-      });
-
-      // Place label before or after children.
-      var enhancedButtonChildren = labelPosition === 'before' ? [labelElement, iconCloned, children] : [children, iconCloned, labelElement];
-
-      return _react2.default.createElement(
-        _Paper2.default,
-        {
-          className: className,
-          style: (0, _simpleAssign2.default)(styles.root, style),
-          zDepth: this.state.zDepth
-        },
-        _react2.default.createElement(
-          _EnhancedButton2.default,
-          (0, _extends3.default)({}, other, buttonEventHandlers, {
-            ref: 'container',
-            disabled: disabled,
-            style: (0, _simpleAssign2.default)(styles.button, buttonStyle),
-            focusRippleColor: mergedRippleStyles.color,
-            touchRippleColor: mergedRippleStyles.color,
-            focusRippleOpacity: mergedRippleStyles.opacity,
-            touchRippleOpacity: mergedRippleStyles.opacity
-          }),
-          _react2.default.createElement(
-            'div',
-            {
-              ref: 'overlay',
-              style: prepareStyles((0, _simpleAssign2.default)(styles.overlay, overlayStyle))
-            },
-            enhancedButtonChildren
-          )
-        )
-      );
-    }
-  }]);
-  return RaisedButton;
-}(_react.Component);
-
-RaisedButton.muiName = 'RaisedButton';
-RaisedButton.defaultProps = {
-  disabled: false,
-  labelPosition: 'after',
-  fullWidth: false,
-  primary: false,
-  secondary: false
-};
-RaisedButton.contextTypes = {
-  muiTheme: _propTypes2.default.object.isRequired
-};
-RaisedButton.propTypes = process.env.NODE_ENV !== "production" ? {
-  /**
-   * Override the default background color for the button,
-   * but not the default disabled background color
-   * (use `disabledBackgroundColor` for this).
-   */
-  backgroundColor: _propTypes2.default.string,
-  /**
-   * Override the inline-styles of the button element.
-   */
-  buttonStyle: _propTypes2.default.object,
-  /**
-   * The content of the button.
-   * If a label is provided via the `label` prop, the text within the label
-   * will be displayed in addition to the content provided here.
-   */
-  children: _propTypes2.default.node,
-  /**
-   * The CSS class name of the root element.
-   */
-  className: _propTypes2.default.string,
-  /**
-    * The element to use as the container for the RaisedButton. Either a string to
-    * use a DOM element or a ReactElement. This is useful for wrapping the
-    * RaisedButton in a custom Link component. If a ReactElement is given, ensure
-    * that it passes all of its given props through to the underlying DOM
-    * element and renders its children prop for proper integration.
-    */
-  containerElement: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.element]),
-  /**
-   * If true, the element's ripple effect will be disabled.
-   */
-  disableTouchRipple: _propTypes2.default.bool,
-  /**
-   * If true, the button will be disabled.
-   */
-  disabled: _propTypes2.default.bool,
-  /**
-   * Override the default background color for the button
-   * when it is disabled.
-   */
-  disabledBackgroundColor: _propTypes2.default.string,
-  /**
-   * The color of the button's label when the button is disabled.
-   */
-  disabledLabelColor: _propTypes2.default.string,
-  /**
-   * If true, the button will take up the full width of its container.
-   */
-  fullWidth: _propTypes2.default.bool,
-  /**
-   * The URL to link to when the button is clicked.
-   */
-  href: _propTypes2.default.string,
-  /**
-   * An icon to be displayed within the button.
-   */
-  icon: _propTypes2.default.node,
-  /**
-   * The label to be displayed within the button.
-   * If content is provided via the `children` prop, that content will be
-   * displayed in addition to the label provided here.
-   */
-  label: validateLabel,
-  /**
-   * The color of the button's label.
-   */
-  labelColor: _propTypes2.default.string,
-  /**
-   * The position of the button's label relative to the button's `children`.
-   */
-  labelPosition: _propTypes2.default.oneOf(['before', 'after']),
-  /**
-   * Override the inline-styles of the button's label element.
-   */
-  labelStyle: _propTypes2.default.object,
-  /** @ignore */
-  onMouseDown: _propTypes2.default.func,
-  /** @ignore */
-  onMouseEnter: _propTypes2.default.func,
-  /** @ignore */
-  onMouseLeave: _propTypes2.default.func,
-  /** @ignore */
-  onMouseUp: _propTypes2.default.func,
-  /** @ignore */
-  onTouchEnd: _propTypes2.default.func,
-  /** @ignore */
-  onTouchStart: _propTypes2.default.func,
-  /**
-   * Callback function fired when the button is touch-tapped.
-   *
-   * @param {object} event TouchTap event targeting the button.
-   */
-  onTouchTap: _propTypes2.default.func,
-  /**
-   * Override the inline style of the button overlay.
-   */
-  overlayStyle: _propTypes2.default.object,
-  /**
-   * If true, the button will use the theme's primary color.
-   */
-  primary: _propTypes2.default.bool,
-  /**
-   * Override the inline style of the ripple element.
-   */
-  rippleStyle: _propTypes2.default.object,
-  /**
-   * If true, the button will use the theme's secondary color.
-   * If both `secondary` and `primary` are true, the button will use
-   * the theme's primary color.
-   */
-  secondary: _propTypes2.default.bool,
-  /**
-   * Override the inline-styles of the root element.
-   */
-  style: _propTypes2.default.object
-} : {};
-exports.default = RaisedButton;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
+/* 410 */,
 /* 411 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -67195,6 +66564,390 @@ module.exports = function(module) {
 	return module;
 };
 
+
+/***/ }),
+/* 550 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(34)(false);
+// imports
+
+
+// module
+exports.push([module.i, "#LoginFormContainer {\n\tmargin: auto;\n    padding: 0;\n}\n\n#formTitle {\n    font-family: 'Raleway', sans-serif;\n    font-size: 35px;\n    font-weight: 100;\n    text-transform: uppercase;\n    text-align: left;\n    letter-spacing: 1px;\n    padding: 0;\n    margin: 0;\n    margin-top: -6px;\n}\n\n#fieldDiv {\n\tpadding: 0;\n}\n\n#fieldDiv:first-of-type {\n\tmargin-top: 20px;\n}\n\n#FormSubmitBtn {\n\tmargin-top: 40px;\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: rgb(0, 0, 0);\n    border-radius: 0;\n    border: 2px solid rgb(0, 0, 0);\n\tpadding: 10px 50px;\n\tbackground-color: rgba(0, 0, 0, 0);\n\tmargin-bottom: 20px;\n}\n\n#noAcctMssg {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: rgba(0, 0, 0, 0.25);\n}\n\n#noAcctMssg a {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: #87e0f0;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 551 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(34)(false);
+// imports
+
+
+// module
+exports.push([module.i, "#logOutClickableArea {\n\tmax-width: max-content;\n    padding: 0;\n    margin: 0;\n    text-align: right !important;\n}\n\n#logOutBtn {\n\tmax-height: 30px;\n\tpadding: 0;\n\tmargin: 0;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 552 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(34)(false);
+// imports
+
+
+// module
+exports.push([module.i, "#sideBarDiv {\n    background-color: #f6c501;\n    color: white;\n    min-height: -webkit-fill-available;\n    font-family: 'Open Sans', sans-serif;\n    padding: 0;\n    margin: 0;\n}\n\n#sideBarTopInfo {\n    font-family: 'Open Sans', sans-serif;\n    font-size: smaller;\n    text-align: center;\n    padding: 40px;\n}\n\n#sideBarNav{\n\tmin-width: 100%;\n    padding: 0;\n    margin: 0;\n}\n\n#sideBarNavMainBtns {\n    font-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: white;\n    border-radius: 0;\n    border-top: 2px solid white;\n    border-bottom: none;\n    border-right: none;\n    border-left: none;\n    padding: 20px 50px;\n    margin: 0;\n    background-color: rgba(0, 0, 0, 0);\n}\n\n#sideBarNavMainBtns:last-of-type {\n    border-bottom: 2px solid white;\n}\n\n#sideBarNavMainBtns:hover {\n\tbackground-color: white;\n\tcolor: #3a88be;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 553 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(34)(false);
+// imports
+
+
+// module
+exports.push([module.i, "#SignUpFormContainer {\n\tmargin: auto;\n    padding: 0;\n}\n\n#formTitle {\n    font-family: 'Raleway', sans-serif;\n    font-size: 35px;\n    font-weight: 100;\n    text-transform: uppercase;\n    text-align: left;\n    letter-spacing: 1px;\n    padding: 0;\n    margin: 0;\n    margin-top: -6px;\n}\n\n#fieldDiv {\n\tpadding: 0;\n\tmargin-top: 20px;\n}\n\n#FormSubmitBtn {\n\tmargin-top: 40px;\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: rgb(0, 0, 0);\n    border-radius: 0;\n    border: 2px solid rgb(0, 0, 0);\n\tpadding: 10px 50px;\n\tbackground-color: rgba(0, 0, 0, 0);\n\tmargin-bottom: 20px;\n}\n\n#noAcctMssg {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: rgba(0, 0, 0, 0.25);\n}\n\n#noAcctMssg a {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: #87e0f0;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 554 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(34)(false);
+// imports
+
+
+// module
+exports.push([module.i, "#topBarRow {\n\tbackground-color: rgba(0, 0, 0, 0.85);\n    color: white;\n    padding: 20px;\n\tmargin: auto;\n\talign-items: center;\n}\n\n#welcomeTitle {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 25px;\n    font-weight: 600;\n    padding: 0;\n    margin: 0;\n}\n\n#topBarLink {\n\tdisplay: contents;\n\tpadding: 0;\n\tmargin: 0;\n}\n\n#katennaIcon {\n\tmax-height: 30px;\n\tpadding: 0;\n\tmargin: 0;\n\tmargin-right: 20px;\n}\n\n#buttonAlign {\n\ttext-align: right !important;\n\tpadding: 0;\n    margin: 0;\n}\n\n#topBarBrand {\n\tdisplay: flex;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 555 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(550);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(36)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../../../node_modules/css-loader/index.js!./LoginForm.css", function() {
+		var newContent = require("!!../../../../node_modules/css-loader/index.js!./LoginForm.css");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 556 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(551);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(36)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../../../node_modules/css-loader/index.js!./LogoutButton.css", function() {
+		var newContent = require("!!../../../../node_modules/css-loader/index.js!./LogoutButton.css");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 557 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(552);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(36)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../../../node_modules/css-loader/index.js!./SideBar.css", function() {
+		var newContent = require("!!../../../../node_modules/css-loader/index.js!./SideBar.css");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 558 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(553);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(36)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../../../node_modules/css-loader/index.js!./SignUpForm.css", function() {
+		var newContent = require("!!../../../../node_modules/css-loader/index.js!./SignUpForm.css");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 559 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(554);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(36)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../../../node_modules/css-loader/index.js!./TopBar.css", function() {
+		var newContent = require("!!../../../../node_modules/css-loader/index.js!./TopBar.css");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 560 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(34)(false);
+// imports
+
+
+// module
+exports.push([module.i, "#mainDashContainer {\n    background-color: rgba(245, 245, 245, 1);\n    color: #262626;\n    min-height: -webkit-fill-available;\n    font-family: 'Open Sans', sans-serif;\n    padding: 50px;\n    margin: 0;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 561 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(560);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(36)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../../../node_modules/css-loader/index.js!./Dashboard.css", function() {
+		var newContent = require("!!../../../../node_modules/css-loader/index.js!./Dashboard.css");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);

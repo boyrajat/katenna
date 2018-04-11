@@ -1,0 +1,38 @@
+#topBarRow {
+	background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 20px;
+	margin: auto;
+	align-items: center;
+}
+
+#welcomeTitle {
+	font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+}
+
+#topBarLink {
+	display: contents;
+	padding: 0;
+	margin: 0;
+}
+
+#katennaIcon {
+	max-height: 30px;
+	padding: 0;
+	margin: 0;
+	margin-right: 20px;
+}
+
+#buttonAlign {
+	text-align: right !important;
+	padding: 0;
+    margin: 0;
+}
+
+#topBarBrand {
+	display: flex;
+}
