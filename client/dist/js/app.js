@@ -40000,7 +40000,10 @@ var AddEmployeeForm = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (AddEmployeeForm.__proto__ || Object.getPrototypeOf(AddEmployeeForm)).call(this, props));
 
-        _this.state = { newName: '' };
+        _this.state = {
+            newName: '',
+            newEmail: ''
+        };
 
         _this.handleChange = _this.handleChange.bind(_this);
         _this.handleSubmit = _this.handleSubmit.bind(_this);
@@ -40010,7 +40013,9 @@ var AddEmployeeForm = function (_React$Component) {
     _createClass(AddEmployeeForm, [{
         key: 'handleChange',
         value: function handleChange(event) {
-            this.setState({ newName: event.target.value });
+            this.setState({
+                newName: event.target.value
+            });
         }
     }, {
         key: 'handleSubmit',
