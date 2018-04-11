@@ -7,11 +7,6 @@ import LoginPage from '../../containers/LoginPage';
 import SignUpPage from '../../containers/SignUpPage';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-<<<<<<< HEAD
-import Modal from '../Modal/ModalParent'
-=======
-
->>>>>>> a036d3d20be72caefb328d421a12d3b8e8bb7022
 // import routes from './routes.js';
 
 import {
@@ -23,18 +18,12 @@ import {
 } from 'react-router-dom'
 
 
-<<<<<<< HEAD
-					<Modal whereTo="/login" />
-					<Link className="btn " to="/login">Log in</Link>
-					<Link className="btn " to="/signup">Sign Up</Link>
-				</div>
-=======
 ReactModal.setAppElement('#react-app');
 
 class Jumbotron extends React.Component {
 
 	//STATE
-	constructor () {
+	constructor() {
 		super();
 
 		this.state = {
@@ -52,7 +41,7 @@ class Jumbotron extends React.Component {
 	handleOpenModalLogin() {
 		this.setState({ showModalLogin: true });
 	}
-	
+
 	handleOpenModalSignUp() {
 		this.setState({ showModalSignup: true });
 	}
@@ -78,7 +67,7 @@ class Jumbotron extends React.Component {
 							{/* OLD LINKS */}
 							{/* <Link className="btn " to="/login" >Log in</Link>
 							<Link className="btn " to="/signup">Sign Up</Link> */}
-							
+
 							{/* NEW BUTTONS FOR THE MODAL */}
 							<button className="btn" id="jumboBtn" onClick={() => this.handleOpenModalLogin()}>Log in</button>
 							<button className="btn" id="jumboBtn" onClick={() => this.handleOpenModalSignUp()}>Sign Up</button>
@@ -92,12 +81,12 @@ class Jumbotron extends React.Component {
 								shouldCloseOnEsc={true}
 								className="Modal"
 								overlayClassName="Overlay"
-								>
+							>
 								<button id="modalClose" onClick={this.handleCloseModalLogin}>X</button>
-								<LoginPage/>
+								<LoginPage />
 							</ReactModal>
 
-							<ReactModal 
+							<ReactModal
 								isOpen={this.state.showModalSignup}
 								contentLabel="Modal #2 Global Style Override Example"
 								onRequestClose={this.handleCloseModalSignup}
@@ -105,13 +94,12 @@ class Jumbotron extends React.Component {
 								shouldCloseOnEsc={true}
 								className="Modal"
 								overlayClassName="Overlay"
-								>
+							>
 								<button id="modalClose" onClick={this.handleCloseModalSignup}>Close Modal</button>
-								<SignUpPage/>
+								<SignUpPage />
 							</ReactModal>
-							
+
 						</div>
->>>>>>> a036d3d20be72caefb328d421a12d3b8e8bb7022
 
 						<div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 text-center align-middle">
 							<img src='/img/desktop.png' id="desktopImage" alt="Desktop Admin Panel" />
@@ -120,7 +108,7 @@ class Jumbotron extends React.Component {
 				</div>
 			</div>
 		);
-	}	
+	}
 }
 
 export default Jumbotron;

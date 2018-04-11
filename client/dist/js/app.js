@@ -39441,10 +39441,204 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /***/ }),
 /* 266 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-throw new Error("Module build failed: SyntaxError: Unexpected token (10:1)\n\n\u001b[0m \u001b[90m  8 | \u001b[39m\u001b[36mimport\u001b[39m getMuiTheme from \u001b[32m'material-ui/styles/getMuiTheme'\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m  9 | \u001b[39m\u001b[36mimport\u001b[39m \u001b[33mMuiThemeProvider\u001b[39m from \u001b[32m'material-ui/styles/MuiThemeProvider'\u001b[39m\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\n \u001b[90m    | \u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 | \u001b[39m\u001b[36mimport\u001b[39m \u001b[33mModal\u001b[39m from \u001b[32m'../Modal/ModalParent'\u001b[39m\n \u001b[90m 12 | \u001b[39m\u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\n \u001b[90m 13 | \u001b[39m\u001b[0m\n");
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(210);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _reactModal = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"react-modal\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+var _reactModal2 = _interopRequireDefault(_reactModal);
+
+var _propTypes = __webpack_require__(13);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+__webpack_require__(532);
+
+var _LoginPage = __webpack_require__(142);
+
+var _LoginPage2 = _interopRequireDefault(_LoginPage);
+
+var _SignUpPage = __webpack_require__(144);
+
+var _SignUpPage2 = _interopRequireDefault(_SignUpPage);
+
+var _getMuiTheme = __webpack_require__(110);
+
+var _getMuiTheme2 = _interopRequireDefault(_getMuiTheme);
+
+var _MuiThemeProvider = __webpack_require__(175);
+
+var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
+
+var _reactRouterDom = __webpack_require__(20);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+// import routes from './routes.js';
+
+_reactModal2.default.setAppElement('#react-app');
+
+var Jumbotron = function (_React$Component) {
+	_inherits(Jumbotron, _React$Component);
+
+	//STATE
+	function Jumbotron() {
+		_classCallCheck(this, Jumbotron);
+
+		var _this = _possibleConstructorReturn(this, (Jumbotron.__proto__ || Object.getPrototypeOf(Jumbotron)).call(this));
+
+		_this.state = {
+			showModalLogin: false,
+			showModalSignup: false
+		};
+
+		_this.handleOpenModalLogin = _this.handleOpenModalLogin.bind(_this);
+		_this.handleOpenModalSignUp = _this.handleOpenModalSignUp.bind(_this);
+		_this.handleCloseModalLogin = _this.handleCloseModalLogin.bind(_this);
+		_this.handleCloseModalSignup = _this.handleCloseModalSignup.bind(_this);
+		return _this;
+	}
+
+	//HELPERS
+
+
+	_createClass(Jumbotron, [{
+		key: 'handleOpenModalLogin',
+		value: function handleOpenModalLogin() {
+			this.setState({ showModalLogin: true });
+		}
+	}, {
+		key: 'handleOpenModalSignUp',
+		value: function handleOpenModalSignUp() {
+			this.setState({ showModalSignup: true });
+		}
+	}, {
+		key: 'handleCloseModalLogin',
+		value: function handleCloseModalLogin() {
+			this.setState({ showModalLogin: false });
+		}
+	}, {
+		key: 'handleCloseModalSignup',
+		value: function handleCloseModalSignup() {
+			this.setState({ showModalSignup: false });
+		}
+
+		//JUMBOTRON RENDERED:
+
+	}, {
+		key: 'render',
+		value: function render() {
+			var _this2 = this;
+
+			return _react2.default.createElement(
+				'div',
+				{ className: 'jumbotron jumbotron-fluid align-middle', id: 'modalParent' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'container align-middle' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'row jumboSpace align-middle' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 align-middle' },
+							_react2.default.createElement(
+								'h1',
+								{ className: 'display-4', id: 'jumboH1' },
+								'Teams come and go. Knowledge never leaves.'
+							),
+							_react2.default.createElement(
+								'p',
+								{ className: 'lead', id: 'jumboP' },
+								'The training and development bot that provides ongoing support to employees, preserves the continuity of institutional knowledge, all while protecting the bottom-line.'
+							),
+							_react2.default.createElement(
+								'button',
+								{ className: 'btn', id: 'jumboBtn', onClick: function onClick() {
+										return _this2.handleOpenModalLogin();
+									} },
+								'Log in'
+							),
+							_react2.default.createElement(
+								'button',
+								{ className: 'btn', id: 'jumboBtn', onClick: function onClick() {
+										return _this2.handleOpenModalSignUp();
+									} },
+								'Sign Up'
+							),
+							_react2.default.createElement(
+								_reactModal2.default,
+								{
+									isOpen: this.state.showModalLogin,
+									contentLabel: 'Modal #1 Global Style Override Example',
+									onRequestClose: this.handleCloseModalLogin,
+									shouldCloseOnOverlayClick: true,
+									shouldCloseOnEsc: true,
+									className: 'Modal',
+									overlayClassName: 'Overlay'
+								},
+								_react2.default.createElement(
+									'button',
+									{ id: 'modalClose', onClick: this.handleCloseModalLogin },
+									'X'
+								),
+								_react2.default.createElement(_LoginPage2.default, null)
+							),
+							_react2.default.createElement(
+								_reactModal2.default,
+								{
+									isOpen: this.state.showModalSignup,
+									contentLabel: 'Modal #2 Global Style Override Example',
+									onRequestClose: this.handleCloseModalSignup,
+									shouldCloseOnOverlayClick: true,
+									shouldCloseOnEsc: true,
+									className: 'Modal',
+									overlayClassName: 'Overlay'
+								},
+								_react2.default.createElement(
+									'button',
+									{ id: 'modalClose', onClick: this.handleCloseModalSignup },
+									'Close Modal'
+								),
+								_react2.default.createElement(_SignUpPage2.default, null)
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 text-center align-middle' },
+							_react2.default.createElement('img', { src: '/img/desktop.png', id: 'desktopImage', alt: 'Desktop Admin Panel' })
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return Jumbotron;
+}(_react2.default.Component);
+
+exports.default = Jumbotron;
 
 /***/ }),
 /* 267 */
@@ -43360,7 +43554,20 @@ exports.push([module.i, ".footerContFlu {\n\tbackground-color: rgba(40, 40, 40, 
 
 
 /***/ }),
-/* 346 */,
+/* 346 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(34)(false);
+// imports
+
+
+// module
+exports.push([module.i, ".jumbotron {\n\tbackground-color: black;\n    padding: 0;\n    padding-top: 120px;\n    padding-bottom: 120px;\n\tcolor: white;\n\tmargin-bottom: 0px;\n}\n\n.jumboSpace {\n\tmin-height: 50vh;\n\talign-items: center !important;\n}\n\n#desktopImage {\n\tmax-width: 100%;\n\tmargin-top: 40px;\t\n}\n\n#jumboH1 {\n\tcolor: white;\n    font-family: 'Raleway', sans-serif;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    font-size: 50px;\n\tfont-weight: 800;\n\tmargin-bottom: 20px;\n\ttext-align: left !important;\n}\n\n#jumboP {\n\tcolor: white;\n    font-family: 'Open Sans', sans-serif;\n    letter-spacing: 1px;\n    font-size: 18px;\n\ttext-align: left !important;\n}\n\n#jumboBtn {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: white;\n    border-radius: 0;\n    border: 2px solid white;\n\tpadding: 10px 50px;\n\tmargin-top: 20px;\n\tbackground-color: rgba(0, 0, 0, 0);\n}\n\n#jumboBtn:first-of-type {\n\tmargin-right: 20px;\n}\n\n.Modal {\n\tposition: relative;\n    max-width: max-content;\n    max-height: max-content;\n    padding: 40px;\n    margin: auto;\n    margin-top: 50px;\n    background: white;\n\tborder-radius: 5px;\n\ttext-align: right;\n  }\n\n  .Overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    background-color: rgba(0, 0, 0, .75);\n  }\n\n  #modalClose {\n\tfont-size: 30px;\n    font-weight: bolder;\n    text-transform: uppercase;\n    border-radius: 0;\n    border: 2px solid black;\n    padding: 5px 20px;\n    background-color: rgba(0, 0, 0, 0);\n    font-family: 'Open Sans', sans-serif;\n  }", ""]);
+
+// exports
+
+
+/***/ }),
 /* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -64811,7 +65018,56 @@ if(false) {
 }
 
 /***/ }),
-/* 532 */,
+/* 532 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(346);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(36)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../../../node_modules/css-loader/index.js!./Jumbotron.css", function() {
+		var newContent = require("!!../../../../node_modules/css-loader/index.js!./Jumbotron.css");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
 /* 533 */
 /***/ (function(module, exports, __webpack_require__) {
 
