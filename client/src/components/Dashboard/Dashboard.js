@@ -17,8 +17,8 @@ import './Dashboard.css';
 
 const Dashboard = ({ secretData, user }) => (
     <div className="col-10" id="mainDashContainer">
-
-		{secretData && <h6>Welcome <strong>{user.name}</strong>!<br />{secretData}</h6>}
+		{/* HIDDING THIS FOR NOW:
+		{secretData && <h6>Welcome <strong>{user.name}</strong>!<br />{secretData}</h6>} */}
 
       <Route path="/logout" component={LogoutFunction} />
       <Route path="/employees" component={Employees} />
