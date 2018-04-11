@@ -51,20 +51,21 @@ class EmployeesFunctions extends React.Component {
       return (
         <div>
           {items.map(item => (
-            <div class="card text-center">
-              <div class="card-header">
-                {item.name}
+            <div className="card text-center">
+              <div className="card-header">
+                {item.position}
               </div>
-              <img class="card-img-top" src="..." alt="Card image cap" />
-              <div class="card-body">
-                <h5 class="card-title">{item.position}</h5>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Phone: {item.phone}</li>
-                  <li class="list-group-item">Email: {item.email}</li>
-                  <li class="list-group-item">Type: {item.type}</li>
+              <img className="card-img-top" src="..." alt="Card image cap" />
+              <div className="card-body">
+                <h5 className="card-title">{item.name}</h5>
+                <ul className="list-group list-group-flush">
+                  <li className="list-group-item">Phone: {item.phone}</li>
+                  <li className="list-group-item">Email: {item.email}</li>
+                  <li className="list-group-item">Type: {item.type}</li>
                 </ul>
                 {/* use the link below to pass state to EmployeeFunctions2 */}
-                <Link class="btn btn-secondary" to={{ pathname: '/taskback', state: { employeeName: item.name, employeePosition: item.position } }}>See Tasks</Link>
+                <Link className="btn btn-secondary" to={{ pathname: '/taskback', state: { employeeName: item.name, employeePosition: item.position } }}>See Tasks</Link>
+                <Link className="btn btn-info" to='' >Add New Task</Link>
               </div>
             </div>
           ))}
