@@ -58,7 +58,7 @@
 	position: relative;
     max-width: max-content;
     max-height: max-content;
-    padding: 40px;
+    padding: 60px;
     margin: auto;
     margin-top: 50px;
     background: white;
@@ -76,12 +76,9 @@
   }
 
   #modalClose {
-	font-size: 30px;
-    font-weight: bolder;
-    text-transform: uppercase;
-    border-radius: 0;
-    border: 2px solid black;
-    padding: 5px 20px;
-    background-color: rgba(0, 0, 0, 0);
-    font-family: 'Open Sans', sans-serif;
+    max-height: 30px;
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    max-width: 30px;
   }

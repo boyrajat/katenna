@@ -82,7 +82,9 @@ class Jumbotron extends React.Component {
 								className="Modal"
 								overlayClassName="Overlay"
 							>
-								<button id="modalClose" onClick={this.handleCloseModalLogin}>X</button>
+
+								<img src="/img/modalCloseButton.svg" id="modalClose" onClick={this.handleCloseModalLogin}/>
+
 								<LoginPage />
 							</ReactModal>
 
@@ -95,7 +97,8 @@ class Jumbotron extends React.Component {
 								className="Modal"
 								overlayClassName="Overlay"
 							>
-								<button id="modalClose" onClick={this.handleCloseModalSignup}>Close Modal</button>
+								<img src="/img/modalCloseButton.svg" id="modalClose" onClick={this.handleCloseModalLogin}/>
+								
 								<SignUpPage />
 							</ReactModal>
 
