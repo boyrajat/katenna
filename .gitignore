@@ -69,7 +69,7 @@ client/dist
 # Typescript v1 declaration files
 typings/
 
-# Optional npm cache directory
+# Optional npm cache directory 
 .npm
 
 # Optional eslint cache

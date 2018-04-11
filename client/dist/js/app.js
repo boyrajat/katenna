@@ -12375,7 +12375,11 @@ module.exports = function(isValidElement) {
 var emptyFunction = __webpack_require__(24);
 var invariant = __webpack_require__(1);
 var warning = __webpack_require__(3);
+<<<<<<< HEAD
 var assign = __webpack_require__(14);
+=======
+var assign = __webpack_require__(13);
+>>>>>>> e6e0e41cd101c5be087df4340ee3ddd1a888e097
 
 var ReactPropTypesSecret = __webpack_require__(113);
 var checkPropTypes = __webpack_require__(425);
@@ -39759,7 +39763,11 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
+<<<<<<< HEAD
 var _propTypes = __webpack_require__(13);
+=======
+var _propTypes = __webpack_require__(14);
+>>>>>>> e6e0e41cd101c5be087df4340ee3ddd1a888e097
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -39801,6 +39809,10 @@ var ModalContainer = function (_React$Component) {
 
       // The modal "window"
       var modalStyle = {
+<<<<<<< HEAD
+=======
+        display: 'block',
+>>>>>>> e6e0e41cd101c5be087df4340ee3ddd1a888e097
         backgroundColor: '#fff',
         borderRadius: 5,
         maxWidth: 500,
@@ -39811,10 +39823,17 @@ var ModalContainer = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
+<<<<<<< HEAD
         { className: 'backdrop', style: '' },
         _react2.default.createElement(
           'div',
           { className: 'modal', style: '' },
+=======
+        { className: 'backdrop', style: backdropStyle },
+        _react2.default.createElement(
+          'div',
+          { className: 'modal', style: modalStyle },
+>>>>>>> e6e0e41cd101c5be087df4340ee3ddd1a888e097
           this.props.children,
           _react2.default.createElement(
             'div',
@@ -39862,10 +39881,13 @@ var _ModalContainer = __webpack_require__(270);
 
 var _ModalContainer2 = _interopRequireDefault(_ModalContainer);
 
+<<<<<<< HEAD
 var _propTypes = __webpack_require__(13);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+=======
+>>>>>>> e6e0e41cd101c5be087df4340ee3ddd1a888e097
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -39874,23 +39896,33 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+<<<<<<< HEAD
 var ModalParent = function (_React$Component) {
   _inherits(ModalParent, _React$Component);
+=======
+var ModalParent = function (_Component) {
+  _inherits(ModalParent, _Component);
+>>>>>>> e6e0e41cd101c5be087df4340ee3ddd1a888e097
 
   function ModalParent(props) {
     _classCallCheck(this, ModalParent);
 
     var _this = _possibleConstructorReturn(this, (ModalParent.__proto__ || Object.getPrototypeOf(ModalParent)).call(this, props));
 
+<<<<<<< HEAD
     var toggleModal = function toggleModal() {
       _this.setState({
         isOpen: !_this.state.isOpen
       });
     };
+=======
+    _this.state = { isOpen: false };
+>>>>>>> e6e0e41cd101c5be087df4340ee3ddd1a888e097
     return _this;
   }
 
   _createClass(ModalParent, [{
+<<<<<<< HEAD
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -39899,12 +39931,40 @@ var ModalParent = function (_React$Component) {
         _react2.default.createElement(
           'button',
           { onClick: toggleModal },
+=======
+    key: 'toggleModal',
+    value: function toggleModal() {
+      this.setState({ isOpen: !this.state.isOpen });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var isOpen = this.state.isOpen;
+
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'ModalParent' },
+        _react2.default.createElement(
+          'button',
+          { onClick: function onClick() {
+              return _this2.toggleModal();
+            } },
+>>>>>>> e6e0e41cd101c5be087df4340ee3ddd1a888e097
           'Open the modal'
         ),
         _react2.default.createElement(
           _ModalContainer2.default,
           { show: this.state.isOpen,
+<<<<<<< HEAD
             onClose: this.toggleModal },
+=======
+            onClose: function onClose() {
+              return _this2.toggleModal();
+            } },
+>>>>>>> e6e0e41cd101c5be087df4340ee3ddd1a888e097
           'Here\'s some content for the modal'
         )
       );
@@ -39912,7 +39972,11 @@ var ModalParent = function (_React$Component) {
   }]);
 
   return ModalParent;
+<<<<<<< HEAD
 }(_react2.default.Component);
+=======
+}(_react.Component);
+>>>>>>> e6e0e41cd101c5be087df4340ee3ddd1a888e097
 
 exports.default = ModalParent;
 

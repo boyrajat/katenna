@@ -5,6 +5,7 @@ import SignUpPage from '../../containers/SignUpPage';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import ModalParent from '../Modal/ModalParent'
 // import routes from './routes.js';
 
 import {
@@ -26,6 +27,11 @@ const Jumbotron = () => (
 
 					<Link className="btn " to="/login">Log in</Link>
 					<Link className="btn " to="/signup">Sign Up</Link>
+<<<<<<< HEAD
+=======
+					<ModalParent/>
+
+>>>>>>> e6e0e41cd101c5be087df4340ee3ddd1a888e097
 				</div>
 
 				<div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 text-center align-middle">
