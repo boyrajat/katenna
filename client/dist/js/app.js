@@ -16258,10 +16258,6 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactTapEventPlugin = __webpack_require__(200);
-
-var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
-
 var _getMuiTheme = __webpack_require__(110);
 
 var _getMuiTheme2 = _interopRequireDefault(_getMuiTheme);
@@ -16305,6 +16301,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+// import injectTapEventPlugin from 'react-tap-event-plugin';
+
 
 // import routes from './routes.js';
 
@@ -16316,7 +16314,7 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
 
 
 // remove tap delay, essential for MaterialUI to work properly
-(0, _reactTapEventPlugin2.default)();
+// injectTapEventPlugin();
 
 var PrivateRoute = function PrivateRoute(_ref) {
   var Component = _ref.component,
@@ -38746,7 +38744,14 @@ var _Main = __webpack_require__(211);
 
 var _Main2 = _interopRequireDefault(_Main);
 
+var _reactTapEventPlugin = __webpack_require__(200);
+
+var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// remove tap delay, essential for MaterialUI to work properly
+(0, _reactTapEventPlugin2.default)();
 
 _reactDom2.default.render(_react2.default.createElement(_Main2.default, null), document.getElementById('react-app'));
 
@@ -39436,96 +39441,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /***/ }),
 /* 266 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-__webpack_require__(532);
-
-var _LoginPage = __webpack_require__(142);
-
-var _LoginPage2 = _interopRequireDefault(_LoginPage);
-
-var _SignUpPage = __webpack_require__(144);
-
-var _SignUpPage2 = _interopRequireDefault(_SignUpPage);
-
-var _reactTapEventPlugin = __webpack_require__(200);
-
-var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
-
-var _getMuiTheme = __webpack_require__(110);
-
-var _getMuiTheme2 = _interopRequireDefault(_getMuiTheme);
-
-var _MuiThemeProvider = __webpack_require__(175);
-
-var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
-
-var _ModalParent = __webpack_require__(273);
-
-var _ModalParent2 = _interopRequireDefault(_ModalParent);
-
-var _reactRouterDom = __webpack_require__(20);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Jumbotron = function Jumbotron() {
-	return _react2.default.createElement(
-		"div",
-		{ className: "jumbotron jumbotron-fluid align-middle" },
-		_react2.default.createElement(
-			"div",
-			{ className: "container align-middle" },
-			_react2.default.createElement(
-				"div",
-				{ className: "row jumboSpace align-middle" },
-				_react2.default.createElement(
-					"div",
-					{ className: "col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 align-middle" },
-					_react2.default.createElement(
-						"h1",
-						{ className: "display-4", id: "jumboH1" },
-						"Teams come and go. Knowledge never leaves."
-					),
-					_react2.default.createElement(
-						"p",
-						{ className: "lead", id: "jumboP" },
-						"The training and development bot that provides ongoing support to employees, preserves the continuity of institutional knowledge, all while protecting the bottom-line."
-					),
-					_react2.default.createElement(_ModalParent2.default, { whereTo: "/login" }),
-					_react2.default.createElement(
-						_reactRouterDom.Link,
-						{ className: "btn ", to: "/login" },
-						"Log in"
-					),
-					_react2.default.createElement(
-						_reactRouterDom.Link,
-						{ className: "btn ", to: "/signup" },
-						"Sign Up"
-					)
-				),
-				_react2.default.createElement(
-					"div",
-					{ className: "col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 text-center align-middle" },
-					_react2.default.createElement("img", { src: "/img/desktop.png", id: "desktopImage", alt: "Desktop Admin Panel" })
-				)
-			)
-		)
-	);
-};
-// import routes from './routes.js';
-
-exports.default = Jumbotron;
+throw new Error("Module build failed: SyntaxError: Unexpected token (10:1)\n\n\u001b[0m \u001b[90m  8 | \u001b[39m\u001b[36mimport\u001b[39m getMuiTheme from \u001b[32m'material-ui/styles/getMuiTheme'\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m  9 | \u001b[39m\u001b[36mimport\u001b[39m \u001b[33mMuiThemeProvider\u001b[39m from \u001b[32m'material-ui/styles/MuiThemeProvider'\u001b[39m\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\n \u001b[90m    | \u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 | \u001b[39m\u001b[36mimport\u001b[39m \u001b[33mModal\u001b[39m from \u001b[32m'../Modal/ModalParent'\u001b[39m\n \u001b[90m 12 | \u001b[39m\u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\n \u001b[90m 13 | \u001b[39m\u001b[0m\n");
 
 /***/ }),
 /* 267 */
@@ -39550,146 +39469,8 @@ Object.defineProperty(exports, "default", {
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 268 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(13);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _reactRouterDom = __webpack_require__(20);
-
-var _Card = __webpack_require__(65);
-
-var _RaisedButton = __webpack_require__(171);
-
-var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
-
-var _TextField = __webpack_require__(173);
-
-var _TextField2 = _interopRequireDefault(_TextField);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var LoginForm = function LoginForm(_ref) {
-  var onSubmit = _ref.onSubmit,
-      onChange = _ref.onChange,
-      errors = _ref.errors,
-      successMessage = _ref.successMessage,
-      user = _ref.user,
-      toggleAuthenticateStatus = _ref.toggleAuthenticateStatus;
-  return _react2.default.createElement(
-    _Card.Card,
-    { className: 'container' },
-    _react2.default.createElement(
-      'form',
-      { action: '/', onSubmit: onSubmit },
-      _react2.default.createElement(
-        'h2',
-        { className: 'card-heading' },
-        'Login'
-      ),
-      successMessage && _react2.default.createElement(
-        'p',
-        { className: 'success-message' },
-        successMessage
-      ),
-      errors.summary && _react2.default.createElement(
-        'p',
-        { className: 'error-message' },
-        errors.summary
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'field-line' },
-        _react2.default.createElement(_TextField2.default, {
-          floatingLabelText: 'Email',
-          name: 'email',
-          errorText: errors.email,
-          onChange: onChange,
-          value: user.email
-        })
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'field-line' },
-        _react2.default.createElement(_TextField2.default, {
-          floatingLabelText: 'Password',
-          type: 'password',
-          name: 'password',
-          onChange: onChange,
-          errorText: errors.password,
-          value: user.password
-        })
-      ),
-      _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'button',
-          { type: 'submit', label: 'Log in' },
-          'Log in'
-        )
-      ),
-      _react2.default.createElement(
-        _Card.CardText,
-        null,
-        'Don\'t have an account? ',
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/signup', style: { fontSize: '16px', color: 'black' } },
-          'Create one'
-        ),
-        '.'
-      )
-    )
-  );
-};
-
-LoginForm.propTypes = {
-  onSubmit: _propTypes2.default.func.isRequired,
-  onChange: _propTypes2.default.func.isRequired,
-  errors: _propTypes2.default.object.isRequired,
-  successMessage: _propTypes2.default.string.isRequired,
-  user: _propTypes2.default.object.isRequired
-};
-
-exports.default = LoginForm;
-
-/***/ }),
-/* 269 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _LoginForm = __webpack_require__(268);
-
-Object.defineProperty(exports, "default", {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_LoginForm).default;
-  }
-});
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/***/ }),
+/* 268 */,
+/* 269 */,
 /* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -39711,10 +39492,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var LogoutButton = function LogoutButton() {
 	return _react2.default.createElement(
 		"div",
-		{ "class": "btn-group-vertical" },
+		{ className: "btn-group-vertical" },
 		_react2.default.createElement(
 			_reactRouterDom.Link,
-			{ "class": "btn btn-danger", to: "/logout" },
+			{ className: "btn btn-danger", to: "/logout" },
 			"Logout"
 		)
 	);
@@ -39745,198 +39526,8 @@ Object.defineProperty(exports, "default", {
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 272 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(13);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ModalContainer = function (_React$Component) {
-  _inherits(ModalContainer, _React$Component);
-
-  function ModalContainer() {
-    _classCallCheck(this, ModalContainer);
-
-    return _possibleConstructorReturn(this, (ModalContainer.__proto__ || Object.getPrototypeOf(ModalContainer)).apply(this, arguments));
-  }
-
-  _createClass(ModalContainer, [{
-    key: 'render',
-    value: function render() {
-      // Render nothing if the "show" prop is false
-      if (!this.props.show) {
-        return null;
-      }
-
-      // The gray background
-      var backdropStyle = {
-        position: 'fixed',
-        top: 0,
-        bottom: 0,
-        left: 0,
-        right: 0,
-        backgroundColor: 'rgba(0,0,0,0.3)',
-        padding: 50
-      };
-
-      // The modal "window"
-      var modalStyle = {
-        display: 'block',
-        backgroundColor: '#fff',
-        borderRadius: 5,
-        maxWidth: 500,
-        minHeight: 300,
-        margin: '0 auto',
-        padding: 30
-      };
-      var whereTo = this.props.whereTo;
-      return _react2.default.createElement(
-        'div',
-        { className: 'backdrop', style: backdropStyle },
-        _react2.default.createElement(
-          'div',
-          { className: 'modal', style: modalStyle },
-          this.props.children,
-          _react2.default.createElement(
-            'div',
-            { className: 'footer' },
-            _react2.default.createElement(
-              'button',
-              { onClick: this.props.onClose },
-              'Close ',
-              whereTo
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return ModalContainer;
-}(_react2.default.Component);
-
-ModalContainer.propTypes = {
-  whereTo: _propTypes2.default.string,
-  onClose: _propTypes2.default.func.isRequired,
-  show: _propTypes2.default.bool,
-  children: _propTypes2.default.node
-};
-
-exports.default = ModalContainer;
-
-/***/ }),
-/* 273 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _ModalContainer = __webpack_require__(272);
-
-var _ModalContainer2 = _interopRequireDefault(_ModalContainer);
-
-var _propTypes = __webpack_require__(13);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ModalParent = function (_Component) {
-  _inherits(ModalParent, _Component);
-
-  function ModalParent(props) {
-    _classCallCheck(this, ModalParent);
-
-    var _this = _possibleConstructorReturn(this, (ModalParent.__proto__ || Object.getPrototypeOf(ModalParent)).call(this, props));
-
-    _this.state = { isOpen: false };
-    return _this;
-  }
-
-  _createClass(ModalParent, [{
-    key: 'toggleModal',
-    value: function toggleModal() {
-      this.setState({ isOpen: !this.state.isOpen });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var isOpen = this.state.isOpen;
-
-      var whereTo = this.props.whereTo;
-      return _react2.default.createElement(
-        'div',
-        { className: 'ModalParent' },
-        _react2.default.createElement(
-          'button',
-          { onClick: function onClick() {
-              return _this2.toggleModal();
-            } },
-          'Open the modal'
-        ),
-        _react2.default.createElement(
-          _ModalContainer2.default,
-          { whereTo: whereTo, show: this.state.isOpen,
-            onClose: function onClose() {
-              return _this2.toggleModal();
-            } },
-          'Here\'s some content for the modal'
-        )
-      );
-    }
-  }]);
-
-  return ModalParent;
-}(_react.Component);
-
-ModalParent.propTypes = {
-  whereTo: _propTypes2.default.string,
-  children: _propTypes2.default.node
-};
-
-exports.default = ModalParent;
-
-/***/ }),
+/* 272 */,
+/* 273 */,
 /* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -40757,8 +40348,8 @@ var DashboardPage = function (_React$Component) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        'container',
-        null,
+        'div',
+        { className: 'container' },
         _react2.default.createElement(_TopBar2.default, { secretData: this.state.secretData, user: this.state.user }),
         _react2.default.createElement(
           'div',
@@ -40801,176 +40392,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /***/ }),
 /* 287 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(13);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _Auth = __webpack_require__(71);
-
-var _Auth2 = _interopRequireDefault(_Auth);
-
-var _LoginForm = __webpack_require__(269);
-
-var _LoginForm2 = _interopRequireDefault(_LoginForm);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var LoginPage = function (_React$Component) {
-  _inherits(LoginPage, _React$Component);
-
-  /**
-   * Class constructor.
-   */
-  function LoginPage(props, context) {
-    _classCallCheck(this, LoginPage);
-
-    var _this = _possibleConstructorReturn(this, (LoginPage.__proto__ || Object.getPrototypeOf(LoginPage)).call(this, props, context));
-
-    var storedMessage = localStorage.getItem('successMessage');
-    var successMessage = '';
-
-    if (storedMessage) {
-      successMessage = storedMessage;
-      localStorage.removeItem('successMessage');
-    }
-
-    // set the initial component state
-    _this.state = {
-      errors: {},
-      successMessage: successMessage,
-      user: {
-        email: '',
-        password: ''
-      }
-    };
-
-    _this.processForm = _this.processForm.bind(_this);
-    _this.changeUser = _this.changeUser.bind(_this);
-    return _this;
-  }
-
-  /**
-   * Process the form.
-   *
-   * @param {object} event - the JavaScript event object
-   */
-
-
-  _createClass(LoginPage, [{
-    key: 'processForm',
-    value: function processForm(event) {
-      var _this2 = this;
-
-      // prevent default action. in this case, action is the form submission event
-      event.preventDefault();
-
-      // create a string for an HTTP body message
-      var email = encodeURIComponent(this.state.user.email);
-      var password = encodeURIComponent(this.state.user.password);
-      var formData = 'email=' + email + '&password=' + password;
-
-      // create an AJAX request
-      var xhr = new XMLHttpRequest();
-      xhr.open('post', '/auth/login');
-      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-      xhr.responseType = 'json';
-      xhr.addEventListener('load', function () {
-        if (xhr.status === 200) {
-          // success
-
-          // change the component-container state
-          _this2.setState({
-            errors: {}
-          });
-
-          // save the token
-          _Auth2.default.authenticateUser(xhr.response.token);
-
-          // update authenticated state
-          _this2.props.toggleAuthenticateStatus();
-
-          // redirect signed in user to dashboard
-          _this2.props.history.push('/');
-          window.location.reload();
-        } else {
-          // failure
-
-          // change the component state
-          var errors = xhr.response.errors ? xhr.response.errors : {};
-          errors.summary = xhr.response.message;
-
-          _this2.setState({
-            errors: errors
-          });
-        }
-      });
-      xhr.send(formData);
-    }
-
-    /**
-     * Change the user object.
-     *
-     * @param {object} event - the JavaScript event object
-     */
-
-  }, {
-    key: 'changeUser',
-    value: function changeUser(event) {
-      var field = event.target.name;
-      var user = this.state.user;
-      user[field] = event.target.value;
-
-      this.setState({
-        user: user
-      });
-    }
-
-    /**
-     * Render the component.
-     */
-
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(_LoginForm2.default, {
-        onSubmit: this.processForm,
-        onChange: this.changeUser,
-        errors: this.state.errors,
-        successMessage: this.state.successMessage,
-        user: this.state.user
-      });
-    }
-  }]);
-
-  return LoginPage;
-}(_react2.default.Component);
-
-LoginPage.contextTypes = {
-  router: _propTypes2.default.object.isRequired
-};
-
-exports.default = LoginPage;
+throw new Error("Module build failed: SyntaxError: Unexpected token (72:1)\n\n\u001b[0m \u001b[90m 70 | \u001b[39m\n \u001b[90m 71 | \u001b[39m        \u001b[90m// redirect signed in user to dashboard\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\n \u001b[90m    | \u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 | \u001b[39m        \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mprops\u001b[33m.\u001b[39mhistory\u001b[33m.\u001b[39mpush(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 74 | \u001b[39m        window\u001b[33m.\u001b[39mlocation\u001b[33m.\u001b[39mreload()\u001b[33m;\u001b[39m\n \u001b[90m 75 | \u001b[39m\u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\u001b[0m\n");
 
 /***/ }),
 /* 288 */
@@ -43935,20 +43360,7 @@ exports.push([module.i, ".footerContFlu {\n\tbackground-color: rgba(40, 40, 40, 
 
 
 /***/ }),
-/* 346 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(34)(false);
-// imports
-
-
-// module
-exports.push([module.i, ".jumbotron {\n\tbackground-color: black;\n    padding: 0;\n    padding-top: 120px;\n    padding-bottom: 120px;\n\tcolor: white;\n\tmargin-bottom: 0px;\n}\n\n.jumboSpace {\n\tmin-height: 50vh;\n\talign-items: center !important;\n}\n\n#desktopImage {\n\tmax-width: 100%;\n\tmargin-top: 40px;\t\n}\n\n#jumboH1 {\n\tcolor: white;\n    font-family: 'Raleway', sans-serif;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    font-size: 50px;\n\tfont-weight: 800;\n\tmargin-bottom: 20px;\n\ttext-align: left !important;\n}\n\n#jumboP {\n\tcolor: white;\n    font-family: 'Open Sans', sans-serif;\n    letter-spacing: 1px;\n    font-size: 18px;\n\ttext-align: left !important;\n}\n\n.btn {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: white;\n    border-radius: 0;\n    border: 2px solid white;\n\tpadding: 10px 50px;\n\tmargin-top: 20px;\n}\n\n.btn:first-of-type {\n\tmargin-right: 20px;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
+/* 346 */,
 /* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -65399,56 +64811,7 @@ if(false) {
 }
 
 /***/ }),
-/* 532 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(346);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(36)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../../../../node_modules/css-loader/index.js!./Jumbotron.css", function() {
-		var newContent = require("!!../../../../node_modules/css-loader/index.js!./Jumbotron.css");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
+/* 532 */,
 /* 533 */
 /***/ (function(module, exports, __webpack_require__) {
 

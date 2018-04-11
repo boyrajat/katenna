@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import injectTapEventPlugin from 'react-tap-event-plugin';
+// import injectTapEventPlugin from 'react-tap-event-plugin';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -23,7 +23,7 @@ import DashboardPage from './containers/DashboardPage';
 import Auth from './modules/Auth';
 
 // remove tap delay, essential for MaterialUI to work properly
-injectTapEventPlugin();
+// injectTapEventPlugin();
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={props => (
@@ -67,12 +67,12 @@ class Main extends Component {
 
   componentDidMount() {
     // check if user is logged in on refresh
-    this.toggleAuthenticateStatus()
+    this.toggleAuthenticateStatus();
   }
 
   toggleAuthenticateStatus() {
     // check authenticated status and toggle state based on that
-    this.setState({ authenticated: Auth.isUserAuthenticated() })
+    this.setState({ authenticated: Auth.isUserAuthenticated() });
   }
 
   render() {

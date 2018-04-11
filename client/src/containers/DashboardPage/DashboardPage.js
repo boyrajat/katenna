@@ -45,7 +45,7 @@ class DashboardPage extends React.Component {
    */
   render() {
     return (
-      <container>
+      <div className="container">
         <TopBar secretData={this.state.secretData} user={this.state.user} />
 
         <div className="row">
@@ -53,7 +53,7 @@ class DashboardPage extends React.Component {
           <SideBar />
           <Dashboard secretData={this.state.secretData} user={this.state.user} />
         </div>
-      </container >
+      </div>
     );
   }
   // test
