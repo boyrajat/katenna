@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-
+import './LogoutButton.css';
 
 const LogoutButton = () =>
-	<div className="btn-group-vertical">
-		<Link className="btn btn-danger" to="/logout" >Logout</Link>
-	</div>;
+	<Link to="/logout" id="logOutClickableArea">
+		<img src='/img/logOut.svg' alt="KATENNA" id="logOutBtn"/>
+	</Link>
+;
 
 export default LogoutButton;
 
