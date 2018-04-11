@@ -41645,7 +41645,7 @@ var DashboardPage = function (_React$Component) {
         _react2.default.createElement(_TopBar2.default, { secretData: this.state.secretData, user: this.state.user }),
         _react2.default.createElement(
           'div',
-          { className: 'row' },
+          { className: 'row', id: 'dashboardMainRow' },
           _react2.default.createElement(_SideBar2.default, null),
           _react2.default.createElement(_Dashboard2.default, { secretData: this.state.secretData, user: this.state.user })
         )
@@ -44785,7 +44785,7 @@ exports = module.exports = __webpack_require__(20)(false);
 
 
 // module
-exports.push([module.i, "#mainDashContainer {\n    background-color: rgba(245, 245, 245, 1);\n    color: #262626;\n    min-height: -webkit-fill-available;\n    font-family: 'Open Sans', sans-serif;\n    padding: 50px;\n    margin: 0;\n}", ""]);
+exports.push([module.i, "#mainDashContainer {\n    background-color: rgba(245, 245, 245, 1);\n    color: #262626;\n    min-height: -webkit-fill-available;\n    font-family: 'Open Sans', sans-serif;\n    padding: 50px;\n\tmargin: 0;\n\tposition: absolute;\n    top: 70px;\n    right: 0;\n}", ""]);
 
 // exports
 
@@ -44925,7 +44925,7 @@ exports = module.exports = __webpack_require__(20)(false);
 
 
 // module
-exports.push([module.i, "#sideBarDiv {\n    background-color: #f6c501;\n    color: white;\n    min-height: -webkit-fill-available;\n    font-family: 'Open Sans', sans-serif;\n    padding: 0;\n    margin: 0;\n}\n\n#sideBarTopInfo {\n    font-family: 'Open Sans', sans-serif;\n    font-size: smaller;\n    text-align: center;\n    padding: 40px;\n}\n\n#sideBarNav{\n\tmin-width: 100%;\n    padding: 0;\n    margin: 0;\n}\n\n#sideBarNavMainBtns {\n    font-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: white;\n    border-radius: 0;\n    border-top: 2px solid white;\n    border-bottom: none;\n    border-right: none;\n    border-left: none;\n    padding: 20px 50px;\n    margin: 0;\n    background-color: rgba(0, 0, 0, 0);\n}\n\n#sideBarNavMainBtns:last-of-type {\n    border-bottom: 2px solid white;\n}\n\n#sideBarNavMainBtns:hover {\n\tbackground-color: white;\n\tcolor: #3a88be;\n}\n", ""]);
+exports.push([module.i, "#sideBarDiv {\n\tbackground-color: #f6c501;\n    color: white;\n    font-family: 'Open Sans', sans-serif;\n    padding: 0;\n    margin: 0;\n    height: 100%;\n    position: fixed;\n    z-index: 1;\n    top: 70px;\n    left: 0;\n    overflow-x: hidden;\n}\n\n#sideBarTopInfo {\n    font-family: 'Open Sans', sans-serif;\n    font-size: smaller;\n    text-align: center;\n    padding: 40px;\n}\n\n#sideBarNav{\n\tmin-width: 100%;\n    padding: 0;\n    margin: 0;\n}\n\n#sideBarNavMainBtns {\n    font-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: white;\n    border-radius: 0;\n    border-top: 2px solid white;\n    border-bottom: none;\n    border-right: none;\n    border-left: none;\n    padding: 20px 50px;\n    margin: 0;\n    background-color: rgba(0, 0, 0, 0);\n}\n\n#sideBarNavMainBtns:last-of-type {\n    border-bottom: 2px solid white;\n}\n\n#sideBarNavMainBtns:hover {\n\tbackground-color: white;\n\tcolor: #3a88be;\n}\n", ""]);
 
 // exports
 
@@ -44953,7 +44953,7 @@ exports = module.exports = __webpack_require__(20)(false);
 
 
 // module
-exports.push([module.i, "#topBarRow {\n\tbackground-color: rgba(0, 0, 0, 0.85);\n    color: white;\n    padding: 20px;\n\tmargin: auto;\n\talign-items: center;\n}\n\n#welcomeTitle {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 25px;\n    font-weight: 600;\n    padding: 0;\n    margin: 0;\n}\n\n#topBarLink {\n\tdisplay: contents;\n\tpadding: 0;\n\tmargin: 0;\n}\n\n#katennaIcon {\n\tmax-height: 30px;\n\tpadding: 0;\n\tmargin: 0;\n\tmargin-right: 20px;\n}\n\n#buttonAlign {\n\ttext-align: right !important;\n\tpadding: 0;\n    margin: 0;\n}\n\n#topBarBrand {\n\tdisplay: flex;\n}", ""]);
+exports.push([module.i, "#topBarRow {\n    position: fixed;\n    top: 0;\n    left: 0;\n    z-index: 100;\n    background-color: #262626;\n    color: white;\n    padding: 20px;\n    margin: auto;\n    align-items: center;\n    width: 100%;\n}\n\n#welcomeTitle {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 25px;\n    font-weight: 600;\n    padding: 0;\n    margin: 0;\n}\n\n#topBarLink {\n\tdisplay: contents;\n\tpadding: 0;\n\tmargin: 0;\n}\n\n#katennaIcon {\n\tmax-height: 30px;\n\tpadding: 0;\n\tmargin: 0;\n\tmargin-right: 20px;\n}\n\n#buttonAlign {\n\ttext-align: right !important;\n\tpadding: 0;\n    margin: 0;\n}\n\n#topBarBrand {\n\tdisplay: flex;\n}", ""]);
 
 // exports
 
