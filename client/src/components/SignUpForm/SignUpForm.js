@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Card, CardText } from 'material-ui/Card';
-import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
+import './SignUpForm.css';
 
 
 const SignUpForm = ({
@@ -12,13 +11,13 @@ const SignUpForm = ({
   errors,
   user,
 }) => (
-    <Card className="container">
+    <div className="container" id="SignUpFormContainer">
       <form action="/" onSubmit={onSubmit}>
-        <h2 className="card-heading">Sign Up</h2>
+        <h2 id="formTitle">Sign Up</h2>
 
         {errors.summary && <p className="error-message">{errors.summary}</p>}
 
-        <div className="field-line">
+        <div className="field-line" id="fieldDiv">
           <TextField
             floatingLabelText="Name"
             name="name"
@@ -28,7 +27,7 @@ const SignUpForm = ({
           />
         </div>
 
-        <div className="field-line">
+        <div className="field-line" id="fieldDiv">
           <TextField
             floatingLabelText="Email"
             name="email"
@@ -38,7 +37,7 @@ const SignUpForm = ({
           />
         </div>
 
-        <div className="field-line">
+        <div className="field-line" id="fieldDiv">
           <TextField
             floatingLabelText="Password"
             type="password"
@@ -50,12 +49,17 @@ const SignUpForm = ({
         </div>
 
         <div>
-          <button type="submit" label="Create New Account" primary>Sign Up</button>
+          <button  id="FormSubmitBtn" type="submit" label="Create New Account" primary>Sign Up</button>
         </div>
 
-        <CardText>Already have an account? <Link to={'/login'} style={{ fontSize: '16px', color: 'black' }}>Log in</Link></CardText>
+		<div id="noAcctMssg">
+			Already have an account?  &nbsp; 
+			<Link to={'/login'}>Log in</Link>
+		</div>
+
+
       </form>
-    </Card>
+    </div>
   );
 
 SignUpForm.propTypes = {
