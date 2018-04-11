@@ -50,3 +50,13 @@
 	background-color: white;
 	color: #3a88be;
 }
+
+#sideBarNavMainBtns:focus {
+	box-shadow: none; 
+}
+
+#sideBarNavMainBtns:active, .btn:not(:disabled):not(.disabled):active  {
+	background-color: white !important;
+	color: #3a88be !important;
+}
+

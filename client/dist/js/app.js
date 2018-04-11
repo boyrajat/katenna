@@ -39907,11 +39907,11 @@ var EmployeesFunctions = function (_React$Component) {
           items.map(function (item) {
             return _react2.default.createElement(
               'div',
-              { className: 'card eachEmployeeCard', style: { maxWidth: "30%", minWidth: "30%" } },
+              { className: 'card eachEmployeeCard', style: { maxWidth: "300px", minWidth: "300px" } },
               _react2.default.createElement(
                 'div',
                 { className: 'eachImgDiv' },
-                _react2.default.createElement('img', { className: 'card-img-top eachCardImg', src: 'http://via.placeholder.com/100x100', alt: 'Card image cap' })
+                _react2.default.createElement('img', { className: 'card-img-top eachCardImg', src: 'http://via.placeholder.com/300x300', alt: 'Card image cap' })
               ),
               _react2.default.createElement(
                 'div',
@@ -41136,12 +41136,12 @@ var SideBar = function SideBar() {
 			{ className: "btn-group-vertical", id: "sideBarNav" },
 			_react2.default.createElement(
 				_reactRouterDom.Link,
-				{ className: "btn btn-secondary", id: "sideBarNavMainBtns", to: "/employees" },
+				{ className: "btn", id: "sideBarNavMainBtns", to: "/employees" },
 				"Employees"
 			),
 			_react2.default.createElement(
 				_reactRouterDom.Link,
-				{ className: "btn btn-secondary", id: "sideBarNavMainBtns", to: "/task" },
+				{ className: "btn", id: "sideBarNavMainBtns", to: "/task" },
 				"Tasks"
 			)
 		)
@@ -44925,7 +44925,7 @@ exports = module.exports = __webpack_require__(20)(false);
 
 
 // module
-exports.push([module.i, "#sideBarDiv {\n\tbackground-color: #f6c501;\n    color: white;\n    font-family: 'Open Sans', sans-serif;\n    padding: 0;\n    margin: 0;\n    height: 100%;\n    position: fixed;\n    z-index: 1;\n    top: 70px;\n    left: 0;\n    overflow-x: hidden;\n}\n\n#sideBarTopInfo {\n    font-family: 'Open Sans', sans-serif;\n    font-size: smaller;\n    text-align: center;\n    padding: 40px;\n}\n\n#sideBarNav{\n\tmin-width: 100%;\n    padding: 0;\n    margin: 0;\n}\n\n#sideBarNavMainBtns {\n    font-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: white;\n    border-radius: 0;\n    border-top: 2px solid white;\n    border-bottom: none;\n    border-right: none;\n    border-left: none;\n    padding: 20px 50px;\n    margin: 0;\n    background-color: rgba(0, 0, 0, 0);\n}\n\n#sideBarNavMainBtns:last-of-type {\n    border-bottom: 2px solid white;\n}\n\n#sideBarNavMainBtns:hover {\n\tbackground-color: white;\n\tcolor: #3a88be;\n}\n", ""]);
+exports.push([module.i, "#sideBarDiv {\n\tbackground-color: #f6c501;\n    color: white;\n    font-family: 'Open Sans', sans-serif;\n    padding: 0;\n    margin: 0;\n    height: 100%;\n    position: fixed;\n    z-index: 1;\n    top: 70px;\n    left: 0;\n    overflow-x: hidden;\n}\n\n#sideBarTopInfo {\n    font-family: 'Open Sans', sans-serif;\n    font-size: smaller;\n    text-align: center;\n    padding: 40px;\n}\n\n#sideBarNav{\n\tmin-width: 100%;\n    padding: 0;\n    margin: 0;\n}\n\n#sideBarNavMainBtns {\n    font-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: white;\n    border-radius: 0;\n    border-top: 2px solid white;\n    border-bottom: none;\n    border-right: none;\n    border-left: none;\n    padding: 20px 50px;\n    margin: 0;\n    background-color: rgba(0, 0, 0, 0);\n}\n\n#sideBarNavMainBtns:last-of-type {\n    border-bottom: 2px solid white;\n}\n\n#sideBarNavMainBtns:hover {\n\tbackground-color: white;\n\tcolor: #3a88be;\n}\n\n#sideBarNavMainBtns:focus {\n\tbox-shadow: none; \n}\n\n#sideBarNavMainBtns:active, .btn:not(:disabled):not(.disabled):active  {\n\tbackground-color: white !important;\n\tcolor: #3a88be !important;\n}\n\n", ""]);
 
 // exports
 
