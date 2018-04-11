@@ -84,7 +84,7 @@ class Jumbotron extends React.Component {
 							>
 
 								<img src="/img/modalCloseButton.svg" id="modalClose" onClick={this.handleCloseModalLogin}/>
-
+								{/* THIS IS WHAT IS INSIDE THE MODAL */}
 								<LoginPage />
 							</ReactModal>
 
