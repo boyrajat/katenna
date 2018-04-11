@@ -51,9 +51,9 @@ class EmployeesFunctions extends React.Component {
       return (
         <div className="card-deck" id="employeesContainerDiv">
           {items.map(item => (
-            <div className="card eachEmployeeCard" style={{maxWidth: "30%", minWidth: "30%"}}>
+            <div className="card eachEmployeeCard" style={{maxWidth: "300px", minWidth: "300px"}}>
 				<div className="eachImgDiv">
-					<img className="card-img-top eachCardImg" src="http://via.placeholder.com/100x100" alt="Card image cap"/>
+					<img className="card-img-top eachCardImg" src="http://via.placeholder.com/300x300" alt="Card image cap"/>
 				</div>
 				
 				<div className="card-header eachCardHeader">
@@ -76,7 +76,7 @@ class EmployeesFunctions extends React.Component {
 							Tasks
 							</Link>
 						</div>
-						
+
 						<div className="col-2"></div>
 						
 						<div className="col-5 eachFooterBtn">

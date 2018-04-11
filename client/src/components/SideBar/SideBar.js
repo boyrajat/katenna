@@ -10,8 +10,8 @@ const SideBar = () =>
 			Please look under katenna/server/static/img/employees for a bunch of 'profile images' we can use.
 		</div>
 		<div className="btn-group-vertical" id="sideBarNav">
-			<Link className="btn btn-secondary" id="sideBarNavMainBtns" to="/employees" >Employees</Link>
-			<Link className="btn btn-secondary" id="sideBarNavMainBtns" to="/task" >Tasks</Link>
+			<Link className="btn" id="sideBarNavMainBtns" to="/employees" >Employees</Link>
+			<Link className="btn" id="sideBarNavMainBtns" to="/task" >Tasks</Link>
 		</div>
 	</div>
 ;
