@@ -9,9 +9,12 @@ import {
   withRouter
 } from 'react-router-dom'
 import LogoutFunction from '../../containers/Logout';
+import GetTasks from '../EmployeesFunctions2';
 import Employees from '../EmployeesFunctions';
 import Tasks from '../TasksFunctions';
 import SideBar from '../SideBar';
+
+
 const Dashboard = ({ secretData, user }) => (
   <div className="col-9">
     <div className="container">
@@ -19,7 +22,8 @@ const Dashboard = ({ secretData, user }) => (
       <Route path="/logout" component={LogoutFunction} />
       <Route path="/employees" component={Employees} />
       <Route path="/task" component={Tasks} />
-
+      {/* get employee's tasks when click on button 'See tasks' */}
+      <Route path="/taskback" component={GetTasks} />
     </div>
   </div>
 );

@@ -9,7 +9,7 @@ import {
   withRouter
 } from 'react-router-dom'
 
-class EmployeesFunctions extends React.Component {
+class EmployeesFunctions2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,7 +20,9 @@ class EmployeesFunctions extends React.Component {
   }
 
   componentDidMount() {
-    fetch("employees/findall")
+    // receive employee position from this employee
+    const { employeePosition } = this.props.location.state;
+    fetch("tasks/dept/" + employeePosition)
       .then(res => res.json())
       .then(
         (result) => {
@@ -43,6 +45,7 @@ class EmployeesFunctions extends React.Component {
 
   render() {
     const { error, isLoaded, items } = this.state;
+    const { employeeName } = this.props.location.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -50,21 +53,22 @@ class EmployeesFunctions extends React.Component {
     } else {
       return (
         <div>
+
           {items.map(item => (
             <div class="card text-center">
-              <div class="card-header">
-                {item.name}
+              <div class="card-header black">
+                Supervisor {item.supervisor}
+                Employee {employeeName}
               </div>
               <img class="card-img-top" src="..." alt="Card image cap" />
               <div class="card-body">
-                <h5 class="card-title">{item.position}</h5>
+                <h5 class="card-title">{item.name}</h5>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Phone: {item.phone}</li>
-                  <li class="list-group-item">Email: {item.email}</li>
-                  <li class="list-group-item">Type: {item.type}</li>
+                  {item.tasks.map(task => (
+                    <li class="list-group-item">Task: {task.item}</li>
+                  ))}
                 </ul>
-                {/* use the link below to pass state to EmployeeFunctions2 */}
-                <Link class="btn btn-secondary" to={{ pathname: '/taskback', state: { employeeName: item.name, employeePosition: item.position } }}>See Tasks</Link>
+                <Link class="btn btn-secondary" to="/employees" >Go Back</Link>
               </div>
             </div>
           ))}
@@ -73,4 +77,5 @@ class EmployeesFunctions extends React.Component {
     }
   }
 }
-export default EmployeesFunctions;
+
+export default EmployeesFunctions2;
