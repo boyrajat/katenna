@@ -1,9 +1,14 @@
 #topBarRow {
-	background-color: rgba(0, 0, 0, 0.85);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #262626;
     color: white;
     padding: 20px;
-	margin: auto;
-	align-items: center;
+    margin: auto;
+    align-items: center;
+    width: 100%;
 }
 
 #welcomeTitle {
