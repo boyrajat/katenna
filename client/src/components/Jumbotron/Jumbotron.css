@@ -36,7 +36,7 @@
 	text-align: left !important;
 }
 
-.btn {
+#jumboBtn {
 	font-family: 'Raleway', sans-serif;
     font-size: 15px;
     font-weight: 600;
@@ -47,8 +47,41 @@
     border: 2px solid white;
 	padding: 10px 50px;
 	margin-top: 20px;
+	background-color: rgba(0, 0, 0, 0);
 }
 
-.btn:first-of-type {
+#jumboBtn:first-of-type {
 	margin-right: 20px;
 }
+
+.Modal {
+	position: relative;
+    max-width: max-content;
+    max-height: max-content;
+    padding: 40px;
+    margin: auto;
+    margin-top: 50px;
+    background: white;
+	border-radius: 5px;
+	text-align: right;
+  }
+
+  .Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .75);
+  }
+
+  #modalClose {
+	font-size: 30px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    border-radius: 0;
+    border: 2px solid black;
+    padding: 5px 20px;
+    background-color: rgba(0, 0, 0, 0);
+    font-family: 'Open Sans', sans-serif;
+  }

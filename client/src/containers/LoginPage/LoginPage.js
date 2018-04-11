@@ -62,14 +62,16 @@ class LoginPage extends React.Component {
           errors: {}
         });
 
-        // save the token
-        Auth.authenticateUser(xhr.response.token);
+		// save the token
+		Auth.authenticateUser(xhr.response.token);
 
-        // update authenticated state
-        this.props.toggleAuthenticateStatus()
+		// update authenticated state
+		this.props.toggleAuthenticateStatus();
 
         // redirect signed in user to dashboard
-        this.props.history.push('/');
+		this.props.history.push('/');
+		// window.location.reload(); 
+		//^^^ Alex & MW trying to debbug here
       } else {
         // failure
 
