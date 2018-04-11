@@ -20,7 +20,7 @@ class EmployeesFunctions2 extends React.Component {
   }
 
   componentDidMount() {
-    // receive employee position from this employee
+    // received employee position from the employee click
     const { employeePosition } = this.props.location.state;
     fetch("tasks/dept/" + employeePosition)
       .then(res => res.json())

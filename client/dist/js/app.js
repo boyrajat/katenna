@@ -40377,47 +40377,52 @@ var EmployeesFunctions = function (_React$Component) {
           items.map(function (item) {
             return _react2.default.createElement(
               'div',
-              { 'class': 'card text-center' },
+              { className: 'card text-center' },
               _react2.default.createElement(
                 'div',
-                { 'class': 'card-header' },
-                item.name
+                { className: 'card-header' },
+                item.position
               ),
-              _react2.default.createElement('img', { 'class': 'card-img-top', src: '...', alt: 'Card image cap' }),
+              _react2.default.createElement('img', { className: 'card-img-top', src: '...', alt: 'Card image cap' }),
               _react2.default.createElement(
                 'div',
-                { 'class': 'card-body' },
+                { className: 'card-body' },
                 _react2.default.createElement(
                   'h5',
-                  { 'class': 'card-title' },
-                  item.position
+                  { className: 'card-title' },
+                  item.name
                 ),
                 _react2.default.createElement(
                   'ul',
-                  { 'class': 'list-group list-group-flush' },
+                  { className: 'list-group list-group-flush' },
                   _react2.default.createElement(
                     'li',
-                    { 'class': 'list-group-item' },
+                    { className: 'list-group-item' },
                     'Phone: ',
                     item.phone
                   ),
                   _react2.default.createElement(
                     'li',
-                    { 'class': 'list-group-item' },
+                    { className: 'list-group-item' },
                     'Email: ',
                     item.email
                   ),
                   _react2.default.createElement(
                     'li',
-                    { 'class': 'list-group-item' },
+                    { className: 'list-group-item' },
                     'Type: ',
                     item.type
                   )
                 ),
                 _react2.default.createElement(
                   _reactRouterDom.Link,
-                  { 'class': 'btn btn-secondary', to: { pathname: '/taskback', state: { employeeName: item.name, employeePosition: item.position } } },
+                  { className: 'btn btn-secondary', to: { pathname: '/taskback', state: { employeeName: item.name, employeePosition: item.position } } },
                   'See Tasks'
+                ),
+                _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { className: 'btn btn-info', to: '' },
+                  'Add New Task'
                 )
               )
             );
@@ -40508,7 +40513,7 @@ var EmployeesFunctions2 = function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      // receive employee position from this employee
+      // received employee position from the employee click
       var employeePosition = this.props.location.state.employeePosition;
 
       fetch("tasks/dept/" + employeePosition).then(function (res) {
