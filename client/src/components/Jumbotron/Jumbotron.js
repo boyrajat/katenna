@@ -97,7 +97,7 @@ class Jumbotron extends React.Component {
 								className="Modal"
 								overlayClassName="Overlay"
 							>
-								<img src="/img/modalCloseButton.svg" id="modalClose" onClick={this.handleCloseModalLogin}/>
+								<img src="/img/modalCloseButton.svg" id="modalClose" onClick={this.handleCloseModalSignup}/>
 								
 								<SignUpPage />
 							</ReactModal>

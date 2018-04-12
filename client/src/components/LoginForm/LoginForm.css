@@ -35,7 +35,8 @@
     border: 2px solid rgb(0, 0, 0);
 	padding: 10px 50px;
 	background-color: rgba(0, 0, 0, 0);
-	margin-bottom: 20px;
+    margin-bottom: 20px;
+    
 }
 
 #noAcctMssg {
@@ -52,4 +53,12 @@
     font-weight: 100;
     text-transform: capitalize;
     color: #87e0f0;
+}
+
+.error-message {
+    padding: 0 16px;
+    color: #f24336;
+    margin-top: 20px;
+    font-size: 13px;
+    text-align: right;
 }
