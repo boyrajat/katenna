@@ -48,7 +48,7 @@ const SignUpForm = ({
           />
         </div>
 
-        <div>
+        <div id="FormButtonDiv">
           <button  id="FormSubmitBtn" type="submit" label="Create New Account" primary>Sign Up</button>
         </div>
 

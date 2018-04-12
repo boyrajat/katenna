@@ -20,6 +20,10 @@
 	margin-top: 20px;
 }
 
+#FormButtonDiv {
+	text-align: center !important;
+}
+
 #FormSubmitBtn {
 	margin-top: 40px;
 	font-family: 'Raleway', sans-serif;

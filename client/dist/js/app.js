@@ -40689,7 +40689,7 @@ var LoginForm = function LoginForm(_ref) {
       ),
       _react2.default.createElement(
         'div',
-        null,
+        { id: 'FormButtonDiv' },
         _react2.default.createElement(
           'button',
           { id: 'FormSubmitBtn', type: 'submit', label: 'Log in' },
@@ -41236,7 +41236,7 @@ var SignUpForm = function SignUpForm(_ref) {
       ),
       _react2.default.createElement(
         'div',
-        null,
+        { id: 'FormButtonDiv' },
         _react2.default.createElement(
           'button',
           { id: 'FormSubmitBtn', type: 'submit', label: 'Create New Account', primary: true },
@@ -44813,7 +44813,7 @@ exports = module.exports = __webpack_require__(20)(false);
 
 
 // module
-exports.push([module.i, "#employeesContainerDiv {\n    padding: 0;\n    margin: 0;\n}\n\n.eachEmployeeCard {\n\tborder: none;\n    border-radius: 0;\n    margin-bottom: 40px !important;\n    padding: 0;\n}\n\n.eachImgDiv {\n    max-height: 150px;\n    border: none;\n    border-radius: 0;\n}\n\n.eachCardImg {\n\tborder: none;\n    border-radius: 0;\n}\n\n.eachCardHeader {\n\tbackground-color: #3a88be;\n    color: white;\n    font-family: 'Raleway', sans-serif;\n    text-transform: capitalize;\n}\n\n.eachCardTitle {\n\tfont-weight: 600;\n    font-size: 25px;\n}\n\n.eachCardSubtitle {\n\tfont-family: 'Open Sans', sans-serif;\n    text-transform: uppercase;\n    font-size: 15px;\n    font-weight: 100;\n    letter-spacing: 2px;\n}\n\n.eachCardBody {\n    border: none;\n    border-radius: 0;\n    padding: 1.25rem;\n}\n\n.eachCardText {\n\tpadding: 0;\n    margin: 0;\n}\n\n.eachCardListItem {\n\ttext-align: left !important;\n    padding: 0;\n    margin: 10px 0px !important;\n}\n\n.eachCardItem {\n\tfont-weight: 600;\n}\n\n.capitalize {\n\ttext-transform: capitalize;\n}\n.eachCardFooter {\n    background-color: white;\n    border: none;\n    border-radius: 0;\n    margin: 0;\n    margin-top: 30px;\n}\n\n.eachFooterBtn {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 13px;\n    font-weight: 600;\n    text-transform: uppercase;\n    color: white;\n    border-radius: 0;\n    border: none;\n    padding: 0;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    background-color: #f6c501;\n    text-align: center;\n}\n\n.eachFooterBtn > a {\n\tpadding: 0 !important;\n\tmargin: 0 !important;\n\tcolor:\twhite;\n}", ""]);
+exports.push([module.i, "#employeesContainerDiv {\n    padding: 0;\n    margin: 0;\n}\n\n.eachEmployeeCard {\n\tborder: none;\n    border-radius: 0;\n    margin-bottom: 40px !important;\n    padding: 0;\n}\n\n.eachImgDiv {\n    max-height: 150px;\n    border: none;\n    border-radius: 0;\n}\n\n.eachCardImg {\n\tborder: none;\n    border-radius: 0;\n}\n\n.eachCardHeader {\n\tbackground-color: #52eab6;\n    color: white;\n    font-family: 'Raleway', sans-serif;\n    text-transform: capitalize;\n}\n\n.eachCardTitle {\n\tfont-weight: 600;\n    font-size: 25px;\n}\n\n.eachCardSubtitle {\n\tfont-family: 'Open Sans', sans-serif;\n    text-transform: uppercase;\n    font-size: 15px;\n    font-weight: 100;\n    letter-spacing: 2px;\n}\n\n.eachCardBody {\n    border: none;\n    border-radius: 0;\n    padding: 1.25rem;\n}\n\n.eachCardText {\n\tpadding: 0;\n    margin: 0;\n}\n\n.eachCardListItem {\n\ttext-align: left !important;\n    padding: 0;\n    margin: 10px 0px !important;\n}\n\n.eachCardItem {\n\tfont-weight: 600;\n}\n\n.capitalize {\n\ttext-transform: capitalize;\n}\n.eachCardFooter {\n    background-color: white;\n    border: none;\n    border-radius: 0;\n    margin: 0;\n    margin-top: 30px;\n}\n\n.eachFooterBtn {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 13px;\n    font-weight: 600;\n    text-transform: uppercase;\n    color: white;\n    border-radius: 0;\n    border: none;\n    padding: 0;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    background-color: #f6c501;\n    text-align: center;\n}\n\n.eachFooterBtn > a {\n\tpadding: 0 !important;\n\tmargin: 0 !important;\n\tcolor:\twhite;\n}", ""]);
 
 // exports
 
@@ -44869,7 +44869,7 @@ exports = module.exports = __webpack_require__(20)(false);
 
 
 // module
-exports.push([module.i, "#LoginFormContainer {\n\tmargin: auto;\n    padding: 0;\n}\n\n#formTitle {\n    font-family: 'Raleway', sans-serif;\n    font-size: 35px;\n    font-weight: 100;\n    text-transform: uppercase;\n    text-align: left;\n    letter-spacing: 1px;\n    padding: 0;\n    margin: 0;\n    margin-top: -6px;\n}\n\n#fieldDiv {\n\tpadding: 0;\n}\n\n#fieldDiv:first-of-type {\n\tmargin-top: 20px;\n}\n\n#FormSubmitBtn {\n\tmargin-top: 40px;\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: rgb(0, 0, 0);\n    border-radius: 0;\n    border: 2px solid rgb(0, 0, 0);\n\tpadding: 10px 50px;\n\tbackground-color: rgba(0, 0, 0, 0);\n\tmargin-bottom: 20px;\n}\n\n#noAcctMssg {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: rgba(0, 0, 0, 0.25);\n}\n\n#noAcctMssg a {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: #87e0f0;\n}", ""]);
+exports.push([module.i, "#LoginFormContainer {\n\tmargin: auto;\n    padding: 0;\n}\n\n#formTitle {\n    font-family: 'Raleway', sans-serif;\n    font-size: 35px;\n    font-weight: 100;\n    text-transform: uppercase;\n    text-align: left;\n    letter-spacing: 1px;\n    padding: 0;\n    margin: 0;\n    margin-top: -6px;\n}\n\n#fieldDiv {\n\tpadding: 0;\n}\n\n#fieldDiv:first-of-type {\n\tmargin-top: 20px;\n}\n\n#FormButtonDiv {\n\ttext-align: center !important;\n}\n\n#FormSubmitBtn {\n\tmargin-top: 40px;\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: rgb(0, 0, 0);\n    border-radius: 0;\n    border: 2px solid rgb(0, 0, 0);\n\tpadding: 10px 50px;\n\tbackground-color: rgba(0, 0, 0, 0);\n\tmargin-bottom: 20px;\n}\n\n#noAcctMssg {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: rgba(0, 0, 0, 0.25);\n}\n\n#noAcctMssg a {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: #87e0f0;\n}", ""]);
 
 // exports
 
@@ -44939,7 +44939,7 @@ exports = module.exports = __webpack_require__(20)(false);
 
 
 // module
-exports.push([module.i, "#SignUpFormContainer {\n\tmargin: auto;\n    padding: 0;\n}\n\n#formTitle {\n    font-family: 'Raleway', sans-serif;\n    font-size: 35px;\n    font-weight: 100;\n    text-transform: uppercase;\n    text-align: left;\n    letter-spacing: 1px;\n    padding: 0;\n    margin: 0;\n    margin-top: -6px;\n}\n\n#fieldDiv {\n\tpadding: 0;\n\tmargin-top: 20px;\n}\n\n#FormSubmitBtn {\n\tmargin-top: 40px;\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: rgb(0, 0, 0);\n    border-radius: 0;\n    border: 2px solid rgb(0, 0, 0);\n\tpadding: 10px 50px;\n\tbackground-color: rgba(0, 0, 0, 0);\n\tmargin-bottom: 20px;\n}\n\n#noAcctMssg {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: rgba(0, 0, 0, 0.25);\n}\n\n#noAcctMssg a {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: #87e0f0;\n}", ""]);
+exports.push([module.i, "#SignUpFormContainer {\n\tmargin: auto;\n    padding: 0;\n}\n\n#formTitle {\n    font-family: 'Raleway', sans-serif;\n    font-size: 35px;\n    font-weight: 100;\n    text-transform: uppercase;\n    text-align: left;\n    letter-spacing: 1px;\n    padding: 0;\n    margin: 0;\n    margin-top: -6px;\n}\n\n#fieldDiv {\n\tpadding: 0;\n\tmargin-top: 20px;\n}\n\n#FormButtonDiv {\n\ttext-align: center !important;\n}\n\n#FormSubmitBtn {\n\tmargin-top: 40px;\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: rgb(0, 0, 0);\n    border-radius: 0;\n    border: 2px solid rgb(0, 0, 0);\n\tpadding: 10px 50px;\n\tbackground-color: rgba(0, 0, 0, 0);\n\tmargin-bottom: 20px;\n}\n\n#noAcctMssg {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: rgba(0, 0, 0, 0.25);\n}\n\n#noAcctMssg a {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: #87e0f0;\n}", ""]);
 
 // exports
 
