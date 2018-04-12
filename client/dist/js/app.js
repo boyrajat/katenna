@@ -40689,7 +40689,7 @@ var LoginForm = function LoginForm(_ref) {
       ),
       _react2.default.createElement(
         'div',
-        null,
+        { className: 'FormButtonDiv' },
         _react2.default.createElement(
           'button',
           { id: 'FormSubmitBtn', type: 'submit', label: 'Log in' },
@@ -41236,7 +41236,7 @@ var SignUpForm = function SignUpForm(_ref) {
       ),
       _react2.default.createElement(
         'div',
-        null,
+        { className: 'FormButtonDiv' },
         _react2.default.createElement(
           'button',
           { id: 'FormSubmitBtn', type: 'submit', label: 'Create New Account', primary: true },
@@ -44869,7 +44869,7 @@ exports = module.exports = __webpack_require__(20)(false);
 
 
 // module
-exports.push([module.i, "#LoginFormContainer {\n\tmargin: auto;\n    padding: 0;\n}\n\n#formTitle {\n    font-family: 'Raleway', sans-serif;\n    font-size: 35px;\n    font-weight: 100;\n    text-transform: uppercase;\n    text-align: left;\n    letter-spacing: 1px;\n    padding: 0;\n    margin: 0;\n    margin-top: -6px;\n}\n\n#fieldDiv {\n\tpadding: 0;\n}\n\n#fieldDiv:first-of-type {\n\tmargin-top: 20px;\n}\n\n#FormSubmitBtn {\n\tmargin-top: 40px;\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: rgb(0, 0, 0);\n    border-radius: 0;\n    border: 2px solid rgb(0, 0, 0);\n\tpadding: 10px 50px;\n\tbackground-color: rgba(0, 0, 0, 0);\n    margin-bottom: 20px;\n    \n}\n\n#noAcctMssg {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: rgba(0, 0, 0, 0.25);\n}\n\n#noAcctMssg a {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: #87e0f0;\n}\n\n.error-message {\n    padding: 0 16px;\n    color: #f24336;\n    margin-top: 20px;\n    font-size: 13px;\n    text-align: right;\n}\n", ""]);
+exports.push([module.i, "#LoginFormContainer {\n\tmargin: auto;\n    padding: 0;\n}\n\n#formTitle {\n    font-family: 'Raleway', sans-serif;\n    font-size: 35px;\n    font-weight: 100;\n    text-transform: uppercase;\n    text-align: left;\n    letter-spacing: 1px;\n    padding: 0;\n    margin: 0;\n    margin-top: -6px;\n}\n\n#fieldDiv {\n\tpadding: 0;\n}\n\n#fieldDiv:first-of-type {\n\tmargin-top: 20px;\n}\n\n.FormButtonDiv {\n\ttext-align: center;\n}\n\n#FormSubmitBtn {\n\tmargin-top: 40px;\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: rgb(0, 0, 0);\n    border-radius: 0;\n    border: 2px solid rgb(0, 0, 0);\n\tpadding: 10px 50px;\n\tbackground-color: rgba(0, 0, 0, 0);\n    margin-bottom: 20px;\n    \n}\n\n#noAcctMssg {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: rgba(0, 0, 0, 0.25);\n}\n\n#noAcctMssg a {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: #87e0f0;\n}\n\n.error-message {\n    padding: 0 16px;\n    color: #f24336;\n    margin-top: 20px;\n    font-size: 13px;\n    text-align: right;\n}\n", ""]);
 
 // exports
 

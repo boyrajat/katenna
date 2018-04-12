@@ -40,7 +40,7 @@ const LoginForm = ({
           />
         </div>
 
-        <div>
+        <div className="FormButtonDiv">
           <button id="FormSubmitBtn" type="submit" label="Log in">LOG IN</button>
         </div>
 
