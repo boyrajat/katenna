@@ -50,3 +50,10 @@
     text-transform: capitalize;
     color: #87e0f0;
 }
+.error-message {
+    padding: 0 16px;
+    color: #f24336;
+    margin-top: 20px;
+    font-size: 13px;
+    text-align: right;
+}
