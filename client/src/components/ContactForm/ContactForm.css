@@ -55,3 +55,9 @@ form {
     border: 2px solid #87e0f0;
     background-color: rgba(255, 255, 255, 0);
 }
+
+#contactSubmit:hover {
+	color: #282828;
+	background-color: #87e0f0;
+	text-decoration: none;
+}

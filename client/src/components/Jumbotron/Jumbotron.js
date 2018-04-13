@@ -40,10 +40,12 @@ class Jumbotron extends React.Component {
 	//HELPERS
 	handleOpenModalLogin() {
 		this.setState({ showModalLogin: true });
+		this.setState({ showModalSignup: false });
 	}
 
 	handleOpenModalSignUp() {
 		this.setState({ showModalSignup: true });
+		this.setState({ showModalLogin: false });
 	}
 
 	handleCloseModalLogin() {
@@ -84,8 +86,15 @@ class Jumbotron extends React.Component {
 							>
 
 								<img src="/img/modalCloseButton.svg" id="modalClose" onClick={this.handleCloseModalLogin}/>
+
 								{/* THIS IS WHAT IS INSIDE THE MODAL */}
 								<LoginPage />
+
+								<div className="noAcctMssg">
+									Don't have an account? &nbsp; 
+									<span onClick={() => this.handleOpenModalSignUp()}>Create one now</span>
+								</div>
+
 							</ReactModal>
 
 							<ReactModal
@@ -100,6 +109,12 @@ class Jumbotron extends React.Component {
 								<img src="/img/modalCloseButton.svg" id="modalClose" onClick={this.handleCloseModalSignup}/>
 								
 								<SignUpPage />
+
+								<div className="noAcctMssg">
+									Already have an account?  &nbsp; 
+									<span onClick={() => this.handleOpenModalLogin()}>Log in</span>
+								</div>
+
 							</ReactModal>
 
 						</div>

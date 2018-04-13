@@ -113,6 +113,13 @@
     border: 2px solid #1DE9B6;
 }
 
+#freeCard .card-body a:hover {
+	color: white;
+	background-color: #1DE9B6;
+	border: 2px solid #1DE9B6;
+	text-decoration: none;
+}
+
 
 
 
@@ -125,6 +132,13 @@
     border: 2px solid #F44336;
 }
 
+#smallCard .card-body a:hover {
+	color: white;
+	background-color: #F44336;
+	border: 2px solid #F44336;
+	text-decoration: none;
+}
+
 
 
 
@@ -135,4 +149,11 @@
 #largeCard .card-body a {
     color: #FFC400;
     border: 2px solid #FFC400;
+}
+
+#largeCard .card-body a:hover {
+	color: white;
+	background-color: #FFC400;
+	border: 2px solid #FFC400;
+	text-decoration: none;
 }

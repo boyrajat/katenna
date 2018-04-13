@@ -40480,11 +40480,13 @@ var Jumbotron = function (_React$Component) {
 		key: 'handleOpenModalLogin',
 		value: function handleOpenModalLogin() {
 			this.setState({ showModalLogin: true });
+			this.setState({ showModalSignup: false });
 		}
 	}, {
 		key: 'handleOpenModalSignUp',
 		value: function handleOpenModalSignUp() {
 			this.setState({ showModalSignup: true });
+			this.setState({ showModalLogin: false });
 		}
 	}, {
 		key: 'handleCloseModalLogin',
@@ -40552,7 +40554,19 @@ var Jumbotron = function (_React$Component) {
 									overlayClassName: 'Overlay'
 								},
 								_react2.default.createElement('img', { src: '/img/modalCloseButton.svg', id: 'modalClose', onClick: this.handleCloseModalLogin }),
-								_react2.default.createElement(_LoginPage2.default, null)
+								_react2.default.createElement(_LoginPage2.default, null),
+								_react2.default.createElement(
+									'div',
+									{ className: 'noAcctMssg' },
+									'Don\'t have an account? \xA0',
+									_react2.default.createElement(
+										'span',
+										{ onClick: function onClick() {
+												return _this2.handleOpenModalSignUp();
+											} },
+										'Create one now'
+									)
+								)
 							),
 							_react2.default.createElement(
 								_reactModal2.default,
@@ -40566,7 +40580,19 @@ var Jumbotron = function (_React$Component) {
 									overlayClassName: 'Overlay'
 								},
 								_react2.default.createElement('img', { src: '/img/modalCloseButton.svg', id: 'modalClose', onClick: this.handleCloseModalSignup }),
-								_react2.default.createElement(_SignUpPage2.default, null)
+								_react2.default.createElement(_SignUpPage2.default, null),
+								_react2.default.createElement(
+									'div',
+									{ className: 'noAcctMssg' },
+									'Already have an account?  \xA0',
+									_react2.default.createElement(
+										'span',
+										{ onClick: function onClick() {
+												return _this2.handleOpenModalLogin();
+											} },
+										'Log in'
+									)
+								)
 							)
 						),
 						_react2.default.createElement(
@@ -40695,16 +40721,6 @@ var LoginForm = function LoginForm(_ref) {
           { id: 'FormSubmitBtn', type: 'submit', label: 'Log in' },
           'LOG IN'
         )
-      ),
-      _react2.default.createElement(
-        'div',
-        { id: 'noAcctMssg' },
-        'Don\'t have an account? \xA0',
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/signup' },
-          'Create one now'
-        )
       )
     )
   );
@@ -40818,6 +40834,10 @@ __webpack_require__(550);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function refreshPage() {
+	window.location.reload();
+}
+
 var NavBar = function NavBar() {
 	return _react2.default.createElement(
 		"nav",
@@ -40826,8 +40846,8 @@ var NavBar = function NavBar() {
 			"div",
 			{ className: "container" },
 			_react2.default.createElement(
-				_reactRouterDom.Link,
-				{ className: "navbar-brand", to: "/" },
+				"button",
+				{ className: "navbar-brand", id: "logoButton", onClick: refreshPage },
 				_react2.default.createElement("img", { src: "/img/katennaWhite.svg", alt: "KATENNA", id: "logo" })
 			),
 			_react2.default.createElement(
@@ -40840,7 +40860,7 @@ var NavBar = function NavBar() {
 				{ className: "collapse navbar-collapse justify-content-end", id: "navbarText" },
 				_react2.default.createElement(
 					"ul",
-					{ className: "navbar-nav " },
+					{ className: "navbar-nav" },
 					_react2.default.createElement(
 						"li",
 						{ className: "nav-item" },
@@ -41244,16 +41264,6 @@ var SignUpForm = function SignUpForm(_ref) {
           'button',
           { id: 'FormSubmitBtn', type: 'submit', label: 'Create New Account', primary: true },
           'Sign Up'
-        )
-      ),
-      _react2.default.createElement(
-        'div',
-        { id: 'noAcctMssg' },
-        'Already have an account?  \xA0',
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/login' },
-          'Log in'
         )
       )
     )
@@ -41794,7 +41804,7 @@ var LoginPage = function (_React$Component) {
           // redirect signed in user to dashboard
           // this.props.history.push('/');
           window.location.reload();
-          //^^^ Alex & MW trying to debbug here
+          //^^^ Alex & MW trying to de-bug here
         } else {
           // failure
 
@@ -44769,7 +44779,7 @@ exports = module.exports = __webpack_require__(20)(false);
 
 
 // module
-exports.push([module.i, "#contactForm h3 {\n    font-family: 'Raleway', sans-serif;\n    text-transform: uppercase;\n    letter-spacing: 1px;\n    font-size: 40px;\n    margin-bottom: 20px;\n}\n\nform {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: 16px;\n    text-transform: uppercase;\n}\n\n.input-group-addon {\n    background-color: #87e0f0;\n    padding: 7px 10px;\n    min-width: 95px;\n    align-items: center !important;\n    vertical-align: middle !important;\n    max-height: 38px;\n    border: none;\n    border-radius: 0;\n}\n\n.input-group > input {\n    background-color: white;\n    border: none;\n    border-radius: 0;\n    font-family: 'Open Sans', sans-serif;\n    font-size: 12px;\n    color: rgba(0, 0, 0, 0.25);\n    font-style: italic;\n}\n\n.input-group > textarea {\n    background-color: white;\n    border: none;\n    border-radius: 0;\n    font-family: 'Open Sans', sans-serif;\n    font-size: 12px;\n    color: rgba(0, 0, 0, 0.25);\n    font-style: italic;\n}\n\n#contactSubmit {\n    font-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    border-radius: 0;\n    padding: 10px 50px;\n    color: #87e0f0;\n    border: 2px solid #87e0f0;\n    background-color: rgba(255, 255, 255, 0);\n}", ""]);
+exports.push([module.i, "#contactForm h3 {\n    font-family: 'Raleway', sans-serif;\n    text-transform: uppercase;\n    letter-spacing: 1px;\n    font-size: 40px;\n    margin-bottom: 20px;\n}\n\nform {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: 16px;\n    text-transform: uppercase;\n}\n\n.input-group-addon {\n    background-color: #87e0f0;\n    padding: 7px 10px;\n    min-width: 95px;\n    align-items: center !important;\n    vertical-align: middle !important;\n    max-height: 38px;\n    border: none;\n    border-radius: 0;\n}\n\n.input-group > input {\n    background-color: white;\n    border: none;\n    border-radius: 0;\n    font-family: 'Open Sans', sans-serif;\n    font-size: 12px;\n    color: rgba(0, 0, 0, 0.25);\n    font-style: italic;\n}\n\n.input-group > textarea {\n    background-color: white;\n    border: none;\n    border-radius: 0;\n    font-family: 'Open Sans', sans-serif;\n    font-size: 12px;\n    color: rgba(0, 0, 0, 0.25);\n    font-style: italic;\n}\n\n#contactSubmit {\n    font-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    border-radius: 0;\n    padding: 10px 50px;\n    color: #87e0f0;\n    border: 2px solid #87e0f0;\n    background-color: rgba(255, 255, 255, 0);\n}\n\n#contactSubmit:hover {\n\tcolor: #282828;\n\tbackground-color: #87e0f0;\n\ttext-decoration: none;\n}", ""]);
 
 // exports
 
@@ -44853,7 +44863,7 @@ exports = module.exports = __webpack_require__(20)(false);
 
 
 // module
-exports.push([module.i, ".jumbotron {\n\tbackground-color: black;\n    padding: 0;\n    padding-top: 120px;\n    padding-bottom: 120px;\n\tcolor: white;\n\tmargin-bottom: 0px;\n}\n\n.jumboSpace {\n\tmin-height: 50vh;\n\talign-items: center !important;\n}\n\n#desktopImage {\n\tmax-width: 100%;\n\tmargin-top: 40px;\t\n}\n\n#jumboH1 {\n\tcolor: white;\n    font-family: 'Raleway', sans-serif;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    font-size: 50px;\n\tfont-weight: 800;\n\tmargin-bottom: 20px;\n\ttext-align: left !important;\n}\n\n#jumboP {\n\tcolor: white;\n    font-family: 'Open Sans', sans-serif;\n    letter-spacing: 1px;\n    font-size: 18px;\n\ttext-align: left !important;\n}\n\n#jumboBtn {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: white;\n    border-radius: 0;\n    border: 2px solid white;\n\tpadding: 10px 50px;\n\tmargin-top: 20px;\n\tbackground-color: rgba(0, 0, 0, 0);\n}\n\n#jumboBtn:first-of-type {\n\tmargin-right: 20px;\n}\n\n.Modal {\n\tposition: relative;\n    max-width: max-content;\n    max-height: max-content;\n    padding: 60px;\n    margin: auto;\n    margin-top: 50px;\n    background: white;\n\tborder-radius: 5px;\n\t\n  }\n\n  .Overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    background-color: rgba(0, 0, 0, .75);\n  }\n\n  #modalClose {\n    max-height: 30px;\n    position: absolute;\n    top: 60px;\n    right: 60px;\n    max-width: 30px;\n  }", ""]);
+exports.push([module.i, ".jumbotron {\n\tbackground-color: black;\n    padding: 0;\n    padding-top: 120px;\n    padding-bottom: 120px;\n\tcolor: white;\n\tmargin-bottom: 0px;\n}\n\n.jumboSpace {\n\tmin-height: 50vh;\n\talign-items: center !important;\n}\n\n#desktopImage {\n\tmax-width: 100%;\n\tmargin-top: 40px;\t\n}\n\n#jumboH1 {\n\tcolor: white;\n    font-family: 'Raleway', sans-serif;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    font-size: 50px;\n\tfont-weight: 800;\n\tmargin-bottom: 20px;\n\ttext-align: left !important;\n}\n\n#jumboP {\n\tcolor: white;\n    font-family: 'Open Sans', sans-serif;\n    letter-spacing: 1px;\n    font-size: 18px;\n\ttext-align: left !important;\n}\n\n#jumboBtn {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: white;\n    border-radius: 0;\n    border: 2px solid white;\n\tpadding: 10px 50px;\n\tmargin-top: 20px;\n\tbackground-color: rgba(0, 0, 0, 0);\n}\n\n#jumboBtn:first-of-type {\n\tmargin-right: 20px;\n}\n\n#jumboBtn:hover {\n\tcolor:black;\n\tbackground-color: white;\n}\n\n.Modal {\n\tposition: relative;\n    max-width: max-content;\n    max-height: max-content;\n    padding: 60px;\n    margin: auto;\n    margin-top: 50px;\n    background: white;\n\tborder-radius: 5px;\n\t\n  }\n\n  .Overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    background-color: rgba(0, 0, 0, .75);\n  }\n\n  #modalClose {\n    max-height: 30px;\n    position: absolute;\n    top: 60px;\n    right: 60px;\n    max-width: 30px;\n  }\n\n.noAcctMssg {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: rgba(0, 0, 0, 0.25);\n}\n\n.noAcctMssg span {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: #87e0f0;\n}", ""]);
 
 // exports
 
@@ -44867,7 +44877,7 @@ exports = module.exports = __webpack_require__(20)(false);
 
 
 // module
-exports.push([module.i, "#LoginFormContainer {\n\tmargin: auto;\n    padding: 0;\n}\n\n#formTitle {\n    font-family: 'Raleway', sans-serif;\n    font-size: 35px;\n    font-weight: 100;\n    text-transform: uppercase;\n    text-align: left;\n    letter-spacing: 1px;\n    padding: 0;\n    margin: 0;\n    margin-top: -6px;\n}\n\n#fieldDiv {\n\tpadding: 0;\n}\n\n#fieldDiv:first-of-type {\n\tmargin-top: 20px;\n}\n\n.FormButtonDiv {\n\ttext-align: center;\n}\n\n#FormSubmitBtn {\n\tmargin-top: 40px;\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: rgb(0, 0, 0);\n    border-radius: 0;\n    border: 2px solid rgb(0, 0, 0);\n\tpadding: 10px 50px;\n\tbackground-color: rgba(0, 0, 0, 0);\n    margin-bottom: 20px;\n    \n}\n\n#noAcctMssg {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: rgba(0, 0, 0, 0.25);\n}\n\n#noAcctMssg a {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: #87e0f0;\n}\n\n.error-message {\n    padding: 0 16px;\n    color: #f24336;\n    margin-top: 20px;\n    font-size: 13px;\n    text-align: right;\n}\n", ""]);
+exports.push([module.i, "#LoginFormContainer {\n\tmargin: auto;\n    padding: 0;\n}\n\n.FormButtonDiv {\n\ttext-align: center;\n}\n\n#FormSubmitBtn {\n\tmargin-top: 40px;\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: rgb(0, 0, 0);\n    border-radius: 0;\n    border: 2px solid rgb(0, 0, 0);\n\tpadding: 10px 50px;\n\tbackground-color: rgba(0, 0, 0, 0);\n    margin-bottom: 20px;\n    \n}\n\n#FormSubmitBtn:hover {\n\tcolor: #ffffff;\n    background-color: #000000;\n    border-color: #000000;\n}\n", ""]);
 
 // exports
 
@@ -44895,7 +44905,7 @@ exports = module.exports = __webpack_require__(20)(false);
 
 
 // module
-exports.push([module.i, ".navbar {\n    padding-top: 60px;\n    background: none;\n    color: black;\n    margin-bottom: -120px;\n    height: 60px;\n    padding-bottom: 60px;\n}\n\n.navbar-brand {\n\tmin-width: 240px;\n\tpadding: 0;\n\tmargin: 0;\n}\n#logo {\n\tmin-height: 60px;\n\tpadding: 0;\n\tmargin: 0;\n}\n\n.nav-item a {\n\tcolor: white;\n    padding-left: 30px;\n    font-family: 'Open Sans', sans-serif;\n    font-size: 14px;\n    letter-spacing: 3px;\n}\n\n#navMenuIcon {\n\tborder: none;\n    padding: 0;\n}\n\n#navbarText {\n\ttext-align: end;\n}", ""]);
+exports.push([module.i, ".navbar {\n    padding-top: 60px;\n    background: none;\n    color: black;\n    margin-bottom: -120px;\n    height: 60px;\n    padding-bottom: 60px;\n}\n\n#logoButton {\n\tpadding: 0;\n\tmargin: 0;\n\tdisplay: contents;\n\tcursor: pointer;\n}\n\n#logo {\n\tmax-height: 40px;\n\tpadding: 0;\n\tmargin: 0;\n}\n\n.nav-item a {\n\tcolor: white;\n    padding-left: 30px;\n    font-family: 'Open Sans', sans-serif;\n    font-size: 14px;\n    letter-spacing: 3px;\n}\n\n.nav-item a:hover {\n\tcolor: #f6c501;\n\ttext-decoration: none;\n}\n\n#navMenuIcon {\n\tborder: none;\n    padding: 0;\n}\n\n#navbarText {\n\ttext-align: end;\n}", ""]);
 
 // exports
 
@@ -44909,7 +44919,7 @@ exports = module.exports = __webpack_require__(20)(false);
 
 
 // module
-exports.push([module.i, "#priceContFlu {\n\tbackground-color: rgba(230, 230, 230, 1);\n\tpadding-top: 100px;\n\tpadding-bottom: 100px;\n}\n\n#priceText h3 {\n\tfont-family: 'Raleway', sans-serif;\n    text-transform: uppercase;\n    letter-spacing: 1px;\n    font-size: 2.25rem;\n    margin-top: 10px;\n\tmargin-bottom: 10px;\n\ttext-align: center !important;\n}\n\n#priceText hr {\n    max-width: 150px;\n    height: 4px;\n    border: none;\n    background-color: #8bf195;\n    margin: auto;\n    margin-top: 20px;\n    margin-bottom: 20px;\n}\n\n#priceText p {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: 14px;\n    color: rgba(50, 50, 50, 1);\n\tmargin-bottom: 40px;\n\ttext-align: center;\n}\n\n#cardDiv .card{\n\tborder: none;\n\tborder-radius: 0;\n\tbackground-color: rgb(255, 255, 255, 0);\n}\n\n\n.card-header {\n    color: white;\n    border: none;\n    border-radius: 0;\n    font-family: 'Raleway', sans-serif;\n    text-transform: uppercase;\n    letter-spacing: 1px;\n    font-size: 1.5rem;\n    font-weight: 600;\n}\n\n.card-body {\n\tbackground-color: white;\n    border-bottom-left-radius: 10px;\n    border-bottom-right-radius: 10px;\n    padding-top: 50px;\n    padding-bottom: 50px;\n}\n\n.card-body h5 {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: 100px;\n    font-weight: 600;\n    color: rgba(50, 50, 50, 1);\n}\n\n#dollar {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: 20px;\n    font-weight: 100;\n    color: rgba(50, 50, 50, 0.5);\n    position: relative;\n\tbottom: 60px;\n}\n\n#years {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: 20px;\n    font-weight: 100;\n    color: rgba(50, 50, 50, 0.5);\n}\n\n.card-body p {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: 14px;\n    color: rgba(50, 50, 50, 0.5);\n\ttext-align: center;\n\tmargin-bottom: 40px;\n}\n\n.card-body a {\n    font-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    border-radius: 0;\n    padding: 10px 50px;\n}\n\n\n\n\n\n\n#freeCard .card-header {\n    background-color: #1DE9B6;\n}\n\n#freeCard .card-body a {\n    color: #1DE9B6;\n    border: 2px solid #1DE9B6;\n}\n\n\n\n\n#smallCard .card-header {\n    background-color: #F44336;\n}\n\n#smallCard .card-body a {\n    color: #F44336;\n    border: 2px solid #F44336;\n}\n\n\n\n\n#largeCard .card-header {\n    background-color: #FFC400;\n}\n\n#largeCard .card-body a {\n    color: #FFC400;\n    border: 2px solid #FFC400;\n}", ""]);
+exports.push([module.i, "#priceContFlu {\n\tbackground-color: rgba(230, 230, 230, 1);\n\tpadding-top: 100px;\n\tpadding-bottom: 100px;\n}\n\n#priceText h3 {\n\tfont-family: 'Raleway', sans-serif;\n    text-transform: uppercase;\n    letter-spacing: 1px;\n    font-size: 2.25rem;\n    margin-top: 10px;\n\tmargin-bottom: 10px;\n\ttext-align: center !important;\n}\n\n#priceText hr {\n    max-width: 150px;\n    height: 4px;\n    border: none;\n    background-color: #8bf195;\n    margin: auto;\n    margin-top: 20px;\n    margin-bottom: 20px;\n}\n\n#priceText p {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: 14px;\n    color: rgba(50, 50, 50, 1);\n\tmargin-bottom: 40px;\n\ttext-align: center;\n}\n\n#cardDiv .card{\n\tborder: none;\n\tborder-radius: 0;\n\tbackground-color: rgb(255, 255, 255, 0);\n}\n\n\n.card-header {\n    color: white;\n    border: none;\n    border-radius: 0;\n    font-family: 'Raleway', sans-serif;\n    text-transform: uppercase;\n    letter-spacing: 1px;\n    font-size: 1.5rem;\n    font-weight: 600;\n}\n\n.card-body {\n\tbackground-color: white;\n    border-bottom-left-radius: 10px;\n    border-bottom-right-radius: 10px;\n    padding-top: 50px;\n    padding-bottom: 50px;\n}\n\n.card-body h5 {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: 100px;\n    font-weight: 600;\n    color: rgba(50, 50, 50, 1);\n}\n\n#dollar {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: 20px;\n    font-weight: 100;\n    color: rgba(50, 50, 50, 0.5);\n    position: relative;\n\tbottom: 60px;\n}\n\n#years {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: 20px;\n    font-weight: 100;\n    color: rgba(50, 50, 50, 0.5);\n}\n\n.card-body p {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: 14px;\n    color: rgba(50, 50, 50, 0.5);\n\ttext-align: center;\n\tmargin-bottom: 40px;\n}\n\n.card-body a {\n    font-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    border-radius: 0;\n    padding: 10px 50px;\n}\n\n\n\n\n\n\n#freeCard .card-header {\n    background-color: #1DE9B6;\n}\n\n#freeCard .card-body a {\n    color: #1DE9B6;\n    border: 2px solid #1DE9B6;\n}\n\n#freeCard .card-body a:hover {\n\tcolor: white;\n\tbackground-color: #1DE9B6;\n\tborder: 2px solid #1DE9B6;\n\ttext-decoration: none;\n}\n\n\n\n\n#smallCard .card-header {\n    background-color: #F44336;\n}\n\n#smallCard .card-body a {\n    color: #F44336;\n    border: 2px solid #F44336;\n}\n\n#smallCard .card-body a:hover {\n\tcolor: white;\n\tbackground-color: #F44336;\n\tborder: 2px solid #F44336;\n\ttext-decoration: none;\n}\n\n\n\n\n#largeCard .card-header {\n    background-color: #FFC400;\n}\n\n#largeCard .card-body a {\n    color: #FFC400;\n    border: 2px solid #FFC400;\n}\n\n#largeCard .card-body a:hover {\n\tcolor: white;\n\tbackground-color: #FFC400;\n\tborder: 2px solid #FFC400;\n\ttext-decoration: none;\n}", ""]);
 
 // exports
 
@@ -44937,7 +44947,7 @@ exports = module.exports = __webpack_require__(20)(false);
 
 
 // module
-exports.push([module.i, "#SignUpFormContainer {\n\tmargin: auto;\n    padding: 0;\n}\n\n#formTitle {\n    font-family: 'Raleway', sans-serif;\n    font-size: 35px;\n    font-weight: 100;\n    text-transform: uppercase;\n    text-align: left;\n    letter-spacing: 1px;\n    padding: 0;\n    margin: 0;\n    margin-top: -6px;\n}\n\n#fieldDiv {\n\tpadding: 0;\n\tmargin-top: 20px;\n}\n\n#FormSubmitBtn {\n\tmargin-top: 40px;\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: rgb(0, 0, 0);\n    border-radius: 0;\n    border: 2px solid rgb(0, 0, 0);\n\tpadding: 10px 50px;\n\tbackground-color: rgba(0, 0, 0, 0);\n\tmargin-bottom: 20px;\n}\n\n#noAcctMssg {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: rgba(0, 0, 0, 0.25);\n}\n\n#noAcctMssg a {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: #87e0f0;\n}\n.error-message {\n    padding: 0 16px;\n    color: #f24336;\n    margin-top: 20px;\n    font-size: 13px;\n    text-align: right;\n}", ""]);
+exports.push([module.i, "#SignUpFormContainer {\n\tmargin: auto;\n    padding: 0;\n}\n\n#formTitle {\n    font-family: 'Raleway', sans-serif;\n    font-size: 35px;\n    font-weight: 100;\n    text-transform: uppercase;\n    text-align: left;\n    letter-spacing: 1px;\n    padding: 0;\n    margin: 0;\n    margin-top: -6px;\n}\n\n#fieldDiv {\n\tpadding: 0;\n}\n\n/* IMPORTANT - THIS ONE IS TO CHANGE THE ERROR MESSAGES INSIDE THE FORMS UNDER THE FIELDS!!! */\n#fieldDiv div > div[\n\tstyle=\"position: relative; bottom: 15px; font-size: 12px; line-height: 12px; color: rgb(244, 67, 54); transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;\"\n\t]{\n\t\tcolor: #f24336 !important;\n\t\ttext-transform: capitalize;\n}\n\n#SignUpFormContainer .error-message {\n\tpadding: 0;\n    color: #f24336 !important;\n    margin-top: 40px;\n    margin-bottom: 0px;\n    font-size: 10px;\n}\n\n", ""]);
 
 // exports
 

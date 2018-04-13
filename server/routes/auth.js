@@ -32,7 +32,7 @@ function validateSignupForm(payload) {
   }
 
   if (!isFormValid) {
-    message = 'Oops the form have some errors';
+    message = 'Oops the form seems to have caused some errors';
   }
 
   return {
@@ -65,7 +65,7 @@ function validateLoginForm(payload) {
   }
 
   if (!isFormValid) {
-    message = 'Oops the form have some errors';
+    message = 'Oops the form seems to have caused some errors';
   }
 
   return {
@@ -93,7 +93,7 @@ router.post('/signup', (req, res, next) => {
         // the 409 HTTP status code is for conflict error
         return res.status(409).json({
           success: false,
-          message: 'Oops the form have some errors',
+          message: 'Oops the form seems to have caused some errors',
           errors: {
             email: 'This email is already taken'
           }
