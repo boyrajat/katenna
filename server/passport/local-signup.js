@@ -1,5 +1,8 @@
 const User = require('mongoose').model('User');
 const PassportLocalStrategy = require('passport-local').Strategy;
+const db = require("../models");
+
+
 
 /**
  * Return the Passport Local Strategy object.
@@ -13,8 +16,11 @@ module.exports = new PassportLocalStrategy({
   const userData = {
     email: email.trim(),
     password: password.trim(),
-    name: req.body.name.trim()
+    name: req.body.name.trim(),
+
   };
+
+
 
   const newUser = new User(userData);
   newUser.save((err) => {
@@ -22,4 +28,5 @@ module.exports = new PassportLocalStrategy({
 
     return done(null);
   });
+
 });

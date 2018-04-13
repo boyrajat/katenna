@@ -39943,8 +39943,213 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactDom2.default.render(_react2.default.createElement(_Main2.default, null), document.getElementById('react-app'));
 
 /***/ }),
-/* 262 */,
-/* 263 */,
+/* 262 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(7);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactRouterDom = __webpack_require__(20);
+
+var _TextField = __webpack_require__(177);
+
+var _TextField2 = _interopRequireDefault(_TextField);
+
+__webpack_require__(563);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AddEmployeeForm = function (_React$Component) {
+    _inherits(AddEmployeeForm, _React$Component);
+
+    function AddEmployeeForm(props) {
+        _classCallCheck(this, AddEmployeeForm);
+
+        var _this = _possibleConstructorReturn(this, (AddEmployeeForm.__proto__ || Object.getPrototypeOf(AddEmployeeForm)).call(this, props));
+
+        _this.state = { value: '', name: '', email: '', photo: '', position: '', type: '', image: '' };
+
+        _this.handleChange = _this.handleChange.bind(_this);
+        _this.handleSubmit = _this.handleSubmit.bind(_this);
+
+        return _this;
+    }
+
+    _createClass(AddEmployeeForm, [{
+        key: 'handleChange',
+        value: function handleChange(event) {
+            // this.setState({ name: event.target.value });
+            this.setState(_defineProperty({}, event.target.name, event.target.value));
+        }
+    }, {
+        key: 'handleSubmit',
+        value: function handleSubmit(event) {
+            event.preventDefault();
+            fetch('/employees/create', {
+                method: 'POST', // or 'PUT'
+                body: JSON.stringify({
+                    data: {
+                        name: this.state.name,
+                        email: this.state.email,
+                        phone: this.state.phone,
+                        position: this.state.position,
+                        type: this.state.type,
+                        image: this.state.image
+                    }
+                }), // data can be `string` or {object}!
+                headers: new Headers({
+                    'Content-Type': 'application/json'
+                })
+            }).then(function (res) {
+                console.log('response URL');
+                console.log(res.url);
+            }).catch(function (error) {
+                return console.error('Error:', error);
+            }).then(function (response) {
+                return console.log('Success:');
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { className: 'container', id: 'AddEmployeeFormContainer' },
+                _react2.default.createElement(
+                    'form',
+                    { onSubmit: this.handleSubmit },
+                    _react2.default.createElement(
+                        'h2',
+                        { id: 'formTitle' },
+                        'New Employee'
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'field-line', id: 'fieldDiv' },
+                        _react2.default.createElement(_TextField2.default, {
+                            floatingLabelText: 'Name',
+                            name: 'name',
+                            onChange: this.handleChange,
+                            value: this.state.name
+                        })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'field-line', id: 'fieldDiv' },
+                        _react2.default.createElement(_TextField2.default, {
+                            floatingLabelText: 'Email',
+                            name: 'email',
+                            onChange: this.handleChange,
+                            value: this.state.email
+                        })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'field-line', id: 'fieldDiv' },
+                        _react2.default.createElement(_TextField2.default, {
+                            floatingLabelText: 'Phone',
+                            name: 'phone',
+                            onChange: this.handleChange,
+                            value: this.state.phone
+                        })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'field-line', id: 'fieldDiv' },
+                        _react2.default.createElement(_TextField2.default, {
+                            floatingLabelText: 'Position',
+                            type: 'position',
+                            name: 'position',
+                            onChange: this.handleChange,
+                            value: this.state.position
+                        })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'field-line', id: 'fieldDiv' },
+                        _react2.default.createElement(_TextField2.default, {
+                            floatingLabelText: 'Type',
+                            type: 'type',
+                            name: 'type',
+                            onChange: this.handleChange,
+                            value: this.state.type
+                        })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'field-line', id: 'fieldDiv' },
+                        _react2.default.createElement(_TextField2.default, {
+                            floatingLabelText: 'Image',
+                            type: 'image',
+                            name: 'image',
+                            onChange: this.handleChange,
+                            value: this.state.image
+                        })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        null,
+                        _react2.default.createElement(
+                            'button',
+                            { id: 'FormSubmitBtn', label: 'Create New Employee' },
+                            'Create'
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return AddEmployeeForm;
+}(_react2.default.Component);
+
+exports.default = AddEmployeeForm;
+
+/***/ }),
+/* 263 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _AddEmployeeForm = __webpack_require__(262);
+
+Object.defineProperty(exports, "default", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_AddEmployeeForm).default;
+  }
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
 /* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -40111,6 +40316,14 @@ var _SideBar = __webpack_require__(145);
 
 var _SideBar2 = _interopRequireDefault(_SideBar);
 
+var _AddEmployeeForm = __webpack_require__(263);
+
+var _AddEmployeeForm2 = _interopRequireDefault(_AddEmployeeForm);
+
+var _AddTaskForm = __webpack_require__(566);
+
+var _AddTaskForm2 = _interopRequireDefault(_AddTaskForm);
+
 __webpack_require__(561);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -40137,7 +40350,8 @@ var Dashboard = function Dashboard(_ref) {
     _react2.default.createElement(_reactRouterDom.Route, { path: '/logout', component: _Logout2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/employees', component: _EmployeesFunctions4.default }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/task', component: _TasksFunctions2.default }),
-    _react2.default.createElement(AddEmployeeForm, null),
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/newemployees', component: _AddEmployeeForm2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/newtask', component: _AddTaskForm2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/taskback', component: _EmployeesFunctions2.default })
   );
 };
@@ -41556,8 +41770,18 @@ var SideBar = function SideBar() {
 			),
 			_react2.default.createElement(
 				_reactRouterDom.Link,
+				{ className: "btn btn-secondary", id: "sideBarNavMainBtns", to: "/newemployees" },
+				"Add New Employees"
+			),
+			_react2.default.createElement(
+				_reactRouterDom.Link,
 				{ className: "btn btn-secondary", id: "sideBarNavMainBtns", to: "/task" },
 				"Tasks"
+			),
+			_react2.default.createElement(
+				_reactRouterDom.Link,
+				{ className: "btn btn-secondary", id: "sideBarNavMainBtns", to: "/newtask" },
+				"Add Tasks"
 			)
 		)
 	);
@@ -66925,6 +67149,350 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	module.hot.accept("!!../../../../node_modules/css-loader/index.js!./Dashboard.css", function() {
 		var newContent = require("!!../../../../node_modules/css-loader/index.js!./Dashboard.css");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 562 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(34)(false);
+// imports
+
+
+// module
+exports.push([module.i, "#SignUpFormContainer {\n\tmargin: auto;\n    padding: 0;\n}\n\n#formTitle {\n    font-family: 'Raleway', sans-serif;\n    font-size: 35px;\n    font-weight: 100;\n    text-transform: uppercase;\n    text-align: left;\n    letter-spacing: 1px;\n    padding: 0;\n    margin: 0;\n    margin-top: -6px;\n}\n\n#fieldDiv {\n\tpadding: 0;\n\tmargin-top: 20px;\n}\n\n#FormSubmitBtn {\n\tmargin-top: 40px;\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: rgb(0, 0, 0);\n    border-radius: 0;\n    border: 2px solid rgb(0, 0, 0);\n\tpadding: 10px 50px;\n\tbackground-color: rgba(0, 0, 0, 0);\n\tmargin-bottom: 20px;\n}\n\n#noAcctMssg {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: rgba(0, 0, 0, 0.25);\n}\n\n#noAcctMssg a {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: #87e0f0;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 563 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(562);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(36)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../../../node_modules/css-loader/index.js!./AddEmployeeForm.css", function() {
+		var newContent = require("!!../../../../node_modules/css-loader/index.js!./AddEmployeeForm.css");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 564 */,
+/* 565 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(7);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactRouterDom = __webpack_require__(20);
+
+var _TextField = __webpack_require__(177);
+
+var _TextField2 = _interopRequireDefault(_TextField);
+
+__webpack_require__(568);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AddTaskForm = function (_React$Component) {
+    _inherits(AddTaskForm, _React$Component);
+
+    function AddTaskForm(props) {
+        _classCallCheck(this, AddTaskForm);
+
+        var _this = _possibleConstructorReturn(this, (AddTaskForm.__proto__ || Object.getPrototypeOf(AddTaskForm)).call(this, props));
+
+        _this.state = { value: '', jobTitle: '', item: '', description1: '', description2: '', description3: '', description4: '', description5: '' };
+
+        _this.handleChange = _this.handleChange.bind(_this);
+        _this.handleSubmit = _this.handleSubmit.bind(_this);
+
+        return _this;
+    }
+
+    _createClass(AddTaskForm, [{
+        key: 'handleChange',
+        value: function handleChange(event) {
+            // this.setState({ name: event.target.value });
+            this.setState(_defineProperty({}, event.target.name, event.target.value));
+        }
+    }, {
+        key: 'handleSubmit',
+        value: function handleSubmit(event) {
+            event.preventDefault();
+            fetch('/employees/create', {
+                method: 'POST', // or 'PUT'
+                body: JSON.stringify({
+                    data: {
+                        Item: this.state.Item,
+                        jobTitle: this.state.jobTitle,
+                        description1: this.state.description1,
+                        description2: this.state.description2,
+                        description3: this.state.description3,
+                        description4: this.state.description4,
+                        description5: this.state.description5
+                    }
+                }), // data can be `string` or {object}!
+                headers: new Headers({
+                    'Content-Type': 'application/json'
+                })
+            }).then(function (res) {
+                console.log('response URL');
+                console.log(res.url);
+            }).catch(function (error) {
+                return console.error('Error:', error);
+            }).then(function (response) {
+                return console.log('Success:');
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { className: 'container', id: 'AddTaskFormContainer' },
+                _react2.default.createElement(
+                    'form',
+                    { onSubmit: this.handleSubmit },
+                    _react2.default.createElement(
+                        'h2',
+                        { id: 'formTitle' },
+                        'New Task'
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'field-line', id: 'fieldDiv' },
+                        _react2.default.createElement(_TextField2.default, {
+                            floatingLabelText: 'Job Title',
+                            name: 'jobTitle',
+                            onChange: this.handleChange,
+                            value: this.state.jobTitle
+                        })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'field-line', id: 'fieldDiv' },
+                        _react2.default.createElement(_TextField2.default, {
+                            floatingLabelText: 'Item',
+                            name: 'item',
+                            onChange: this.handleChange,
+                            value: this.state.item
+                        })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'field-line', id: 'fieldDiv' },
+                        _react2.default.createElement(_TextField2.default, {
+                            floatingLabelText: 'Description1',
+                            name: 'description1',
+                            onChange: this.handleChange,
+                            value: this.state.description1
+                        })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'field-line', id: 'fieldDiv' },
+                        _react2.default.createElement(_TextField2.default, {
+                            floatingLabelText: 'Description2',
+                            name: 'description2',
+                            onChange: this.handleChange,
+                            value: this.state.description2
+                        })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'field-line', id: 'fieldDiv' },
+                        _react2.default.createElement(_TextField2.default, {
+                            floatingLabelText: 'Description3',
+                            name: 'description3',
+                            onChange: this.handleChange,
+                            value: this.state.description3
+                        })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'field-line', id: 'fieldDiv' },
+                        _react2.default.createElement(_TextField2.default, {
+                            floatingLabelText: 'Description4',
+                            name: 'description4',
+                            onChange: this.handleChange,
+                            value: this.state.description4
+                        })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'field-line', id: 'fieldDiv' },
+                        _react2.default.createElement(_TextField2.default, {
+                            floatingLabelText: 'Description5',
+                            name: 'description5',
+                            onChange: this.handleChange,
+                            value: this.state.description5
+                        })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        null,
+                        _react2.default.createElement(
+                            'button',
+                            { id: 'FormSubmitBtn', label: 'Create New Task' },
+                            'Create'
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return AddTaskForm;
+}(_react2.default.Component);
+
+exports.default = AddTaskForm;
+
+/***/ }),
+/* 566 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _AddTaskForm = __webpack_require__(565);
+
+Object.defineProperty(exports, "default", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_AddTaskForm).default;
+  }
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+/* 567 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(34)(false);
+// imports
+
+
+// module
+exports.push([module.i, "#SignUpFormContainer {\n\tmargin: auto;\n    padding: 0;\n}\n\n#formTitle {\n    font-family: 'Raleway', sans-serif;\n    font-size: 35px;\n    font-weight: 100;\n    text-transform: uppercase;\n    text-align: left;\n    letter-spacing: 1px;\n    padding: 0;\n    margin: 0;\n    margin-top: -6px;\n}\n\n#fieldDiv {\n\tpadding: 0;\n\tmargin-top: 20px;\n}\n\n#FormSubmitBtn {\n\tmargin-top: 40px;\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: rgb(0, 0, 0);\n    border-radius: 0;\n    border: 2px solid rgb(0, 0, 0);\n\tpadding: 10px 50px;\n\tbackground-color: rgba(0, 0, 0, 0);\n\tmargin-bottom: 20px;\n}\n\n#noAcctMssg {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: rgba(0, 0, 0, 0.25);\n}\n\n#noAcctMssg a {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: #87e0f0;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 568 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(567);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(36)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../../../node_modules/css-loader/index.js!./AddTaskForm.css", function() {
+		var newContent = require("!!../../../../node_modules/css-loader/index.js!./AddTaskForm.css");
 
 		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 

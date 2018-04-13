@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import TextField from 'material-ui/TextField';
-import './AddEmployeeForm.css';
+import './AddTaskForm.css';
 
-class AddEmployeeForm extends React.Component {
+class AddTaskForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { value: '', name: '', email: '', photo: '', position: '', type: '', image: '' };
+        this.state = { value: '', jobTitle: '', item: '', description1: '', description2: '', description3: '', description4: '', description5: '' };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,12 +24,13 @@ class AddEmployeeForm extends React.Component {
             method: 'POST', // or 'PUT'
             body: JSON.stringify({
                 data: {
-                    name: this.state.name,
-                    email: this.state.email,
-                    phone: this.state.phone,
-                    position: this.state.position,
-                    type: this.state.type,
-                    image: this.state.image
+                    Item: this.state.Item,
+                    jobTitle: this.state.jobTitle,
+                    description1: this.state.description1,
+                    description2: this.state.description2,
+                    description3: this.state.description3,
+                    description4: this.state.description4,
+                    description5: this.state.description5,
                 }
             }), // data can be `string` or {object}!
             headers: new Headers({
@@ -45,71 +46,79 @@ class AddEmployeeForm extends React.Component {
 
     render() {
         return (
-            <div className="container" id="AddEmployeeFormContainer">
+            <div className="container" id="AddTaskFormContainer">
                 <form onSubmit={this.handleSubmit}>
 
-                    <h2 id="formTitle">New Employee</h2>
+                    <h2 id="formTitle">New Task</h2>
 
                     {/* {errors.summary && <p className="error-message">{errors.summary}</p>} */}
 
                     <div className="field-line" id="fieldDiv">
                         <TextField
-                            floatingLabelText="Name"
-                            name="name"
+                            floatingLabelText="Job Title"
+                            name="jobTitle"
                             onChange={this.handleChange}
-                            value={this.state.name}
+                            value={this.state.jobTitle}
                         />
                     </div>
 
                     <div className="field-line" id="fieldDiv">
                         <TextField
-                            floatingLabelText="Email"
-                            name="email"
+                            floatingLabelText="Item"
+                            name="item"
                             onChange={this.handleChange}
-                            value={this.state.email}
+                            value={this.state.item}
                         />
                     </div>
 
                     <div className="field-line" id="fieldDiv">
                         <TextField
-                            floatingLabelText="Phone"
-                            name="phone"
+                            floatingLabelText="Description1"
+                            name="description1"
                             onChange={this.handleChange}
-                            value={this.state.phone}
+                            value={this.state.description1}
                         />
                     </div>
 
                     <div className="field-line" id="fieldDiv">
                         <TextField
-                            floatingLabelText="Position"
-                            type="position"
-                            name="position"
+                            floatingLabelText="Description2"
+                            name="description2"
                             onChange={this.handleChange}
-                            value={this.state.position}
+                            value={this.state.description2}
                         />
                     </div>
 
                     <div className="field-line" id="fieldDiv">
                         <TextField
-                            floatingLabelText="Type"
-                            type="type"
-                            name="type"
+                            floatingLabelText="Description3"
+                            name="description3"
                             onChange={this.handleChange}
-                            value={this.state.type}
+                            value={this.state.description3}
                         />
                     </div>
+
                     <div className="field-line" id="fieldDiv">
                         <TextField
-                            floatingLabelText="Image"
-                            type="image"
-                            name="image"
+                            floatingLabelText="Description4"
+                            name="description4"
                             onChange={this.handleChange}
-                            value={this.state.image}
+                            value={this.state.description4}
                         />
                     </div>
+
+                    <div className="field-line" id="fieldDiv">
+                        <TextField
+                            floatingLabelText="Description5"
+                            name="description5"
+                            onChange={this.handleChange}
+                            value={this.state.description5}
+                        />
+                    </div>
+
 
                     <div>
-                        <button id="FormSubmitBtn" label="Create New Employee">Create</button>
+                        <button id="FormSubmitBtn" label="Create New Task">Create</button>
                     </div>
 
 
@@ -120,4 +129,4 @@ class AddEmployeeForm extends React.Component {
     }
 }
 
-export default AddEmployeeForm;
+export default AddTaskForm;

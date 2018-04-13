@@ -12,19 +12,22 @@ const EmployeeSchema = new Schema({
     required: true
   },
   phone: {
-      type: String,
-      required: true
+    type: String,
+    required: true
   },
   position: {
-      type: String,
-      required: true
+    type: String,
+    required: true
   },
   type: {
-      type: String,
-      required: true
+    type: String,
+    required: true
+  },
+  image: {
+    type: String
   }
-    
-});
+
+}, { strict: false });
 
 const Employee = mongoose.model("Employee", EmployeeSchema);
 

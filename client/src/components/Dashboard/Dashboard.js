@@ -12,6 +12,8 @@ import GetTasks from '../EmployeesFunctions2';
 import Employees from '../EmployeesFunctions';
 import Tasks from '../TasksFunctions';
 import SideBar from '../SideBar';
+import AddEmployeeForm from '../AddEmployeeForm';
+import AddTaskForm from '../AddTaskForm';
 import './Dashboard.css';
 
 
@@ -23,7 +25,8 @@ const Dashboard = ({ secretData, user }) => (
     <Route path="/logout" component={LogoutFunction} />
     <Route path="/employees" component={Employees} />
     <Route path="/task" component={Tasks} />
-    <AddEmployeeForm />
+    <Route path="/newemployees" component={AddEmployeeForm} />
+    <Route path="/newtask" component={AddTaskForm} />
     {/* get employee's tasks when click on button 'See tasks' */}
     <Route path="/taskback" component={GetTasks} />
   </div>
