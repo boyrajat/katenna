@@ -7,13 +7,15 @@
     padding-bottom: 60px;
 }
 
-.navbar-brand {
-	min-width: 240px;
+#logoButton {
 	padding: 0;
 	margin: 0;
+	display: contents;
+	cursor: pointer;
 }
+
 #logo {
-	min-height: 60px;
+	max-height: 40px;
 	padding: 0;
 	margin: 0;
 }
@@ -24,6 +26,11 @@
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     letter-spacing: 3px;
+}
+
+.nav-item a:hover {
+	color: #f6c501;
+	text-decoration: none;
 }
 
 #navMenuIcon {
