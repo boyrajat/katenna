@@ -4,6 +4,8 @@ const employeesController = require("../../controllers/employeesController");
 // Matches with "/api/tasks"
 router.route("/findall")
   .get(employeesController.findAll)
+
+router.route("/create")
   .post(employeesController.create);
 
 // Matches with "/api/tasks/:id"

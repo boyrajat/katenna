@@ -1,7 +1,9 @@
 const express = require('express');
 const validator = require('validator');
 const passport = require('passport');
-
+const User = require("../models/user");
+const Tasks = require("../models/task");
+const Employee = require("../models/employee");
 const router = new express.Router();
 
 /**
@@ -75,6 +77,7 @@ function validateLoginForm(payload) {
   };
 }
 
+
 router.post('/signup', (req, res, next) => {
   const validationResult = validateSignupForm(req.body);
   if (!validationResult.success) {
@@ -105,6 +108,70 @@ router.post('/signup', (req, res, next) => {
         message: 'Could not process the form'
       });
     }
+
+    // Employee.find().each(
+    //   function (x) {
+    //     console.log(x);
+    //     // User.update(
+    //     //   // query 
+    //     //   { name: 'Alexander' },
+    //     //   // update 
+    //     //   { $set: { tasks: x.name } },
+    //     //   // options:
+    //     //   { "multi": true } // Update all matching documents
+    //     // );
+    //   }
+    // );
+    // User.update(
+    //   { name: 'Alexander' }, { name: 'Peter Parker' },
+    //   { multi: true }, function (err, res) {
+    //     if (err) {
+    //       console.log(err);
+
+    //     } else {
+    //       console.log(res);
+    //     } // Update all matching documents
+
+    //   }
+    // );
+
+    // this is a test to set or unset fields base on a filter
+    // Employee.update({ 'name': 'Angelo Oneill' }, { $unset: { "isOpen": false } }, { multi: true }, function (err, res) {
+    //   if (err) {
+    //     console.log(err);
+
+    //   } else {
+    //     console.log(res);
+    //   } // Update all matching documents
+
+    // })
+
+    Tasks.find({ 'name': 'Front Office' }, 'tasks', function (err, tasks) {
+      if (err) return handleError(err);
+      console.log("here");
+      //creating an array with the tasks length and setting initial values as 0
+      let newTaskArray = [];
+      for (let i = 0; i < tasks[0].tasks.length; i++) {
+        console.log("here");
+        newTaskArray[i] = true;
+        if (i === (tasks[0].tasks.length - 1)) {
+          console.log("here");
+          console.log(newTaskArray);
+        }
+      }
+      Employee.update({ 'name': 'Angelo Oneill' }, { $set: { "Tasks": newTaskArray } }, { multi: true }, function (err, res) {
+        if (err) {
+          console.log(err);
+
+        } else {
+          console.log(res);
+        } // Update all matching documents
+
+      });
+      // Prints".
+      console.log('%s %s is a %s.', tasks);
+    });
+
 
     return res.status(200).json({
       success: true,

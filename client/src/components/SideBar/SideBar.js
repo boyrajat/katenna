@@ -9,10 +9,12 @@ const SideBar = ({ secretDate, user }) => (
 			<p id="userName">{user.name}</p>
 		</div>
 		<div className="btn-group-vertical" id="sideBarNav">
-			<Link className="btn" id="sideBarNavMainBtns" to="/employees" >Employees</Link>
-			<Link className="btn" id="sideBarNavMainBtns" to="/task" >Tasks</Link>
+			<Link className="btn btn-secondary" id="sideBarNavMainBtns" to="/employees" >Employees</Link>
+			<Link className="btn btn-secondary" id="sideBarNavMainBtns" to="/newemployees" >Add New Employees</Link>
+			<Link className="btn btn-secondary" id="sideBarNavMainBtns" to="/task" >Tasks</Link>
+			<Link className="btn btn-secondary" id="sideBarNavMainBtns" to="/newtask" >Add Tasks</Link>
 		</div>
-	</div>
+	</div >
 );
 
 export default SideBar;

@@ -24,8 +24,9 @@ module.exports = {
 
   },
   create: function (req, res) {
+    console.log(req.body);
     Employee
-      .create(req.body)
+      .create(req.body.data)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
