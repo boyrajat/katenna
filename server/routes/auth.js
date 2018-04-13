@@ -20,21 +20,21 @@ function validateSignupForm(payload) {
 
   if (!payload || typeof payload.email !== 'string' || !validator.isEmail(payload.email)) {
     isFormValid = false;
-    errors.email = 'Please provide a correct email address.';
+    errors.email = 'Please provide a correct email address';
   }
 
   if (!payload || typeof payload.password !== 'string' || payload.password.trim().length < 10) {
     isFormValid = false;
-    errors.password = 'Password must have at least 10 characters.';
+    errors.password = 'Password must have at least 10 characters';
   }
 
   if (!payload || typeof payload.name !== 'string' || payload.name.trim().length === 0) {
     isFormValid = false;
-    errors.name = 'Please provide your name.';
+    errors.name = 'Please provide your name';
   }
 
   if (!isFormValid) {
-    message = 'Oops the form have some errors.';
+    message = 'Oops the form have some errors';
   }
 
   return {
@@ -58,16 +58,16 @@ function validateLoginForm(payload) {
 
   if (!payload || typeof payload.email !== 'string' || payload.email.trim().length === 0) {
     isFormValid = false;
-    errors.email = 'Please provide your email address.';
+    errors.email = 'Please provide your email address';
   }
 
   if (!payload || typeof payload.password !== 'string' || payload.password.trim().length === 0) {
     isFormValid = false;
-    errors.password = 'Please provide your password.';
+    errors.password = 'Please provide your password';
   }
 
   if (!isFormValid) {
-    message = 'Oops the form have some errors.';
+    message = 'Oops the form have some errors';
   }
 
   return {
@@ -96,16 +96,16 @@ router.post('/signup', (req, res, next) => {
         // the 409 HTTP status code is for conflict error
         return res.status(409).json({
           success: false,
-          message: 'Oops the form have some errors.',
+          message: 'Oops the form have some errors',
           errors: {
-            email: 'This email is already taken.'
+            email: 'This email is already taken'
           }
         });
       }
 
       return res.status(400).json({
         success: false,
-        message: 'Could not process the form.'
+        message: 'Could not process the form'
       });
     }
 
@@ -202,7 +202,7 @@ router.post('/login', (req, res, next) => {
 
       return res.status(400).json({
         success: false,
-        message: 'Could not process the form.'
+        message: 'Could not process the form'
       });
     }
 

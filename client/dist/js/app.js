@@ -40334,19 +40334,6 @@ var Dashboard = function Dashboard(_ref) {
   return _react2.default.createElement(
     'div',
     { className: 'col-10', id: 'mainDashContainer' },
-    secretData && _react2.default.createElement(
-      'h6',
-      null,
-      'Welcome ',
-      _react2.default.createElement(
-        'strong',
-        null,
-        user.name
-      ),
-      '!',
-      _react2.default.createElement('br', null),
-      secretData
-    ),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/logout', component: _Logout2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/employees', component: _EmployeesFunctions4.default }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/task', component: _TasksFunctions2.default }),
@@ -40492,9 +40479,9 @@ var _propTypes = __webpack_require__(7);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _Card = __webpack_require__(48);
-
 var _reactRouterDom = __webpack_require__(20);
+
+__webpack_require__(570);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -40567,56 +40554,91 @@ var EmployeesFunctions = function (_React$Component) {
       } else {
         return _react2.default.createElement(
           'div',
-          null,
+          { className: 'card-deck', id: 'employeesContainerDiv' },
           items.map(function (item) {
             return _react2.default.createElement(
               'div',
-              { className: 'card text-center' },
+              { className: 'card eachEmployeeCard', style: { maxWidth: "300px", minWidth: "300px" } },
               _react2.default.createElement(
                 'div',
-                { className: 'card-header' },
-                item.position
+                { className: 'eachImgDiv' },
+                _react2.default.createElement('img', { className: 'card-img-top eachCardImg', src: item.image, alt: 'Card image cap' })
               ),
-              _react2.default.createElement('img', { className: 'card-img-top', src: '...', alt: 'Card image cap' }),
               _react2.default.createElement(
                 'div',
-                { className: 'card-body' },
+                { className: 'card-header eachCardHeader' },
                 _react2.default.createElement(
                   'h5',
-                  { className: 'card-title' },
+                  { className: 'card-title eachCardTitle' },
                   item.name
                 ),
                 _react2.default.createElement(
-                  'ul',
-                  { className: 'list-group list-group-flush' },
+                  'h6',
+                  { className: 'card-subtitle eachCardSubtitle' },
+                  item.position
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'card-body eachCardBody' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'card-text eachCardText' },
                   _react2.default.createElement(
-                    'li',
-                    { className: 'list-group-item' },
+                    'p',
+                    { className: 'eachCardListItem' },
                     'Phone: ',
-                    item.phone
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'eachCardItem' },
+                      item.phone
+                    )
                   ),
                   _react2.default.createElement(
-                    'li',
-                    { className: 'list-group-item' },
+                    'p',
+                    { className: 'eachCardListItem' },
                     'Email: ',
-                    item.email
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'eachCardItem' },
+                      item.email
+                    )
                   ),
                   _react2.default.createElement(
-                    'li',
-                    { className: 'list-group-item' },
-                    'Type: ',
-                    item.type
+                    'p',
+                    { className: 'eachCardListItem' },
+                    'User Type: ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'eachCardItem capitalize' },
+                      item.type
+                    )
                   )
                 ),
                 _react2.default.createElement(
-                  _reactRouterDom.Link,
-                  { className: 'btn btn-secondary', to: { pathname: '/taskback', state: { employeeName: item.name, employeePosition: item.position } } },
-                  'See Tasks'
-                ),
-                _react2.default.createElement(
-                  _reactRouterDom.Link,
-                  { className: 'btn btn-info', to: '' },
-                  'Add New Task'
+                  'div',
+                  { className: 'eachCardFooter row' },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'col-5 eachFooterBtn' },
+                    _react2.default.createElement(
+                      _reactRouterDom.Link,
+                      {
+                        to: { pathname: '/taskback', state: { employeeName: item.name, employeePosition: item.position } } },
+                      'Tasks'
+                    )
+                  ),
+                  _react2.default.createElement('div', { className: 'col-2' }),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'col-5 eachFooterBtn' },
+                    _react2.default.createElement(
+                      _reactRouterDom.Link,
+                      {
+                        to: '/' },
+                      'New Task'
+                    )
+                  )
                 )
               )
             );
@@ -41194,7 +41216,7 @@ var Jumbotron = function (_React$Component) {
 									className: 'Modal',
 									overlayClassName: 'Overlay'
 								},
-								_react2.default.createElement('img', { src: '/img/modalCloseButton.svg', id: 'modalClose', onClick: this.handleCloseModalLogin }),
+								_react2.default.createElement('img', { src: '/img/modalCloseButton.svg', id: 'modalClose', onClick: this.handleCloseModalSignup }),
 								_react2.default.createElement(_SignUpPage2.default, null)
 							)
 						),
@@ -41318,7 +41340,7 @@ var LoginForm = function LoginForm(_ref) {
       ),
       _react2.default.createElement(
         'div',
-        null,
+        { className: 'FormButtonDiv' },
         _react2.default.createElement(
           'button',
           { id: 'FormSubmitBtn', type: 'submit', label: 'Log in' },
@@ -41747,18 +41769,21 @@ __webpack_require__(557);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var SideBar = function SideBar() {
+var SideBar = function SideBar(_ref) {
+	var secretDate = _ref.secretDate,
+	    user = _ref.user;
 	return _react2.default.createElement(
 		"div",
 		{ className: "col-2", id: "sideBarDiv" },
 		_react2.default.createElement(
 			"div",
 			{ id: "sideBarTopInfo" },
-			"Something cool here like user photo or something.",
-			_react2.default.createElement("br", null),
-			"I need the image info from database here I suppose, plus the current user's name only, not lastname.",
-			_react2.default.createElement("br", null),
-			"Please look under katenna/server/static/img/employees for a bunch of 'profile images' we can use."
+			_react2.default.createElement("img", { src: user.userImage, alt: "USER", id: "userImage" }),
+			_react2.default.createElement(
+				"p",
+				{ id: "userName" },
+				user.name
+			)
 		),
 		_react2.default.createElement(
 			"div",
@@ -41875,7 +41900,7 @@ var SignUpForm = function SignUpForm(_ref) {
       ),
       _react2.default.createElement(
         'div',
-        null,
+        { className: 'FormButtonDiv' },
         _react2.default.createElement(
           'button',
           { id: 'FormSubmitBtn', type: 'submit', label: 'Create New Account', primary: true },
@@ -42145,12 +42170,7 @@ var TopBar = function TopBar(_ref) {
 			_react2.default.createElement(
 				"h1",
 				{ id: "welcomeTitle" },
-				"Welcome, ",
-				_react2.default.createElement(
-					"strong",
-					null,
-					user.name
-				)
+				"Welcome!"
 			)
 		),
 		_react2.default.createElement(
@@ -42284,8 +42304,8 @@ var DashboardPage = function (_React$Component) {
         _react2.default.createElement(_TopBar2.default, { secretData: this.state.secretData, user: this.state.user }),
         _react2.default.createElement(
           'div',
-          { className: 'row' },
-          _react2.default.createElement(_SideBar2.default, null),
+          { className: 'row', id: 'dashboardMainRow' },
+          _react2.default.createElement(_SideBar2.default, { secretData: this.state.secretData, user: this.state.user }),
           _react2.default.createElement(_Dashboard2.default, { secretData: this.state.secretData, user: this.state.user })
         )
       );
@@ -45466,7 +45486,7 @@ exports = module.exports = __webpack_require__(34)(false);
 
 
 // module
-exports.push([module.i, ".jumbotron {\n\tbackground-color: black;\n    padding: 0;\n    padding-top: 120px;\n    padding-bottom: 120px;\n\tcolor: white;\n\tmargin-bottom: 0px;\n}\n\n.jumboSpace {\n\tmin-height: 50vh;\n\talign-items: center !important;\n}\n\n#desktopImage {\n\tmax-width: 100%;\n\tmargin-top: 40px;\t\n}\n\n#jumboH1 {\n\tcolor: white;\n    font-family: 'Raleway', sans-serif;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    font-size: 50px;\n\tfont-weight: 800;\n\tmargin-bottom: 20px;\n\ttext-align: left !important;\n}\n\n#jumboP {\n\tcolor: white;\n    font-family: 'Open Sans', sans-serif;\n    letter-spacing: 1px;\n    font-size: 18px;\n\ttext-align: left !important;\n}\n\n#jumboBtn {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: white;\n    border-radius: 0;\n    border: 2px solid white;\n\tpadding: 10px 50px;\n\tmargin-top: 20px;\n\tbackground-color: rgba(0, 0, 0, 0);\n}\n\n#jumboBtn:first-of-type {\n\tmargin-right: 20px;\n}\n\n.Modal {\n\tposition: relative;\n    max-width: max-content;\n    max-height: max-content;\n    padding: 60px;\n    margin: auto;\n    margin-top: 50px;\n    background: white;\n\tborder-radius: 5px;\n\ttext-align: right;\n  }\n\n  .Overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    background-color: rgba(0, 0, 0, .75);\n  }\n\n  #modalClose {\n    max-height: 30px;\n    position: absolute;\n    top: 60px;\n    right: 60px;\n    max-width: 30px;\n  }", ""]);
+exports.push([module.i, ".jumbotron {\n\tbackground-color: black;\n    padding: 0;\n    padding-top: 120px;\n    padding-bottom: 120px;\n\tcolor: white;\n\tmargin-bottom: 0px;\n}\n\n.jumboSpace {\n\tmin-height: 50vh;\n\talign-items: center !important;\n}\n\n#desktopImage {\n\tmax-width: 100%;\n\tmargin-top: 40px;\t\n}\n\n#jumboH1 {\n\tcolor: white;\n    font-family: 'Raleway', sans-serif;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    font-size: 50px;\n\tfont-weight: 800;\n\tmargin-bottom: 20px;\n\ttext-align: left !important;\n}\n\n#jumboP {\n\tcolor: white;\n    font-family: 'Open Sans', sans-serif;\n    letter-spacing: 1px;\n    font-size: 18px;\n\ttext-align: left !important;\n}\n\n#jumboBtn {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: white;\n    border-radius: 0;\n    border: 2px solid white;\n\tpadding: 10px 50px;\n\tmargin-top: 20px;\n\tbackground-color: rgba(0, 0, 0, 0);\n}\n\n#jumboBtn:first-of-type {\n\tmargin-right: 20px;\n}\n\n.Modal {\n\tposition: relative;\n    max-width: max-content;\n    max-height: max-content;\n    padding: 60px;\n    margin: auto;\n    margin-top: 50px;\n    background: white;\n\tborder-radius: 5px;\n\t\n  }\n\n  .Overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    background-color: rgba(0, 0, 0, .75);\n  }\n\n  #modalClose {\n    max-height: 30px;\n    position: absolute;\n    top: 60px;\n    right: 60px;\n    max-width: 30px;\n  }", ""]);
 
 // exports
 
@@ -66798,7 +66818,7 @@ exports = module.exports = __webpack_require__(34)(false);
 
 
 // module
-exports.push([module.i, "#LoginFormContainer {\n\tmargin: auto;\n    padding: 0;\n}\n\n#formTitle {\n    font-family: 'Raleway', sans-serif;\n    font-size: 35px;\n    font-weight: 100;\n    text-transform: uppercase;\n    text-align: left;\n    letter-spacing: 1px;\n    padding: 0;\n    margin: 0;\n    margin-top: -6px;\n}\n\n#fieldDiv {\n\tpadding: 0;\n}\n\n#fieldDiv:first-of-type {\n\tmargin-top: 20px;\n}\n\n#FormSubmitBtn {\n\tmargin-top: 40px;\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: rgb(0, 0, 0);\n    border-radius: 0;\n    border: 2px solid rgb(0, 0, 0);\n\tpadding: 10px 50px;\n\tbackground-color: rgba(0, 0, 0, 0);\n\tmargin-bottom: 20px;\n}\n\n#noAcctMssg {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: rgba(0, 0, 0, 0.25);\n}\n\n#noAcctMssg a {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: #87e0f0;\n}", ""]);
+exports.push([module.i, "#LoginFormContainer {\n\tmargin: auto;\n    padding: 0;\n}\n\n#formTitle {\n    font-family: 'Raleway', sans-serif;\n    font-size: 35px;\n    font-weight: 100;\n    text-transform: uppercase;\n    text-align: left;\n    letter-spacing: 1px;\n    padding: 0;\n    margin: 0;\n    margin-top: -6px;\n}\n\n#fieldDiv {\n\tpadding: 0;\n}\n\n#fieldDiv:first-of-type {\n\tmargin-top: 20px;\n}\n\n.FormButtonDiv {\n\ttext-align: center;\n}\n\n#FormSubmitBtn {\n\tmargin-top: 40px;\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: rgb(0, 0, 0);\n    border-radius: 0;\n    border: 2px solid rgb(0, 0, 0);\n\tpadding: 10px 50px;\n\tbackground-color: rgba(0, 0, 0, 0);\n    margin-bottom: 20px;\n    \n}\n\n#noAcctMssg {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: rgba(0, 0, 0, 0.25);\n}\n\n#noAcctMssg a {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: #87e0f0;\n}\n\n.error-message {\n    padding: 0 16px;\n    color: #f24336;\n    margin-top: 20px;\n    font-size: 13px;\n    text-align: right;\n}\n", ""]);
 
 // exports
 
@@ -66826,7 +66846,7 @@ exports = module.exports = __webpack_require__(34)(false);
 
 
 // module
-exports.push([module.i, "#sideBarDiv {\n    background-color: #f6c501;\n    color: white;\n    min-height: -webkit-fill-available;\n    font-family: 'Open Sans', sans-serif;\n    padding: 0;\n    margin: 0;\n}\n\n#sideBarTopInfo {\n    font-family: 'Open Sans', sans-serif;\n    font-size: smaller;\n    text-align: center;\n    padding: 40px;\n}\n\n#sideBarNav{\n\tmin-width: 100%;\n    padding: 0;\n    margin: 0;\n}\n\n#sideBarNavMainBtns {\n    font-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: white;\n    border-radius: 0;\n    border-top: 2px solid white;\n    border-bottom: none;\n    border-right: none;\n    border-left: none;\n    padding: 20px 50px;\n    margin: 0;\n    background-color: rgba(0, 0, 0, 0);\n}\n\n#sideBarNavMainBtns:last-of-type {\n    border-bottom: 2px solid white;\n}\n\n#sideBarNavMainBtns:hover {\n\tbackground-color: white;\n\tcolor: #3a88be;\n}\n", ""]);
+exports.push([module.i, "#sideBarDiv {\n\tbackground-color: #f6c501;\n    color: white;\n    font-family: 'Open Sans', sans-serif;\n    padding: 0;\n    margin: 0;\n    height: 100%;\n    position: fixed;\n    z-index: 1;\n    top: 70px;\n    left: 0;\n    overflow-x: hidden;\n}\n\n#sideBarTopInfo {\n    font-family: 'Open Sans', sans-serif;\n    font-size: smaller;\n    text-align: center;\n    padding: 40px;\n}\n\n#userImage {\n\tmax-width: 100%;\n    border-radius: 100%;\n    border: 1px solid white;\n}\n\n#userName {\n\tmargin-bottom: 0;\n    font-family: 'Raleway', sans-serif;\n    font-size: 20px;\n    font-weight: 600;\n    padding: 0;\n    margin-top: 20px;\n    text-transform: uppercase;\n    color: #262626;\n}\n\n\n#sideBarNav{\n\tmin-width: 100%;\n    padding: 0;\n    margin: 0;\n}\n\n#sideBarNavMainBtns {\n    font-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: white;\n    border-radius: 0;\n    border-top: 2px solid white;\n    border-bottom: none;\n    border-right: none;\n    border-left: none;\n    padding: 20px 50px;\n    margin: 0;\n    background-color: rgba(0, 0, 0, 0);\n}\n\n#sideBarNavMainBtns:last-of-type {\n    border-bottom: 2px solid white;\n}\n\n#sideBarNavMainBtns:hover {\n\tbackground-color: white;\n\tcolor: #3a88be;\n}\n\n#sideBarNavMainBtns:focus {\n\tbox-shadow: none; \n}\n\n#sideBarNavMainBtns:active, .btn:not(:disabled):not(.disabled):active  {\n\tbackground-color: white !important;\n\tcolor: #3a88be !important;\n}\n\n", ""]);
 
 // exports
 
@@ -66840,7 +66860,7 @@ exports = module.exports = __webpack_require__(34)(false);
 
 
 // module
-exports.push([module.i, "#SignUpFormContainer {\n\tmargin: auto;\n    padding: 0;\n}\n\n#formTitle {\n    font-family: 'Raleway', sans-serif;\n    font-size: 35px;\n    font-weight: 100;\n    text-transform: uppercase;\n    text-align: left;\n    letter-spacing: 1px;\n    padding: 0;\n    margin: 0;\n    margin-top: -6px;\n}\n\n#fieldDiv {\n\tpadding: 0;\n\tmargin-top: 20px;\n}\n\n#FormSubmitBtn {\n\tmargin-top: 40px;\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: rgb(0, 0, 0);\n    border-radius: 0;\n    border: 2px solid rgb(0, 0, 0);\n\tpadding: 10px 50px;\n\tbackground-color: rgba(0, 0, 0, 0);\n\tmargin-bottom: 20px;\n}\n\n#noAcctMssg {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: rgba(0, 0, 0, 0.25);\n}\n\n#noAcctMssg a {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: #87e0f0;\n}", ""]);
+exports.push([module.i, "#SignUpFormContainer {\n\tmargin: auto;\n    padding: 0;\n}\n\n#formTitle {\n    font-family: 'Raleway', sans-serif;\n    font-size: 35px;\n    font-weight: 100;\n    text-transform: uppercase;\n    text-align: left;\n    letter-spacing: 1px;\n    padding: 0;\n    margin: 0;\n    margin-top: -6px;\n}\n\n#fieldDiv {\n\tpadding: 0;\n\tmargin-top: 20px;\n}\n\n#FormSubmitBtn {\n\tmargin-top: 40px;\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: rgb(0, 0, 0);\n    border-radius: 0;\n    border: 2px solid rgb(0, 0, 0);\n\tpadding: 10px 50px;\n\tbackground-color: rgba(0, 0, 0, 0);\n\tmargin-bottom: 20px;\n}\n\n#noAcctMssg {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: rgba(0, 0, 0, 0.25);\n}\n\n#noAcctMssg a {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: #87e0f0;\n}\n.error-message {\n    padding: 0 16px;\n    color: #f24336;\n    margin-top: 20px;\n    font-size: 13px;\n    text-align: right;\n}", ""]);
 
 // exports
 
@@ -66854,7 +66874,7 @@ exports = module.exports = __webpack_require__(34)(false);
 
 
 // module
-exports.push([module.i, "#topBarRow {\n\tbackground-color: rgba(0, 0, 0, 0.85);\n    color: white;\n    padding: 20px;\n\tmargin: auto;\n\talign-items: center;\n}\n\n#welcomeTitle {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 25px;\n    font-weight: 600;\n    padding: 0;\n    margin: 0;\n}\n\n#topBarLink {\n\tdisplay: contents;\n\tpadding: 0;\n\tmargin: 0;\n}\n\n#katennaIcon {\n\tmax-height: 30px;\n\tpadding: 0;\n\tmargin: 0;\n\tmargin-right: 20px;\n}\n\n#buttonAlign {\n\ttext-align: right !important;\n\tpadding: 0;\n    margin: 0;\n}\n\n#topBarBrand {\n\tdisplay: flex;\n}", ""]);
+exports.push([module.i, "#topBarRow {\n    position: fixed;\n    top: 0;\n    left: 0;\n    z-index: 100;\n    background-color: #262626;\n    color: white;\n    padding: 20px;\n    margin: auto;\n    align-items: center;\n    width: 100%;\n}\n\n#welcomeTitle {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 25px;\n    font-weight: 600;\n    padding: 0;\n    margin: 0;\n}\n\n#topBarLink {\n\tdisplay: contents;\n\tpadding: 0;\n\tmargin: 0;\n}\n\n#katennaIcon {\n\tmax-height: 30px;\n\tpadding: 0;\n\tmargin: 0;\n\tmargin-right: 20px;\n}\n\n#buttonAlign {\n\ttext-align: right !important;\n\tpadding: 0;\n    margin: 0;\n}\n\n#topBarBrand {\n\tdisplay: flex;\n}", ""]);
 
 // exports
 
@@ -67118,7 +67138,7 @@ exports = module.exports = __webpack_require__(34)(false);
 
 
 // module
-exports.push([module.i, "#mainDashContainer {\n    background-color: rgba(245, 245, 245, 1);\n    color: #262626;\n    min-height: -webkit-fill-available;\n    font-family: 'Open Sans', sans-serif;\n    padding: 50px;\n    margin: 0;\n}", ""]);
+exports.push([module.i, "#mainDashContainer {\n    background-color: rgba(245, 245, 245, 1);\n    color: #262626;\n    min-height: -webkit-fill-available;\n    font-family: 'Open Sans', sans-serif;\n    padding: 50px;\n\tmargin: 0;\n\tposition: absolute;\n    top: 70px;\n    right: 0;\n}", ""]);
 
 // exports
 
@@ -67493,6 +67513,70 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	module.hot.accept("!!../../../../node_modules/css-loader/index.js!./AddTaskForm.css", function() {
 		var newContent = require("!!../../../../node_modules/css-loader/index.js!./AddTaskForm.css");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 569 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(34)(false);
+// imports
+
+
+// module
+exports.push([module.i, "#employeesContainerDiv {\n    padding: 0;\n    margin: 0;\n}\n\n.eachEmployeeCard {\n\tborder: none;\n    border-radius: 0;\n    margin-bottom: 40px !important;\n    padding: 0;\n}\n\n.eachImgDiv {\n    max-height: 200px;\n    border: none;\n    border-radius: 0;\n}\n\n.eachCardImg {\n\tborder: none;\n    border-radius: 0;\n}\n\n.eachCardHeader {\n\tbackground-color: #262626;\n    color: white;\n    font-family: 'Raleway', sans-serif;\n    text-transform: capitalize;\n}\n\n.eachCardTitle {\n\tfont-weight: 600;\n    font-size: 25px;\n}\n\n.eachCardSubtitle {\n\tfont-family: 'Open Sans', sans-serif;\n    text-transform: uppercase;\n    font-size: 15px;\n    font-weight: 100;\n    letter-spacing: 2px;\n}\n\n.eachCardBody {\n    border: none;\n    border-radius: 0;\n    padding: 1.25rem;\n}\n\n.eachCardText {\n\tpadding: 0;\n    margin: 0;\n}\n\n.eachCardListItem {\n\ttext-align: left !important;\n    padding: 0;\n    margin: 10px 0px !important;\n}\n\n.eachCardItem {\n\tfont-weight: 600;\n}\n\n.capitalize {\n\ttext-transform: capitalize;\n}\n.eachCardFooter {\n    background-color: white;\n    border: none;\n    border-radius: 0;\n    margin: 0;\n    margin-top: 30px;\n}\n\n.eachFooterBtn {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 13px;\n    font-weight: 600;\n    text-transform: uppercase;\n    color: white;\n    border-radius: 0;\n    border: none;\n    padding: 0;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    background-color: #f6c501;\n    text-align: center;\n}\n\n.eachFooterBtn > a {\n\tpadding: 0 !important;\n\tmargin: 0 !important;\n\tcolor:\twhite;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 570 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(569);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(36)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../../../node_modules/css-loader/index.js!./EmployeesFunction.css", function() {
+		var newContent = require("!!../../../../node_modules/css-loader/index.js!./EmployeesFunction.css");
 
 		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 

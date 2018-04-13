@@ -48,8 +48,8 @@ class DashboardPage extends React.Component {
 			<div className="container-fluid">
 				<TopBar secretData={this.state.secretData} user={this.state.user} />
 
-				<div className="row">
-					<SideBar />
+				<div className="row" id="dashboardMainRow">
+					<SideBar secretData={this.state.secretData} user={this.state.user}/>
 					<Dashboard secretData={this.state.secretData} user={this.state.user} />
 				</div>
 			</div>

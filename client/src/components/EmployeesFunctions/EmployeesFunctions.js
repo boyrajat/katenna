@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, CardTitle, CardText } from 'material-ui/Card';
 import {
   BrowserRouter as Router,
   Route,
@@ -8,6 +7,7 @@ import {
   Redirect,
   withRouter
 } from 'react-router-dom'
+import './EmployeesFunction.css';
 
 class EmployeesFunctions extends React.Component {
   constructor(props) {
@@ -49,24 +49,48 @@ class EmployeesFunctions extends React.Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <div>
+        <div className="card-deck" id="employeesContainerDiv">
           {items.map(item => (
-            <div className="card text-center">
-              <div className="card-header">
-                {item.position}
-              </div>
-              <img className="card-img-top" src="..." alt="Card image cap" />
-              <div className="card-body">
-                <h5 className="card-title">{item.name}</h5>
-                <ul className="list-group list-group-flush">
-                  <li className="list-group-item">Phone: {item.phone}</li>
-                  <li className="list-group-item">Email: {item.email}</li>
-                  <li className="list-group-item">Type: {item.type}</li>
-                </ul>
-                {/* use the link below to pass state to EmployeeFunctions2 */}
-                <Link className="btn btn-secondary" to={{ pathname: '/taskback', state: { employeeName: item.name, employeePosition: item.position } }}>See Tasks</Link>
-                <Link className="btn btn-info" to='' >Add New Task</Link>
-              </div>
+            <div className="card eachEmployeeCard" style={{maxWidth: "300px", minWidth: "300px"}}>
+				<div className="eachImgDiv">
+					<img className="card-img-top eachCardImg" src={item.image} alt="Card image cap"/>
+				</div>
+				
+				<div className="card-header eachCardHeader">
+					<h5 className="card-title eachCardTitle">{item.name}</h5>
+					<h6 className="card-subtitle eachCardSubtitle">{item.position}</h6>
+				</div>
+					
+				<div className="card-body eachCardBody">
+					<div className="card-text eachCardText">
+						<p className="eachCardListItem">Phone: <span className="eachCardItem">{item.phone}</span></p>
+						<p className="eachCardListItem">Email: <span className="eachCardItem">{item.email}</span></p>
+						<p className="eachCardListItem">User Type: <span className="eachCardItem capitalize">{item.type}</span></p>
+					</div>
+
+					<div className="eachCardFooter row">
+						{/* use the link below to pass state to EmployeeFunctions2 */}
+						<div className="col-5 eachFooterBtn">
+							<Link
+							to={{ pathname: '/taskback', state: { employeeName: item.name, employeePosition: item.position } }}>
+							Tasks
+							</Link>
+						</div>
+
+						<div className="col-2"></div>
+						
+						<div className="col-5 eachFooterBtn">
+							<Link
+							to='/' >
+							New Task
+							</Link>
+						</div>
+						
+					</div>
+				</div>
+
+
+
             </div>
           ))}
         </div>

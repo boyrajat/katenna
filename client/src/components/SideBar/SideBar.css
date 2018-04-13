@@ -1,10 +1,15 @@
 #sideBarDiv {
-    background-color: #f6c501;
+	background-color: #f6c501;
     color: white;
-    min-height: -webkit-fill-available;
     font-family: 'Open Sans', sans-serif;
     padding: 0;
     margin: 0;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 70px;
+    left: 0;
+    overflow-x: hidden;
 }
 
 #sideBarTopInfo {
@@ -13,6 +18,24 @@
     text-align: center;
     padding: 40px;
 }
+
+#userImage {
+	max-width: 100%;
+    border-radius: 100%;
+    border: 1px solid white;
+}
+
+#userName {
+	margin-bottom: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0;
+    margin-top: 20px;
+    text-transform: uppercase;
+    color: #262626;
+}
+
 
 #sideBarNav{
 	min-width: 100%;
@@ -45,3 +68,13 @@
 	background-color: white;
 	color: #3a88be;
 }
+
+#sideBarNavMainBtns:focus {
+	box-shadow: none; 
+}
+
+#sideBarNavMainBtns:active, .btn:not(:disabled):not(.disabled):active  {
+	background-color: white !important;
+	color: #3a88be !important;
+}
+
