@@ -19,6 +19,24 @@
     padding: 40px;
 }
 
+#userImage {
+	max-width: 100%;
+    border-radius: 100%;
+    border: 1px solid white;
+}
+
+#userName {
+	margin-bottom: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0;
+    margin-top: 20px;
+    text-transform: uppercase;
+    color: #262626;
+}
+
+
 #sideBarNav{
 	min-width: 100%;
     padding: 0;

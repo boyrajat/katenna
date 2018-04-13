@@ -39911,7 +39911,7 @@ var EmployeesFunctions = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'eachImgDiv' },
-                _react2.default.createElement('img', { className: 'card-img-top eachCardImg', src: 'http://via.placeholder.com/300x300', alt: 'Card image cap' })
+                _react2.default.createElement('img', { className: 'card-img-top eachCardImg', src: item.image, alt: 'Card image cap' })
               ),
               _react2.default.createElement(
                 'div',
@@ -41118,18 +41118,21 @@ __webpack_require__(552);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var SideBar = function SideBar() {
+var SideBar = function SideBar(_ref) {
+	var secretDate = _ref.secretDate,
+	    user = _ref.user;
 	return _react2.default.createElement(
 		"div",
 		{ className: "col-2", id: "sideBarDiv" },
 		_react2.default.createElement(
 			"div",
 			{ id: "sideBarTopInfo" },
-			"Something cool here like user photo or something.",
-			_react2.default.createElement("br", null),
-			"I need the image info from database here I suppose, plus the current user's name only, not lastname.",
-			_react2.default.createElement("br", null),
-			"Please look under katenna/server/static/img/employees for a bunch of 'profile images' we can use."
+			_react2.default.createElement("img", { src: user.userImage, alt: "USER", id: "userImage" }),
+			_react2.default.createElement(
+				"p",
+				{ id: "userName" },
+				user.name
+			)
 		),
 		_react2.default.createElement(
 			"div",
@@ -41506,12 +41509,7 @@ var TopBar = function TopBar(_ref) {
 			_react2.default.createElement(
 				"h1",
 				{ id: "welcomeTitle" },
-				"Welcome, ",
-				_react2.default.createElement(
-					"strong",
-					null,
-					user.name
-				)
+				"Welcome!"
 			)
 		),
 		_react2.default.createElement(
@@ -41646,7 +41644,7 @@ var DashboardPage = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'row', id: 'dashboardMainRow' },
-          _react2.default.createElement(_SideBar2.default, null),
+          _react2.default.createElement(_SideBar2.default, { secretData: this.state.secretData, user: this.state.user }),
           _react2.default.createElement(_Dashboard2.default, { secretData: this.state.secretData, user: this.state.user })
         )
       );
@@ -44813,7 +44811,7 @@ exports = module.exports = __webpack_require__(20)(false);
 
 
 // module
-exports.push([module.i, "#employeesContainerDiv {\n    padding: 0;\n    margin: 0;\n}\n\n.eachEmployeeCard {\n\tborder: none;\n    border-radius: 0;\n    margin-bottom: 40px !important;\n    padding: 0;\n}\n\n.eachImgDiv {\n    max-height: 150px;\n    border: none;\n    border-radius: 0;\n}\n\n.eachCardImg {\n\tborder: none;\n    border-radius: 0;\n}\n\n.eachCardHeader {\n\tbackground-color: #52eab6;\n    color: white;\n    font-family: 'Raleway', sans-serif;\n    text-transform: capitalize;\n}\n\n.eachCardTitle {\n\tfont-weight: 600;\n    font-size: 25px;\n}\n\n.eachCardSubtitle {\n\tfont-family: 'Open Sans', sans-serif;\n    text-transform: uppercase;\n    font-size: 15px;\n    font-weight: 100;\n    letter-spacing: 2px;\n}\n\n.eachCardBody {\n    border: none;\n    border-radius: 0;\n    padding: 1.25rem;\n}\n\n.eachCardText {\n\tpadding: 0;\n    margin: 0;\n}\n\n.eachCardListItem {\n\ttext-align: left !important;\n    padding: 0;\n    margin: 10px 0px !important;\n}\n\n.eachCardItem {\n\tfont-weight: 600;\n}\n\n.capitalize {\n\ttext-transform: capitalize;\n}\n.eachCardFooter {\n    background-color: white;\n    border: none;\n    border-radius: 0;\n    margin: 0;\n    margin-top: 30px;\n}\n\n.eachFooterBtn {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 13px;\n    font-weight: 600;\n    text-transform: uppercase;\n    color: white;\n    border-radius: 0;\n    border: none;\n    padding: 0;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    background-color: #f6c501;\n    text-align: center;\n}\n\n.eachFooterBtn > a {\n\tpadding: 0 !important;\n\tmargin: 0 !important;\n\tcolor:\twhite;\n}", ""]);
+exports.push([module.i, "#employeesContainerDiv {\n    padding: 0;\n    margin: 0;\n}\n\n.eachEmployeeCard {\n\tborder: none;\n    border-radius: 0;\n    margin-bottom: 40px !important;\n    padding: 0;\n}\n\n.eachImgDiv {\n    max-height: 200px;\n    border: none;\n    border-radius: 0;\n}\n\n.eachCardImg {\n\tborder: none;\n    border-radius: 0;\n}\n\n.eachCardHeader {\n\tbackground-color: #262626;\n    color: white;\n    font-family: 'Raleway', sans-serif;\n    text-transform: capitalize;\n}\n\n.eachCardTitle {\n\tfont-weight: 600;\n    font-size: 25px;\n}\n\n.eachCardSubtitle {\n\tfont-family: 'Open Sans', sans-serif;\n    text-transform: uppercase;\n    font-size: 15px;\n    font-weight: 100;\n    letter-spacing: 2px;\n}\n\n.eachCardBody {\n    border: none;\n    border-radius: 0;\n    padding: 1.25rem;\n}\n\n.eachCardText {\n\tpadding: 0;\n    margin: 0;\n}\n\n.eachCardListItem {\n\ttext-align: left !important;\n    padding: 0;\n    margin: 10px 0px !important;\n}\n\n.eachCardItem {\n\tfont-weight: 600;\n}\n\n.capitalize {\n\ttext-transform: capitalize;\n}\n.eachCardFooter {\n    background-color: white;\n    border: none;\n    border-radius: 0;\n    margin: 0;\n    margin-top: 30px;\n}\n\n.eachFooterBtn {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 13px;\n    font-weight: 600;\n    text-transform: uppercase;\n    color: white;\n    border-radius: 0;\n    border: none;\n    padding: 0;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    background-color: #f6c501;\n    text-align: center;\n}\n\n.eachFooterBtn > a {\n\tpadding: 0 !important;\n\tmargin: 0 !important;\n\tcolor:\twhite;\n}", ""]);
 
 // exports
 
@@ -44925,7 +44923,7 @@ exports = module.exports = __webpack_require__(20)(false);
 
 
 // module
-exports.push([module.i, "#sideBarDiv {\n\tbackground-color: #f6c501;\n    color: white;\n    font-family: 'Open Sans', sans-serif;\n    padding: 0;\n    margin: 0;\n    height: 100%;\n    position: fixed;\n    z-index: 1;\n    top: 70px;\n    left: 0;\n    overflow-x: hidden;\n}\n\n#sideBarTopInfo {\n    font-family: 'Open Sans', sans-serif;\n    font-size: smaller;\n    text-align: center;\n    padding: 40px;\n}\n\n#sideBarNav{\n\tmin-width: 100%;\n    padding: 0;\n    margin: 0;\n}\n\n#sideBarNavMainBtns {\n    font-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: white;\n    border-radius: 0;\n    border-top: 2px solid white;\n    border-bottom: none;\n    border-right: none;\n    border-left: none;\n    padding: 20px 50px;\n    margin: 0;\n    background-color: rgba(0, 0, 0, 0);\n}\n\n#sideBarNavMainBtns:last-of-type {\n    border-bottom: 2px solid white;\n}\n\n#sideBarNavMainBtns:hover {\n\tbackground-color: white;\n\tcolor: #3a88be;\n}\n\n#sideBarNavMainBtns:focus {\n\tbox-shadow: none; \n}\n\n#sideBarNavMainBtns:active, .btn:not(:disabled):not(.disabled):active  {\n\tbackground-color: white !important;\n\tcolor: #3a88be !important;\n}\n\n", ""]);
+exports.push([module.i, "#sideBarDiv {\n\tbackground-color: #f6c501;\n    color: white;\n    font-family: 'Open Sans', sans-serif;\n    padding: 0;\n    margin: 0;\n    height: 100%;\n    position: fixed;\n    z-index: 1;\n    top: 70px;\n    left: 0;\n    overflow-x: hidden;\n}\n\n#sideBarTopInfo {\n    font-family: 'Open Sans', sans-serif;\n    font-size: smaller;\n    text-align: center;\n    padding: 40px;\n}\n\n#userImage {\n\tmax-width: 100%;\n    border-radius: 100%;\n    border: 1px solid white;\n}\n\n#userName {\n\tmargin-bottom: 0;\n    font-family: 'Raleway', sans-serif;\n    font-size: 20px;\n    font-weight: 600;\n    padding: 0;\n    margin-top: 20px;\n    text-transform: uppercase;\n    color: #262626;\n}\n\n\n#sideBarNav{\n\tmin-width: 100%;\n    padding: 0;\n    margin: 0;\n}\n\n#sideBarNavMainBtns {\n    font-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: white;\n    border-radius: 0;\n    border-top: 2px solid white;\n    border-bottom: none;\n    border-right: none;\n    border-left: none;\n    padding: 20px 50px;\n    margin: 0;\n    background-color: rgba(0, 0, 0, 0);\n}\n\n#sideBarNavMainBtns:last-of-type {\n    border-bottom: 2px solid white;\n}\n\n#sideBarNavMainBtns:hover {\n\tbackground-color: white;\n\tcolor: #3a88be;\n}\n\n#sideBarNavMainBtns:focus {\n\tbox-shadow: none; \n}\n\n#sideBarNavMainBtns:active, .btn:not(:disabled):not(.disabled):active  {\n\tbackground-color: white !important;\n\tcolor: #3a88be !important;\n}\n\n", ""]);
 
 // exports
 
