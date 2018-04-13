@@ -11,7 +11,7 @@
 }
 
 .eachImgDiv {
-    max-height: 150px;
+    max-height: 200px;
     border: none;
     border-radius: 0;
 }
@@ -22,7 +22,7 @@
 }
 
 .eachCardHeader {
-	background-color: #52eab6;
+	background-color: #262626;
     color: white;
     font-family: 'Raleway', sans-serif;
     text-transform: capitalize;

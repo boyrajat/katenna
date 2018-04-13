@@ -11,7 +11,7 @@ const TopBar = ({ secretData, user }) => (
 			<Link to="/" id="topBarLink">
 				<img src='/img/kIcon.svg' alt="KATENNA" id="katennaIcon" />
 			</Link>
-			<h1 id="welcomeTitle">Welcome, <strong>{user.name}</strong></h1>
+			<h1 id="welcomeTitle">Welcome!</h1>
 		</div>
 		
 		<div className="col-1 text-right" id="buttonAlign">

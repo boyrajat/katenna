@@ -49,7 +49,7 @@ class DashboardPage extends React.Component {
 				<TopBar secretData={this.state.secretData} user={this.state.user} />
 
 				<div className="row" id="dashboardMainRow">
-					<SideBar />
+					<SideBar secretData={this.state.secretData} user={this.state.user}/>
 					<Dashboard secretData={this.state.secretData} user={this.state.user} />
 				</div>
 			</div>

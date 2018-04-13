@@ -53,7 +53,7 @@ class EmployeesFunctions extends React.Component {
           {items.map(item => (
             <div className="card eachEmployeeCard" style={{maxWidth: "300px", minWidth: "300px"}}>
 				<div className="eachImgDiv">
-					<img className="card-img-top eachCardImg" src="http://via.placeholder.com/300x300" alt="Card image cap"/>
+					<img className="card-img-top eachCardImg" src={item.image} alt="Card image cap"/>
 				</div>
 				
 				<div className="card-header eachCardHeader">
