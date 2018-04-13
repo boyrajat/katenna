@@ -51,13 +51,6 @@ const SignUpForm = ({
         <div className="FormButtonDiv">
           <button  id="FormSubmitBtn" type="submit" label="Create New Account" primary>Sign Up</button>
         </div>
-
-		<div id="noAcctMssg">
-			Already have an account?  &nbsp; 
-			<Link to={'/login'}>Log in</Link>
-		</div>
-
-
       </form>
     </div>
   );

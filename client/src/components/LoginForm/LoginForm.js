@@ -44,11 +44,6 @@ const LoginForm = ({
           <button id="FormSubmitBtn" type="submit" label="Log in">LOG IN</button>
         </div>
 
-		<div id="noAcctMssg">
-		Don't have an account? &nbsp; 
-		<Link to={'/signup'}>Create one now</Link>
-		</div>
-
       </form>
     </div>
   );

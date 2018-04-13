@@ -54,6 +54,11 @@
 	margin-right: 20px;
 }
 
+#jumboBtn:hover {
+	color:black;
+	background-color: white;
+}
+
 .Modal {
 	position: relative;
     max-width: max-content;
@@ -82,3 +87,19 @@
     right: 60px;
     max-width: 30px;
   }
+
+.noAcctMssg {
+	font-family: 'Open Sans', sans-serif;
+    font-size: small;
+    font-weight: 100;
+    text-transform: capitalize;
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.noAcctMssg span {
+	font-family: 'Open Sans', sans-serif;
+    font-size: small;
+    font-weight: 100;
+    text-transform: capitalize;
+    color: #87e0f0;
+}

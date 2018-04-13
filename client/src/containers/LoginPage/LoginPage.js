@@ -71,7 +71,7 @@ class LoginPage extends React.Component {
         // redirect signed in user to dashboard
         // this.props.history.push('/');
         window.location.reload();
-        //^^^ Alex & MW trying to debbug here
+        //^^^ Alex & MW trying to de-bug here
       } else {
         // failure
 
