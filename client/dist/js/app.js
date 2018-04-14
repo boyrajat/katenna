@@ -41783,10 +41783,177 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /***/ }),
 /* 288 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-throw new Error("Module build failed: SyntaxError: Unexpected token (18:0)\n\n\u001b[0m \u001b[90m 16 | \u001b[39m\t\t\u001b[36msuper\u001b[39m(props)\u001b[33m;\u001b[39m \u001b[90m//calls the constructor of the parent ¿? Research more\u001b[39m\n \u001b[90m 17 | \u001b[39m\t\t\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mstate \u001b[33m=\u001b[39m {\u001b[90m//whatever I want to pass on to SideBard child\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 18 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\n \u001b[90m    | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 19 | \u001b[39m\u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\n \u001b[90m 20 | \u001b[39m\t\t\terror\u001b[33m:\u001b[39m \u001b[36mnull\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 21 | \u001b[39m\t\t\tisLoaded\u001b[33m:\u001b[39m \u001b[36mfalse\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n");
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(7);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactRouterDom = __webpack_require__(20);
+
+var _JobTitlesList = __webpack_require__(724);
+
+var _JobTitlesList2 = _interopRequireDefault(_JobTitlesList);
+
+__webpack_require__(557);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SideBar = function (_Component) {
+	_inherits(SideBar, _Component);
+
+	//these (props) are the ones being passed down from Dashboard Page
+	function SideBar(props) {
+		_classCallCheck(this, SideBar);
+
+		//calls the constructor of the parent ¿? Research more
+		var _this = _possibleConstructorReturn(this, (SideBar.__proto__ || Object.getPrototypeOf(SideBar)).call(this, props)); //We set up the props and the state
+
+
+		_this.state = { //whatever I want to pass on to SideBard child
+			error: null,
+			isLoaded: false,
+			showJobTitles: false,
+			items: []
+		};
+		return _this;
+	}
+
+	//HELPER FUNCTIONS to show and hide element on click these are conditional rendering functions
+
+
+	_createClass(SideBar, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			var _this2 = this;
+
+			fetch("/tasks/findall").then(function (res) {
+				return res.json();
+			}).then(function (result) {
+				_this2.setState({
+					isLoaded: true,
+					items: result
+				});
+			},
+			// Note: it's important to handle errors here
+			// instead of a catch() block so that we don't swallow
+			// exceptions from actual bugs in components.
+			function (error) {
+				_this2.setState({
+					isLoaded: true,
+					error: error
+				});
+			});
+		}
+
+		// handleOpenJobTitles() {
+		// 	// event.preventDefault();
+		// 	// if (this.showJobTitles) {
+		// 	// 	this.setState({ showJobTitles: false });
+		// 	// } 
+		// 	this.setState({showJobTitles: true });	
+
+		// 	console.log(this.state.showJobTitles);
+		// }
+
+	}, {
+		key: 'workingFunction',
+		value: function workingFunction() {
+			this.setState({ showJobTitles: !this.state.showJobTitles });
+
+			console.log(this.state.showJobTitles);
+			console.log('frank rox');
+			// if (!this.state.showJobTitles){
+			// 	return <JobTitlesList items={this.state.items} style1='display: none;' />
+			// } else{
+			// 	return <JobTitlesList items={this.state.items} style1='display:content;' />	
+			// }
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _state = this.state,
+			    error = _state.error,
+			    isLoaded = _state.isLoaded,
+			    items = _state.items,
+			    showJobTitles = _state.showJobTitles;
+
+
+			if (error) {
+				return _react2.default.createElement(
+					'div',
+					null,
+					'Error: ',
+					error.message
+				);
+			} else if (!isLoaded) {
+				return _react2.default.createElement(
+					'div',
+					null,
+					'Loading...'
+				);
+			} else {
+				return _react2.default.createElement(
+					'div',
+					{ className: 'col-2', id: 'sideBarDiv' },
+					_react2.default.createElement(
+						'div',
+						{ id: 'sideBarTopInfo' },
+						_react2.default.createElement('img', { src: this.props.user.userImage, alt: 'USER', id: 'userImage' }),
+						_react2.default.createElement(
+							'p',
+							{ id: 'userName' },
+							this.props.user.name
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'btn-group-vertical', id: 'sideBarNav' },
+						_react2.default.createElement(
+							_reactRouterDom.Link,
+							{ className: 'btn btn-secondary', id: 'sideBarNavMainBtns', to: '/employees' },
+							'Employees'
+						),
+						_react2.default.createElement(
+							_reactRouterDom.Link,
+							{
+								className: 'btn btn-secondary',
+								id: 'sideBarNavMainBtns',
+								onClick: this.workingFunction.bind(this),
+								to: '/task'
+							},
+							'JOB TITLES'
+						),
+						this.state.showJobTitles ? _react2.default.createElement(_JobTitlesList2.default, { items: this.state.items }) : null
+					)
+				);
+			}
+		}
+	}]);
+
+	return SideBar;
+}(_react.Component);
+
+exports.default = SideBar;
 
 /***/ }),
 /* 289 */
@@ -66834,7 +67001,20 @@ exports.push([module.i, "#logOutClickableArea {\n\tmax-width: max-content;\n    
 
 
 /***/ }),
-/* 552 */,
+/* 552 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(34)(false);
+// imports
+
+
+// module
+exports.push([module.i, "#sideBarDiv {\n\tbackground-color: #f6c501;\n    color: white;\n    font-family: 'Open Sans', sans-serif;\n    padding: 0;\n    margin: 0;\n    height: 100%;\n    position: fixed;\n    z-index: 1;\n    top: 70px;\n    left: 0;\n    overflow-x: hidden;\n}\n\n#sideBarTopInfo {\n    font-family: 'Open Sans', sans-serif;\n    font-size: smaller;\n    text-align: center;\n    padding: 40px;\n}\n\n#userImage {\n\tmax-width: 100%;\n    border-radius: 100%;\n    border: 1px solid white;\n}\n\n#userName {\n\tmargin-bottom: 0;\n    font-family: 'Raleway', sans-serif;\n    font-size: 20px;\n    font-weight: 600;\n    padding: 0;\n    margin-top: 20px;\n    text-transform: uppercase;\n    color: #262626;\n}\n\n\n#sideBarNav{\n\tmin-width: 100%;\n    padding: 0;\n    margin: 0;\n}\n\n#sideBarNavMainBtns {\n    font-family: 'Raleway Bold', sans-serif;\n    font-size: 15px;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: white;\n    border-radius: 0;\n    border-top: 2px solid white;\n    border-bottom: none;\n    border-right: none;\n    border-left: none;\n    padding: 20px 50px;\n    margin: 0;\n    background-color: rgba(0, 0, 0, 0);\n}\n\n#sideBarNavMainBtns:last-of-type {\n    border-bottom: 2px solid white;\n}\n\n#sideBarNavMainBtns:hover {\n\tbackground-color: white;\n\tcolor: #262626;\n}\n\n#sideBarNavMainBtns:focus {\n\tbox-shadow: none; \n}\n\n#sideBarNavMainBtns:active, .btn:not(:disabled):not(.disabled):active  {\n\tbackground-color: white !important;\n\tcolor: #3a88be !important;\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 553 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -66963,7 +67143,56 @@ if(false) {
 }
 
 /***/ }),
-/* 557 */,
+/* 557 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(552);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(36)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../../../node_modules/css-loader/index.js!./SideBar.css", function() {
+		var newContent = require("!!../../../../node_modules/css-loader/index.js!./SideBar.css");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
 /* 558 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -67743,6 +67972,286 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	module.hot.accept("!!../../../../node_modules/css-loader/index.js!./TasksFunctions.css", function() {
 		var newContent = require("!!../../../../node_modules/css-loader/index.js!./TasksFunctions.css");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 577 */,
+/* 578 */,
+/* 579 */,
+/* 580 */,
+/* 581 */,
+/* 582 */,
+/* 583 */,
+/* 584 */,
+/* 585 */,
+/* 586 */,
+/* 587 */,
+/* 588 */,
+/* 589 */,
+/* 590 */,
+/* 591 */,
+/* 592 */,
+/* 593 */,
+/* 594 */,
+/* 595 */,
+/* 596 */,
+/* 597 */,
+/* 598 */,
+/* 599 */,
+/* 600 */,
+/* 601 */,
+/* 602 */,
+/* 603 */,
+/* 604 */,
+/* 605 */,
+/* 606 */,
+/* 607 */,
+/* 608 */,
+/* 609 */,
+/* 610 */,
+/* 611 */,
+/* 612 */,
+/* 613 */,
+/* 614 */,
+/* 615 */,
+/* 616 */,
+/* 617 */,
+/* 618 */,
+/* 619 */,
+/* 620 */,
+/* 621 */,
+/* 622 */,
+/* 623 */,
+/* 624 */,
+/* 625 */,
+/* 626 */,
+/* 627 */,
+/* 628 */,
+/* 629 */,
+/* 630 */,
+/* 631 */,
+/* 632 */,
+/* 633 */,
+/* 634 */,
+/* 635 */,
+/* 636 */,
+/* 637 */,
+/* 638 */,
+/* 639 */,
+/* 640 */,
+/* 641 */,
+/* 642 */,
+/* 643 */,
+/* 644 */,
+/* 645 */,
+/* 646 */,
+/* 647 */,
+/* 648 */,
+/* 649 */,
+/* 650 */,
+/* 651 */,
+/* 652 */,
+/* 653 */,
+/* 654 */,
+/* 655 */,
+/* 656 */,
+/* 657 */,
+/* 658 */,
+/* 659 */,
+/* 660 */,
+/* 661 */,
+/* 662 */,
+/* 663 */,
+/* 664 */,
+/* 665 */,
+/* 666 */,
+/* 667 */,
+/* 668 */,
+/* 669 */,
+/* 670 */,
+/* 671 */,
+/* 672 */,
+/* 673 */,
+/* 674 */,
+/* 675 */,
+/* 676 */,
+/* 677 */,
+/* 678 */,
+/* 679 */,
+/* 680 */,
+/* 681 */,
+/* 682 */,
+/* 683 */,
+/* 684 */,
+/* 685 */,
+/* 686 */,
+/* 687 */,
+/* 688 */,
+/* 689 */,
+/* 690 */,
+/* 691 */,
+/* 692 */,
+/* 693 */,
+/* 694 */,
+/* 695 */,
+/* 696 */,
+/* 697 */,
+/* 698 */,
+/* 699 */,
+/* 700 */,
+/* 701 */,
+/* 702 */,
+/* 703 */,
+/* 704 */,
+/* 705 */,
+/* 706 */,
+/* 707 */,
+/* 708 */,
+/* 709 */,
+/* 710 */,
+/* 711 */,
+/* 712 */,
+/* 713 */,
+/* 714 */,
+/* 715 */,
+/* 716 */,
+/* 717 */,
+/* 718 */,
+/* 719 */,
+/* 720 */,
+/* 721 */,
+/* 722 */,
+/* 723 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(7);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactRouterDom = __webpack_require__(20);
+
+__webpack_require__(726);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var JobTitlesList = function JobTitlesList(_ref) {
+	var items = _ref.items,
+	    style1 = _ref.style1;
+	return _react2.default.createElement(
+		"div",
+		{ className: "jobTitlesList" },
+		items.map(function (item) {
+			return _react2.default.createElement(
+				"p",
+				{ className: "eachJobTitle" },
+				item.name
+			);
+		})
+	);
+};
+
+JobTitlesList.propTypes = {
+	items: _propTypes2.default.array.isRequired,
+	style1: _propTypes2.default.string.isRequired
+};
+
+exports.default = JobTitlesList;
+
+/***/ }),
+/* 724 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _JobTitlesList = __webpack_require__(723);
+
+Object.defineProperty(exports, "default", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_JobTitlesList).default;
+  }
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+/* 725 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(34)(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+/* 726 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(725);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(36)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../../../../node_modules/css-loader/index.js!./JobTitlesList.css", function() {
+		var newContent = require("!!../../../../../node_modules/css-loader/index.js!./JobTitlesList.css");
 
 		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 
