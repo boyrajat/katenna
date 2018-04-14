@@ -36,7 +36,6 @@ class SideBar extends Component {
 		);
 	}
 }
->>>>>>> origin
 
 SideBar.propTypes = {
 	grandpaMoney: PropTypes.string.isRequired
