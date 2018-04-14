@@ -64,7 +64,7 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
-client/dist
+
 
 # Typescript v1 declaration files
 typings/
@@ -91,7 +91,6 @@ typings/
 
 # dependencies
 /node_modules
-/client/dist/js/app.js
 # testing
 /coverage
 

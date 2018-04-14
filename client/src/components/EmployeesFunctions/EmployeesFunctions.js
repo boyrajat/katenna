@@ -72,7 +72,6 @@ class EmployeesFunctions extends React.Component {
                   <div className="card-text eachCardText">
                     <p className="eachCardListItem">Phone: <span className="eachCardItem">{item.phone}</span></p>
                     <p className="eachCardListItem">Email: <span className="eachCardItem">{item.email}</span></p>
-                    <p className="eachCardListItem">User Type: <span className="eachCardItem capitalize">{item.type}</span></p>
                   </div>
 
                   <div className="eachCardFooter row">
