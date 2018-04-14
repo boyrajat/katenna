@@ -7,15 +7,17 @@ import './AddTaskForm.css';
 class AddTaskForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { value: '', jobTitle: '', item: '', description1: '', description2: '', description3: '', description4: '', description5: '' };
+        this.state = { value: '', jobTitle: '', item: '', description: [], item1: '' };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-
     }
     handleChange(event) {
-        // this.setState({ name: event.target.value });
         this.setState({ [event.target.name]: event.target.value });
+    }
+    appendInput() {
+        var newInput = `input-${this.state.description.length}`;
+        this.setState({ description: this.state.description.concat([newInput]) });
     }
 
     handleSubmit(event) {
@@ -26,11 +28,7 @@ class AddTaskForm extends React.Component {
                 data: {
                     Item: this.state.Item,
                     jobTitle: this.state.jobTitle,
-                    description1: this.state.description1,
-                    description2: this.state.description2,
-                    description3: this.state.description3,
-                    description4: this.state.description4,
-                    description5: this.state.description5,
+                    description: this.state.description
                 }
             }), // data can be `string` or {object}!
             headers: new Headers({
@@ -73,57 +71,34 @@ class AddTaskForm extends React.Component {
 
                     <div className="field-line" id="fieldDiv">
                         <TextField
-                            floatingLabelText="Description1"
-                            name="description1"
+                            floatingLabelText="Description"
+                            name="item1"
                             onChange={this.handleChange}
-                            value={this.state.description1}
+                            value={this.state.item1}
                         />
                     </div>
 
-                    <div className="field-line" id="fieldDiv">
-                        <TextField
-                            floatingLabelText="Description2"
-                            name="description2"
-                            onChange={this.handleChange}
-                            value={this.state.description2}
-                        />
-                    </div>
-
-                    <div className="field-line" id="fieldDiv">
-                        <TextField
-                            floatingLabelText="Description3"
-                            name="description3"
-                            onChange={this.handleChange}
-                            value={this.state.description3}
-                        />
-                    </div>
-
-                    <div className="field-line" id="fieldDiv">
-                        <TextField
-                            floatingLabelText="Description4"
-                            name="description4"
-                            onChange={this.handleChange}
-                            value={this.state.description4}
-                        />
-                    </div>
-
-                    <div className="field-line" id="fieldDiv">
-                        <TextField
-                            floatingLabelText="Description5"
-                            name="description5"
-                            onChange={this.handleChange}
-                            value={this.state.description5}
-                        />
-                    </div>
-
+                    {this.state.description.map(input =>
+                        <div className="field-line" id="fieldDiv">
+                            <TextField
+                                floatingLabelText="Description"
+                                name={'input-' + input.length}
+                                onChange={this.handleChange}
+                                value={this.state.description[input.length - 1]}
+                            />
+                        </div>
+                    )}
 
                     <div>
                         <button id="FormSubmitBtn" label="Create New Task">Create</button>
                     </div>
-
+                    <button onClick={() => this.appendInput()}>
+                        CLICK ME TO ADD AN INPUT
+               </button>
 
 
                 </form>
+
             </div>
         );
     }
