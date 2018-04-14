@@ -26,6 +26,11 @@ module.exports = {
       }
     },
     {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'exports-loader!babel-loader'
+    },
+    {
       test: /\.css?$/,
       include: path.join(__dirname, '/client/src'),
       loader: ['style-loader', 'css-loader'],
@@ -35,3 +40,5 @@ module.exports = {
   // start Webpack in a watch mode, so Webpack will rebuild the bundle on changes
   watch: true
 };
+
+

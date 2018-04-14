@@ -19,7 +19,7 @@ class SideBar extends Component {
 			isLoaded: false,
 			showJobTitles: false,
 			items: [],
-		};	
+		};
 	}
 
 	//HELPER FUNCTIONS to show and hide element on click these are conditional rendering functions
@@ -29,8 +29,8 @@ class SideBar extends Component {
 			.then(
 				(result) => {
 					this.setState({
-					isLoaded: true,
-					items: result
+						isLoaded: true,
+						items: result
 					});
 				},
 				// Note: it's important to handle errors here
@@ -38,8 +38,8 @@ class SideBar extends Component {
 				// exceptions from actual bugs in components.
 				(error) => {
 					this.setState({
-					isLoaded: true,
-					error
+						isLoaded: true,
+						error
 					});
 				}
 			)
@@ -51,20 +51,20 @@ class SideBar extends Component {
 	// 	// 	this.setState({ showJobTitles: false });
 	// 	// } 
 	// 	this.setState({showJobTitles: true });	
-		
+
 	// 	console.log(this.state.showJobTitles);
 	// }
-workingFunction(){
-			this.setState({ showJobTitles: !this.state.showJobTitles });
-			
+	workingFunction() {
+		this.setState({ showJobTitles: !this.state.showJobTitles });
+
 		console.log(this.state.showJobTitles);
-		console.log('frank rox');	
+		console.log('frank rox');
 		// if (!this.state.showJobTitles){
 		// 	return <JobTitlesList items={this.state.items} style1='display: none;' />
 		// } else{
 		// 	return <JobTitlesList items={this.state.items} style1='display:content;' />	
 		// }
-}
+	}
 
 	render() {
 
@@ -89,14 +89,14 @@ workingFunction(){
 							id="sideBarNavMainBtns"
 							onClick={this.workingFunction.bind(this)}
 							to='/task'
-							>
+						>
 							JOB TITLES
-						</Link>	
-						{this.state.showJobTitles ? <JobTitlesList items={this.state.items}/> : null }
-					
+						</Link>
+						{this.state.showJobTitles ? <JobTitlesList items={this.state.items} /> : null}
+
 						{/* THIS IS WHERE JOB TITLES POPULATE */}
 
-					
+
 					</div>
 				</div>
 			);
