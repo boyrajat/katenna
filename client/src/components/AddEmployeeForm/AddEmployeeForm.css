@@ -1,5 +1,6 @@
 #AddEmployeeFormContainer {
-
+ background-color: white;
+ padding: 40px;
 }
 
 #formTitle {
@@ -11,7 +12,8 @@
     letter-spacing: 1px;
     padding: 0;
     margin: 0;
-    margin-top: -6px;
+	margin-top: -6px;
+
 }
 
 #fieldDiv {
