@@ -90,26 +90,28 @@ class AddEmployeeForm extends React.Component {
 
 					<div className="form-group" id="fieldDiv">
 						<label>Employee's Job Title / Position</label>
-						<input
-							className="form-control"
-							id="positionInput"
-							type="text"
-							name="position"
-							onChange={this.handleChange}
-							value={this.state.position}
-						/>
-					</div>
+						<select className="custom-select form-control" id="inputGroupSelect01" onChange={this.handleChange}
+							value={this.state.position}>
+  						<option selected>Select Job Ttitle/Position (required)</option>
+   						<option value="Front Desk">Front Desk</option>
+   						<option value="Accountant">Accountant</option>
+   						<option value="Bellman">Bellman</option>
+						<option value="Housekeeping">Housekeeping</option>
+						<option value="Manager">Manager</option>
+  						</select>
+						
+						</div>
 
 					<div className="form-group" id="fieldDiv">
 						<label>Employee Type</label>
-						<input
-							className="form-control"
-							id="employeeTypeInput"
-							type="text"
-							name="type"
-							onChange={this.handleChange}
-							value={this.state.type}
-						/>
+						<select className="custom-select form-control" id="inputGroupSelect01" onChange={this.handleChange}
+							value={this.state.type}>
+							<option selected>Select Employee Type (required)</option>
+							<option value="Employee">Employee</option>
+							<option value="Administrator">Administrator</option>
+							</select>
+
+						
 					</div>
 
 					<div className="form-group" id="fieldDiv">

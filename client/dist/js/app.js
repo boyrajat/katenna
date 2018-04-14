@@ -7375,7 +7375,7 @@ Router.childContextTypes = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp__ = __webpack_require__(227);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp__ = __webpack_require__(226);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_path_to_regexp__);
 
 
@@ -18045,18 +18045,9 @@ var createMemoryHistory = function createMemoryHistory() {
 
 /***/ }),
 /* 226 */
-/***/ (function(module, exports) {
-
-module.exports = Array.isArray || function (arr) {
-  return Object.prototype.toString.call(arr) == '[object Array]';
-};
-
-
-/***/ }),
-/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isarray = __webpack_require__(226)
+var isarray = __webpack_require__(227)
 
 /**
  * Expose `pathToRegexp`.
@@ -18482,6 +18473,15 @@ function pathToRegexp (path, keys, options) {
 
   return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
 }
+
+
+/***/ }),
+/* 227 */
+/***/ (function(module, exports) {
+
+module.exports = Array.isArray || function (arr) {
+  return Object.prototype.toString.call(arr) == '[object Array]';
+};
 
 
 /***/ }),
@@ -39614,14 +39614,41 @@ var AddEmployeeForm = function (_React$Component) {
 							null,
 							'Employee\'s Job Title / Position'
 						),
-						_react2.default.createElement('input', {
-							className: 'form-control',
-							id: 'positionInput',
-							type: 'text',
-							name: 'position',
-							onChange: this.handleChange,
-							value: this.state.position
-						})
+						_react2.default.createElement(
+							'select',
+							{ className: 'custom-select form-control', id: 'inputGroupSelect01', onChange: this.handleChange,
+								value: this.state.position },
+							_react2.default.createElement(
+								'option',
+								{ selected: true },
+								'Select Job Ttitle/Position (required)'
+							),
+							_react2.default.createElement(
+								'option',
+								{ value: 'Front Desk' },
+								'Front Desk'
+							),
+							_react2.default.createElement(
+								'option',
+								{ value: 'Accountant' },
+								'Accountant'
+							),
+							_react2.default.createElement(
+								'option',
+								{ value: 'Bellman' },
+								'Bellman'
+							),
+							_react2.default.createElement(
+								'option',
+								{ value: 'Housekeeping' },
+								'Housekeeping'
+							),
+							_react2.default.createElement(
+								'option',
+								{ value: 'Manager' },
+								'Manager'
+							)
+						)
 					),
 					_react2.default.createElement(
 						'div',
@@ -39631,14 +39658,26 @@ var AddEmployeeForm = function (_React$Component) {
 							null,
 							'Employee Type'
 						),
-						_react2.default.createElement('input', {
-							className: 'form-control',
-							id: 'employeeTypeInput',
-							type: 'text',
-							name: 'type',
-							onChange: this.handleChange,
-							value: this.state.type
-						})
+						_react2.default.createElement(
+							'select',
+							{ className: 'custom-select form-control', id: 'inputGroupSelect01', onChange: this.handleChange,
+								value: this.state.type },
+							_react2.default.createElement(
+								'option',
+								{ selected: true },
+								'Select Employee Type (required)'
+							),
+							_react2.default.createElement(
+								'option',
+								{ value: 'Employee' },
+								'Employee'
+							),
+							_react2.default.createElement(
+								'option',
+								{ value: 'Administrator' },
+								'Administrator'
+							)
+						)
 					),
 					_react2.default.createElement(
 						'div',
@@ -39807,8 +39846,15 @@ var AddTaskForm = function (_React$Component) {
                     _react2.default.createElement(
                         'div',
                         { className: 'field-line', id: 'fieldDiv' },
-                        _react2.default.createElement(_TextField2.default, {
-                            floatingLabelText: 'Job Title',
+                        _react2.default.createElement(
+                            'label',
+                            null,
+                            'Job Title'
+                        ),
+                        _react2.default.createElement('input', {
+                            className: 'form-control',
+                            id: 'jobTitleInput',
+                            type: 'text',
                             name: 'jobTitle',
                             onChange: this.handleChange,
                             value: this.state.jobTitle
@@ -39817,8 +39863,15 @@ var AddTaskForm = function (_React$Component) {
                     _react2.default.createElement(
                         'div',
                         { className: 'field-line', id: 'fieldDiv' },
-                        _react2.default.createElement(_TextField2.default, {
-                            floatingLabelText: 'Item',
+                        _react2.default.createElement(
+                            'label',
+                            null,
+                            'Item'
+                        ),
+                        _react2.default.createElement('input', {
+                            className: 'form-control',
+                            id: 'itemInput',
+                            type: 'text',
                             name: 'item',
                             onChange: this.handleChange,
                             value: this.state.item
@@ -39827,8 +39880,15 @@ var AddTaskForm = function (_React$Component) {
                     _react2.default.createElement(
                         'div',
                         { className: 'field-line', id: 'fieldDiv' },
-                        _react2.default.createElement(_TextField2.default, {
-                            floatingLabelText: 'Description',
+                        _react2.default.createElement(
+                            'label',
+                            null,
+                            'Description'
+                        ),
+                        _react2.default.createElement('input', {
+                            className: 'form-control',
+                            id: 'descriptionInput',
+                            type: 'text',
                             name: 'item1',
                             onChange: this.handleChange,
                             value: this.state.item1
@@ -39838,8 +39898,15 @@ var AddTaskForm = function (_React$Component) {
                         return _react2.default.createElement(
                             'div',
                             { className: 'field-line', id: 'fieldDiv' },
-                            _react2.default.createElement(_TextField2.default, {
-                                floatingLabelText: 'Description',
+                            _react2.default.createElement(
+                                'label',
+                                null,
+                                'Description'
+                            ),
+                            _react2.default.createElement('input', {
+                                className: 'form-control',
+                                id: 'descriptionInput',
+                                type: 'text',
                                 name: 'input-' + input.length,
                                 onChange: _this2.handleChange,
                                 value: _this2.state.description[input.length - 1]

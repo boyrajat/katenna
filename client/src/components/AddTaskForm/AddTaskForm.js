@@ -52,8 +52,11 @@ class AddTaskForm extends React.Component {
                     {/* {errors.summary && <p className="error-message">{errors.summary}</p>} */}
 
                     <div className="field-line" id="fieldDiv">
-                        <TextField
-                            floatingLabelText="Job Title"
+                       <label>Job Title</label>
+                       <input
+                            className="form-control"
+                            id="jobTitleInput"
+                            type="text"
                             name="jobTitle"
                             onChange={this.handleChange}
                             value={this.state.jobTitle}
@@ -61,8 +64,11 @@ class AddTaskForm extends React.Component {
                     </div>
 
                     <div className="field-line" id="fieldDiv">
-                        <TextField
-                            floatingLabelText="Item"
+                    <label>Item</label>
+                       <input
+                            className="form-control"
+                            id="itemInput"
+                            type="text"
                             name="item"
                             onChange={this.handleChange}
                             value={this.state.item}
@@ -70,8 +76,11 @@ class AddTaskForm extends React.Component {
                     </div>
 
                     <div className="field-line" id="fieldDiv">
-                        <TextField
-                            floatingLabelText="Description"
+                       <label>Description</label>
+                       <input
+                            className="form-control"
+                            id="descriptionInput"
+                            type="text"
                             name="item1"
                             onChange={this.handleChange}
                             value={this.state.item1}
@@ -80,11 +89,14 @@ class AddTaskForm extends React.Component {
 
                     {this.state.description.map(input =>
                         <div className="field-line" id="fieldDiv">
-                            <TextField
-                                floatingLabelText="Description"
-                                name={'input-' + input.length}
-                                onChange={this.handleChange}
-                                value={this.state.description[input.length - 1]}
+                        <label>Description</label>
+                        <input
+                            className="form-control"
+                            id="descriptionInput"
+                            type="text"
+                            name={'input-' + input.length}
+                            onChange={this.handleChange}
+                            value={this.state.description[input.length - 1]}
                             />
                         </div>
                     )}
