@@ -49,6 +49,13 @@ class EmployeesFunctions extends React.Component {
       return <div>Loading...</div>;
     } else {
       return (
+	<div>
+		<div className="employeesViewTopLinks">
+			<Link className="dashViewButtons" id="newEmployeeBtn" to="/newemployees" >
+				<img id="addBtn" src="/img/addBtn.svg" alt="Add A New Employee"/>
+				<p id="addEmployeeText">Add A New Employee</p>
+			</Link> 
+		</div>
         <div className="card-deck" id="employeesContainerDiv">
           {items.map(item => (
             <div className="card eachEmployeeCard" style={{maxWidth: "300px", minWidth: "300px"}}>
@@ -94,6 +101,7 @@ class EmployeesFunctions extends React.Component {
             </div>
           ))}
         </div>
+		</div>
       );
     }
   }

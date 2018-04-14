@@ -1,3 +1,26 @@
+.employeesViewTopLinks {
+	margin-left: 15px;
+    padding-bottom: 40px;
+    vertical-align: middle;
+}
+
+#addBtn {
+    max-height: 40px;
+	max-width: 40px;
+	margin-right: 10px;
+}
+
+#addEmployeeText {
+	display: inline-block;
+    font-family: 'Raleway', sans-serif;
+    padding: 0;
+    margin: 0;
+    color: #262626;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+}
+
 #employeesContainerDiv {
     padding: 0;
     margin: 0;
