@@ -7,7 +7,7 @@ import './AddTaskForm.css';
 class AddTaskForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { value: '', jobTitle: '', item: '', description: ['input-0'] };
+        this.state = { value: '', jobTitle: '', item: '', description: [], item1: '' };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,8 +16,8 @@ class AddTaskForm extends React.Component {
         this.setState({ [event.target.name]: event.target.value });
     }
     appendInput() {
-        var newInput = `input-${this.state.inputs.length}`;
-        this.setState({ description: this.state.inputs.concat([newInput]) });
+        var newInput = `input-${this.state.description.length}`;
+        this.setState({ description: this.state.description.concat([newInput]) });
     }
 
     handleSubmit(event) {
@@ -72,21 +72,22 @@ class AddTaskForm extends React.Component {
                     <div className="field-line" id="fieldDiv">
                         <TextField
                             floatingLabelText="Description"
-                            name="description"
+                            name="item1"
                             onChange={this.handleChange}
-                            value={this.state.description}
+                            value={this.state.item1}
                         />
                     </div>
 
-                    <div id="dynamicInput">
-                        {this.state.description.map(input =>
+                    {this.state.description.map(input =>
+                        <div className="field-line" id="fieldDiv">
                             <TextField
                                 floatingLabelText="Description"
-                                name={input}
+                                name={'input-' + input.length}
                                 onChange={this.handleChange}
-                                value={this.state.description}
-                            />)}
-                    </div>
+                                value={this.state.description[input.length - 1]}
+                            />
+                        </div>
+                    )}
 
                     <div>
                         <button id="FormSubmitBtn" label="Create New Task">Create</button>
