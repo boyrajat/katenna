@@ -7,28 +7,37 @@ import './AddTaskForm.css';
 class AddTaskForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { value: '', jobTitle: '', item: '', description: [], item1: '' };
-
+        this.state =
+            {
+                value: '',
+                name: '',
+                supervisor: '',
+                tasks: [],
+                item: '',
+                description: [],
+                tempStoreForDescriptions: []
+            };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
     handleChange(event) {
         this.setState({ [event.target.name]: event.target.value });
     }
     appendInput() {
         var newInput = `input-${this.state.description.length}`;
         this.setState({ description: this.state.description.concat([newInput]) });
+        // this.setState({ tasks: this.state.description.concat([newInput]) });
     }
-
     handleSubmit(event) {
         event.preventDefault();
         fetch('/employees/create', {
             method: 'POST', // or 'PUT'
             body: JSON.stringify({
                 data: {
-                    Item: this.state.Item,
-                    jobTitle: this.state.jobTitle,
-                    description: this.state.description
+                    item: this.state.name,
+                    supervisor: this.state.supervisor,
+                    tasks: [this.state.item, JSON.stringify(this.state.description)]
                 }
             }), // data can be `string` or {object}!
             headers: new Headers({
@@ -54,9 +63,18 @@ class AddTaskForm extends React.Component {
                     <div className="field-line" id="fieldDiv">
                         <TextField
                             floatingLabelText="Job Title"
-                            name="jobTitle"
+                            name="name"
                             onChange={this.handleChange}
-                            value={this.state.jobTitle}
+                            value={this.state.name}
+                        />
+                    </div>
+
+                    <div className="field-line" id="fieldDiv">
+                        <TextField
+                            floatingLabelText="Supervisor"
+                            name="supervisor"
+                            onChange={this.handleChange}
+                            value={this.state.supervisor}
                         />
                     </div>
 
@@ -69,20 +87,12 @@ class AddTaskForm extends React.Component {
                         />
                     </div>
 
-                    <div className="field-line" id="fieldDiv">
-                        <TextField
-                            floatingLabelText="Description"
-                            name="item1"
-                            onChange={this.handleChange}
-                            value={this.state.item1}
-                        />
-                    </div>
-
-                    {this.state.description.map(input =>
+                    {this.state.description.map((input, index) =>
                         <div className="field-line" id="fieldDiv">
                             <TextField
-                                floatingLabelText="Description"
-                                name={'input-' + input.length}
+                                floatingLabelText={"Description " + (index + 1)}
+                                floatingLabelFixed
+                                name={'input-' + this.state.description[input.length]}
                                 onChange={this.handleChange}
                                 value={this.state.description[input.length - 1]}
                             />
