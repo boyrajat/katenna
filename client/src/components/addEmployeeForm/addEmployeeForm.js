@@ -45,10 +45,11 @@ class AddEmployeeForm extends React.Component {
 	render() {
 		return (
 			<div id="AddEmployeeFormContainer">
+
+				<h2 id="formTitle">Add New Employee</h2>
+
 				<form onSubmit={this.handleSubmit}>
-
-					<h2 id="formTitle">Add New Employee</h2>
-
+				
 					{/* {errors.summary && <p className="error-message">{errors.summary}</p>} */}
 
 					<div className="form-group" id="fieldDiv">
