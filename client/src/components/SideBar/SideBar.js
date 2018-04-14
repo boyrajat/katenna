@@ -10,6 +10,8 @@ const SideBar = ({ secretDate, user }) => (
 		</div>
 		<div className="btn-group-vertical" id="sideBarNav">
 			<Link className="btn btn-secondary" id="sideBarNavMainBtns" to="/employees" >Employees</Link>
+			
+			{/* Changing this button down here to "Job Titles", as per our initial layout of app on the whiteboard in the classroom */}
 			<Link className="btn btn-secondary" id="sideBarNavMainBtns" to="/task" >Job Titles</Link>
 		</div>
 	</div>
