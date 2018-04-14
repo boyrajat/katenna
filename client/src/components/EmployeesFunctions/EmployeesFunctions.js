@@ -88,7 +88,7 @@ class EmployeesFunctions extends React.Component {
 
                     <div className="col-5 eachFooterBtn">
                       <Link
-                        to='/' >
+                        to='/newtask' >
                         New Task
 							</Link>
                     </div>
