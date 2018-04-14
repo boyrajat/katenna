@@ -10,7 +10,8 @@ const SideBar = ({ secretDate, user }) => (
 		</div>
 		<div className="btn-group-vertical" id="sideBarNav">
 			<Link className="btn btn-secondary" id="sideBarNavMainBtns" to="/employees" >Employees</Link>
-			<Link className="btn btn-secondary" id="sideBarNavMainBtns" to="/newemployees" >Add New Employees</Link>
+			{/* Hiding this, since this button shoudl be inside the employees function component
+			<Link className="btn btn-secondary" id="sideBarNavMainBtns" to="/newemployees" >Add New Employees</Link> */}
 			<Link className="btn btn-secondary" id="sideBarNavMainBtns" to="/task" >Tasks</Link>
 			<Link className="btn btn-secondary" id="sideBarNavMainBtns" to="/newtask" >Add Tasks</Link>
 		</div>

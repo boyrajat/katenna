@@ -3,6 +3,40 @@
     padding: 0;
 }
 
+#formTitle {
+    font-family: 'Raleway', sans-serif;
+    font-size: 35px;
+    font-weight: 100;
+    text-transform: uppercase;
+    text-align: left;
+    letter-spacing: 1px;
+    padding: 0;
+    margin: 0;
+    margin-top: -6px;
+}
+
+#fieldDiv {
+	padding: 0;
+}
+
+/* IMPORTANT - THIS ONE IS TO CHANGE THE ERROR MESSAGEON TOP OF THE FORM!!! */
+#LoginFormContainer .error-message {
+	padding: 0;
+    color: #f24336 !important;
+    margin-top: 40px;
+    margin-bottom: 0px;
+    font-size: 10px;
+    text-align: center;
+}
+
+/* IMPORTANT - THIS ONE IS TO CHANGE THE ERROR MESSAGES INSIDE THE FORMS UNDER THE FIELDS!!! */
+#fieldDiv div > div[
+	style="position: relative; bottom: 15px; font-size: 12px; line-height: 12px; color: rgb(244, 67, 54); transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;"
+	]{
+		color: #f24336 !important;
+		text-transform: capitalize;
+}
+
 .FormButtonDiv {
 	text-align: center;
 }
