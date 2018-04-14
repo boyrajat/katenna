@@ -15,15 +15,12 @@ class SideBar extends Component {
 	constructor(props) { //We set up the props and the state
 		super(props); //calls the constructor of the parent ¿? Research more
 		this.state = {//whatever I want to pass on to SideBard child
-<<<<<<< HEAD
 			error: null,
 			isLoaded: false,
 			showJobTitles: false,
 			items: [],
 		};	
 	}
-=======
->>>>>>> origin
 
 	//HELPER FUNCTIONS to show and hide element on click these are conditional rendering functions
 	componentDidMount() {
@@ -107,12 +104,4 @@ workingFunction(){
 	}
 }
 
-<<<<<<< HEAD
 export default SideBar;
-=======
-SideBar.propTypes = {
-	grandpaMoney: PropTypes.string.isRequired
-};
-
-export default SideBar;
->>>>>>> origin
