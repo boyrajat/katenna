@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node --use_strict index.js",
     "dev": "nodemon --use_strict index.js",
-    "bundle": "webpack"
   },
   "author": "",
   "license": "ISC",
