@@ -86,6 +86,7 @@
     top: 60px;
     right: 60px;
     max-width: 30px;
+    cursor: pointer;
   }
 
 .noAcctMssg {
@@ -102,4 +103,5 @@
     font-weight: 100;
     text-transform: capitalize;
     color: #87e0f0;
+    cursor: pointer;
 }
