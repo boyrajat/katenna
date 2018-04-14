@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect,
-  withRouter
+	BrowserRouter as Router,
+	Route,
+	Link,
+	Redirect,
+	withRouter
 } from 'react-router-dom'
 import './SideBar.css';
 
@@ -13,7 +13,7 @@ class SideBar extends Component {
 	//these (props) are the ones being passed down from Dashboard Page
 	constructor(props) { //We set up the props and the state
 		super(props); //calls the constructor of the parent ¿? Research more
-		this.state={//whatever I want to pass on to SideBard child
+		this.state = {//whatever I want to pass on to SideBard child
 
 		}
 	}
@@ -42,4 +42,3 @@ SideBar.propTypes = {
 };
 
 export default SideBar;
-
