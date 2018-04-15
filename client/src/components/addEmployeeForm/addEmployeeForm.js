@@ -44,16 +44,14 @@ class AddEmployeeForm extends React.Component {
 
 	render() {
 		return (
-			<div id="AddEmployeeFormContainer">
+			<div className="row justify-content-center">
+			<div className="col-8" id="AddEmployeeFormContainer">
 
-				<h2 id="formTitle">Add New Employee</h2>
+				<h2 id="empFormTitle">Add New Employee</h2>
 
-				<form onSubmit={this.handleSubmit}>
+				<form onSubmit={this.handleSubmit} id="empFormSpace">
 				
-					{/* {errors.summary && <p className="error-message">{errors.summary}</p>} */}
-
-					<div className="form-group" id="fieldDiv">
-						<label>Full Name</label>
+					<div className="form-group" id="empFieldDiv">
 						<input
 							className="form-control"
 							id="nameInput"
@@ -62,10 +60,10 @@ class AddEmployeeForm extends React.Component {
 							onChange={this.handleChange}
 							value={this.state.name}
 							/>
+						<label className="labelInput">Full Name</label>
 					</div>
 
-					<div className="form-group" id="fieldDiv">
-						<label>Email</label>
+					<div className="form-group" id="empFieldDiv">
 						<input
 							className="form-control"
 							id="emailInput"
@@ -74,10 +72,10 @@ class AddEmployeeForm extends React.Component {
 							onChange={this.handleChange}
 							value={this.state.email}
 						/>
+						<label className="labelInput">Email</label>
 					</div>
 
-					<div className="form-group" id="fieldDiv">
-						<label>Phone Number</label>
+					<div className="form-group" id="empFieldDiv">
 						<input
 							className="form-control"
 							id="phoneInput"
@@ -86,36 +84,10 @@ class AddEmployeeForm extends React.Component {
 							onChange={this.handleChange}
 							value={this.state.phone}
 						/>
+						<label className="labelInput">Phone Number</label>
 					</div>
 
-					<div className="form-group" id="fieldDiv">
-						<label>Employee's Job Title / Position</label>
-						<select className="custom-select form-control" id="inputGroupSelect01" onChange={this.handleChange}
-							value={this.state.position}>
-  						<option selected>Select Job Ttitle/Position (required)</option>
-   						<option value="Front Desk">Front Desk</option>
-   						<option value="Accountant">Accountant</option>
-   						<option value="Bellman">Bellman</option>
-						<option value="Housekeeping">Housekeeping</option>
-						<option value="Manager">Manager</option>
-  						</select>
-						
-						</div>
-
-					<div className="form-group" id="fieldDiv">
-						<label>Employee Type</label>
-						<select className="custom-select form-control" id="inputGroupSelect01" onChange={this.handleChange}
-							value={this.state.type}>
-							<option selected>Select Employee Type (required)</option>
-							<option value="Employee">Employee</option>
-							<option value="Administrator">Administrator</option>
-							</select>
-
-						
-					</div>
-
-					<div className="form-group" id="fieldDiv">
-						<label>Employee Photo</label>
+					<div className="form-group" id="empFieldDiv">
 						<input
 							className="form-control"
 							id="empImgInput"
@@ -124,12 +96,36 @@ class AddEmployeeForm extends React.Component {
 							onChange={this.handleChange}
 							value={this.state.image}
 						/>
+						<label className="labelInput">Employee Photo</label>
+					</div>
+					
+					<div className="row" id="empFormRow">
+						<div className="col form-group" id="empFieldDiv">
+							<label className="labelSelect">Employee's Job Title / Position</label>
+							<select className="form-control" id="inputGroupSelect01" onChange={this.handleChange}
+								value={this.state.position}>
+							<option value="Front Desk">Front Desk</option>
+							<option value="Accountant">Accountant</option>
+							<option value="Bellman">Bellman</option>
+							<option value="Housekeeping">Housekeeping</option>
+							<option value="Manager">Manager</option>
+							</select>
+						</div>
+						<div className=" col form-group" id="empFieldDiv">
+							<label className="labelSelect">Employee Type</label>
+							<select className="form-control" id="inputGroupSelect01" onChange={this.handleChange}
+								value={this.state.type}>
+								<option value="Employee">Employee</option>
+								<option value="Administrator">Administrator</option>
+							</select>
+						</div>
 					</div>
 
-					<div>
+					<div className="text-center">
 						<button id="FormSubmitBtn" label="Create New Employee">Create New Employee</button>
 					</div>
 				</form>
+			</div>
 			</div>
 		);
 	}

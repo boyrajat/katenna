@@ -1,29 +1,131 @@
 #AddEmployeeFormContainer {
- background-color: white;
- padding: 40px;
+	background-color: white;
+	padding: 0;
 }
 
-#formTitle {
-    font-family: 'Raleway', sans-serif;
+#empFormTitle {
+	font-family: 'Raleway', sans-serif;
     font-size: 35px;
-    font-weight: 100;
+    font-weight: 600;
     text-transform: uppercase;
     text-align: left;
     letter-spacing: 1px;
+    padding: 40px;
+	margin: 0;
+	background-color: #f6c600;
+	color: white;
+}
+
+#empFormSpace {
+    padding: 40px;
+}
+
+#empFieldDiv {
     padding: 0;
-    margin: 0;
-	margin-top: -6px;
-
+    position: relative;
+    height: 60px;
+    margin-bottom: 20px;
 }
 
-#fieldDiv {
-	padding: 0;
-	margin-top: 20px;
+#empFieldDiv > input {
+	border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #ced4da;
+    position: absolute;
+    bottom: 0;
+	background-color: rgba(255, 255, 255, 0);
+	transition: all .3s;
 }
 
-#FormSubmitBtn {
+#empFieldDiv > input:focus {
+	color: #495057;
+    outline: 0;
+	box-shadow: none;
+	border-bottom: 1px solid #3a88be;
+	box-shadow: 0 1px 0 0  #495057;
+}
+
+#empFieldDiv > input[type="text"] + .labelInput {
+    color: rgb(38, 38, 38, 0.5);
+    font-size: 16px;
+    position: absolute;
+    top: 25px;
+    margin-bottom: 0;
+	pointer-events: none;
+	transition: .2s ease-out;
+}
+
+#empFieldDiv > input[type="email"] + .labelInput {
+    color: rgb(38, 38, 38, 0.5);
+    font-size: 16px;
+    position: absolute;
+    top: 25px;
+    margin-bottom: 0;
+	pointer-events: none;
+	transition: .2s ease-out;
+}
+
+#empFieldDiv > input[type="text"]:focus + .labelInput {
+	color: #3a88be;
+    position: absolute;
+	top: 0px;
+	font-size: 14px;
+}
+
+#empFieldDiv > input[type="email"]:focus + .labelInput {
+	color: #3a88be;
+    position: absolute;
+	top: 0px;
+	font-size: 14px;
+}
+
+#empFormRow {
+	margin: 0;
+}
+
+#empFormRow > #empFieldDiv:first-of-type {
+	margin-right: 10px;
+}
+
+#empFieldDiv > select {
+	border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #ced4da;
+    position: absolute;
+    bottom: 0;
+	background-color: rgba(255, 255, 255, 0);
+	transition: all .3s;
+	-webkit-appearance: none !important;	
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right .75rem center;
+	background-size: 8px 10px;
+}
+
+#empFieldDiv > .labelSelect {
+	color: rgb(38, 38, 38, 0.5);
+    font-size: 16px;
+    margin-bottom: 0;
+	pointer-events: none;
+	transition: .2s ease-out;
+}
+
+#empFieldDiv:focus-within > .labelSelect {
+	color: #3a88be;
+	font-size: 14px;
+}
+
+#empFieldDiv > select:focus {
+	color: #495057;
+    outline: 0;
+	box-shadow: none;
+	border-bottom: 1px solid #3a88be;
+	box-shadow: 0 1px 0 0  #495057;
+}
+
+#empFormSubmitBtn {
 	margin-top: 40px;
-	font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 15px;
     font-weight: 600;
     text-transform: uppercase;
@@ -31,7 +133,7 @@
     color: rgb(0, 0, 0);
     border-radius: 0;
     border: 2px solid rgb(0, 0, 0);
-	padding: 10px 50px;
-	background-color: rgba(0, 0, 0, 0);
+    padding: 10px 50px;
+    background-color: rgba(0, 0, 0, 0);
 	margin-bottom: 20px;
 }
