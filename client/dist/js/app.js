@@ -40577,10 +40577,10 @@ var EmployeesFunctions = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'card-deck', id: 'employeesContainerDiv' },
-            items.map(function (item) {
+            items.map(function (item, index) {
               return _react2.default.createElement(
                 'div',
-                { className: 'card eachEmployeeCard', style: { maxWidth: "300px", minWidth: "300px" } },
+                { className: 'card eachEmployeeCard', key: 'employee' + index, style: { maxWidth: "300px", minWidth: "300px" } },
                 _react2.default.createElement(
                   'div',
                   { className: 'eachImgDiv' },
@@ -41864,17 +41864,6 @@ var SideBar = function (_Component) {
 				});
 			});
 		}
-
-		// handleOpenJobTitles() {
-		// 	// event.preventDefault();
-		// 	// if (this.showJobTitles) {
-		// 	// 	this.setState({ showJobTitles: false });
-		// 	// } 
-		// 	this.setState({showJobTitles: true });	
-
-		// 	console.log(this.state.showJobTitles);
-		// }
-
 	}, {
 		key: 'workingFunction',
 		value: function workingFunction() {
@@ -67460,6 +67449,14 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var initialState = {
+    value: '',
+    name: '',
+    supervisor: '',
+    description: '',
+    steps: []
+};
+
 var AddTaskForm = function (_React$Component) {
     _inherits(AddTaskForm, _React$Component);
 
@@ -67468,15 +67465,7 @@ var AddTaskForm = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (AddTaskForm.__proto__ || Object.getPrototypeOf(AddTaskForm)).call(this, props));
 
-        _this.state = {
-            value: '',
-            name: '',
-            supervisor: '',
-            tasks: [],
-            item: '',
-            description: [],
-            tempStoreForDescriptions: []
-        };
+        _this.state = initialState;
         _this.handleChange = _this.handleChange.bind(_this);
         _this.handleSubmit = _this.handleSubmit.bind(_this);
         return _this;
@@ -67485,26 +67474,38 @@ var AddTaskForm = function (_React$Component) {
     _createClass(AddTaskForm, [{
         key: 'handleChange',
         value: function handleChange(event) {
-            this.setState(_defineProperty({}, event.target.name, event.target.value));
+            event.preventDefault();
+            console.log(event.target.name);
+            // check if textbox is a description text box
+            if (event.target.name.includes('step')) {
+                var thisStepIndex = event.target.name;
+                // removing the word description from name to get the index of the description field in the form.
+                thisStepIndex = thisStepIndex.replace(/steps/g, '');
+                // console.log(thisDescriptionIndex);
+                this.state.steps[thisStepIndex] = event.target.value;
+            } else {
+                this.setState(_defineProperty({}, event.target.name, event.target.value));
+            }
         }
     }, {
         key: 'appendInput',
         value: function appendInput() {
-            var newInput = 'input-' + this.state.description.length;
-            this.setState({ description: this.state.description.concat([newInput]) });
-            // this.setState({ tasks: this.state.description.concat([newInput]) });
+            this.setState({ steps: this.state.steps.concat(['']) });
+            // console.log(this.state.description);
         }
     }, {
         key: 'handleSubmit',
         value: function handleSubmit(event) {
+            var _this2 = this;
+
             event.preventDefault();
-            fetch('/employees/create', {
+            fetch('/tasks/create', {
                 method: 'POST', // or 'PUT'
                 body: JSON.stringify({
                     data: {
-                        item: this.state.name,
+                        name: this.state.name,
                         supervisor: this.state.supervisor,
-                        tasks: [this.state.item, JSON.stringify(this.state.description)]
+                        tasks: [{ item: this.state.description, description: this.state.steps }]
                     }
                 }), // data can be `string` or {object}!
                 headers: new Headers({
@@ -67516,13 +67517,21 @@ var AddTaskForm = function (_React$Component) {
             }).catch(function (error) {
                 return console.error('Error:', error);
             }).then(function (response) {
-                return console.log('Success:');
+                console.log('Success:');
+                // reset to initial states and create a step field as default
+                _this2.setState(initialState);
+                _this2.appendInput();
             });
+        }
+    }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.appendInput();
         }
     }, {
         key: 'render',
         value: function render() {
-            var _this2 = this;
+            var _this3 = this;
 
             return _react2.default.createElement(
                 'div',
@@ -67540,6 +67549,7 @@ var AddTaskForm = function (_React$Component) {
                         { className: 'field-line', id: 'fieldDiv' },
                         _react2.default.createElement(_TextField2.default, {
                             floatingLabelText: 'Job Title',
+                            floatingLabelFixed: true,
                             name: 'name',
                             onChange: this.handleChange,
                             value: this.state.name
@@ -67550,6 +67560,7 @@ var AddTaskForm = function (_React$Component) {
                         { className: 'field-line', id: 'fieldDiv' },
                         _react2.default.createElement(_TextField2.default, {
                             floatingLabelText: 'Supervisor',
+                            floatingLabelFixed: true,
                             name: 'supervisor',
                             onChange: this.handleChange,
                             value: this.state.supervisor
@@ -67559,22 +67570,22 @@ var AddTaskForm = function (_React$Component) {
                         'div',
                         { className: 'field-line', id: 'fieldDiv' },
                         _react2.default.createElement(_TextField2.default, {
-                            floatingLabelText: 'Item',
-                            name: 'item',
+                            floatingLabelText: 'Description',
+                            floatingLabelFixed: true,
+                            name: 'description',
                             onChange: this.handleChange,
-                            value: this.state.item
+                            value: this.state.description
                         })
                     ),
-                    this.state.description.map(function (input, index) {
+                    this.state.steps.map(function (input, index) {
                         return _react2.default.createElement(
                             'div',
-                            { className: 'field-line', id: 'fieldDiv' },
+                            { className: 'field-line', id: 'fieldDiv', key: 'description' + index },
                             _react2.default.createElement(_TextField2.default, {
-                                floatingLabelText: "Description " + (index + 1),
+                                floatingLabelText: "Step " + (index + 1),
                                 floatingLabelFixed: true,
-                                name: 'input-' + _this2.state.description[input.length],
-                                onChange: _this2.handleChange,
-                                value: _this2.state.description[input.length - 1]
+                                name: 'steps' + index,
+                                onChange: _this3.handleChange
                             })
                         );
                     }),
@@ -67583,16 +67594,20 @@ var AddTaskForm = function (_React$Component) {
                         null,
                         _react2.default.createElement(
                             'button',
-                            { id: 'FormSubmitBtn', label: 'Create New Task' },
-                            'Create'
+                            { type: 'button', onClick: function onClick() {
+                                    return _this3.appendInput();
+                                } },
+                            'add more steps'
                         )
                     ),
                     _react2.default.createElement(
-                        'button',
-                        { onClick: function onClick() {
-                                return _this2.appendInput();
-                            } },
-                        'CLICK ME TO ADD AN INPUT'
+                        'div',
+                        null,
+                        _react2.default.createElement(
+                            'button',
+                            { id: 'FormSubmitBtn', label: 'Create New Task' },
+                            'Create'
+                        )
                     )
                 )
             );
@@ -68168,8 +68183,7 @@ __webpack_require__(726);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var JobTitlesList = function JobTitlesList(_ref) {
-	var items = _ref.items,
-	    style1 = _ref.style1;
+	var items = _ref.items;
 	return _react2.default.createElement(
 		"div",
 		{ className: "jobTitlesList" },
@@ -68184,8 +68198,7 @@ var JobTitlesList = function JobTitlesList(_ref) {
 };
 
 JobTitlesList.propTypes = {
-	items: _propTypes2.default.array.isRequired,
-	style1: _propTypes2.default.string.isRequired
+	items: _propTypes2.default.array.isRequired
 };
 
 exports.default = JobTitlesList;

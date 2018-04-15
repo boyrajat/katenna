@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import './JobTitlesList.css';
 
-const JobTitlesList = ({items,style1}) => (
+const JobTitlesList = ({ items }) => (
 	<div className="jobTitlesList">
 		{items.map(item => (
 			<p className="eachJobTitle">
@@ -15,7 +15,6 @@ const JobTitlesList = ({items,style1}) => (
 
 JobTitlesList.propTypes = {
 	items: PropTypes.array.isRequired,
-	style1:PropTypes.string.isRequired
-};	
+};
 
 export default JobTitlesList;

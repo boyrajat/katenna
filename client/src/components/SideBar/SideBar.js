@@ -45,15 +45,6 @@ class SideBar extends Component {
 			)
 	}
 
-	// handleOpenJobTitles() {
-	// 	// event.preventDefault();
-	// 	// if (this.showJobTitles) {
-	// 	// 	this.setState({ showJobTitles: false });
-	// 	// } 
-	// 	this.setState({showJobTitles: true });	
-
-	// 	console.log(this.state.showJobTitles);
-	// }
 	workingFunction() {
 		this.setState({ showJobTitles: !this.state.showJobTitles });
 
