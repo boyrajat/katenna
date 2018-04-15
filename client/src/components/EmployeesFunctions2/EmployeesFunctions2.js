@@ -15,12 +15,48 @@ class EmployeesFunctions2 extends React.Component {
     this.state = {
       error: null,
       isLoaded: false,
-      items: []
+      items: [],
+      isAssigned: false
     };
   }
 
+  handleInputChange(e) {
+    // const target = event.target;
+    // const value = target.type === 'checkbox' ? target.checked : target.value;
+    // const name = target.name;
+
+    // this.setState({
+    //   [name]: value
+    // });
+
+
+    var el = e.target
+    var name = el.name
+    var type = el.type
+    var stateChange = {}
+
+    if (type == 'select-multiple') {
+      var selectedOptions = []
+      for (var i = 0, l = el.options.length; i < l; i++) {
+        if (el.options[i].selected) {
+          selectedOptions.push(el.options[i].value)
+        }
+      }
+      stateChange[name] = selectedOptions
+    }
+  }
+
+  appendInput() {
+    this.state.items.tasks.map(item => {
+      this.setState({ steps: this.state.steps.concat([true]) });
+    }
+    )
+    // console.log(this.state.description);
+  }
+
+
   componentDidMount() {
-    // received employee position from the employee click
+    // received employee position from the employee clicked
     const { employeePosition } = this.props.location.state;
     fetch("tasks/dept/" + employeePosition)
       .then(res => res.json())
@@ -40,7 +76,9 @@ class EmployeesFunctions2 extends React.Component {
             error
           });
         }
-      )
+      );
+    //set the initial state for the checkboxes
+    appendInput();
   }
 
   render() {
@@ -55,20 +93,30 @@ class EmployeesFunctions2 extends React.Component {
         <div>
 
           {items.map(item => (
-            <div class="card text-center">
-              <div class="card-header black">
+            <div className="card text-center">
+              <div className="card-header black">
                 Supervisor {item.supervisor}
                 Employee {employeeName}
               </div>
-              <img class="card-img-top" src="..." alt="Card image cap" />
-              <div class="card-body">
-                <h5 class="card-title">{item.name}</h5>
-                <ul class="list-group list-group-flush">
-                  {item.tasks.map(task => (
-                    <li class="list-group-item">Task: {task.item}</li>
+              <img className="card-img-top" src="..." alt="Card image cap" />
+              <div className="card-body">
+                <h5 className="card-title">{item.name}</h5>
+                <ul className="list-group list-group-flush">
+                  {item.tasks.map((task, index) => (
+                    <li className="list-group-item">
+                      <p>Task: {task.item}</p>
+                      <label>
+                        Assign??
+                          <input
+                          name={"isAssigned" + index}
+                          type="checkbox"
+                          checked={this.state.isAssigned}
+                          onChange={this.handleInputChange} />
+                      </label>
+                    </li>
                   ))}
                 </ul>
-                <Link class="btn btn-secondary" to="/employees" >Go Back</Link>
+                <Link className="btn btn-secondary" to="/employees" >Go Back</Link>
               </div>
             </div>
           ))}
