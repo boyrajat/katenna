@@ -6,7 +6,7 @@ module.exports = {
     console.log("inside findall");
     Task
       .find({})
-      
+
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -24,8 +24,10 @@ module.exports = {
 
   },
   create: function (req, res) {
+    console.log("inside create");
+    console.log(req.body.data);
     Task
-      .create(req.body)
+      .create(req.body.data)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

@@ -4,6 +4,8 @@ const tasksController = require("../../controllers/tasksController");
 // Matches with "/api/tasks"
 router.route("/findall")
   .get(tasksController.findAll)
+
+router.route("/create")
   .post(tasksController.create);
 
 // Matches with "/api/tasks/:id"

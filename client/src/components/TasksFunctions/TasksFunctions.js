@@ -49,39 +49,39 @@ class TasksFunctions extends React.Component {
       return <div>Loading...</div>;
     } else {
       return (
-		<div>
-			<div className="tasksViewTopLinks">
-				<Link className="dashViewButtons" id="newTaskBtn" to="/newtask" >
-					<img id="addBtn" src="/img/addBtn.svg" alt="Add A New Task"/>
-					<p id="addTaskText">Add A New Task</p>
-				</Link> 
-			</div>
+        <div>
+          <div className="tasksViewTopLinks">
+            <Link className="dashViewButtons" id="newTaskBtn" to="/newtask" >
+              <img id="addBtn" src="/img/addBtn.svg" alt="Add A New Task" />
+              <p id="addTaskText">Add A New Task</p>
+            </Link>
+          </div>
 
-			<div>
-				{items.map(item => (
-				<div className="card text-center">
-					<div className="card-header">
-					{item.name}
-					</div>
-					<img className="card-img-top" src="..." alt="Card image cap" />
-					<div className="card-body">
-					<h5 className="card-title"></h5>
-					<ul className="list-group list-group-flush">
-						<li className="list-group-item">Phone: {item.supervisor}</li>
-						{item.tasks.map(tasks => (
-						<div>
-							<li className="list-group-item">Task: {tasks.item}</li>
-							{tasks.description.map(description => (
-							<li className="list-group-item">Description: {description}</li>
-							))}
-						</div>
-						))}
-					</ul>
-					</div>
-				</div>
-				))}
-			</div>
-		</div>
+          <div>
+            {items.map(item => (
+              <div className="card text-center">
+                <div className="card-header">
+                  {item.name}
+                </div>
+                <img className="card-img-top" src="..." alt="Card image cap" />
+                <div className="card-body">
+                  <h5 className="card-title"></h5>
+                  <ul className="list-group list-group-flush">
+                    <li className="list-group-item">Phone: {item.supervisor}</li>
+                    {item.tasks.map(tasks => (
+                      <div>
+                        <li className="list-group-item">Task: {tasks.item}</li>
+                        {tasks.description.map(description => (
+                          <li className="list-group-item">Description: {description}</li>
+                        ))}
+                      </div>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       );
     }
   }

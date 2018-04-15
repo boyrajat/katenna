@@ -57,8 +57,8 @@ class EmployeesFunctions extends React.Component {
             </Link>
           </div>
           <div className="card-deck" id="employeesContainerDiv">
-            {items.map(item => (
-              <div className="card eachEmployeeCard" style={{ maxWidth: "300px", minWidth: "300px" }}>
+            {items.map((item, index) => (
+              <div className="card eachEmployeeCard" key={'employee' + index} style={{ maxWidth: "300px", minWidth: "300px" }}>
                 <div className="eachImgDiv">
                   <img className="card-img-top eachCardImg" src={item.image} alt="Card image cap" />
                 </div>
