@@ -21,14 +21,9 @@ module.exports = {
       include: path.join(__dirname, '/client/src'),
       loader: 'babel-loader',
       query: {
-        presets: ["react", "es2015"],
+        presets: ['es2015', 'react', 'stage-3'],
         plugins: ["transform-es2015-destructuring", "transform-object-rest-spread"]
       }
-    },
-    {
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: 'exports-loader!babel-loader'
     },
     {
       test: /\.css?$/,
