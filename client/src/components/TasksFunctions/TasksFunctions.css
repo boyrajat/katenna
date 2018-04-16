@@ -1,22 +1,190 @@
-.tasksViewTopLinks {
-	margin-left: 15px;
-    padding-bottom: 40px;
-    vertical-align: middle;
+.eachJobCard {
+	background: none;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    margin-bottom: 40px;
 }
 
-#addBtn {
-    max-height: 40px;
-	max-width: 40px;
-	margin-right: 10px;
-}
-
-#addTaskText {
-	display: inline-block;
-    font-family: 'Raleway', sans-serif;
+.eachJobCard > .eachJobHeader {
+	background-color: #c8c8c8;
     padding: 0;
     margin: 0;
+    border: none;
+    border-radius: 0;
+}
+
+.eachJobHeader > .eachJobBtn {	
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: left;
+    letter-spacing: 1px;
+    padding: 20px;
+    margin: 0;
+    background: none;
+    color: white;
+    min-width: 100%;
+    border: none;
+    border-radius: 0;
+	line-height: 1;
+}
+
+.eachJobHeader > .eachJobBtn:hover, .eachJobBtn:active, .eachJobBtn:focus, .eachJobBtn:focus-within {	
+	cursor: pointer;
+	background-color: #f6c600;
+	-webkit-appearance: none;
+	outline: 0;
+    box-shadow: none;
+}
+
+.eachJobBody {
+    padding: 40px;
+    border: none;
+    border-radius: 0;
+}
+
+.tasksViewTopLinks {
+	margin: 0;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.tasksViewTopLinks > .card-title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba(50, 50, 50, 1);
+    margin: 0;
+    padding: 0;
+}
+
+.tasksViewTopLinks > .card-title > span {
+	font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+	color: #646464;
+	margin-left: 10px;
+}
+
+.tasksViewTopLinks > #newTaskBtn {
+	padding: 0;
+    margin: 0;
+}
+
+.tasksViewTopLinks > #newTaskBtn:hover {
+	text-decoration: none;
+}
+
+.dashViewButtons > #addTaskText {
+    padding: 0;
     color: #262626;
     text-transform: uppercase;
-    font-weight: 600;
-    font-size: 16px;
+	font-size: 16px;
+	margin: 0;
+	margin-bottom: 0px;
+	text-align: right;
 }
+
+#addTaskText > #addBtn {
+    max-height: 40px;
+	max-width: 40px;
+	margin: 0;
+	margin-left: 10px;
+}
+
+.eachTaskCard {
+	background: none;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.eachTaskCard > .eachTaskHeader {
+    background-color: #e1e1e1;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+}
+
+.eachTaskHeader > .eachTaskBtn {	
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+    padding: 10px;
+    margin: 0;
+    background: none;
+    color: #262626;
+    min-width: 100%;
+    border: none;
+    border-radius: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.eachTaskHeader > .eachTaskBtn:hover, .eachTaskBtn:active, .eachTaskBtn:focus, .eachTaskBtn:focus-within {	
+	cursor: pointer;
+	background-color: #f6c600;
+	-webkit-appearance: none;
+	outline: 0;
+    box-shadow: none;
+}
+
+.eachTaskBtn > .taskName {	
+	font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+    background: none;
+    text-transform: capitalize;
+}
+
+.eachTaskCard > .eachTaskBody {
+    padding: 0 30px;
+    margin: 0;
+    background: rgba(245, 245, 245, 1);
+    border: none;
+    border-radius: 0;
+}
+
+.descriptionListUL {
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    background: none;
+}
+
+.eachTaskDescription {
+    padding: 20px 10px;
+    margin: 0;
+    border: none;
+    border-radius: 0 !important;
+    border-bottom: 1px solid rgba(235, 235, 235, 1);
+    background: none;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.descriptionListUL > .eachTaskDescription:last-of-type {
+    border-bottom: 0;
+}
+
+.eachDescriptionText {
+	font-size: 14px;
+    font-weight: 100;
+    text-transform: initial;
+}
+
+
+
+
+
+
+
+
+
+
