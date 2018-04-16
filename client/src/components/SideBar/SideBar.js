@@ -18,6 +18,7 @@ class SideBar extends Component {
 			error: null,
 			isLoaded: false,
 			showJobTitles: false,
+			sideBtnIds: 'sideBarNavMainBtns',
 			items: [],
 		};
 	}
@@ -46,20 +47,19 @@ class SideBar extends Component {
 	}
 
 	workingFunction() {
-		this.setState({ showJobTitles: !this.state.showJobTitles });
 
-		console.log(this.state.showJobTitles);
-		console.log('frank rox');
-		// if (!this.state.showJobTitles){
-		// 	return <JobTitlesList items={this.state.items} style1='display: none;' />
-		// } else{
-		// 	return <JobTitlesList items={this.state.items} style1='display:content;' />	
-		// }
+		this.setState({ showJobTitles: !this.state.showJobTitles });
+		if (this.state.showJobTitles) {
+			this.setState({ sideBtnIds: 'sideBarNavMainBtns' });
+		} else {
+			this.setState({ sideBtnIds: 'sideBarNavMainBtnsDropDown' });
+		}
 	}
+	
 
 	render() {
 
-		const { error, isLoaded, items, showJobTitles } = this.state;
+		const { error, isLoaded, items, showJobTitles, sideBtnIds } = this.state;
 
 		if (error) {
 			return <div>Error: {error.message}</div>;
@@ -77,7 +77,7 @@ class SideBar extends Component {
 
 						<Link
 							className="btn btn-secondary"
-							id="sideBarNavMainBtns"
+							id={sideBtnIds}
 							onClick={this.workingFunction.bind(this)}
 							to='/task'
 						>
