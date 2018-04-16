@@ -6,7 +6,7 @@ import './JobTitlesList.css';
 const JobTitlesList = ({ items }) => (
 	<div className="jobTitlesList">
 		{items.map(item => (
-			<p className="eachJobTitle">
+			<p className="eachJobTitle" key={item.name}>
 				{item.name}
 			</p>
 		))}

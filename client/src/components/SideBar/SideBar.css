@@ -72,8 +72,20 @@
 	box-shadow: none; 
 }
 
-#sideBarNavMainBtns:active, .btn:not(:disabled):not(.disabled):active  {
-	background-color: white !important;
-	color: #3a88be !important;
+#sideBarNavMainBtnsDropDown {
+	font-family: 'Raleway Bold', sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 0;
+    border-top: 2px solid white;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+    padding: 20px 50px;
+    margin: 0;
+	background-color: white;
+	color: #262626;
+	box-shadow: none; 
 }
 

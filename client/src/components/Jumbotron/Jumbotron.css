@@ -104,4 +104,5 @@
     text-transform: capitalize;
     color: #87e0f0;
     cursor: pointer;
+    text-decoration: underline;
 }

@@ -4,50 +4,31 @@ import { Link } from 'react-router-dom';
 import TextField from 'material-ui/TextField';
 import './AddTaskForm.css';
 
-const initialState = {
-    value: '',
-    name: '',
-    supervisor: '',
-    description: '',
-    steps: [],
-};
-
 class AddTaskForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = initialState
+        this.state = { value: '', jobTitle: '', item: '', description: [], item1: '' };
+
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
     handleChange(event) {
-        event.preventDefault();
-        console.log(event.target.name);
-        // check if textbox is a description text box
-        if (event.target.name.includes('step')) {
-            let thisStepIndex = event.target.name;
-            // removing the word description from name to get the index of the description field in the form.
-            thisStepIndex = thisStepIndex.replace(/steps/g, '');
-            // console.log(thisDescriptionIndex);
-            this.state.steps[thisStepIndex] = event.target.value;
-        } else {
-            this.setState({ [event.target.name]: event.target.value });
-        }
-
+        this.setState({ [event.target.name]: event.target.value });
     }
     appendInput() {
-        this.setState({ steps: this.state.steps.concat(['']) });
-        // console.log(this.state.description);
+        var newInput = `input-${this.state.description.length}`;
+        this.setState({ description: this.state.description.concat([newInput]) });
     }
+
     handleSubmit(event) {
         event.preventDefault();
-        fetch('/tasks/create', {
+        fetch('/employees/create', {
             method: 'POST', // or 'PUT'
             body: JSON.stringify({
                 data: {
-                    name: this.state.name,
-                    supervisor: this.state.supervisor,
-                    tasks: [{ item: this.state.description, description: this.state.steps }]
+                    Item: this.state.Item,
+                    jobTitle: this.state.jobTitle,
+                    description: this.state.description
                 }
             }), // data can be `string` or {object}!
             headers: new Headers({
@@ -58,77 +39,85 @@ class AddTaskForm extends React.Component {
             console.log(res.url);
         })
             .catch(error => console.error('Error:', error))
-            .then(response => {
-                console.log('Success:');
-                // reset to initial states and create a step field as default
-                this.setState(initialState);
-                this.appendInput();
-            });
+            .then(response => console.log('Success:'));
     }
 
-    componentDidMount() {
-        this.appendInput();
-    }
     render() {
         return (
-            <div className="container" id="AddTaskFormContainer">
-                <form onSubmit={this.handleSubmit}>
 
-                    <h2 id="formTitle">New Task</h2>
+            <div className="row justify-content-center">
+            <div className="col-8" id="AddTaskFormContainer">
+
+                <h2 id="addFormTitle">New Task</h2>
+
+                <form onSubmit={this.handleSubmit} id="addFormSpace">
 
                     {/* {errors.summary && <p className="error-message">{errors.summary}</p>} */}
 
-                    <div className="field-line" id="fieldDiv">
-                        <TextField
-                            floatingLabelText="Job Title"
-                            floatingLabelFixed
-                            name="name"
+                    <div className="form-group" id="addFieldDiv">
+                       
+                       <input
+                            className="form-control"
+                            id="jobTitleInput"
+                            type="text"
+                            name="jobTitle"
                             onChange={this.handleChange}
-                            value={this.state.name}
+                            value={this.state.jobTitle}
                         />
+                        <label className="labelInput">Job Title</label>
                     </div>
 
-                    <div className="field-line" id="fieldDiv">
-                        <TextField
-                            floatingLabelText="Supervisor"
-                            floatingLabelFixed
-                            name="supervisor"
+                    <div className="field-group" id="addFieldDiv">
+                    
+                       <input
+                            className="form-control"
+                            id="itemInput"
+                            type="text"
+                            name="item"
                             onChange={this.handleChange}
-                            value={this.state.supervisor}
+                            value={this.state.item}
                         />
+                        <label className="labelInput">Item</label>
                     </div>
 
-                    <div className="field-line" id="fieldDiv">
-                        <TextField
-                            floatingLabelText="Description"
-                            floatingLabelFixed
-                            name="description"
+                    <div className="field-group" id="addFieldDiv">
+                       <input
+                            className="form-control"
+                            id="descriptionInput"
+                            type="text"
+                            name="item1"
                             onChange={this.handleChange}
-                            value={this.state.description}
+                            value={this.state.item1}
                         />
+                        <label className="labelInput">Description</label>
                     </div>
 
-                    {this.state.steps.map((input, index) =>
-                        <div className="field-line" id="fieldDiv" key={'description' + index}>
-                            <TextField
-                                floatingLabelText={"Step " + (index + 1)}
-                                floatingLabelFixed
-                                name={'steps' + index}
-                                onChange={this.handleChange}
+                    {this.state.description.map(input =>
+                        <div className="field-group" id="addFieldDiv">
+                        <input
+                            className="form-control"
+                            id="descriptionInput"
+                            type="text"
+                            name={'input-' + input.length}
+                            onChange={this.handleChange}
+                            value={this.state.description[input.length - 1]}
                             />
+                            <label className="labelInput">Description</label>
                         </div>
                     )}
-                    <div>
-                        <button type="button" onClick={() => this.appendInput()}>
-                            add more steps
-                        </button>
+                    <div className="addNewDescriptionDiv">
+                        <img id="addNewDescriptionBtn" src="/img/addBtn.svg" onClick={() => this.appendInput()} />
+                        <p id="addNewDescriptionText">Add New Task Description</p>
                     </div>
-                    <div>
+                    <div className="text-center">
                         <button id="FormSubmitBtn" label="Create New Task">Create</button>
                     </div>
+                    
+                    
+
 
                 </form>
-
+            </div>
             </div>
         );
     }
