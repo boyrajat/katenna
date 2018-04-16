@@ -1,7 +1,189 @@
-.someRandomClass {
+.employeeTaskCard {
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+}
+
+.employeeTaskHeader {
+	margin: 0;
+	padding: 0;
+	border: none;
+	border-radius: 0 !important;
+	background-color: #262626;
+}
+
+.employeeTaskImageCol {
+	padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    min-width: min-content;
+}
+
+.employeeTaskImg {
 	border: none;
     border-radius: 0;
-    /* TEMPORAL FIX UNTIL MELI FIX THIS UGLY CSS */
     max-height: 200px;
     max-width: 200px;
 }
+
+.employeeTaskDetailsCol {
+	padding: 40px;
+    margin: 0;
+}
+
+.employeeTaskName {
+	background-color: #262626;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+	text-transform: capitalize;
+	font-weight: 600;
+    font-size: 25px;
+}
+
+.employeeTaskJobTitle {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+.employeeTaskSuervisor {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+	padding: 0;
+	text-transform: capitalize;
+}
+
+.employeeTaskSuperName {
+	font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 100;
+    color: white;
+	margin-left: 5px;
+}
+
+.employeeTaskBtnsCol {
+    padding: 40px;
+    margin: 0;
+    text-align: right;
+}
+
+.employeeTaskGoBackBtn {
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 0;
+    border: none;
+    padding: 10px 20px;
+    background-color: #f6c501;
+	text-align: center;
+	margin: 0;
+}
+
+.employeeTaskBody {
+    background: white;
+    margin: 0;
+    padding: 0 40px;
+    border: none;
+    border-radius: 0 !important;
+}
+
+.employeeTaskList {
+	margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+}
+
+.employeeTaskEach {
+	margin: 0;
+    padding: 20px 20px;
+    border: none;
+    border-radius: 0 !important;
+    border-bottom: 1px solid rgba(235, 235, 235, 1);
+}
+
+.employeeTaskEach:first-of-type {
+	margin-top: 40px;
+    border-top: 1px solid rgba(235, 235, 235, 1);
+}
+
+.employeeTaskTitle {
+	margin: 0 !important;
+	font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.employeeTaskSpan {
+	margin: 0;
+    font-weight: 100;
+    text-transform: initial;
+}
+
+.employeeTaskAssigned {
+    margin: 0;
+    padding: 0;
+}
+
+#checkBoxLabel {
+	max-width: 100px;
+    min-width: 100px;
+    padding: 0;
+    margin: 0;
+	text-align: left;
+	cursor: pointer;
+}
+
+#eachTaskCheckBox {
+	position: absolute;
+    top: 5px;
+    right: 0;
+    margin-left: 14px;
+    display: inline-block;
+}
+
+.employeeTaskFooter {
+    padding: 40px;
+    margin-top: 40px;
+    margin-bottom: 0px;
+    margin-left: -40px;
+    margin-right: -40px;
+    border: none;
+    border-radius: 0 !important;
+    background-color: rgba(220, 220, 220, 1);
+	text-align: center;
+	display: flex;
+  	justify-content: space-between;
+}
+
+.employeeTaskFooterBtn {
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #000000;
+    border-radius: 0;
+    border: 2px solid #000000;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    min-width: 190px;
+}
+
+.employeeTaskFooterBtn:hover {
+	color: #ffffff;
+	background-color: #000000;
+	border-color: #000000;
+}
+
