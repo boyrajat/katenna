@@ -108,13 +108,11 @@ class EmployeesFunctions2 extends React.Component {
         <div>
           {items.map(item => (
             <div className="card text-center">
-              <div className="card-header black">
-                Supervisor {item.supervisor}
-                Employee {employeeName}
-              </div>
               <img className="card-img-top someRandomClass" src={backImg} alt="Card image cap" />
               <div className="card-body">
-                <h5 className="card-title">{item.name}</h5>
+                <h5 className="card-title">{employeeName}</h5>
+                <h3 className="card-title">{item.name}</h3>
+                <h1 className="card-title">Supervisor: {item.supervisor}</h1>
                 <ul className="list-group list-group-flush">
                   {item.tasks.map((task, index) => (
                     <li className="list-group-item">

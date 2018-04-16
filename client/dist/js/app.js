@@ -40683,14 +40683,6 @@ var EmployeesFunctions2 = function (_React$Component) {
             return _react2.default.createElement(
               'div',
               { className: 'card text-center' },
-              _react2.default.createElement(
-                'div',
-                { className: 'card-header black' },
-                'Supervisor ',
-                item.supervisor,
-                'Employee ',
-                employeeName
-              ),
               _react2.default.createElement('img', { className: 'card-img-top someRandomClass', src: backImg, alt: 'Card image cap' }),
               _react2.default.createElement(
                 'div',
@@ -40698,7 +40690,18 @@ var EmployeesFunctions2 = function (_React$Component) {
                 _react2.default.createElement(
                   'h5',
                   { className: 'card-title' },
+                  employeeName
+                ),
+                _react2.default.createElement(
+                  'h3',
+                  { className: 'card-title' },
                   item.name
+                ),
+                _react2.default.createElement(
+                  'h1',
+                  { className: 'card-title' },
+                  'Supervisor: ',
+                  item.supervisor
                 ),
                 _react2.default.createElement(
                   'ul',
