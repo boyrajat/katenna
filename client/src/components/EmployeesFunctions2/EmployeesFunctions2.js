@@ -44,6 +44,7 @@ class EmployeesFunctions2 extends React.Component {
     this.setState({ assignedTasks: this.state.assignedTasks.map(() => false) })
   }
 
+  // UPDATE DATABASE TASKS ASSIGNED FOR CURRENT EMPLOYEE
   saveChanges() {
     const { employeeName, employeeId } = this.props.location.state;
     const newEmployeeId = 'ObjectId("' + employeeId + '")'
@@ -72,6 +73,7 @@ class EmployeesFunctions2 extends React.Component {
     const { employeePosition } = this.props.location.state;
     const { myTasks } = this.props.location.state;
     console.log(myTasks);
+    // GETTING DATABASE TASKS FROM BASED ON CURRENT EMPLOYEE POSITION
     fetch("tasks/dept/" + employeePosition)
       .then(res => res.json())
       .then(
@@ -86,6 +88,7 @@ class EmployeesFunctions2 extends React.Component {
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
         // exceptions from actual bugs in components.
+        //PLEASE DONT DELETE THE ERROR FUNCTION!!!!!
         (error) => {
           this.setState({
             isLoaded: true,
@@ -107,12 +110,15 @@ class EmployeesFunctions2 extends React.Component {
       return (
         <div>
           {items.map(item => (
-            <div className="card text-center">
+            //=======EMPLOYEE JOB INFORMATION AND PICTURE==========
+            < div className="card text-center" >
               <img className="card-img-top someRandomClass" src={backImg} alt="Card image cap" />
               <div className="card-body">
                 <h5 className="card-title">{employeeName}</h5>
                 <h3 className="card-title">{item.name}</h3>
                 <h1 className="card-title">Supervisor: {item.supervisor}</h1>
+                {/* ======================================== */}
+                {/* ALL TASK AND CHECKBOXES ARE DISPLAYED BELOW */}
                 <ul className="list-group list-group-flush">
                   {item.tasks.map((task, index) => (
                     <li className="list-group-item">
@@ -128,11 +134,18 @@ class EmployeesFunctions2 extends React.Component {
                     </li>
                   ))}
                 </ul>
+                {/* END OF TASKS AND CHECKBOXES */}
+                {/* ======================================== */}
+
+                {/* ======================================== */}
+                {/* ALL BUTTONS ARE DISPLAYED BELOW */}
                 <button type='button' onClick={this.assignAll} >Assign All</button>
                 <button type='button' onClick={this.clearAll}>Clear All</button>
                 <button type='button'>Add new Task</button>
                 <button type='button' onClick={this.saveChanges}>Save</button>
                 <Link className="btn btn-secondary" to="/employees" >Go Back</Link>
+                {/* END OF BUTTONS */}
+                {/* ======================================== */}
               </div>
             </div>
           ))}
