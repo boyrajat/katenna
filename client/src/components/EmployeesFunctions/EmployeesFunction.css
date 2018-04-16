@@ -24,6 +24,7 @@
 #employeesContainerDiv {
     padding: 0;
     margin: 0;
+    justify-content: center;
 }
 
 .eachEmployeeCard {
