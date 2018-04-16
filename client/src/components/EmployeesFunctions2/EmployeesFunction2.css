@@ -1,0 +1,7 @@
+.someRandomClass {
+	border: none;
+    border-radius: 0;
+    /* TEMPORAL FIX UNTIL MELI FIX THIS UGLY CSS */
+    max-height: 200px;
+    max-width: 200px;
+}

@@ -8,6 +8,9 @@ router.route("/findall")
 router.route("/create")
   .post(employeesController.create);
 
+router.route("/updatetasks")
+  .post(employeesController.updateTasks);
+
 // Matches with "/api/tasks/:id"
 router.route("/:id")
   .get(employeesController.findById)

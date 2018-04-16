@@ -6,7 +6,6 @@ module.exports = {
     console.log("inside findall");
     Company
       .find({})
-      
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

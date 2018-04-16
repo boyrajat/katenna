@@ -78,7 +78,7 @@ class EmployeesFunctions extends React.Component {
                     {/* use the link below to pass state to EmployeeFunctions2 */}
                     <div className="col-5 eachFooterBtn">
                       <Link
-                        to={{ pathname: '/taskback', state: { employeeName: item.name, employeePosition: item.position } }}>
+                        to={{ pathname: '/taskback', state: { employeeName: item.name, employeePosition: item.position, employeeId: item._id, myTasks: item.tasks, backImg: item.image } }}>
                         Tasks
 							</Link>
                     </div>

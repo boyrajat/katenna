@@ -30,9 +30,18 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  update: function (req, res) {
+  //use this to update tasks assigned to employee
+  updateTasks: function (req, res) {
+    console.log(req.body);
     Employee
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .findOneAndUpdate({ _id: req.body.data.sentEmployeeId }, { $set: { tasks: req.body.data.tasks } })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  update: function (req, res) {
+    console.log(req.body.data.tasks);
+    Employee
+      .findOneAndUpdate({ _id: ObjectId(req.body.data.sentEmployeeId) }, { $set: { tasks: req.body.data.tasks } })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
