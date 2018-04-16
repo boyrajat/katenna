@@ -25,7 +25,13 @@ const EmployeeSchema = new Schema({
   },
   image: {
     type: String
-  }
+  },
+  tasks: [
+    {
+      type: Boolean,
+      required: false
+    }
+  ]
 
 }, { strict: false });
 

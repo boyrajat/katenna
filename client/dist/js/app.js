@@ -39774,14 +39774,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var initialState = {
-    value: '',
-    name: '',
-    supervisor: '',
-    description: '',
-    steps: []
-};
-
 var AddTaskForm = function (_React$Component) {
     _inherits(AddTaskForm, _React$Component);
 
@@ -39790,7 +39782,8 @@ var AddTaskForm = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (AddTaskForm.__proto__ || Object.getPrototypeOf(AddTaskForm)).call(this, props));
 
-        _this.state = initialState;
+        _this.state = { value: '', jobTitle: '', item: '', description: [], item1: '' };
+
         _this.handleChange = _this.handleChange.bind(_this);
         _this.handleSubmit = _this.handleSubmit.bind(_this);
         return _this;
@@ -39799,38 +39792,25 @@ var AddTaskForm = function (_React$Component) {
     _createClass(AddTaskForm, [{
         key: 'handleChange',
         value: function handleChange(event) {
-            event.preventDefault();
-            console.log(event.target.name);
-            // check if textbox is a description text box
-            if (event.target.name.includes('step')) {
-                var thisStepIndex = event.target.name;
-                // removing the word description from name to get the index of the description field in the form.
-                thisStepIndex = thisStepIndex.replace(/steps/g, '');
-                // console.log(thisDescriptionIndex);
-                this.state.steps[thisStepIndex] = event.target.value;
-            } else {
-                this.setState(_defineProperty({}, event.target.name, event.target.value));
-            }
+            this.setState(_defineProperty({}, event.target.name, event.target.value));
         }
     }, {
         key: 'appendInput',
         value: function appendInput() {
-            this.setState({ steps: this.state.steps.concat(['']) });
-            // console.log(this.state.description);
+            var newInput = 'input-' + this.state.description.length;
+            this.setState({ description: this.state.description.concat([newInput]) });
         }
     }, {
         key: 'handleSubmit',
         value: function handleSubmit(event) {
-            var _this2 = this;
-
             event.preventDefault();
-            fetch('/tasks/create', {
+            fetch('/employees/create', {
                 method: 'POST', // or 'PUT'
                 body: JSON.stringify({
                     data: {
-                        name: this.state.name,
-                        supervisor: this.state.supervisor,
-                        tasks: [{ item: this.state.description, description: this.state.steps }]
+                        Item: this.state.Item,
+                        jobTitle: this.state.jobTitle,
+                        description: this.state.description
                     }
                 }), // data can be `string` or {object}!
                 headers: new Headers({
@@ -39842,96 +39822,118 @@ var AddTaskForm = function (_React$Component) {
             }).catch(function (error) {
                 return console.error('Error:', error);
             }).then(function (response) {
-                console.log('Success:');
-                // reset to initial states and create a step field as default
-                _this2.setState(initialState);
-                _this2.appendInput();
+                return console.log('Success:');
             });
-        }
-    }, {
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            this.appendInput();
         }
     }, {
         key: 'render',
         value: function render() {
-            var _this3 = this;
+            var _this2 = this;
 
             return _react2.default.createElement(
                 'div',
-                { className: 'container', id: 'AddTaskFormContainer' },
+                { className: 'row justify-content-center' },
                 _react2.default.createElement(
-                    'form',
-                    { onSubmit: this.handleSubmit },
+                    'div',
+                    { className: 'col-8', id: 'AddTaskFormContainer' },
                     _react2.default.createElement(
                         'h2',
-                        { id: 'formTitle' },
+                        { id: 'addFormTitle' },
                         'New Task'
                     ),
                     _react2.default.createElement(
-                        'div',
-                        { className: 'field-line', id: 'fieldDiv' },
-                        _react2.default.createElement(_TextField2.default, {
-                            floatingLabelText: 'Job Title',
-                            floatingLabelFixed: true,
-                            name: 'name',
-                            onChange: this.handleChange,
-                            value: this.state.name
-                        })
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'field-line', id: 'fieldDiv' },
-                        _react2.default.createElement(_TextField2.default, {
-                            floatingLabelText: 'Supervisor',
-                            floatingLabelFixed: true,
-                            name: 'supervisor',
-                            onChange: this.handleChange,
-                            value: this.state.supervisor
-                        })
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'field-line', id: 'fieldDiv' },
-                        _react2.default.createElement(_TextField2.default, {
-                            floatingLabelText: 'Description',
-                            floatingLabelFixed: true,
-                            name: 'description',
-                            onChange: this.handleChange,
-                            value: this.state.description
-                        })
-                    ),
-                    this.state.steps.map(function (input, index) {
-                        return _react2.default.createElement(
+                        'form',
+                        { onSubmit: this.handleSubmit, id: 'addFormSpace' },
+                        _react2.default.createElement(
                             'div',
-                            { className: 'field-line', id: 'fieldDiv', key: 'description' + index },
-                            _react2.default.createElement(_TextField2.default, {
-                                floatingLabelText: "Step " + (index + 1),
-                                floatingLabelFixed: true,
-                                name: 'steps' + index,
-                                onChange: _this3.handleChange
-                            })
-                        );
-                    }),
-                    _react2.default.createElement(
-                        'div',
-                        null,
+                            { className: 'form-group', id: 'addFieldDiv' },
+                            _react2.default.createElement('input', {
+                                className: 'form-control',
+                                id: 'jobTitleInput',
+                                type: 'text',
+                                name: 'jobTitle',
+                                onChange: this.handleChange,
+                                value: this.state.jobTitle
+                            }),
+                            _react2.default.createElement(
+                                'label',
+                                { className: 'labelInput' },
+                                'Job Title'
+                            )
+                        ),
                         _react2.default.createElement(
-                            'button',
-                            { type: 'button', onClick: function onClick() {
-                                    return _this3.appendInput();
-                                } },
-                            'add more steps'
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        null,
+                            'div',
+                            { className: 'field-group', id: 'addFieldDiv' },
+                            _react2.default.createElement('input', {
+                                className: 'form-control',
+                                id: 'itemInput',
+                                type: 'text',
+                                name: 'item',
+                                onChange: this.handleChange,
+                                value: this.state.item
+                            }),
+                            _react2.default.createElement(
+                                'label',
+                                { className: 'labelInput' },
+                                'Item'
+                            )
+                        ),
                         _react2.default.createElement(
-                            'button',
-                            { id: 'FormSubmitBtn', label: 'Create New Task' },
-                            'Create'
+                            'div',
+                            { className: 'field-group', id: 'addFieldDiv' },
+                            _react2.default.createElement('input', {
+                                className: 'form-control',
+                                id: 'descriptionInput',
+                                type: 'text',
+                                name: 'item1',
+                                onChange: this.handleChange,
+                                value: this.state.item1
+                            }),
+                            _react2.default.createElement(
+                                'label',
+                                { className: 'labelInput' },
+                                'Description'
+                            )
+                        ),
+                        this.state.description.map(function (input) {
+                            return _react2.default.createElement(
+                                'div',
+                                { className: 'field-group', id: 'addFieldDiv' },
+                                _react2.default.createElement('input', {
+                                    className: 'form-control',
+                                    id: 'descriptionInput',
+                                    type: 'text',
+                                    name: 'input-' + input.length,
+                                    onChange: _this2.handleChange,
+                                    value: _this2.state.description[input.length - 1]
+                                }),
+                                _react2.default.createElement(
+                                    'label',
+                                    { className: 'labelInput' },
+                                    'Description'
+                                )
+                            );
+                        }),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'addNewDescriptionDiv' },
+                            _react2.default.createElement('img', { id: 'addNewDescriptionBtn', src: '/img/addBtn.svg', onClick: function onClick() {
+                                    return _this2.appendInput();
+                                } }),
+                            _react2.default.createElement(
+                                'p',
+                                { id: 'addNewDescriptionText' },
+                                'Add New Task Description'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'text-center' },
+                            _react2.default.createElement(
+                                'button',
+                                { id: 'FormSubmitBtn', label: 'Create New Task' },
+                                'Create'
+                            )
                         )
                     )
                 )
@@ -40453,7 +40455,7 @@ var EmployeesFunctions = function (_React$Component) {
                       _react2.default.createElement(
                         _reactRouterDom.Link,
                         {
-                          to: { pathname: '/taskback', state: { employeeName: item.name, employeePosition: item.position } } },
+                          to: { pathname: '/taskback', state: { employeeName: item.name, employeePosition: item.position, employeeId: item._id, myTasks: item.tasks } } },
                         'Tasks'
                       )
                     ),
@@ -40550,81 +40552,113 @@ var EmployeesFunctions2 = function (_React$Component) {
       error: null,
       isLoaded: false,
       items: [],
-      isAssigned: false
+      isAssigned: false,
+      assignedTasks: []
+
     };
+    _this.handleInputChange = _this.handleInputChange.bind(_this);
+    _this.assignAll = _this.assignAll.bind(_this);
+    _this.clearAll = _this.clearAll.bind(_this);
+    _this.saveChanges = _this.saveChanges.bind(_this);
     return _this;
   }
 
   _createClass(EmployeesFunctions2, [{
     key: 'handleInputChange',
-    value: function handleInputChange(e) {
-      // const target = event.target;
-      // const value = target.type === 'checkbox' ? target.checked : target.value;
-      // const name = target.name;
-
-      // this.setState({
-      //   [name]: value
-      // });
-
-
-      var el = e.target;
-      var name = el.name;
-      var type = el.type;
-      var stateChange = {};
-
-      if (type == 'select-multiple') {
-        var selectedOptions = [];
-        for (var i = 0, l = el.options.length; i < l; i++) {
-          if (el.options[i].selected) {
-            selectedOptions.push(el.options[i].value);
-          }
-        }
-        stateChange[name] = selectedOptions;
-      }
+    value: function handleInputChange(index, event) {
+      console.log(index);
+      console.log(this.assignedTasks);
+      console.log(event.target.checked);
+      this.setState({
+        isAssigned: event.target.checked
+      });
+      this.state.assignedTasks[index] = event.target.checked;
+      console.log(this.state.assignedTasks);
     }
   }, {
-    key: 'appendInput',
-    value: function appendInput() {
-      var _this2 = this;
+    key: 'assignAll',
+    value: function assignAll() {
+      this.setState({ assignedTasks: this.state.assignedTasks.map(function () {
+          return true;
+        }) });
+    }
+  }, {
+    key: 'clearAll',
+    value: function clearAll() {
+      this.setState({ assignedTasks: this.state.assignedTasks.map(function () {
+          return false;
+        }) });
+    }
+  }, {
+    key: 'saveChanges',
+    value: function saveChanges() {
+      var _props$location$state = this.props.location.state,
+          employeeName = _props$location$state.employeeName,
+          employeeId = _props$location$state.employeeId;
 
-      this.state.items.tasks.map(function (item) {
-        _this2.setState({ steps: _this2.state.steps.concat([true]) });
+      var newEmployeeId = 'ObjectId("' + employeeId + '")';
+      console.log(newEmployeeId);
+      fetch('/employees/updatetasks', {
+        method: 'POST', // or 'PUT'
+        body: JSON.stringify({
+          data: {
+            sentEmployeeId: employeeId,
+            tasks: this.state.assignedTasks
+          }
+        }), // data can be `string` or {object}!
+        headers: new Headers({
+          'Content-Type': 'application/json'
+        })
+      }).then(function (res) {
+        console.log('response URL');
+        console.log(res.url);
+      }).catch(function (error) {
+        return console.error('Error:', error);
+      }).then(function (response) {
+        return console.log('Success:');
       });
-      // console.log(this.state.description);
     }
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var _this3 = this;
+      var _this2 = this;
 
       // received employee position from the employee clicked
       var employeePosition = this.props.location.state.employeePosition;
+      var myTasks = this.props.location.state.myTasks;
 
+      console.log(myTasks);
       fetch("tasks/dept/" + employeePosition).then(function (res) {
         return res.json();
       }).then(function (result) {
-        _this3.setState({
+        _this2.setState({
           isLoaded: true,
-          items: result
+          items: result,
+          isAssigned: _this2.props.isAssigned || false,
+          assignedTasks: myTasks //hard coded result[0].tasks.map(() => true)
         });
       },
       // Note: it's important to handle errors here
       // instead of a catch() block so that we don't swallow
       // exceptions from actual bugs in components.
       function (error) {
-        _this3.setState({
+        _this2.setState({
           isLoaded: true,
           error: error
         });
       });
-      //set the initial state for the checkboxes
-      appendInput();
     }
   }, {
     key: 'render',
     value: function render() {
-      var _this4 = this;
+      var _this3 = this;
 
+      var checkedOrNot = [];
+      checkedOrNot.push(_react2.default.createElement(
+        'p',
+        null,
+        this.state.isAssigned ? 'Checked' : 'Unchecked'
+      ));
       var _state = this.state,
           error = _state.error,
           isLoaded = _state.isLoaded,
@@ -40685,15 +40719,32 @@ var EmployeesFunctions2 = function (_React$Component) {
                       _react2.default.createElement(
                         'label',
                         null,
-                        'Assign??',
                         _react2.default.createElement('input', {
-                          name: "isAssigned" + index,
                           type: 'checkbox',
-                          checked: _this4.state.isAssigned,
-                          onChange: _this4.handleInputChange })
+                          checked: _this3.state.assignedTasks[index],
+                          name: index,
+                          onChange: function onChange(e) {
+                            _this3.handleInputChange(index, e);
+                          } }),
+                        _this3.state.assignedTasks[index] ? 'Unassign?' : 'Assign?'
                       )
                     );
                   })
+                ),
+                _react2.default.createElement(
+                  'button',
+                  { type: 'button', onClick: _this3.assignAll },
+                  'Assign All'
+                ),
+                _react2.default.createElement(
+                  'button',
+                  { type: 'button', onClick: _this3.clearAll },
+                  'Clear All'
+                ),
+                _react2.default.createElement(
+                  'button',
+                  { type: 'button', onClick: _this3.saveChanges },
+                  'Save'
                 ),
                 _react2.default.createElement(
                   _reactRouterDom.Link,
@@ -41687,7 +41738,7 @@ var JobTitlesList = function JobTitlesList(_ref) {
 		items.map(function (item) {
 			return _react2.default.createElement(
 				"p",
-				{ className: "eachJobTitle" },
+				{ className: "eachJobTitle", key: item.name },
 				item.name
 			);
 		})
@@ -41774,6 +41825,7 @@ var SideBar = function (_Component) {
 			error: null,
 			isLoaded: false,
 			showJobTitles: false,
+			sideBtnIds: 'sideBarNavMainBtns',
 			items: []
 		};
 		return _this;
@@ -41808,15 +41860,13 @@ var SideBar = function (_Component) {
 	}, {
 		key: 'workingFunction',
 		value: function workingFunction() {
-			this.setState({ showJobTitles: !this.state.showJobTitles });
 
-			console.log(this.state.showJobTitles);
-			console.log('frank rox');
-			// if (!this.state.showJobTitles){
-			// 	return <JobTitlesList items={this.state.items} style1='display: none;' />
-			// } else{
-			// 	return <JobTitlesList items={this.state.items} style1='display:content;' />	
-			// }
+			this.setState({ showJobTitles: !this.state.showJobTitles });
+			if (this.state.showJobTitles) {
+				this.setState({ sideBtnIds: 'sideBarNavMainBtns' });
+			} else {
+				this.setState({ sideBtnIds: 'sideBarNavMainBtnsDropDown' });
+			}
 		}
 	}, {
 		key: 'render',
@@ -41825,7 +41875,8 @@ var SideBar = function (_Component) {
 			    error = _state.error,
 			    isLoaded = _state.isLoaded,
 			    items = _state.items,
-			    showJobTitles = _state.showJobTitles;
+			    showJobTitles = _state.showJobTitles,
+			    sideBtnIds = _state.sideBtnIds;
 
 
 			if (error) {
@@ -41867,7 +41918,7 @@ var SideBar = function (_Component) {
 							_reactRouterDom.Link,
 							{
 								className: 'btn btn-secondary',
-								id: 'sideBarNavMainBtns',
+								id: sideBtnIds,
 								onClick: this.workingFunction.bind(this),
 								to: '/task'
 							},
@@ -42021,7 +42072,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -42047,141 +42098,185 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var TasksFunctions = function (_React$Component) {
-  _inherits(TasksFunctions, _React$Component);
+	_inherits(TasksFunctions, _React$Component);
 
-  function TasksFunctions(props) {
-    _classCallCheck(this, TasksFunctions);
+	function TasksFunctions(props) {
+		_classCallCheck(this, TasksFunctions);
 
-    var _this = _possibleConstructorReturn(this, (TasksFunctions.__proto__ || Object.getPrototypeOf(TasksFunctions)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (TasksFunctions.__proto__ || Object.getPrototypeOf(TasksFunctions)).call(this, props));
 
-    _this.state = {
-      error: null,
-      isLoaded: false,
-      items: []
-    };
-    return _this;
-  }
+		_this.state = {
+			error: null,
+			isLoaded: false,
+			items: []
+		};
+		return _this;
+	}
 
-  _createClass(TasksFunctions, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var _this2 = this;
+	_createClass(TasksFunctions, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			var _this2 = this;
 
-      fetch("/tasks/findall").then(function (res) {
-        return res.json();
-      }).then(function (result) {
-        _this2.setState({
-          isLoaded: true,
-          items: result
-        });
-      },
-      // Note: it's important to handle errors here
-      // instead of a catch() block so that we don't swallow
-      // exceptions from actual bugs in components.
-      function (error) {
-        _this2.setState({
-          isLoaded: true,
-          error: error
-        });
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _state = this.state,
-          error = _state.error,
-          isLoaded = _state.isLoaded,
-          items = _state.items;
+			fetch("/tasks/findall").then(function (res) {
+				return res.json();
+			}).then(function (result) {
+				_this2.setState({
+					isLoaded: true,
+					items: result
+				});
+			},
+			// Note: it's important to handle errors here
+			// instead of a catch() block so that we don't swallow
+			// exceptions from actual bugs in components.
+			function (error) {
+				_this2.setState({
+					isLoaded: true,
+					error: error
+				});
+			});
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _state = this.state,
+			    error = _state.error,
+			    isLoaded = _state.isLoaded,
+			    items = _state.items;
 
-      if (error) {
-        return _react2.default.createElement(
-          'div',
-          null,
-          'Error: ',
-          error.message
-        );
-      } else if (!isLoaded) {
-        return _react2.default.createElement(
-          'div',
-          null,
-          'Loading...'
-        );
-      } else {
-        return _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(
-            'div',
-            { className: 'tasksViewTopLinks' },
-            _react2.default.createElement(
-              _reactRouterDom.Link,
-              { className: 'dashViewButtons', id: 'newTaskBtn', to: '/newtask' },
-              _react2.default.createElement('img', { id: 'addBtn', src: '/img/addBtn.svg', alt: 'Add A New Task' }),
-              _react2.default.createElement(
-                'p',
-                { id: 'addTaskText' },
-                'Add A New Task'
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            null,
-            items.map(function (item) {
-              return _react2.default.createElement(
-                'div',
-                { className: 'card text-center' },
-                _react2.default.createElement(
-                  'div',
-                  { className: 'card-header' },
-                  item.name
-                ),
-                _react2.default.createElement('img', { className: 'card-img-top', src: '...', alt: 'Card image cap' }),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'card-body' },
-                  _react2.default.createElement('h5', { className: 'card-title' }),
-                  _react2.default.createElement(
-                    'ul',
-                    { className: 'list-group list-group-flush' },
-                    _react2.default.createElement(
-                      'li',
-                      { className: 'list-group-item' },
-                      'Phone: ',
-                      item.supervisor
-                    ),
-                    item.tasks.map(function (tasks) {
-                      return _react2.default.createElement(
-                        'div',
-                        null,
-                        _react2.default.createElement(
-                          'li',
-                          { className: 'list-group-item' },
-                          'Task: ',
-                          tasks.item
-                        ),
-                        tasks.description.map(function (description) {
-                          return _react2.default.createElement(
-                            'li',
-                            { className: 'list-group-item' },
-                            'Description: ',
-                            description
-                          );
-                        })
-                      );
-                    })
-                  )
-                )
-              );
-            })
-          )
-        );
-      }
-    }
-  }]);
 
-  return TasksFunctions;
-}(_react2.default.Component);
+			if (error) {
+
+				return _react2.default.createElement(
+					'div',
+					null,
+					'Error: ',
+					error.message
+				);
+			} else if (!isLoaded) {
+
+				return _react2.default.createElement(
+					'div',
+					null,
+					'Loading...'
+				);
+			} else {
+
+				return _react2.default.createElement(
+					'div',
+					null,
+					_react2.default.createElement(
+						'div',
+						{ className: 'accordion', id: 'accordion eachJobAccordion' },
+						items.map(function (item, index) {
+							return _react2.default.createElement(
+								'div',
+								{ className: 'card eachJobCard', key: "card" + index },
+								_react2.default.createElement(
+									'div',
+									{ className: 'card-header eachJobHeader', id: "card" + index },
+									_react2.default.createElement(
+										'button',
+										{
+											className: 'btn eachJobBtn',
+											type: 'button',
+											'data-toggle': 'collapse',
+											'data-target': "#" + item.name,
+											'aria-expanded': 'false',
+											'aria-controls': item.name
+										},
+										item.name
+									)
+								),
+								_react2.default.createElement(
+									'div',
+									{ className: 'card-body collapse eachJobBody', id: item.name, 'aria-labelledby': "card" + index, 'data-parent': '#accordion' },
+									_react2.default.createElement(
+										'div',
+										{ className: 'row align-middle tasksViewTopLinks' },
+										_react2.default.createElement(
+											'h5',
+											{ className: 'col-4 align-middle text-left card-title' },
+											'Supervisor: ',
+											_react2.default.createElement(
+												'span',
+												null,
+												item.supervisor
+											)
+										),
+										_react2.default.createElement(
+											_reactRouterDom.Link,
+											{ className: 'col-8 align-middle text-right dashViewButtons', id: 'newTaskBtn', to: '/newtask' },
+											_react2.default.createElement(
+												'p',
+												{ id: 'addTaskText' },
+												'Add A New Task',
+												_react2.default.createElement('img', { id: 'addBtn', src: '/img/addBtn.svg', alt: 'Add A New Task' })
+											)
+										)
+									),
+									_react2.default.createElement(
+										'div',
+										{ className: 'accordion', id: 'accordion2 eachTaskAccordion' },
+										item.tasks.map(function (tasks, index) {
+											return _react2.default.createElement(
+												'div',
+												{ className: 'card eachTaskCard', key: "task" + index },
+												_react2.default.createElement(
+													'div',
+													{ className: 'card-header eachTaskHeader', id: "task" + index },
+													_react2.default.createElement(
+														'button',
+														{
+															className: 'btn eachTaskBtn',
+															type: 'button',
+															'data-toggle': 'collapse',
+															'data-target': "#" + tasks.item,
+															'aria-expanded': 'false',
+															'aria-controls': tasks.item
+														},
+														'Task: ',
+														_react2.default.createElement(
+															'span',
+															{ className: 'taskName' },
+															tasks.item
+														)
+													)
+												),
+												_react2.default.createElement(
+													'div',
+													{ className: 'card-body eachTaskBody collapse', id: tasks.item, 'aria-labelledby': "task" + index, 'data-parent': '#accordion2' },
+													_react2.default.createElement(
+														'ul',
+														{ className: 'descriptionListUL' },
+														tasks.description.map(function (description, index) {
+															return _react2.default.createElement(
+																'li',
+																{ className: 'list-group-item eachTaskDescription', key: "description" + index, id: "description" + index },
+																'Description: ',
+																_react2.default.createElement(
+																	'span',
+																	{ className: 'eachDescriptionText' },
+																	description
+																)
+															);
+														})
+													)
+												)
+											);
+										})
+									)
+								)
+							);
+						})
+					)
+				);
+			}
+		}
+	}]);
+
+	return TasksFunctions;
+}(_react2.default.Component); //end of class
 
 exports.default = TasksFunctions;
 
@@ -45651,7 +45746,7 @@ exports = module.exports = __webpack_require__(16)(false);
 
 
 // module
-exports.push([module.i, "#SignUpFormContainer {\n\tmargin: auto;\n    padding: 0;\n}\n\n#formTitle {\n    font-family: 'Raleway', sans-serif;\n    font-size: 35px;\n    font-weight: 100;\n    text-transform: uppercase;\n    text-align: left;\n    letter-spacing: 1px;\n    padding: 0;\n    margin: 0;\n    margin-top: -6px;\n}\n\n#fieldDiv {\n\tpadding: 0;\n\tmargin-top: 20px;\n}\n\n#FormSubmitBtn {\n\tmargin-top: 40px;\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: rgb(0, 0, 0);\n    border-radius: 0;\n    border: 2px solid rgb(0, 0, 0);\n\tpadding: 10px 50px;\n\tbackground-color: rgba(0, 0, 0, 0);\n\tmargin-bottom: 20px;\n}\n\n#noAcctMssg {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: rgba(0, 0, 0, 0.25);\n}\n\n#noAcctMssg a {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: #87e0f0;\n}", ""]);
+exports.push([module.i, "#AddTaskFormContainer {\n\tbackground-color: white;\n\tpadding: 0;\n}\n\n#addFormTitle {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 35px;\n    font-weight: 600;\n    text-transform: uppercase;\n    text-align: left;\n    letter-spacing: 1px;\n    padding: 40px;\n\tmargin: 0;\n\tbackground-color: #f6c600;\n\tcolor: white;\n}\n\n#addFormSpace {\n    padding: 40px;\n}\n\n#addFieldDiv {\n    padding: 0;\n    position: relative;\n    height: 60px;\n    margin-bottom: 20px;\n}\n\n#addFieldDiv > input {\n\tborder: none;\n    border-radius: 0;\n    border-bottom: 1px solid #ced4da;\n    position: absolute;\n    bottom: 0;\n\tbackground-color: rgba(255, 255, 255, 0);\n\ttransition: all .3s;\n}\n\n#addFieldDiv > input:focus {\n\tcolor: #495057;\n    outline: 0;\n\tbox-shadow: none;\n\tborder-bottom: 1px solid #3a88be;\n\tbox-shadow: 0 1px 0 0  #495057;\n}\n\n#addFieldDiv > input[type=\"text\"] + .labelInput {\n    color: rgb(38, 38, 38, 0.5);\n    font-size: 16px;\n    position: absolute;\n    top: 25px;\n    margin-bottom: 0;\n\tpointer-events: none;\n\ttransition: .2s ease-out;\n}\n\n#addFieldDiv > input[type=\"text\"]:focus + .labelInput {\n\tcolor: #3a88be;\n    position: absolute;\n\ttop: 0px;\n\tfont-size: 14px;\n}\n.addNewDescriptionDiv{\n    margin-top: 40px;\n}\n#addNewDescriptionBtn {\n    max-height: 40px;\n\tmax-width: 40px;\n    margin-right: 10px; \n    cursor: pointer;\n}\n\n#addNewDescriptionText{\n    display: inline-block;\n    font-family: 'Raleway', sans-serif;\n    padding: 0;\n    margin: 0;\n    color: #262626;\n    text-transform: uppercase;\n    font-weight: 600;\n    font-size: 16px;\n}\n\n#addTaskSubmitBtn {\n\tmargin-top: 40px;\n    font-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: rgb(0, 0, 0);\n    border-radius: 0;\n    border: 2px solid rgb(0, 0, 0);\n    padding: 10px 50px;\n    background-color: rgba(0, 0, 0, 0);\n\tmargin-bottom: 20px;\n}", ""]);
 
 // exports
 
@@ -45707,7 +45802,7 @@ exports = module.exports = __webpack_require__(16)(false);
 
 
 // module
-exports.push([module.i, ".employeesViewTopLinks {\n\tmargin-left: 15px;\n    padding-bottom: 40px;\n    vertical-align: middle;\n}\n\n#addBtn {\n    max-height: 40px;\n\tmax-width: 40px;\n\tmargin-right: 10px;\n}\n\n#addEmployeeText {\n\tdisplay: inline-block;\n    font-family: 'Raleway', sans-serif;\n    padding: 0;\n    margin: 0;\n    color: #262626;\n    text-transform: uppercase;\n    font-weight: 600;\n    font-size: 16px;\n}\n\n#employeesContainerDiv {\n    padding: 0;\n    margin: 0;\n}\n\n.eachEmployeeCard {\n\tborder: none;\n    border-radius: 0;\n    margin-bottom: 40px !important;\n    padding: 0;\n}\n\n.eachImgDiv {\n    max-height: 200px;\n    border: none;\n    border-radius: 0;\n}\n\n.eachCardImg {\n\tborder: none;\n    border-radius: 0;\n}\n\n.eachCardHeader {\n\tbackground-color: #262626;\n    color: white;\n    font-family: 'Raleway', sans-serif;\n    text-transform: capitalize;\n}\n\n.eachCardTitle {\n\tfont-weight: 600;\n    font-size: 25px;\n}\n\n.eachCardSubtitle {\n\tfont-family: 'Open Sans', sans-serif;\n    text-transform: uppercase;\n    font-size: 15px;\n    font-weight: 100;\n    letter-spacing: 2px;\n}\n\n.eachCardBody {\n    border: none;\n    border-radius: 0;\n    padding: 1.25rem;\n    \n}\n.card-body p{\n    color: black;\n}\n.eachCardText {\n\tpadding: 0;\n    margin: 0;\n}\n\n.eachCardListItem {\n\ttext-align: left !important;\n    padding: 0;\n    margin: 10px 0px !important;\n    \n}\n\n.eachCardItem {\n    font-weight: 600;\n    color: rgb(50, 50, 50, 0.5);\n}\n\n.capitalize {\n\ttext-transform: capitalize;\n}\n.eachCardFooter {\n    background-color: white;\n    border: none;\n    border-radius: 0;\n    margin: 0;\n    margin-top: 30px;\n}\n\n.eachFooterBtn {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 13px;\n    font-weight: 600;\n    text-transform: uppercase;\n    color: white;\n    border-radius: 0;\n    border: none;\n    padding: 0;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    background-color: #f6c501;\n    text-align: center;\n}\n\n.eachFooterBtn > a {\n\tpadding: 0 !important;\n\tmargin: 0 !important;\n\tcolor:\twhite;\n}", ""]);
+exports.push([module.i, ".employeesViewTopLinks {\n\tmargin-left: 15px;\n    padding-bottom: 40px;\n    vertical-align: middle;\n}\n\n#addBtn {\n    max-height: 40px;\n\tmax-width: 40px;\n\tmargin-right: 10px;\n}\n\n#addEmployeeText {\n\tdisplay: inline-block;\n    font-family: 'Raleway', sans-serif;\n    padding: 0;\n    margin: 0;\n    color: #262626;\n    text-transform: uppercase;\n    font-weight: 600;\n    font-size: 16px;\n}\n\n#employeesContainerDiv {\n    padding: 0;\n    margin: 0;\n    justify-content: center;\n}\n\n.eachEmployeeCard {\n\tborder: none;\n    border-radius: 0;\n    margin-bottom: 40px !important;\n    padding: 0;\n}\n\n.eachImgDiv {\n    max-height: 200px;\n    border: none;\n    border-radius: 0;\n}\n\n.eachCardImg {\n\tborder: none;\n    border-radius: 0;\n}\n\n.eachCardHeader {\n\tbackground-color: #262626;\n    color: white;\n    font-family: 'Raleway', sans-serif;\n    text-transform: capitalize;\n}\n\n.eachCardTitle {\n\tfont-weight: 600;\n    font-size: 25px;\n}\n\n.eachCardSubtitle {\n\tfont-family: 'Open Sans', sans-serif;\n    text-transform: uppercase;\n    font-size: 15px;\n    font-weight: 100;\n    letter-spacing: 2px;\n}\n\n.eachCardBody {\n    border: none;\n    border-radius: 0;\n    padding: 1.25rem;\n    \n}\n.card-body p{\n    color: black;\n}\n.eachCardText {\n\tpadding: 0;\n    margin: 0;\n}\n\n.eachCardListItem {\n\ttext-align: left !important;\n    padding: 0;\n    margin: 10px 0px !important;\n    \n}\n\n.eachCardItem {\n    font-weight: 600;\n    color: rgb(50, 50, 50, 0.5);\n}\n\n.capitalize {\n\ttext-transform: capitalize;\n}\n.eachCardFooter {\n    background-color: white;\n    border: none;\n    border-radius: 0;\n    margin: 0;\n    margin-top: 30px;\n}\n\n.eachFooterBtn {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 13px;\n    font-weight: 600;\n    text-transform: uppercase;\n    color: white;\n    border-radius: 0;\n    border: none;\n    padding: 0;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    background-color: #f6c501;\n    text-align: center;\n}\n\n.eachFooterBtn > a {\n\tpadding: 0 !important;\n\tmargin: 0 !important;\n\tcolor:\twhite;\n}", ""]);
 
 // exports
 
@@ -45749,7 +45844,7 @@ exports = module.exports = __webpack_require__(16)(false);
 
 
 // module
-exports.push([module.i, ".jumbotron {\n\tbackground-color: black;\n    padding: 0;\n    padding-top: 120px;\n    padding-bottom: 120px;\n\tcolor: white;\n\tmargin-bottom: 0px;\n}\n\n.jumboSpace {\n\tmin-height: 50vh;\n\talign-items: center !important;\n}\n\n#desktopImage {\n\tmax-width: 100%;\n\tmargin-top: 40px;\t\n}\n\n#jumboH1 {\n\tcolor: white;\n    font-family: 'Raleway', sans-serif;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    font-size: 50px;\n\tfont-weight: 800;\n\tmargin-bottom: 20px;\n\ttext-align: left !important;\n}\n\n#jumboP {\n\tcolor: white;\n    font-family: 'Open Sans', sans-serif;\n    letter-spacing: 1px;\n    font-size: 18px;\n\ttext-align: left !important;\n}\n\n#jumboBtn {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: white;\n    border-radius: 0;\n    border: 2px solid white;\n\tpadding: 10px 50px;\n\tmargin-top: 20px;\n\tbackground-color: rgba(0, 0, 0, 0);\n}\n\n#jumboBtn:first-of-type {\n\tmargin-right: 20px;\n}\n\n#jumboBtn:hover {\n\tcolor:black;\n\tbackground-color: white;\n}\n\n.Modal {\n\tposition: relative;\n    max-width: max-content;\n    max-height: max-content;\n    padding: 60px;\n    margin: auto;\n    margin-top: 50px;\n    background: white;\n\tborder-radius: 5px;\n\t\n  }\n\n  .Overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    background-color: rgba(0, 0, 0, .75);\n  }\n\n  #modalClose {\n    max-height: 30px;\n    position: absolute;\n    top: 60px;\n    right: 60px;\n    max-width: 30px;\n    cursor: pointer;\n  }\n\n.noAcctMssg {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: rgba(0, 0, 0, 0.25);\n}\n\n.noAcctMssg span {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: #87e0f0;\n    cursor: pointer;\n}", ""]);
+exports.push([module.i, ".jumbotron {\n\tbackground-color: black;\n    padding: 0;\n    padding-top: 120px;\n    padding-bottom: 120px;\n\tcolor: white;\n\tmargin-bottom: 0px;\n}\n\n.jumboSpace {\n\tmin-height: 50vh;\n\talign-items: center !important;\n}\n\n#desktopImage {\n\tmax-width: 100%;\n\tmargin-top: 40px;\t\n}\n\n#jumboH1 {\n\tcolor: white;\n    font-family: 'Raleway', sans-serif;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    font-size: 50px;\n\tfont-weight: 800;\n\tmargin-bottom: 20px;\n\ttext-align: left !important;\n}\n\n#jumboP {\n\tcolor: white;\n    font-family: 'Open Sans', sans-serif;\n    letter-spacing: 1px;\n    font-size: 18px;\n\ttext-align: left !important;\n}\n\n#jumboBtn {\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: white;\n    border-radius: 0;\n    border: 2px solid white;\n\tpadding: 10px 50px;\n\tmargin-top: 20px;\n\tbackground-color: rgba(0, 0, 0, 0);\n}\n\n#jumboBtn:first-of-type {\n\tmargin-right: 20px;\n}\n\n#jumboBtn:hover {\n\tcolor:black;\n\tbackground-color: white;\n}\n\n.Modal {\n\tposition: relative;\n    max-width: max-content;\n    max-height: max-content;\n    padding: 60px;\n    margin: auto;\n    margin-top: 50px;\n    background: white;\n\tborder-radius: 5px;\n\t\n  }\n\n  .Overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    background-color: rgba(0, 0, 0, .75);\n  }\n\n  #modalClose {\n    max-height: 30px;\n    position: absolute;\n    top: 60px;\n    right: 60px;\n    max-width: 30px;\n    cursor: pointer;\n  }\n\n.noAcctMssg {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: rgba(0, 0, 0, 0.25);\n}\n\n.noAcctMssg span {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: small;\n    font-weight: 100;\n    text-transform: capitalize;\n    color: #87e0f0;\n    cursor: pointer;\n    text-decoration: underline;\n}", ""]);
 
 // exports
 
@@ -45763,7 +45858,7 @@ exports = module.exports = __webpack_require__(16)(false);
 
 
 // module
-exports.push([module.i, "#LoginFormContainer {\n\tmargin: auto;\n    padding: 0;\n}\n\n#formTitle {\n    font-family: 'Raleway', sans-serif;\n    font-size: 35px;\n    font-weight: 100;\n    text-transform: uppercase;\n    text-align: left;\n    letter-spacing: 1px;\n    padding: 0;\n    margin: 0;\n    margin-top: -6px;\n}\n\n#fieldDiv {\n\tpadding: 0;\n}\n\n/* IMPORTANT - THIS ONE IS TO CHANGE THE ERROR MESSAGEON TOP OF THE FORM!!! */\n#LoginFormContainer .error-message {\n\tpadding: 0;\n    color: #f24336 !important;\n    margin-top: 40px;\n    margin-bottom: 0px;\n    font-size: 10px;\n    text-align: center;\n}\n\n/* IMPORTANT - THIS ONE IS TO CHANGE THE ERROR MESSAGES INSIDE THE FORMS UNDER THE FIELDS!!! */\n#fieldDiv div > div[\n\tstyle=\"position: relative; bottom: 15px; font-size: 12px; line-height: 12px; color: rgb(244, 67, 54); transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;\"\n\t]{\n\t\tcolor: #f24336 !important;\n\t\ttext-transform: capitalize;\n}\n\n.FormButtonDiv {\n\ttext-align: center;\n}\n\n#FormSubmitBtn {\n\tmargin-top: 40px;\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: rgb(0, 0, 0);\n    border-radius: 0;\n    border: 2px solid rgb(0, 0, 0);\n\tpadding: 10px 50px;\n\tbackground-color: rgba(0, 0, 0, 0);\n    margin-bottom: 20px;\n    \n}\n\n#FormSubmitBtn:hover {\n\tcolor: #ffffff;\n    background-color: #000000;\n    border-color: #000000;\n}\n", ""]);
+exports.push([module.i, "#LoginFormContainer {\n\tmargin: auto;\n    padding: 0;\n}\n\n#formTitle {\n    font-family: 'Raleway', sans-serif;\n    font-size: 35px;\n    font-weight: 100;\n    text-transform: uppercase;\n    text-align: left;\n    letter-spacing: 1px;\n    padding: 0;\n    margin: 0;\n    margin-top: -6px;\n}\n\n#fieldDiv {\n\tpadding: 0;\n}\n\n/* IMPORTANT - THIS ONE IS TO CHANGE THE ERROR MESSAGEON TOP OF THE FORM!!! */\n#LoginFormContainer .error-message {\n\tpadding: 0;\n    color: #f24336 !important;\n    margin-top: 40px;\n    margin-bottom: 0px;\n    font-size: 10px;\n    text-align: center;\n}\n\n/* IMPORTANT - THIS ONE IS TO CHANGE THE ERROR MESSAGES INSIDE THE FORMS UNDER THE FIELDS!!! */\n#fieldDiv div > div[\n\tstyle=\"position: relative; bottom: 15px; font-size: 12px; line-height: 12px; color: rgb(244, 67, 54); transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;\"\n\t]{\n\t\tcolor: #f24336 !important;\n\t\ttext-transform: capitalize;\n}\n\n.FormButtonDiv {\n\ttext-align: center;\n}\n\n#FormSubmitBtn {\n\tmargin-top: 40px;\n\tfont-family: 'Raleway', sans-serif;\n    font-size: 15px;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: rgb(0, 0, 0);\n    border-radius: 0;\n    border: 2px solid rgb(0, 0, 0);\n\tpadding: 10px 50px;\n\tbackground-color: rgba(0, 0, 0, 0);\n    margin-bottom: 20px;\n    cursor: pointer;\n}\n\n#FormSubmitBtn:hover {\n\tcolor: #ffffff;\n    background-color: #000000;\n    border-color: #000000;\n}\n", ""]);
 
 // exports
 
@@ -45819,7 +45914,7 @@ exports = module.exports = __webpack_require__(16)(false);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".jobTitlesList {\n\tbackground-color: rgb(38, 38, 38);\n\tmin-width: inherit;\n\tpadding: 0;\n\tfont-size: 14px;\n}\n\n.eachJobTitle {\n    padding: 20px;\n    margin-bottom: 0;\n    text-indent: 5px;\n    border-bottom: 1px solid white;\n}\n\n.eachJobTitle:last-of-type {\n\tborder-bottom: none;\n}\n\n.eachJobTitle:hover {\n\tbackground-color: white;\n    color: #262626;\n}", ""]);
 
 // exports
 
@@ -45833,7 +45928,7 @@ exports = module.exports = __webpack_require__(16)(false);
 
 
 // module
-exports.push([module.i, "#sideBarDiv {\n\tbackground-color: #f6c501;\n    color: white;\n    font-family: 'Open Sans', sans-serif;\n    padding: 0;\n    margin: 0;\n    height: 100%;\n    position: fixed;\n    z-index: 1;\n    top: 70px;\n    left: 0;\n    overflow-x: hidden;\n}\n\n#sideBarTopInfo {\n    font-family: 'Open Sans', sans-serif;\n    font-size: smaller;\n    text-align: center;\n    padding: 40px;\n}\n\n#userImage {\n\tmax-width: 100%;\n    border-radius: 100%;\n    border: 1px solid white;\n}\n\n#userName {\n\tmargin-bottom: 0;\n    font-family: 'Raleway', sans-serif;\n    font-size: 20px;\n    font-weight: 600;\n    padding: 0;\n    margin-top: 20px;\n    text-transform: uppercase;\n    color: #262626;\n}\n\n\n#sideBarNav{\n\tmin-width: 100%;\n    padding: 0;\n    margin: 0;\n}\n\n#sideBarNavMainBtns {\n    font-family: 'Raleway Bold', sans-serif;\n    font-size: 15px;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: white;\n    border-radius: 0;\n    border-top: 2px solid white;\n    border-bottom: none;\n    border-right: none;\n    border-left: none;\n    padding: 20px 50px;\n    margin: 0;\n    background-color: rgba(0, 0, 0, 0);\n}\n\n#sideBarNavMainBtns:last-of-type {\n    border-bottom: 2px solid white;\n}\n\n#sideBarNavMainBtns:hover {\n\tbackground-color: white;\n\tcolor: #262626;\n}\n\n#sideBarNavMainBtns:focus {\n\tbox-shadow: none; \n}\n\n#sideBarNavMainBtns:active, .btn:not(:disabled):not(.disabled):active  {\n\tbackground-color: white !important;\n\tcolor: #3a88be !important;\n}\n\n", ""]);
+exports.push([module.i, "#sideBarDiv {\n\tbackground-color: #f6c501;\n    color: white;\n    font-family: 'Open Sans', sans-serif;\n    padding: 0;\n    margin: 0;\n    height: 100%;\n    position: fixed;\n    z-index: 1;\n    top: 70px;\n    left: 0;\n    overflow-x: hidden;\n}\n\n#sideBarTopInfo {\n    font-family: 'Open Sans', sans-serif;\n    font-size: smaller;\n    text-align: center;\n    padding: 40px;\n}\n\n#userImage {\n\tmax-width: 100%;\n    border-radius: 100%;\n    border: 1px solid white;\n}\n\n#userName {\n\tmargin-bottom: 0;\n    font-family: 'Raleway', sans-serif;\n    font-size: 20px;\n    font-weight: 600;\n    padding: 0;\n    margin-top: 20px;\n    text-transform: uppercase;\n    color: #262626;\n}\n\n\n#sideBarNav{\n\tmin-width: 100%;\n    padding: 0;\n    margin: 0;\n}\n\n#sideBarNavMainBtns {\n    font-family: 'Raleway Bold', sans-serif;\n    font-size: 15px;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    color: white;\n    border-radius: 0;\n    border-top: 2px solid white;\n    border-bottom: none;\n    border-right: none;\n    border-left: none;\n    padding: 20px 50px;\n    margin: 0;\n    background-color: rgba(0, 0, 0, 0);\n}\n\n#sideBarNavMainBtns:last-of-type {\n    border-bottom: 2px solid white;\n}\n\n#sideBarNavMainBtns:hover {\n\tbackground-color: white;\n\tcolor: #262626;\n}\n\n#sideBarNavMainBtns:focus {\n\tbox-shadow: none; \n}\n\n#sideBarNavMainBtnsDropDown {\n\tfont-family: 'Raleway Bold', sans-serif;\n    font-size: 15px;\n    text-transform: uppercase;\n    letter-spacing: 2px;\n    border-radius: 0;\n    border-top: 2px solid white;\n    border-bottom: none;\n    border-right: none;\n    border-left: none;\n    padding: 20px 50px;\n    margin: 0;\n\tbackground-color: white;\n\tcolor: #262626;\n\tbox-shadow: none; \n}\n\n", ""]);
 
 // exports
 
@@ -45861,7 +45956,7 @@ exports = module.exports = __webpack_require__(16)(false);
 
 
 // module
-exports.push([module.i, ".tasksViewTopLinks {\n\tmargin-left: 15px;\n    padding-bottom: 40px;\n    vertical-align: middle;\n}\n\n#addBtn {\n    max-height: 40px;\n\tmax-width: 40px;\n\tmargin-right: 10px;\n}\n\n#addTaskText {\n\tdisplay: inline-block;\n    font-family: 'Raleway', sans-serif;\n    padding: 0;\n    margin: 0;\n    color: #262626;\n    text-transform: uppercase;\n    font-weight: 600;\n    font-size: 16px;\n}\n", ""]);
+exports.push([module.i, ".eachJobCard {\n\tbackground: none;\n    border: none;\n    border-radius: 0;\n    margin: 0;\n    margin-bottom: 40px;\n}\n\n.eachJobCard > .eachJobHeader {\n\tbackground-color: #c8c8c8;\n    padding: 0;\n    margin: 0;\n    border: none;\n    border-radius: 0;\n}\n\n.eachJobHeader > .eachJobBtn {\t\n    font-family: 'Raleway', sans-serif;\n    font-size: 25px;\n    font-weight: 600;\n    text-transform: uppercase;\n    text-align: left;\n    letter-spacing: 1px;\n    padding: 20px;\n    margin: 0;\n    background: none;\n    color: white;\n    min-width: 100%;\n    border: none;\n    border-radius: 0;\n\tline-height: 1;\n}\n\n.eachJobHeader > .eachJobBtn:hover, .eachJobBtn:active, .eachJobBtn:focus, .eachJobBtn:focus-within {\t\n\tcursor: pointer;\n\tbackground-color: #f6c600;\n\t-webkit-appearance: none;\n\toutline: 0;\n    box-shadow: none;\n}\n\n.eachJobBody {\n    padding: 40px;\n    border: none;\n    border-radius: 0;\n}\n\n.tasksViewTopLinks {\n\tmargin: 0;\n    padding: 0;\n    margin-bottom: 40px;\n}\n\n.tasksViewTopLinks > .card-title {\n    font-family: 'Open Sans', sans-serif;\n    font-size: 20px;\n    font-weight: 600;\n    color: rgba(50, 50, 50, 1);\n    margin: 0;\n    padding: 0;\n}\n\n.tasksViewTopLinks > .card-title > span {\n\tfont-family: 'Open Sans', sans-serif;\n    font-size: 20px;\n    font-weight: 100;\n\tcolor: #646464;\n\tmargin-left: 10px;\n}\n\n.tasksViewTopLinks > #newTaskBtn {\n\tpadding: 0;\n    margin: 0;\n}\n\n.tasksViewTopLinks > #newTaskBtn:hover {\n\ttext-decoration: none;\n}\n\n.dashViewButtons > #addTaskText {\n    padding: 0;\n    color: #262626;\n    text-transform: uppercase;\n\tfont-size: 16px;\n\tmargin: 0;\n\tmargin-bottom: 0px;\n\ttext-align: right;\n}\n\n#addTaskText > #addBtn {\n    max-height: 40px;\n\tmax-width: 40px;\n\tmargin: 0;\n\tmargin-left: 10px;\n}\n\n.eachTaskCard {\n\tbackground: none;\n    border: none;\n    border-radius: 0;\n    margin: 0;\n    margin-bottom: 10px;\n}\n\n.eachTaskCard > .eachTaskHeader {\n    background-color: #e1e1e1;\n    padding: 0;\n    margin: 0;\n    border: none;\n    border-radius: 0;\n}\n\n.eachTaskHeader > .eachTaskBtn {\t\n    font-family: 'Raleway', sans-serif;\n    font-size: 16px;\n    font-weight: 600;\n    text-align: left;\n    padding: 10px;\n    margin: 0;\n    background: none;\n    color: #262626;\n    min-width: 100%;\n    border: none;\n    border-radius: 0;\n    text-transform: uppercase;\n    letter-spacing: 1px;\n}\n.eachTaskHeader > .eachTaskBtn:hover, .eachTaskBtn:active, .eachTaskBtn:focus, .eachTaskBtn:focus-within {\t\n\tcursor: pointer;\n\tbackground-color: #f6c600;\n\t-webkit-appearance: none;\n\toutline: 0;\n    box-shadow: none;\n}\n\n.eachTaskBtn > .taskName {\t\n\tfont-size: 16px;\n    font-weight: 600;\n    text-align: left;\n    background: none;\n    text-transform: capitalize;\n}\n\n.eachTaskCard > .eachTaskBody {\n    padding: 0 30px;\n    margin: 0;\n    background: rgba(245, 245, 245, 1);\n    border: none;\n    border-radius: 0;\n}\n\n.descriptionListUL {\n    padding: 0;\n    margin: 0;\n    border: none;\n    border-radius: 0;\n    background: none;\n}\n\n.eachTaskDescription {\n    padding: 20px 10px;\n    margin: 0;\n    border: none;\n    border-radius: 0 !important;\n    border-bottom: 1px solid rgba(235, 235, 235, 1);\n    background: none;\n    font-size: 14px;\n    font-weight: 600;\n    text-transform: uppercase;\n}\n\n.descriptionListUL > .eachTaskDescription:last-of-type {\n    border-bottom: 0;\n}\n\n.eachDescriptionText {\n\tfont-size: 14px;\n    font-weight: 100;\n    text-transform: initial;\n}\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
