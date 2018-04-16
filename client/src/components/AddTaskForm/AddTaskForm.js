@@ -46,78 +46,78 @@ class AddTaskForm extends React.Component {
         return (
 
             <div className="row justify-content-center">
-            <div className="col-8" id="AddTaskFormContainer">
+                <div className="col-8" id="AddTaskFormContainer">
 
-                <h2 id="addFormTitle">New Task</h2>
+                    <h2 id="addFormTitle">New Task</h2>
 
-                <form onSubmit={this.handleSubmit} id="addFormSpace">
+                    <form onSubmit={this.handleSubmit} id="addFormSpace">
 
-                    {/* {errors.summary && <p className="error-message">{errors.summary}</p>} */}
+                        {/* {errors.summary && <p className="error-message">{errors.summary}</p>} */}
 
-                    <div className="form-group" id="addFieldDiv">
-                       
-                       <input
-                            className="form-control"
-                            id="jobTitleInput"
-                            type="text"
-                            name="jobTitle"
-                            onChange={this.handleChange}
-                            value={this.state.jobTitle}
-                        />
-                        <label className="labelInput">Job Title</label>
-                    </div>
+                        <div className="form-group" id="addFieldDiv">
 
-                    <div className="field-group" id="addFieldDiv">
-                    
-                       <input
-                            className="form-control"
-                            id="itemInput"
-                            type="text"
-                            name="item"
-                            onChange={this.handleChange}
-                            value={this.state.item}
-                        />
-                        <label className="labelInput">Item</label>
-                    </div>
+                            <input
+                                className="form-control"
+                                id="jobTitleInput"
+                                type="text"
+                                name="jobTitle"
+                                onChange={this.handleChange}
+                                value={this.state.jobTitle}
+                            />
+                            <label className="labelInput">Job Title</label>
+                        </div>
 
-                    <div className="field-group" id="addFieldDiv">
-                       <input
-                            className="form-control"
-                            id="descriptionInput"
-                            type="text"
-                            name="item1"
-                            onChange={this.handleChange}
-                            value={this.state.item1}
-                        />
-                        <label className="labelInput">Description</label>
-                    </div>
-
-                    {this.state.description.map(input =>
                         <div className="field-group" id="addFieldDiv">
-                        <input
-                            className="form-control"
-                            id="descriptionInput"
-                            type="text"
-                            name={'input-' + input.length}
-                            onChange={this.handleChange}
-                            value={this.state.description[input.length - 1]}
+
+                            <input
+                                className="form-control"
+                                id="itemInput"
+                                type="text"
+                                name="item"
+                                onChange={this.handleChange}
+                                value={this.state.item}
+                            />
+                            <label className="labelInput">Item</label>
+                        </div>
+
+                        <div className="field-group" id="addFieldDiv">
+                            <input
+                                className="form-control"
+                                id="descriptionInput"
+                                type="text"
+                                name="item1"
+                                onChange={this.handleChange}
+                                value={this.state.item1}
                             />
                             <label className="labelInput">Description</label>
                         </div>
-                    )}
-                    <div className="addNewDescriptionDiv">
-                        <img id="addNewDescriptionBtn" src="/img/addBtn.svg" onClick={() => this.appendInput()} />
-                        <p id="addNewDescriptionText">Add New Task Description</p>
-                    </div>
-                    <div className="text-center">
-                        <button id="FormSubmitBtn" label="Create New Task">Create</button>
-                    </div>
-                    
-                    
+
+                        {this.state.description.map((input, index) =>
+                            <div className="field-group" id="addFieldDiv" key={'AddTask' + index}>
+                                <input
+                                    className="form-control"
+                                    id="descriptionInput"
+                                    type="text"
+                                    name={'input-' + input.length}
+                                    onChange={this.handleChange}
+                                    value={this.state.description[input.length - 1]}
+                                />
+                                <label className="labelInput">Description</label>
+                            </div>
+                        )}
+                        <div className="addNewDescriptionDiv">
+                            <img id="addNewDescriptionBtn" src="/img/addBtn.svg" onClick={() => this.appendInput()} />
+                            <p id="addNewDescriptionText">Add New Task Description</p>
+                        </div>
+                        <div className="text-center">
+                            <button id="FormSubmitBtn" label="Create New Task">Create</button>
+                        </div>
 
 
-                </form>
-            </div>
+
+
+                    </form>
+                </div>
             </div>
         );
     }

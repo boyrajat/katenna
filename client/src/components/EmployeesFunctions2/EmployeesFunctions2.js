@@ -27,14 +27,14 @@ class EmployeesFunctions2 extends React.Component {
   }
 
   handleInputChange(index, event) {
-    console.log(index);
-    console.log(this.assignedTasks);
-    console.log(event.target.checked);
+    // console.log(index);
+    // console.log(this.assignedTasks);
+    // console.log(event.target.checked);
     this.setState({
       isAssigned: event.target.checked
     });
     this.state.assignedTasks[index] = event.target.checked;
-    console.log(this.state.assignedTasks);
+    // console.log(this.state.assignedTasks);
   }
 
   assignAll() {
@@ -48,7 +48,6 @@ class EmployeesFunctions2 extends React.Component {
   saveChanges() {
     const { employeeName, employeeId } = this.props.location.state;
     const newEmployeeId = 'ObjectId("' + employeeId + '")'
-    console.log(newEmployeeId);
     fetch('/employees/updatetasks', {
       method: 'POST', // or 'PUT'
       body: JSON.stringify({
@@ -72,7 +71,6 @@ class EmployeesFunctions2 extends React.Component {
     // received employee position from the employee clicked
     const { employeePosition } = this.props.location.state;
     const { myTasks } = this.props.location.state;
-    console.log(myTasks);
     // GETTING DATABASE TASKS FROM BASED ON CURRENT EMPLOYEE POSITION
     fetch("tasks/dept/" + employeePosition)
       .then(res => res.json())
@@ -109,9 +107,9 @@ class EmployeesFunctions2 extends React.Component {
     } else {
       return (
         <div>
-          {items.map(item => (
+          {items.map((item, index) => (
             //=======EMPLOYEE JOB INFORMATION AND PICTURE==========
-            < div className="card text-center" >
+            < div className="card text-center" key={'assignTask' + index}>
               <img className="card-img-top someRandomClass" src={backImg} alt="Card image cap" />
               <div className="card-body">
                 <h5 className="card-title">{employeeName}</h5>
@@ -121,7 +119,7 @@ class EmployeesFunctions2 extends React.Component {
                 {/* ALL TASK AND CHECKBOXES ARE DISPLAYED BELOW */}
                 <ul className="list-group list-group-flush">
                   {item.tasks.map((task, index) => (
-                    <li className="list-group-item">
+                    <li className="list-group-item" key={'assignTaskList' + index}>
                       <p>Task: {task.item}</p>
                       <label>
                         <input

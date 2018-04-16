@@ -39895,10 +39895,10 @@ var AddTaskForm = function (_React$Component) {
                                 'Description'
                             )
                         ),
-                        this.state.description.map(function (input) {
+                        this.state.description.map(function (input, index) {
                             return _react2.default.createElement(
                                 'div',
-                                { className: 'field-group', id: 'addFieldDiv' },
+                                { className: 'field-group', id: 'addFieldDiv', key: 'AddTask' + index },
                                 _react2.default.createElement('input', {
                                     className: 'form-control',
                                     id: 'descriptionInput',
@@ -40567,14 +40567,14 @@ var EmployeesFunctions2 = function (_React$Component) {
   _createClass(EmployeesFunctions2, [{
     key: 'handleInputChange',
     value: function handleInputChange(index, event) {
-      console.log(index);
-      console.log(this.assignedTasks);
-      console.log(event.target.checked);
+      // console.log(index);
+      // console.log(this.assignedTasks);
+      // console.log(event.target.checked);
       this.setState({
         isAssigned: event.target.checked
       });
       this.state.assignedTasks[index] = event.target.checked;
-      console.log(this.state.assignedTasks);
+      // console.log(this.state.assignedTasks);
     }
   }, {
     key: 'assignAll',
@@ -40601,7 +40601,6 @@ var EmployeesFunctions2 = function (_React$Component) {
           employeeId = _props$location$state.employeeId;
 
       var newEmployeeId = 'ObjectId("' + employeeId + '")';
-      console.log(newEmployeeId);
       fetch('/employees/updatetasks', {
         method: 'POST', // or 'PUT'
         body: JSON.stringify({
@@ -40630,9 +40629,8 @@ var EmployeesFunctions2 = function (_React$Component) {
       // received employee position from the employee clicked
       var employeePosition = this.props.location.state.employeePosition;
       var myTasks = this.props.location.state.myTasks;
-
-      console.log(myTasks);
       // GETTING DATABASE TASKS FROM BASED ON CURRENT EMPLOYEE POSITION
+
       fetch("tasks/dept/" + employeePosition).then(function (res) {
         return res.json();
       }).then(function (result) {
@@ -40684,12 +40682,12 @@ var EmployeesFunctions2 = function (_React$Component) {
         return _react2.default.createElement(
           'div',
           null,
-          items.map(function (item) {
+          items.map(function (item, index) {
             return (
               //=======EMPLOYEE JOB INFORMATION AND PICTURE==========
               _react2.default.createElement(
                 'div',
-                { className: 'card text-center' },
+                { className: 'card text-center', key: 'assignTask' + index },
                 _react2.default.createElement('img', { className: 'card-img-top someRandomClass', src: backImg, alt: 'Card image cap' }),
                 _react2.default.createElement(
                   'div',
@@ -40716,7 +40714,7 @@ var EmployeesFunctions2 = function (_React$Component) {
                     item.tasks.map(function (task, index) {
                       return _react2.default.createElement(
                         'li',
-                        { className: 'list-group-item' },
+                        { className: 'list-group-item', key: 'assignTaskList' + index },
                         _react2.default.createElement(
                           'p',
                           null,
