@@ -40590,6 +40590,9 @@ var EmployeesFunctions2 = function (_React$Component) {
           return false;
         }) });
     }
+
+    // UPDATE DATABASE TASKS ASSIGNED FOR CURRENT EMPLOYEE
+
   }, {
     key: 'saveChanges',
     value: function saveChanges() {
@@ -40629,6 +40632,7 @@ var EmployeesFunctions2 = function (_React$Component) {
       var myTasks = this.props.location.state.myTasks;
 
       console.log(myTasks);
+      // GETTING DATABASE TASKS FROM BASED ON CURRENT EMPLOYEE POSITION
       fetch("tasks/dept/" + employeePosition).then(function (res) {
         return res.json();
       }).then(function (result) {
@@ -40642,6 +40646,7 @@ var EmployeesFunctions2 = function (_React$Component) {
       // Note: it's important to handle errors here
       // instead of a catch() block so that we don't swallow
       // exceptions from actual bugs in components.
+      //PLEASE DONT DELETE THE ERROR FUNCTION!!!!!
       function (error) {
         _this2.setState({
           isLoaded: true,
@@ -40680,78 +40685,84 @@ var EmployeesFunctions2 = function (_React$Component) {
           'div',
           null,
           items.map(function (item) {
-            return _react2.default.createElement(
-              'div',
-              { className: 'card text-center' },
+            return (
+              //=======EMPLOYEE JOB INFORMATION AND PICTURE==========
               _react2.default.createElement(
                 'div',
-                { className: 'card-header black' },
-                'Supervisor ',
-                item.supervisor,
-                'Employee ',
-                employeeName
-              ),
-              _react2.default.createElement('img', { className: 'card-img-top someRandomClass', src: backImg, alt: 'Card image cap' }),
-              _react2.default.createElement(
-                'div',
-                { className: 'card-body' },
+                { className: 'card text-center' },
+                _react2.default.createElement('img', { className: 'card-img-top someRandomClass', src: backImg, alt: 'Card image cap' }),
                 _react2.default.createElement(
-                  'h5',
-                  { className: 'card-title' },
-                  item.name
-                ),
-                _react2.default.createElement(
-                  'ul',
-                  { className: 'list-group list-group-flush' },
-                  item.tasks.map(function (task, index) {
-                    return _react2.default.createElement(
-                      'li',
-                      { className: 'list-group-item' },
-                      _react2.default.createElement(
-                        'p',
-                        null,
-                        'Task: ',
-                        task.item
-                      ),
-                      _react2.default.createElement(
-                        'label',
-                        null,
-                        _react2.default.createElement('input', {
-                          type: 'checkbox',
-                          checked: _this3.state.assignedTasks[index],
-                          name: index,
-                          onChange: function onChange(e) {
-                            _this3.handleInputChange(index, e);
-                          } }),
-                        _this3.state.assignedTasks[index] ? 'Unassign?' : 'Assign?'
-                      )
-                    );
-                  })
-                ),
-                _react2.default.createElement(
-                  'button',
-                  { type: 'button', onClick: _this3.assignAll },
-                  'Assign All'
-                ),
-                _react2.default.createElement(
-                  'button',
-                  { type: 'button', onClick: _this3.clearAll },
-                  'Clear All'
-                ),
-                _react2.default.createElement(
-                  'button',
-                  { type: 'button' },
-                  'Add new Task'
-                ),
-                _react2.default.createElement(
-                  'button',
-                  { type: 'button', onClick: _this3.saveChanges },
-                  'Save'
-                ),
-                _react2.default.createElement(
-                  _reactRouterDom.Link,
-                  { className: 'btn btn-secondary', to: '/employees' },
-                  'Go Back'
+                  'div',
+                  { className: 'card-body' },
+                  _react2.default.createElement(
+                    'h5',
+                    { className: 'card-title' },
+                    employeeName
+                  ),
+                  _react2.default.createElement(
+                    'h3',
+                    { className: 'card-title' },
+                    item.name
+                  ),
+                  _react2.default.createElement(
+                    'h1',
+                    { className: 'card-title' },
+                    'Supervisor: ',
+                    item.supervisor
+                  ),
+                  _react2.default.createElement(
+                    'ul',
+                    { className: 'list-group list-group-flush' },
+                    item.tasks.map(function (task, index) {
+                      return _react2.default.createElement(
+                        'li',
+                        { className: 'list-group-item' },
+                        _react2.default.createElement(
+                          'p',
+                          null,
+                          'Task: ',
+                          task.item
+                        ),
+                        _react2.default.createElement(
+                          'label',
+                          null,
+                          _react2.default.createElement('input', {
+                            type: 'checkbox',
+                            checked: _this3.state.assignedTasks[index],
+                            name: index,
+                            onChange: function onChange(e) {
+                              _this3.handleInputChange(index, e);
+                            } }),
+                          _this3.state.assignedTasks[index] ? 'Unassign?' : 'Assign?'
+                        )
+                      );
+                    })
+                  ),
+                  _react2.default.createElement(
+                    'button',
+                    { type: 'button', onClick: _this3.assignAll },
+                    'Assign All'
+                  ),
+                  _react2.default.createElement(
+                    'button',
+                    { type: 'button', onClick: _this3.clearAll },
+                    'Clear All'
+                  ),
+                  _react2.default.createElement(
+                    'button',
+                    { type: 'button' },
+                    'Add new Task'
+                  ),
+                  _react2.default.createElement(
+                    'button',
+                    { type: 'button', onClick: _this3.saveChanges },
+                    'Save'
+                  ),
+                  _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { className: 'btn btn-secondary', to: '/employees' },
+                    'Go Back'
+                  )
                 )
               )
             );
