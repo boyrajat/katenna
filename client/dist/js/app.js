@@ -40455,7 +40455,7 @@ var EmployeesFunctions = function (_React$Component) {
                       _react2.default.createElement(
                         _reactRouterDom.Link,
                         {
-                          to: { pathname: '/taskback', state: { employeeName: item.name, employeePosition: item.position, employeeId: item._id, myTasks: item.tasks } } },
+                          to: { pathname: '/taskback', state: { employeeName: item.name, employeePosition: item.position, employeeId: item._id, myTasks: item.tasks, backImg: item.image } } },
                         'Tasks'
                       )
                     ),
@@ -40532,6 +40532,8 @@ var _Card = __webpack_require__(419);
 
 var _reactRouterDom = __webpack_require__(19);
 
+__webpack_require__(579);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -40554,7 +40556,6 @@ var EmployeesFunctions2 = function (_React$Component) {
       items: [],
       isAssigned: false,
       assignedTasks: []
-
     };
     _this.handleInputChange = _this.handleInputChange.bind(_this);
     _this.assignAll = _this.assignAll.bind(_this);
@@ -40653,17 +40654,13 @@ var EmployeesFunctions2 = function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
-      var checkedOrNot = [];
-      checkedOrNot.push(_react2.default.createElement(
-        'p',
-        null,
-        this.state.isAssigned ? 'Checked' : 'Unchecked'
-      ));
       var _state = this.state,
           error = _state.error,
           isLoaded = _state.isLoaded,
           items = _state.items;
-      var employeeName = this.props.location.state.employeeName;
+      var _props$location$state2 = this.props.location.state,
+          employeeName = _props$location$state2.employeeName,
+          backImg = _props$location$state2.backImg;
 
       if (error) {
         return _react2.default.createElement(
@@ -40694,7 +40691,7 @@ var EmployeesFunctions2 = function (_React$Component) {
                 'Employee ',
                 employeeName
               ),
-              _react2.default.createElement('img', { className: 'card-img-top', src: '...', alt: 'Card image cap' }),
+              _react2.default.createElement('img', { className: 'card-img-top someRandomClass', src: backImg, alt: 'Card image cap' }),
               _react2.default.createElement(
                 'div',
                 { className: 'card-body' },
@@ -40740,6 +40737,11 @@ var EmployeesFunctions2 = function (_React$Component) {
                   'button',
                   { type: 'button', onClick: _this3.clearAll },
                   'Clear All'
+                ),
+                _react2.default.createElement(
+                  'button',
+                  { type: 'button' },
+                  'Add new Task'
                 ),
                 _react2.default.createElement(
                   'button',
@@ -68361,6 +68363,70 @@ module.exports = function(module) {
 	return module;
 };
 
+
+/***/ }),
+/* 578 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(16)(false);
+// imports
+
+
+// module
+exports.push([module.i, ".someRandomClass {\n\tborder: none;\n    border-radius: 0;\n    /* TEMPORAL FIX UNTIL MELI FIX THIS UGLY CSS */\n    max-height: 200px;\n    max-width: 200px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 579 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(578);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(17)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../../../node_modules/css-loader/index.js!./EmployeesFunction2.css", function() {
+		var newContent = require("!!../../../../node_modules/css-loader/index.js!./EmployeesFunction2.css");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);

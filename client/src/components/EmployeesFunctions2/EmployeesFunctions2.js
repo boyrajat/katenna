@@ -7,7 +7,8 @@ import {
   Link,
   Redirect,
   withRouter
-} from 'react-router-dom'
+} from 'react-router-dom';
+import './EmployeesFunction2.css';
 
 class EmployeesFunctions2 extends React.Component {
   constructor(props) {
@@ -18,7 +19,6 @@ class EmployeesFunctions2 extends React.Component {
       items: [],
       isAssigned: false,
       assignedTasks: []
-
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.assignAll = this.assignAll.bind(this);
@@ -97,12 +97,8 @@ class EmployeesFunctions2 extends React.Component {
   }
 
   render() {
-    const checkedOrNot = [];
-    checkedOrNot.push(
-      <p>{this.state.isAssigned ? 'Checked' : 'Unchecked'}</p>
-    );
     const { error, isLoaded, items } = this.state;
-    const { employeeName } = this.props.location.state;
+    const { employeeName, backImg } = this.props.location.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -116,7 +112,7 @@ class EmployeesFunctions2 extends React.Component {
                 Supervisor {item.supervisor}
                 Employee {employeeName}
               </div>
-              <img className="card-img-top" src="..." alt="Card image cap" />
+              <img className="card-img-top someRandomClass" src={backImg} alt="Card image cap" />
               <div className="card-body">
                 <h5 className="card-title">{item.name}</h5>
                 <ul className="list-group list-group-flush">
@@ -136,6 +132,7 @@ class EmployeesFunctions2 extends React.Component {
                 </ul>
                 <button type='button' onClick={this.assignAll} >Assign All</button>
                 <button type='button' onClick={this.clearAll}>Clear All</button>
+                <button type='button'>Add new Task</button>
                 <button type='button' onClick={this.saveChanges}>Save</button>
                 <Link className="btn btn-secondary" to="/employees" >Go Back</Link>
               </div>
