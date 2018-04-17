@@ -107,7 +107,7 @@ class AddTaskForm extends React.Component {
                         )}
                         <div className="addNewDescriptionDiv">
                             <img id="addNewDescriptionBtn" src="/img/addBtn.svg" onClick={() => this.appendInput()} />
-                            <p id="addNewDescriptionText">Add New Task Description</p>
+                            <p id="addNewDescriptionText" onClick={() => this.appendInput()}>Add New Task Description</p>
                         </div>
                         <div className="text-center">
                             <button id="FormSubmitBtn" label="Create New Task">Create</button>
