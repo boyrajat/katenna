@@ -9,7 +9,8 @@ const UserSchema = new Schema({
   },
   password: String,
   name: String,
-  newField: String
+  newField: String,
+  position: String,
 }, { strict: false });
 
 

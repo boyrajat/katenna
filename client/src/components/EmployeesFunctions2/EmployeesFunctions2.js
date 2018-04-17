@@ -94,7 +94,6 @@ class EmployeesFunctions2 extends React.Component {
           });
         }
       );
-
   }
 
   render() {
