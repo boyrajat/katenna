@@ -54,3 +54,13 @@
 	text-align: left !important;
 }
 
+#aboutUs > p > a {
+	color: white;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#aboutUs > p >a:hover {
+	color: #f6c501;
+}
+
