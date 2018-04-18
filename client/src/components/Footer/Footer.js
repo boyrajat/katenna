@@ -23,6 +23,17 @@ const Footer = () => (
 					</Link>
 					<br />
 					<p><span>KATENNA</span> was created by Alexander, Charles, Mariela, Melissa and Rajat. We are passionate about building applications which solve problems that have yet to even be discovered on our daily basis. We’d love to show you our solutions, get your feedback and see if we might be a good fit for your organization. Please contact us if you would like to schedule a brief demo.</p>
+					<br/>
+					<p>Alexander Lizarraga •&nbsp;
+					<Link to="mailto:alexander_lizarraga@ymail.com?Subject=From%20Katenna%20Website" target="_top">Email</Link> •&nbsp;<Link to="https://www.linkedin.com/in/alizarraga" target="_blank">Connect</Link><br/>
+					Charles Caldwell •&nbsp;
+					<Link to="mailto:polymath.hacker@gmail.com?Subject=From%20Katenna%20Website" target="_top">Email</Link> •&nbsp;<Link to="https://www.linkedin.com/in/thoughtfool" target="_blank">Connect</Link><br/>
+					Mariela Pascual •&nbsp;
+					<Link to="mailto:mariela2pascual@gmail.com?Subject=From%20Katenna%20Website" target="_top">Email</Link> •&nbsp;<Link to="https://www.linkedin.com/in/marielapascual" target="_blank">Connect</Link><br/>
+					Melissa Wolowicz •&nbsp;
+					<Link to="mailto:melissa.wolowicz@gmail.com?Subject=From%20Katenna%20Website" target="_top">Email</Link> •&nbsp;<Link to="https://www.linkedin.com/in/mwolowicz" target="_blank">Connect</Link><br/>
+					Rajat Narula •&nbsp;
+					<Link to="mailto:boyrajat@hotmail.com?Subject=From%20Katenna%20Website" target="_top">Email</Link> •&nbsp;<Link to="https://www.linkedin.com/in/r-narula" target="_blank">Connect</Link></p>
 				</div>
 
 				<ContactForm/>
