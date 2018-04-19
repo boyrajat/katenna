@@ -80,23 +80,17 @@ class EmployeesFunctions extends React.Component {
                       <Link
                         to={{ pathname: '/taskback', state: { employeeName: item.name, employeePosition: item.position, employeeId: item._id, myTasks: item.tasks, backImg: item.image } }}>
                         Tasks
-							</Link>
+							        </Link>
                     </div>
-
                     <div className="col-2"></div>
-
                     <div className="col-5 eachFooterBtn">
                       <Link
                         to='/newtask' >
                         New Task
-							</Link>
+							        </Link>
                     </div>
-
                   </div>
                 </div>
-
-
-
               </div>
             ))}
           </div>
