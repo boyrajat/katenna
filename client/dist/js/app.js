@@ -40159,7 +40159,7 @@ var Dashboard = function Dashboard(_ref) {
   return _react2.default.createElement(
     'div',
     { className: 'col-10', id: 'mainDashContainer' },
-    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _WelcomePage2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _EmployeesFunctions4.default }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/logout', component: _Logout2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/employees', component: _EmployeesFunctions4.default }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/task', component: _TasksFunctions2.default }),
