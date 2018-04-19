@@ -45,7 +45,7 @@ app.use(employeeRoutes);
 app.use(companyRoutes);
 
 
-// Handles all routes so we don't get any error on undefined urls
+// Handles all routes so we don't get any error on undefined urls.
 app.get('*', function (request, response) {
   response.sendFile(path.resolve('./server/static/', 'index.html'))
 })
