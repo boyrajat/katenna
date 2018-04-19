@@ -49,7 +49,7 @@ class JobTitlesList extends React.Component {
 
 	render() {
 		const { error, isLoaded, items } = this.state;
-		console.log(items);
+		// console.log(items);
 		if (error) {
 
 			return <div>Error: {error.message}</div>;

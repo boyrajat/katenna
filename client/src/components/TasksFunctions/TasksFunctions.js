@@ -32,7 +32,7 @@ class TasksFunctions extends React.Component {
 						});
 					} else {
 						let taskIndexClicked = parseInt(this.props.match.params.whichTask);
-						console.log(taskIndexClicked);
+						// console.log(taskIndexClicked);
 						this.setState({
 							isLoaded: true,
 							items: result // string to integer the index of the item clicked in the side bar
@@ -75,7 +75,7 @@ class TasksFunctions extends React.Component {
 	}
 
 	componentWillReceiveProps() {
-		console.log("inside update");
+		// console.log("inside update");
 		fetch("/tasks/findall")
 			.then(res => res.json())
 			.then(
@@ -87,7 +87,7 @@ class TasksFunctions extends React.Component {
 						});
 					} else {
 						let taskIndexClicked = parseInt(this.props.match.params.whichTask);
-						console.log(taskIndexClicked);
+						// console.log(taskIndexClicked);
 						this.setState({
 							items: [result[taskIndexClicked]] // string to integer the index of the item clicked in the side bar
 						});
@@ -105,7 +105,7 @@ class TasksFunctions extends React.Component {
 	}
 	render() {
 		const { error, isLoaded, items } = this.state;
-		console.log(this.props.match.params);
+		// console.log(this.props.match.params);
 		if (error) {
 
 			return <div>Error: {error.message}</div>;
