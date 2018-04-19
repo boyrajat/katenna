@@ -1,49 +1,111 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect,
-  withRouter
+	BrowserRouter as Router,
+	Route,
+	Link,
+	Redirect,
+	withRouter
 } from 'react-router-dom'
 import './TasksFunctions.css';
 
 class TasksFunctions extends React.Component {
-  constructor(props) {
-	super(props);
-	this.state = {
-	  error: null,
-	  isLoaded: false,
-	  items: []
-	};
-  }
+	constructor(props) {
+		super(props);
+		this.state = {
+			error: null,
+			isLoaded: false,
+			items: []
+		};
+	}
 
-  componentDidMount() {
-	fetch("/tasks/findall")
-	  .then(res => res.json())
-	  .then(
-		(result) => {
-		  this.setState({
-			isLoaded: true,
-			items: result
-		  });
-		},
-		// Note: it's important to handle errors here
-		// instead of a catch() block so that we don't swallow
-		// exceptions from actual bugs in components.
-		(error) => {
-		  this.setState({
-			isLoaded: true,
-			error
-		  });
-		}
-	  )
-  }
+	componentDidMount() {
+		fetch("/tasks/findall")
+			.then(res => res.json())
+			.then(
+				(result) => {
+					// check the URL param whichTask from the router and set value of result for proper render of the click task
+					if (this.props.match.params.whichTask === "all") {
+						this.setState({
+							isLoaded: true,
+							items: [result[0]]
+						});
+					} else {
+						let taskIndexClicked = parseInt(this.props.match.params.whichTask);
+						console.log(taskIndexClicked);
+						this.setState({
+							isLoaded: true,
+							items: result // string to integer the index of the item clicked in the side bar
+						});
 
+					}
+				},
+				// Note: it's important to handle errors here
+				// instead of a catch() block so that we don't swallow
+				// exceptions from actual bugs in components.
+				(error) => {
+					this.setState({
+						isLoaded: true,
+						error
+					});
+				}
+			)
+	}
+
+	componentDidMount() {
+		fetch("/tasks/findall")
+			.then(res => res.json())
+			.then(
+				(result) => {
+					this.setState({
+						isLoaded: true,
+						items: result
+					});
+				},
+				// Note: it's important to handle errors here
+				// instead of a catch() block so that we don't swallow
+				// exceptions from actual bugs in components.
+				(error) => {
+					this.setState({
+						isLoaded: true,
+						error
+					});
+				}
+			)
+	}
+
+	componentWillReceiveProps() {
+		console.log("inside update");
+		fetch("/tasks/findall")
+			.then(res => res.json())
+			.then(
+				(result) => {
+					// check the URL param whichTask from the router and set value of result for proper render of the click task
+					if (this.props.match.params.whichTask === "all") {
+						this.setState({
+							items: result
+						});
+					} else {
+						let taskIndexClicked = parseInt(this.props.match.params.whichTask);
+						console.log(taskIndexClicked);
+						this.setState({
+							items: [result[taskIndexClicked]] // string to integer the index of the item clicked in the side bar
+						});
+					}
+				},
+				// Note: it's important to handle errors here
+				// instead of a catch() block so that we don't swallow
+				// exceptions from actual bugs in components.
+				(error) => {
+					this.setState({
+						error
+					});
+				}
+			)
+	}
 	render() {
 		const { error, isLoaded, items } = this.state;
-
+		console.log(this.props.match.params);
 		if (error) {
 
 			return <div>Error: {error.message}</div>;
@@ -53,7 +115,7 @@ class TasksFunctions extends React.Component {
 			return <div>Loading...</div>;
 
 		} else {
-				
+
 			return (
 				<div>
 					<div className="accordion" id="accordion eachJobAccordion">
@@ -71,7 +133,7 @@ class TasksFunctions extends React.Component {
 										{item.name}
 									</button>
 								</div>
-								
+
 								<div className="card-body collapse eachJobBody" id={item.name} aria-labelledby={"card" + index} data-parent="#accordion">
 									<div className="row align-middle tasksViewTopLinks">
 										<h5 className="col-4 align-middle text-left card-title">Supervisor: <span>{item.supervisor}</span></h5>

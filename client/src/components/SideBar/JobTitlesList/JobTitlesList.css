@@ -9,7 +9,7 @@
     padding: 20px;
     margin-bottom: 0;
     text-indent: 5px;
-    border-bottom: 1px solid white;
+	border-bottom: 1px solid white;
 }
 
 .eachJobTitle:last-of-type {
@@ -18,5 +18,7 @@
 
 .eachJobTitle:hover {
 	background-color: white;
-    color: #262626;
+	color: #262626;
 }
+
+

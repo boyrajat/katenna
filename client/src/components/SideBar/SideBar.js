@@ -55,7 +55,7 @@ class SideBar extends Component {
 			this.setState({ sideBtnIds: 'sideBarNavMainBtnsDropDown' });
 		}
 	}
-	
+
 
 	render() {
 
@@ -79,14 +79,13 @@ class SideBar extends Component {
 							className="btn btn-secondary"
 							id={sideBtnIds}
 							onClick={this.workingFunction.bind(this)}
-							to='/task'
+							to='/task/all'
 						>
 							JOB TITLES
 						</Link>
 						{this.state.showJobTitles ? <JobTitlesList items={this.state.items} /> : null}
 
 						{/* THIS IS WHERE JOB TITLES POPULATE */}
-
 
 					</div>
 				</div>

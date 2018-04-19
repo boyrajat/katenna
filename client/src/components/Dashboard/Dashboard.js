@@ -25,7 +25,7 @@ const Dashboard = ({ secretData, user }) => (
     <Route exact path="/" component={Employees} />
     <Route path="/logout" component={LogoutFunction} />
     <Route path="/employees" component={Employees} />
-    <Route path="/task" component={Tasks} />
+    <Route path="/task/:whichTask" component={Tasks} />
     <Route path="/newemployees" component={AddEmployeeForm} />
     <Route path="/newtask" component={AddTaskForm} />
     {/* get employee's tasks when click on button 'See tasks' */}
