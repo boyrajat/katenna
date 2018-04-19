@@ -109,19 +109,19 @@ class EmployeesFunctions2 extends React.Component {
           {items.map((item, index) => (
             //=======EMPLOYEE JOB INFORMATION AND PICTURE==========
             <div className="col-10 card employeeTaskCard" key={'assignTask' + index}>
-				<div className="row card-header employeeTaskHeader">
-					<div className="col-2 employeeTaskImageCol">
-						<img className="employeeTaskImg" src={backImg} alt="Employee" />
-					</div>
-					<div className="col employeeTaskDetailsCol">
-						<h1 className="employeeTaskName">{employeeName}</h1>
-						<h2 className="employeeTaskJobTitle">{item.name}</h2>
-						<h3 className="employeeTaskSuervisor">Supervisor: <span className="employeeTaskSuperName">{item.supervisor}</span></h3>
-					</div>
-					<div className="col employeeTaskBtnsCol">
-					<Link className="employeeTaskGoBackBtn" to="/employees" >Go Back</Link>
-					</div>
-				</div>
+              <div className="row card-header employeeTaskHeader">
+                <div className="col-2 employeeTaskImageCol">
+                  <img className="employeeTaskImg" src={backImg} alt="Employee" />
+                </div>
+                <div className="col employeeTaskDetailsCol">
+                  <h1 className="employeeTaskName">{employeeName}</h1>
+                  <h2 className="employeeTaskJobTitle">{item.name}</h2>
+                  <h3 className="employeeTaskSuervisor">Supervisor: <span className="employeeTaskSuperName">{item.supervisor}</span></h3>
+                </div>
+                <div className="col employeeTaskBtnsCol">
+                  <Link className="employeeTaskGoBackBtn" to="/employees" >Go Back</Link>
+                </div>
+              </div>
               <div className="card-body employeeTaskBody">
                 {/* ======================================== */}
                 {/* ALL TASK AND CHECKBOXES ARE DISPLAYED BELOW */}
@@ -129,18 +129,18 @@ class EmployeesFunctions2 extends React.Component {
                   {item.tasks.map((task, index) => (
                     <li className="row employeeTaskEach" key={'assignTaskList' + index}>
                       <p className="col-9 text-left employeeTaskTitle">Task: <span className="employeeTaskSpan">{task.item}</span></p>
-					  <div className="col-3 text-right employeeTaskAssigned">
-						<label className="employeeTaskLabel" id="checkBoxLabel">
-							<input
-								className="employeeTaskInput"
-								id="eachTaskCheckBox"
-							type="checkbox"
-							checked={this.state.assignedTasks[index]}
-							name={index}
-							onChange={(e) => { this.handleInputChange(index, e) }} />
-							{this.state.assignedTasks[index] ? 'Unassign?' : 'Assign?'}
-						</label>
-					  </div>
+                      <div className="col-3 text-right employeeTaskAssigned">
+                        <label className="employeeTaskLabel" id="checkBoxLabel">
+                          <input
+                            className="employeeTaskInput"
+                            id="eachTaskCheckBox"
+                            type="checkbox"
+                            checked={this.state.assignedTasks[index]}
+                            name={index}
+                            onChange={(e) => { this.handleInputChange(index, e) }} />
+                          {this.state.assignedTasks[index] ? 'Unassign?' : 'Assign?'}
+                        </label>
+                      </div>
                     </li>
                   ))}
                 </ul>
@@ -149,12 +149,12 @@ class EmployeesFunctions2 extends React.Component {
 
                 {/* ======================================== */}
                 {/* ALL BUTTONS ARE DISPLAYED BELOW */}
-				<div className="card-footer employeeTaskFooter">
-					<button className="employeeTaskFooterBtn" id="employeeTaskAssignAllBtn" type='button' onClick={this.assignAll} >Assign All</button>
-					<button className="employeeTaskFooterBtn" id="employeeTaskClearAllBtn" type='button' onClick={this.clearAll}>Clear All</button>
-					<button className="employeeTaskFooterBtn" id="employeeTaskAddNewBtn" type='button'>Add new Task</button>
-					<button className="employeeTaskFooterBtn" id="employeeTaskSaveBtn" type='button' onClick={this.saveChanges}>Save</button>
-				</div>
+                <div className="card-footer employeeTaskFooter">
+                  <button className="employeeTaskFooterBtn" id="employeeTaskAssignAllBtn" type='button' onClick={this.assignAll} >Assign All</button>
+                  <button className="employeeTaskFooterBtn" id="employeeTaskClearAllBtn" type='button' onClick={this.clearAll}>Clear All</button>
+                  <button className="employeeTaskFooterBtn" id="employeeTaskAddNewBtn" type='button'>Add new Task</button>
+                  <button className="employeeTaskFooterBtn" id="employeeTaskSaveBtn" type='button' onClick={this.saveChanges}>Save</button>
+                </div>
                 {/* END OF BUTTONS */}
                 {/* ======================================== */}
               </div>
