@@ -65,11 +65,10 @@ class JobTitlesList extends React.Component {
 					{this.state.items.map((item, index) => (
 
 						<div key={item.name} className="eachJobTitle">
-							<Link style={{
-								color: this.state.textColor
-							}}
-								onMouseEnter={this.onMouseover.bind(this)}
-								onMouseLeave={this.onMouseout.bind(this)}
+							<Link id="jobTitleLink"
+								// style={{ color: this.state.textColor }}
+								// onMouseEnter={this.onMouseover.bind(this)}
+								// onMouseLeave={this.onMouseout.bind(this)}
 								to={"/task/" + index}
 
 							>{item.name}</Link>
@@ -77,7 +76,7 @@ class JobTitlesList extends React.Component {
 
 					))
 					}
-				</div >
+				</div>
 			);
 		}
 

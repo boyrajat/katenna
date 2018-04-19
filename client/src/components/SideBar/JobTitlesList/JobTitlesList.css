@@ -10,7 +10,13 @@
     margin-bottom: 0;
     text-indent: 5px;
 	border-bottom: 1px solid white;
+	color: white;
 }
+
+.eachJobTitle > a {
+	color: white !important;
+}
+
 
 .eachJobTitle:last-of-type {
 	border-bottom: none;
@@ -18,7 +24,10 @@
 
 .eachJobTitle:hover {
 	background-color: white;
-	color: #262626;
+	/* color: #262626 !important; */
 }
 
+.eachJobTitle:hover a {
+	color: #262626 !important;
+}
 
