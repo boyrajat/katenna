@@ -30,6 +30,7 @@ const Dashboard = ({ secretData, user }) => (
     <Route path="/newtask" component={AddTaskForm} />
     {/* get employee's tasks when click on button 'See tasks' */}
     <Route path="/taskback" component={GetTasks} />
+
   </div>
 );
 

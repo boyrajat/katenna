@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const config = require('./config');
 
+const path = require('path');
+
 // connect to the database and load models
 require('./server/models').connect(config.dbUri);
 
@@ -41,6 +43,13 @@ app.use('/api', apiRoutes);
 app.use(taskRoutes);
 app.use(employeeRoutes);
 app.use(companyRoutes);
+
+
+// Handles all routes so we don't get any error on undefined urls.
+app.get('*', function (request, response) {
+  response.sendFile(path.resolve('./server/static/', 'index.html'))
+})
+
 
 // Set Port, hosting services will look for process.env.PORT
 app.set('port', (process.env.PORT || 3000));

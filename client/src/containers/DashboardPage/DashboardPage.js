@@ -43,18 +43,20 @@ class DashboardPage extends React.Component {
   /**
    * Render the component.
    */
-	render() {
-		return (
-			<div className="container-fluid">
-				<TopBar secretData={this.state.secretData} user={this.state.user} />
+  render() {
+    return (
+      <div className="container-fluid">
+        <TopBar secretData={this.state.secretData} user={this.state.user} />
 
-				<div className="row" id="dashboardMainRow">
-					<SideBar secretData={this.state.secretData} user={this.state.user}/>
-					<Dashboard secretData={this.state.secretData} user={this.state.user} />
-				</div>
-			</div>
-		);
-	}
+        <div className="row" id="dashboardMainRow">
+          <SideBar secretData={this.state.secretData} user={this.state.user} />
+          <Dashboard secretData={this.state.secretData} user={this.state.user} />
+        </div>
+      </div>
+    );
+  }
   // test
 }
 export default DashboardPage;
+
+

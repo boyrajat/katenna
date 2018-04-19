@@ -14,4 +14,8 @@ router.get('/dashboard', (req, res) => {
   });
 });
 
+router.get('*', function (request, response) {
+  response.sendFile(path.resolve(__dirname, '../static', 'index.html'))
+})
+
 module.exports = router;
