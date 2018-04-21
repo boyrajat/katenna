@@ -15,7 +15,7 @@ const Footer = () => (
 		</div>
 
 		<div className="container footerCont">
-			<div className="row">
+			<div className="row" id="footerRow">
 
 				<div className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7" id="aboutUs">
 					<Link to="/home">
@@ -38,6 +38,9 @@ const Footer = () => (
 
 				<ContactForm/>
 				
+				<hr/>
+				<p id="copyright">&copy; 2018 Katenna. All Rights Reserved.</p>
+
 			</div>
 		</div>
 	</div>
